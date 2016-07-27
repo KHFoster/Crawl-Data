@@ -1,0 +1,1688 @@
+<raw_content>&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;
+
+        &lt;meta charset="utf-8"&gt;
+
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+
+        &lt;title&gt; 
+
+    ARMSLIST - Frequently Asked Questions
+
+&lt;/title&gt;
+
+        &lt;link href="https://s3.amazonaws.com/mgm-content/sites/armslist/content/system/favicon.ico" rel="shortcut icon"&gt;
+
+        &lt;link rel="stylesheet" href="https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/css/bootstrap.css"&gt;
+
+        &lt;link rel="stylesheet" href="https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/css/all.css"&gt;
+
+        &lt;link href="//fonts.googleapis.com/css?family=Oswald:400,300%7CLato:400,700" rel="stylesheet" type="text/css"&gt;
+
+        &lt;link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"&gt;
+
+        &lt;div class="fit-vids-style" id="fit-vids-style" style="display: none;"&gt;­&lt;style&gt;.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}&lt;/style&gt;&lt;/div&gt;&lt;script async="" src="//www.google-analytics.com/analytics.js"&gt;&lt;/script&gt;&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"&gt;&lt;/script&gt;
+
+        &lt;script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"&gt;&lt;/script&gt;
+
+        &lt;script type="text/javascript" src="https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/js/jquery.main.js"&gt;&lt;/script&gt;
+
+
+
+        
+
+        &lt;script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"&gt;&lt;/script&gt;
+
+
+
+        
+
+        &lt;script type="text/javascript" src="https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/scripts/lib/jquery-cookie.js"&gt;&lt;/script&gt;
+
+
+
+        &lt;script type="text/javascript" src="https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/scripts/listmill-app.js"&gt;&lt;/script&gt;
+
+        &lt;script type="text/javascript" src="https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/scripts/jquery-listmill.js"&gt;&lt;/script&gt;
+
+        
+
+
+
+
+
+        &lt;script type="text/javascript"&gt;
+
+            var appOptions = {
+
+                showTermsOnLoad: "true" == "true" ? true : false,
+
+                showTermsOnLoadTimeout: 0};
+
+        
+
+
+
+            $(function () {
+
+                if(appOptions.showTermsOnLoad) {
+
+                    //listmill.app.checkTerms();
+
+                    //alert("show terms");
+
+                    checkTerms();
+
+                    
+
+                }
+
+                //listmill.app.themePreview();
+
+                //listmill.datatations.initialize();
+
+            });
+
+            function checkTerms() {
+
+                if ((document.cookie.length == 0 || document.cookie.indexOf("terms=agreed") == -1)
+
+                    &amp;&amp; window.location.href.indexOf("/info/terms") == -1
+
+                    &amp;&amp; document.cookie.indexOf("listmill_auth") == -1) {
+
+                    showTerms();
+
+                } else
+
+                    acceptTerms();
+
+            }
+
+            function acceptTerms() {
+
+                var dateStr = "";
+
+                if (appOptions.showTermsOnLoadTimeout &gt; 0) {
+
+                    date = new Date();
+
+                    date.setHours(date.getHours() + appOptions.showTermsOnLoadTimeout);
+
+                    dateStr = "; expires=" + date.toUTCString();
+
+                };
+
+                document.cookie = "terms=agreed" + dateStr + "; path=/";
+
+
+
+                $('#termsModal').modal('hide');
+
+            }
+
+
+
+            function showTerms() {
+
+                //termsModalContainer
+
+                $.ajax({
+
+                    url: "/info/termsagreement",
+
+                    dataType: "html",
+
+                    success: function (data) {
+
+                        $("#termsModalContainer").html(data);
+
+                        /*$("#termsagreement")
+
+                                .html("&lt;h2&gt;TERMS OF USE&lt;/h2&gt;" + data + "&lt;p style='font-size: 7pt; margin-top: 2em;'&gt;* COOKIES MUST BE ENABLED FOR THIS SITE TO WORK.&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;We recommend the use of Google Chrome, Firefox 3.0+, or Internet Explorer 7.0+ for the best browsing experience.&lt;/p&gt;")
+
+                                .dialog({
+
+                                    closeOnEscape: false,
+
+                                    modal: true,
+
+                                    title: "Please read and agree to our Terms of Use:",
+
+                                    width: Math.min(800, $(window).width() - 30),
+
+                                    height: Math.min(400, $(window).height() - 30),
+
+                                    buttons: {
+
+                                        "I Agree": function () { agreeTerms(); $(this).dialog("close"); },
+
+                                        "I Do Not Agree": function () { window.location = "http://www.google.com" }
+
+                                    }
+
+                                });*/
+
+                        //$(".ui-dialog-titlebar-close").hide();
+
+                        $('#termsModal').modal({
+
+                            backdrop: 'static',
+
+                            keyboard: false
+
+                        });
+
+
+
+                        $('#termsModal').modal('show');
+
+                    }});
+
+                
+
+            }
+
+        &lt;/script&gt;
+
+
+
+        
+
+    
+
+    &lt;script type="text/javascript"&gt;
+
+        $(function () {
+
+            listmill.info.initFaqs();
+
+        });
+
+    &lt;/script&gt;
+
+
+
+
+
+
+
+        &lt;!-- --&gt;
+
+
+
+        &lt;!--                &lt;style type="text/css"&gt;
+
+        .footer-social {  width: 100px;  margin-right: 0px !important;}
+
+        &lt;/style&gt;
+
+--&gt;
+
+        &lt;style type="text/css"&gt;
+
+            #h3Overrides h3 {
+
+                margin-top: 0px;
+
+                color: #000000;
+
+            }
+
+        &lt;/style&gt;
+
+    &lt;/head&gt;
+
+
+
+
+
+    &lt;body style="-webkit-overflow-scrolling: touch;" class="modal-open"&gt;
+
+        &lt;div id="termsModal" class="modal fade in" role="dialog" style="color: rgb(101, 93, 91) !important; display: block;"&gt;
+
+            &lt;div class="modal-dialog"&gt;
+
+
+
+                &lt;!-- Modal content--&gt;
+
+                &lt;div class="modal-content"&gt;
+
+                    &lt;div class="modal-header"&gt;
+
+                        &lt;h4 style="color: #655d5b"&gt;TERMS OF USE&lt;/h4&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;div class="modal-body"&gt;
+
+                        &lt;div id="termsModalContainer"&gt;&lt;ol class="terms"&gt;                
+
+    &lt;li&gt;I am 18 years of age or older.&lt;/li&gt;
+
+    &lt;li&gt;I understand that ARMSLIST DOES NOT become involved in transactions between parties and does not certify, investigate, or in any way guarantee the legal capacity of any party to transact.&lt;/li&gt;
+
+    &lt;li&gt;I am responsible for obeying all applicable enforcement mechanisms, including, but not limited to federal, state, municipal, and tribal statutes, rules, regulations, ordinances, and judicial decisions, any applicable Presidential Executive Orders, including compliance with all applicable licensing requirements.&lt;/li&gt;
+
+    &lt;li&gt;I will not use Armslist.com for any illegal purpose.&lt;/li&gt;
+
+    &lt;li&gt;If I am at all unsure about firearm sales or transfers, I will contact the Bureau of Alcohol, Tobacco, Firearms, and Explosive at 1-800-ATF-GUNS and visit the ATF website at http://www.atf.gov.&lt;/li&gt;
+
+    &lt;li&gt;I will help to ensure the overall openness and accessibility of the site to all users through a peer-review process.  I understand that failure to adhere to proper internet protocol and etiquette may result in removal of my listings or more severe corrective action.&lt;/li&gt;
+
+    &lt;li&gt;ARMSLIST may edit or remove information, including my listings, from the site without notice.&lt;/li&gt;        
+
+    &lt;li&gt;If I violate these terms, ARMSLIST may permanently remove me from the site or, depending on the nature and severity of the violation, avail itself of such remedies as are prescribed by law.  Whilst ARMSLIST ABSOLUTELY BELIEVES AND CHAMPIONS "the right of the people to keep and bear Arms," ARMSLIST will comply with federal, state, municipal, and tribal law enforcement entities pursuant to the Constitution of the United States and Due Process of Law.&lt;/li&gt;
+
+    &lt;li&gt;I agree to abide by the spam and listing policies. I may only have one account and may only list an item once, in the correct category, and in my physical location. &lt;/li&gt; 
+
+    &lt;li&gt;I understand that the sale or trade of animals on Armslist is prohibited. &lt;/li&gt; 
+
+    &lt;li&gt;I take responsibility for my actions whilst using Armslist.com.  I also take responsibility for any and all of my actions related to, or resulting from, my use of Armslist.com.  Further, I am solely responsible for any and all consequences of such my actions.&lt;/li&gt; 
+
+    &lt;li&gt;I indemnify and hold harmless ARMSLIST and all of its owners, directors, officers, employees, and agents for any and all loss, harm, damage, costs, liability, and expense caused to them, whether intentionally or unintentionally, by my use of Armslist.com, including but not limited to direct or indirect results of violations of any and all applicable laws.&lt;/li&gt;
+
+    &lt;li&gt;ARMSLIST may make changes to these terms at any time without notifying me.  As a user, I am solely responsible for reading the most current version of the terms and conditions.&lt;/li&gt;        
+
+    &lt;li&gt;By clicking "I agree," I electronically represent ("sign") that I agree to the above terms and further certify that I have read, and completely agree, to be legally bound by the ARMSLIST Terms of Use&lt;/li&gt;
+
+&lt;/ol&gt;
+
+&lt;/div&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;div class="modal-footer"&gt;
+
+                        &lt;button type="button" class="btn btn-default" onclick="acceptTerms()"&gt;Accept&lt;/button&gt;
+
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+
+
+
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+
+        &lt;div id="promotionModal" class="modal fade" role="dialog" style="color: #655D5B !important;"&gt;
+
+            &lt;div class="modal-dialog"&gt;
+
+
+
+                &lt;!-- Modal content--&gt;
+
+                &lt;div class="modal-content"&gt;
+
+                    &lt;div class="modal-header"&gt;
+
+                        &lt;h4 style="color: #655d5b"&gt;PROMOTIONAL LINK&lt;/h4&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;div class="modal-body"&gt;
+
+                        &lt;div id="promotionModalContainer"&gt;&lt;/div&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;div class="modal-footer"&gt;
+
+                        &lt;button type="button" class="btn btn-default" data-dismiss="modal"&gt;Close&lt;/button&gt;
+
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+
+
+
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+
+        &lt;div id="filterByModal" class="modal fade" role="dialog" style="color: #655D5B !important;"&gt;
+
+        &lt;div class="modal-dialog"&gt;
+
+
+
+            &lt;!-- Modal content--&gt;
+
+            &lt;div class="modal-content"&gt;
+
+                &lt;div class="modal-header"&gt;
+
+                    &lt;button type="button" class="close" data-dismiss="modal"&gt;×&lt;/button&gt;
+
+                    &lt;h4 style="color: #655d5b"&gt;Filter By&lt;/h4&gt;
+
+                &lt;/div&gt;
+
+                &lt;div class="modal-body"&gt;
+
+                    &lt;div id="filterByContainer"&gt;&lt;/div&gt;
+
+                &lt;/div&gt;
+
+                &lt;div class="modal-footer"&gt;
+
+                    &lt;button type="button" class="btn btn-default" data-dismiss="modal"&gt;Close&lt;/button&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+
+
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+
+
+
+    &lt;div id="contactSellerEmailModal" class="modal fade" role="dialog" style="color: #655D5B !important;"&gt;
+
+        &lt;div class="modal-dialog"&gt;
+
+
+
+            &lt;!-- Modal content--&gt;
+
+            &lt;div class="modal-content"&gt;
+
+                &lt;div class="modal-header"&gt;
+
+                    &lt;button type="button" class="close" data-dismiss="modal"&gt;×&lt;/button&gt;
+
+                    &lt;h4 style="color: #655d5b"&gt;Contact Seller&lt;/h4&gt;
+
+                &lt;/div&gt;
+
+                &lt;div class="modal-body"&gt;
+
+                    &lt;div id="messageSellerContainer"&gt;&lt;/div&gt;
+
+                &lt;/div&gt;
+
+                &lt;div class="modal-footer"&gt;
+
+                    &lt;button id="contactFormSubmitBtn" type="button" class="pull-left btn btn-default" onclick="doMessageSend()"&gt;Send&lt;/button&gt;
+
+                    &lt;button type="button" class="btn btn-default" data-dismiss="modal"&gt;Cancel&lt;/button&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+
+
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+
+    &lt;div id="searchAlertModal" class="modal fade" role="dialog" style="color: #655D5B !important;"&gt;
+
+        &lt;div class="modal-dialog"&gt;
+
+
+
+            &lt;!-- Modal content--&gt;
+
+            &lt;div class="modal-content"&gt;
+
+                &lt;div class="modal-header"&gt;
+
+                    &lt;button type="button" class="close" data-dismiss="modal"&gt;×&lt;/button&gt;
+
+                    &lt;h4 style="color: #655d5b"&gt;Search Alert&lt;/h4&gt;
+
+                &lt;/div&gt;
+
+                &lt;div class="modal-body"&gt;
+
+                    &lt;div id="searchAlertContainer"&gt;&lt;/div&gt;
+
+                &lt;/div&gt;
+
+                &lt;div class="modal-footer"&gt;
+
+                    &lt;button id="searchAlertFormSubmitBtn" type="button" class="pull-left btn btn-default" onclick="createSearchAlert()"&gt;Create&lt;/button&gt;
+
+                    &lt;button type="button" class="btn btn-default" data-dismiss="modal"&gt;Cancel&lt;/button&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+
+
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+
+    &lt;div id="wrapper"&gt;
+
+        &lt;header id="header" class="navbar-default text-uppercase" role="navigation"&gt;
+
+            &lt;div class="top-holder"&gt;
+
+                &lt;div class="container-fluid"&gt;
+
+                    &lt;button type="button" class="navbar-toggle text-uppercase pull-left" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" id="popoverMobileViewMainMenu" data-original-title="" title=""&gt;
+
+                        &lt;span class="icon-bar"&gt;&lt;/span&gt;
+
+                        &lt;span class="icon-bar"&gt;&lt;/span&gt;
+
+                        &lt;span class="icon-bar"&gt;&lt;/span&gt;
+
+                        &lt;span class="text"&gt;Menu&lt;/span&gt;
+
+                    &lt;/button&gt;
+
+                    &lt;div id="popovercontentMobileViewMainMenu" style="display: none;"&gt;
+
+                        &lt;div class="container-fluid"&gt;
+
+                            &lt;div class="row" id="h3Overrides"&gt;
+
+                                &lt;div class="col-md-3 col-sm-6 col-lg-offset-1 col-md-offset-0"&gt;
+
+    &lt;h3 class="text-uppercase"&gt;ACCOUNT &amp;amp; LISTINGS &lt;/h3&gt;
+
+    &lt;ul class="nav-footer"&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/accountlogin/new"&gt;Account Login&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/account/new"&gt;New Account&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/posts/new"&gt;Create a New Listing&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/posts/resendactivation"&gt;Edit or Remove a Listing&lt;/a&gt;&lt;/li&gt;
+
+    &lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;div class="col-lg-2 col-md-3 col-sm-6"&gt;
+
+    &lt;h3 class="text-uppercase"&gt;ABOUT &amp;amp; HELP&lt;/h3&gt;
+
+    &lt;ul class="nav-footer"&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/info/faqs"&gt;FAQs&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/info/contact"&gt;Contact Armslist&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/info/privacy"&gt;Privacy Policy&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/info/terms"&gt;Terms of Use&lt;/a&gt;&lt;/li&gt;
+
+    &lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;div class="col-md-3 col-sm-6"&gt;
+
+    &lt;h3 class="text-uppercase"&gt;MORE ARMSLIST LINKS &lt;/h3&gt;
+
+    &lt;ul class="nav-footer"&gt;
+
+        &lt;li&gt;&lt;a href="http://forum.armslist.com/"&gt;Armslist Discussion Forum&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="http://www.armslist.com/contests/"&gt;Armslist Contests&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="http://www.armslistlegaldefensefund.com/"&gt;Armslist Legal Defense Fund&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/info/advertise"&gt;Advertising with Armslist&lt;/a&gt;&lt;/li&gt;
+
+    &lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;div class="col-md-3 col-sm-6"&gt;
+
+    &lt;h3 class="text-uppercase"&gt;PARTNER SITES&lt;/h3&gt;
+
+    &lt;ul class="nav-footer"&gt;
+
+        &lt;li&gt;&lt;a href="http://www.torquelist.com/"&gt;Torquelist Vehicle Trader&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="http://www.rangemonkey.com/"&gt;Range Monkey&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="http://www.invictusgearcompany.com/"&gt;Invictus Gear &lt;/a&gt;&lt;/li&gt;
+
+    &lt;/ul&gt;
+
+&lt;/div&gt;
+
+                            &lt;/div&gt;
+
+                        &lt;/div&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;script type="text/javascript"&gt;
+
+                        $(document).ready(function () {
+
+
+
+                            $("#popoverMobileViewMainMenu").popover({
+
+                                html: true,
+
+                                container: 'body',
+
+                                content: function () {
+
+                                    return $('#popovercontentMobileViewMainMenu').html();
+
+                                }
+
+                            });
+
+
+
+                            $('html').on('click', function (e) {
+
+                                if (typeof $(e.target).data('original-title') == 'undefined' &amp;&amp;
+
+                                    !$(e.target).parents().is('.popover.in') &amp;&amp;
+
+                                    $(e.target).parent().attr("id") !== "popoverMobileViewMainMenu") {
+
+                                    $('[data-original-title]').popover('hide');
+
+                                }
+
+                            });
+
+                        });
+
+
+
+                    &lt;/script&gt;
+
+
+
+                    &lt;div class="pull-right align-right"&gt;
+
+&lt;form action="/classifieds/search" class="search-form navbar-form hidden-xs" method="get" role="search"&gt;                            &lt;fieldset&gt;
+
+                                &lt;div class="form-group"&gt;
+
+
+
+                                    &lt;input type="text" name="search" class="form-control" placeholder="Search listings" value=""&gt;
+
+                                    &lt;input type="hidden" name="location" value="usa"&gt;
+
+                                    &lt;input type="hidden" name="category" value="all"&gt;
+
+                                    &lt;input type="hidden" name="posttype" value="7"&gt;
+
+                                    &lt;input type="hidden" name="ships" value="False"&gt;
+
+                                &lt;/div&gt;
+
+                                &lt;button type="submit" class="btn btn-default icon-search"&gt;&lt;/button&gt;
+
+                            &lt;/fieldset&gt;
+
+&lt;/form&gt;                        
+
+                        &lt;a href="/posts/new" class="btn btn-warning create-btn text-uppercase"&gt;&lt;span class="hidden-sm hidden-xs"&gt;CREATE A LISTING&lt;/span&gt; &lt;i class="icon-pencil"&gt;&lt;/i&gt; &lt;span class="visible-sm visible-xs"&gt;list&lt;/span&gt;&lt;/a&gt;
+
+
+
+                        
+
+&lt;ul class="users-list hidden-xs"&gt;
+
+
+
+        &lt;li&gt;&lt;a href="/account/new"&gt;CREATE AN ACCOUNT&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="/accountlogin"&gt;LOGIN&lt;/a&gt;&lt;/li&gt;
+
+&lt;/ul&gt;
+
+
+
+
+
+                        &lt;button type="button" class="btn btn-warning create-btn text-uppercase visible-xs" onclick="showHideSearchMobile()"&gt;&lt;i class="icon-search"&gt;&lt;/i&gt; &lt;span class="visible-xs"&gt;search&lt;/span&gt;&lt;/button&gt;
+
+                        &lt;script type="text/javascript"&gt;
+
+                            function showHideSearchMobile() {
+
+                                $("#searchMobileView").fadeToggle();
+
+                            }
+
+                        &lt;/script&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;div id="logo" class="pull-left"&gt;
+
+                        &lt;a href="/" title="ARMSLIST - Firearms Classifieds"&gt;
+
+                            &lt;picture&gt;
+
+                                    &lt;!--[if IE 9]&gt;&lt;video style="display: none;"&gt;&lt;![endif]--&gt;
+
+                                    &lt;source srcset="https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/images/logo-mobile.png, https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/images/logo-mobile@2x.png 2x" media="(max-width: 767px)"&gt;
+
+                                    &lt;source srcset="https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/images/logo-desktop.png, https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/images/logo-desktop@2x.png 2x"&gt;
+
+                                    &lt;!--[if IE 9]&gt;&lt;/video&gt;&lt;![endif]--&gt;
+
+                                    &lt;img src="https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/images/logo-desktop.png" alt="armslist firearms marketplace" width="260" height="66"&gt;
+
+                            &lt;/picture&gt;
+
+                        &lt;/a&gt;
+
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+            &lt;div class="alert " id="mainMessageContainer" style="display: none; margin-bottom: 0px;"&gt;
+
+                
+
+                &lt;div id="mainMessageContainer_Message" style="text-align: center;"&gt;&lt;/div&gt;
+
+            &lt;/div&gt;
+
+            
+
+            &lt;div style="padding: 20px 10px 10px 20px; text-align: center; display: none;" class="hidden-sm hidden-md hidden-lg" id="searchMobileView"&gt;
+
+
+
+&lt;form action="/classifieds/search" class="search-form" method="get" role="search" style="width: 75% !important;"&gt;                    &lt;fieldset&gt;
+
+                        &lt;div class="form-group"&gt;
+
+                            &lt;input type="text" name="search" class="form-control" placeholder="Search listings" value=""&gt;
+
+                            &lt;input type="hidden" name="location" value="usa"&gt;
+
+                            &lt;input type="hidden" name="category" value="all"&gt;
+
+                            &lt;input type="hidden" name="posttype" value="7"&gt;
+
+                            &lt;input type="hidden" name="ships" value="False"&gt;
+
+                        &lt;/div&gt;
+
+                        &lt;button type="submit" class="btn btn-default icon-search"&gt;&lt;/button&gt;
+
+                    &lt;/fieldset&gt;
+
+&lt;/form&gt;                &lt;br&gt;
+
+
+
+                &lt;div id="myCarousel" class="carousel slide" data-ride="carousel" style="padding-top: 20px;"&gt;
+
+
+
+
+
+                    &lt;!-- Wrapper for slides --&gt;
+
+                    &lt;div class="carousel-inner" role="listbox"&gt;
+
+                        &lt;div class="item"&gt;
+
+                            &lt;div style="text-align: center; font: 300 16px/19px &amp;quot;Oswald&amp;quot;, &amp;quot;Arial&amp;quot;, &amp;quot;Helvetica&amp;quot;, sans-serif; text-decoration: none; text-transform: uppercase;"&gt;
+
+                                &lt;a style="color: #e5e0bf; padding-right: 10px; display: inline-block;" href="/classifieds/search?category=handguns&amp;amp;location=usa&amp;amp;posttype=7&amp;amp;ships=False"&gt;HANDGUNS &lt;br&gt;&lt;i class="icon-handguns"&gt;&lt;/i&gt;&lt;/a&gt;
+
+                                &lt;a style="color: #e5e0bf; padding-right: 10px; display: inline-block;" href="/classifieds/search?category=shotguns&amp;amp;location=usa&amp;amp;posttype=7&amp;amp;ships=False"&gt;SHOTGUNS &lt;br&gt;&lt;i class="icon-shotguns"&gt;&lt;/i&gt;&lt;/a&gt;
+
+                                &lt;a style="color: #e5e0bf; display: inline-block;" href="/classifieds/search?category=rifles&amp;amp;location=usa&amp;amp;posttype=7&amp;amp;ships=False"&gt;RIFLES &lt;br&gt;&lt;i class="icon-rifles"&gt;&lt;/i&gt;&lt;/a&gt;
+
+                            &lt;/div&gt;
+
+                        &lt;/div&gt;
+
+
+
+                        &lt;div class="item active"&gt;
+
+                            &lt;div style="text-align: center; font: 300 16px/19px &amp;quot;Oswald&amp;quot;, &amp;quot;Arial&amp;quot;, &amp;quot;Helvetica&amp;quot;, sans-serif; text-decoration: none; text-transform: uppercase;"&gt;
+
+                                &lt;a style="color: #e5e0bf; padding-right: 10px; display: inline-block;" href="/classifieds/search?category=firearm-accessories&amp;amp;location=usa&amp;amp;posttype=7&amp;amp;ships=False"&gt;ACCESSORIES &lt;br&gt;&lt;i class="icon-scope"&gt;&lt;/i&gt;&lt;/a&gt;
+
+                                &lt;a style="color: #e5e0bf; display: inline-block;" href="/classifieds/search?category=outdoors&amp;amp;location=usa&amp;amp;posttype=7&amp;amp;ships=False"&gt;GEAR + MORE &lt;br&gt;&lt;i class="icon-gear"&gt;&lt;/i&gt;&lt;/a&gt;
+
+                            &lt;/div&gt;
+
+                        &lt;/div&gt;
+
+                    &lt;/div&gt;
+
+
+
+                    &lt;!-- Left and right controls --&gt;
+
+                    &lt;a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"&gt;
+
+                        &lt;span class="glyphicon glyphicon-chevron-left" aria-hidden="true"&gt;&lt;/span&gt;
+
+                        &lt;span class="sr-only"&gt;Previous&lt;/span&gt;
+
+                    &lt;/a&gt;
+
+                    &lt;a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"&gt;
+
+                        &lt;span class="glyphicon glyphicon-chevron-right" aria-hidden="true"&gt;&lt;/span&gt;
+
+                        &lt;span class="sr-only"&gt;Next&lt;/span&gt;
+
+                    &lt;/a&gt;
+
+                &lt;/div&gt;
+
+                &lt;style type="text/css"&gt;
+
+                    .carousel-control.left, .carousel-control.right {
+
+                        background-image: none;
+
+                    }
+
+                &lt;/style&gt;
+
+            &lt;/div&gt;
+
+        &lt;/header&gt;
+
+        
+
+
+
+        
+
+            &lt;main id="main"&gt;
+
+                &lt;div class="container-fluid" style="color: #655D5B;"&gt;
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+              
+
+&lt;h1&gt;Frequently Asked Questions&lt;/h1&gt;
+
+&lt;div class="faqs"&gt;
+
+     &lt;h2 class="faq-section-title"&gt;&lt;a name="accounts"&gt;Accounts&lt;/a&gt;&lt;/h2&gt;
+
+
+
+ &lt;dl class="faq-section"&gt;
+
+     &lt;dt class="question"&gt;&lt;a name="faq4001"&gt;Q: Do I need an account to use ARMSLIST?&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;No. You can perform all of the major functions without creating an account.&lt;/dd&gt;
+
+
+
+     &lt;dt class="question"&gt;&lt;a name="faq4002"&gt;Q: Why should I create an account?&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;If you are a frequent user of ARMSLIST, you can create an account
+
+         that will save you time performing repeated tasks.&lt;br&gt;What are these features you ask?
+
+         &lt;ul class="disc-list"&gt;
+
+             &lt;li&gt;Ability to bypass confirmation emails&lt;/li&gt;
+
+             &lt;li&gt;Ability to have your email address pre-filled when creating listings or sending messages&lt;/li&gt;
+
+             &lt;li&gt;Ability to view/edit listings you have made in the past in a single consolidated interface&lt;/li&gt;
+
+         &lt;/ul&gt;
+
+     &lt;/dd&gt;
+
+
+
+     &lt;dt class="question"&gt;&lt;a class="section" name="faq4003"&gt;Q: What is OpenID?&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;OpenID is a system that allows you to use
+
+         a single login for a variety of different websites.  OpenID works by allowing you to select
+
+         a provider that you already have an account with, such as Google, AOL, or Yahoo.  Login
+
+         is transferred to the selected provider.  The provider verifies your login information
+
+         and control is transferred back to ARMSLIST.
+
+     &lt;/dd&gt;
+
+
+
+     &lt;dt class="question"&gt;&lt;a name="faq0014"&gt;Q: Why use OpenID?&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;It seems that every website requires you to create
+
+         an account. You end up with tons of usernames and passwords that you have to try to remember.
+
+         OpenID allows you to reuse these logins in a secure way. Basically, it's simpler.
+
+     &lt;/dd&gt;
+
+ &lt;/dl&gt;
+
+
+
+ &lt;h2 class="faq-section-title"&gt;&lt;a name="vendors"&gt;Premium Vendor Account&lt;/a&gt;&lt;/h2&gt;
+
+
+
+ &lt;p&gt;&lt;img src="http://cdn2.armslist.com/sites/armslist/content/faqs/vendor-quote-02.png"&gt;&lt;/p&gt;
+
+
+
+ &lt;dl class="faq-section"&gt;
+
+     &lt;dt class="question"&gt;&lt;a name="faq5001"&gt;Q: How do I get a Premium Vendor account?&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;Please head to &lt;a href="/account/new"&gt;Create an Account&lt;/a&gt; in the top right hand corner of the page. You will be prompted to select either a free (non-vendor), or Premium Vendor account.  Choose Premium Vendor and head through the billing setup process. We will approve your account as soon as we've received your FFL or business license.&lt;/dd&gt;
+
+
+
+     &lt;dt class="question"&gt;&lt;a name="faq5002"&gt;Q: How much does a Premium Vendor account cost?&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;A Premium Vendor account currently costs $30 per month or $300 for a one-year subscription. &lt;/dd&gt;
+
+
+
+     &lt;dt class="question"&gt;&lt;a name="faq5003"&gt;Q: I've created a Premium Vendor account. Why does it say "Free Account - Upgrade Pending"?&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;We are still waiting to receive your FFL or business license. Please send it to us via our Contact Us page. We will activate your account as soon as we review it.&lt;/dd&gt;
+
+
+
+
+
+     &lt;!--   &lt;dt class="question"&gt;&lt;a name="faq5003"&gt;Q: How is payment made?&lt;/a&gt;&lt;/dt&gt;
+
+         &lt;dd class="answer"&gt;
+
+
+
+             &lt;form action="https://www.paypal.com/cgi-bin/webscr" method="post"&gt;
+
+                 &lt;input type="hidden" name="cmd" value="_s-xclick"&gt;
+
+                 &lt;input type="hidden" name="hosted_button_id" value="8YS6SRDV3W96G"&gt;
+
+                 &lt;table&gt;
+
+                     &lt;tr&gt;&lt;td&gt;&lt;input type="hidden" name="on0" value="Payment Options"&gt;Payment Options&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;select name="os0"&gt;
+
+                     &lt;option value="Vendor Account"&gt;Vendor Account : $30.00 USD - monthly&lt;/option&gt;&lt;/select&gt; &lt;/td&gt;&lt;/tr&gt;
+
+                 &lt;/table&gt;
+
+                 &lt;input type="hidden" name="currency_code" value="USD"&gt;
+
+                 &lt;input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"&gt;
+
+                 &lt;img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"&gt;
+
+             &lt;/form&gt;
+
+         &lt;/dd&gt;
+
+     --&gt;
+
+     &lt;dt class="question"&gt;&lt;a name="faq5004"&gt;Q: What features do I get as a Premium Vendor?&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;The following features enhance your ability to move inventory, drive internet traffic to your own website, as well as drive foot traffic through your front door:
+
+         &lt;ul class="disc-list"&gt;
+
+             &lt;li&gt;Enhanced virtual storefront&lt;/li&gt;
+
+             &lt;li&gt;Hyperlinks to your website or URL of your choosing&lt;/li&gt;
+
+             &lt;li&gt;Listing history&lt;/li&gt;
+
+             &lt;li&gt;Page view counter on all listings&lt;/li&gt;
+
+             &lt;li&gt;Ability to create up to 500 listings.
+
+                 You are still required to abide by anti-spamming rules.&lt;/li&gt;
+
+             &lt;li&gt;Skip listing confirmation email&lt;/li&gt;
+
+             &lt;li&gt;Pre-fill email address&lt;/li&gt;
+
+             &lt;li&gt;Auto-select HOME location&lt;/li&gt;
+
+             &lt;li&gt;Display dealer profile in listings&lt;/li&gt;
+
+             &lt;li&gt;Skip reCaptcha during listing creation&lt;/li&gt;
+
+             &lt;li&gt;Listings cannot be flagged&lt;/li&gt;
+
+             &lt;li&gt;Users can now search by “Dealers that Ship” to more easily find you!&lt;/li&gt;
+
+             &lt;li&gt;Direct access to our development team for questions, problems, or feature requests.&lt;/li&gt;
+
+         &lt;/ul&gt;
+
+         In addition to these benefits, we'll be implementing additional features for building virtual stores and allowing
+
+         integration of your listings into your own websites as the vendor program matures and we get more feedback.
+
+     &lt;/dd&gt;
+
+
+
+     &lt;dt class="question"&gt;&lt;a name="faq5005"&gt;Q: How do I create new listings as a Premium Vendor?&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;
+
+         After your premium subscription has been activated by our staff, you will need to create a vendor profile.  There is a link on the account home page that will allow you to create your vendor profile.  After you have created your vendor profile, new listings will automatically be created as "Premium Vendor" listings.
+
+     &lt;/dd&gt;
+
+     &lt;dt class="question"&gt;&lt;a name="faq5005"&gt;Q: How do I upgrade existing listings to Premium Vendor listings?&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;
+
+         You must first create a vendor profile via the account home page.  After you have a vendor profile, please contact our staff via the &lt;a href="/info/contact?reason=vendor"&gt;contact us&lt;/a&gt; page to have your existing listings upgraded.
+
+     &lt;/dd&gt;
+
+ &lt;/dl&gt;
+
+
+
+ &lt;h2 class="faq-section-title"&gt;&lt;a name="general"&gt;General&lt;/a&gt;&lt;/h2&gt;
+
+
+
+ &lt;dl class="faq-section"&gt;
+
+
+
+
+
+     &lt;dt class="question"&gt;&lt;a name="faq0008"&gt;Q: I do not see the CAPTCHA and cannot send a message?&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;Please ensure you &lt;em&gt;do not&lt;/em&gt; have security software or ad removal software running while browsing ARMSLIST. Software such as AdBlock
+
+         may cause certain pages to fail to load correctly.  If you are using Internet Explorer 6.0 please upgrade to a newer browser.
+
+     &lt;/dd&gt;
+
+
+
+     &lt;dt class="question"&gt;&lt;a name="faq0003"&gt;Q: I have contacted a seller and not received a response.&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;If you have not gotten a response, the item has likely been sold.  You can look for the item from another seller.  Additionally, you
+
+         can flag the listing as unresponsive and it will eventually be removed from the site.&lt;br&gt;
+
+         &lt;img src="http://cdn2.armslist.com/sites/armslist/content/faqs/new-faq-unresponsive-flag.png"&gt;
+
+     &lt;/dd&gt;
+
+
+
+     &lt;dt class="question"&gt;&lt;a name="faq0009"&gt;Q: Dealers are overrunning the site, can you ban them?&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;In short no, there are a number of features that enable you to filter out vendors.  On the category selection page, there are links
+
+         that allow you to view "private party" or "dealer" versions of the category. Additionally, on the category listings page, there are
+
+         filters on the left side of the screen that allow you to toggle "private party", "vendor", or "all sellers".  If you have old bookmarks,
+
+         please save new ones with these filters applied appropriately.
+
+     &lt;/dd&gt;
+
+
+
+     &lt;dt class="question"&gt;&lt;a name="faq0010"&gt;Q: Can you tell me if an item is still for sale?&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;Please contact the seller directly. ARMSLIST does not get involved in transactions.&lt;/dd&gt;
+
+
+
+     &lt;dt class="question"&gt;&lt;a name="faq0011"&gt;Q: Can you help me contact a seller?&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;Please use the built in tool for contacting a seller.&lt;/dd&gt;         &lt;dt class="question"&gt;&lt;a name="faq0015"&gt;Q: When I visit Armslist I get a popup and/or redirected to another site. Can you help?&lt;/a&gt;&lt;/dt&gt;  &lt;dd class="answer"&gt;ARMSLIST does not allow popups in any way; via ad partners or in post content.  If you're seeing a popup or are being redirected to another site or app within your system, it is likely that your device has run into malicious code that is hijacking your browser.  Depending on your device type, some solutions are as follows: &lt;br&gt; &lt;br&gt;&lt;b&gt;Notebook/Desktop:&lt;/b&gt; Run a virus scanner on your system.  All of the major virus protection software vendors offer a free 30 day trial which will allow you to resolve the current issue and evaluate your virus scanning needs over the course of the month. &lt;br&gt;&lt;br&gt; &lt;b&gt;Iphone/Android/Windows Phone/Tablet:&lt;/b&gt; Antivirus apps do exist for phone/tablet devices however the value of these apps is not clear at this time and it may be possible to simply clear your browser cache to rid your device of the problem software.  Examples for some of the major mobile browser types follow; use a search engine to query for 'clear browser cache' and your specific device and browser type if your default browser is not mentioned.  Keep in mind that the malicious software may actually be an app that you've installed recently, take an inventory of the apps and evaluate their safety.&lt;br&gt; &lt;ol class="disc-list"&gt;&lt;li&gt;&lt;a href="https://support.google.com/chrome/answer/2392709?hl=en" target="_blank"&gt;Instructions to clear Chrome mobile browser cache&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href="https://support.apple.com/en-us/HT201265" target="_blank"&gt;Instructions to clear Safari mobile browser cache&lt;/a&gt;&lt;/li&gt;  &lt;/ol&gt;&lt;/dd&gt;
+
+   &lt;dt class="question"&gt;&lt;a name="faq0016"&gt;Q: I'm not receiving emails from your site? My ISP is Comcast&lt;/a&gt;&lt;/dt&gt;  &lt;dd class="answer"&gt;&lt;b&gt;STEP 1:&lt;/b&gt; Login to &lt;a href="http://customer.comcast.com" target="_blank"&gt;http://customer.comcast.com&lt;/a&gt; with your Comcast email address and password. &lt;br&gt; &lt;b&gt;STEP 2:&lt;/b&gt; Click on &lt;b&gt;Users and Preferences&lt;/b&gt;.&lt;br&gt;&lt;b&gt;STEP 3:&lt;/b&gt; Under &lt;b&gt;Email Settings&lt;/b&gt;, next to &lt;b&gt;Spam filter&lt;/b&gt;, click the &lt;b&gt;Edit&lt;/b&gt; button*.&lt;br&gt;* If you do not see an Edit button, you are probably logged in as a Restricted account. Your primary Comcast username is an Unrestricted account, and can make other sub-accounts Unrestricted. You can call 1-800-COMCAST to have them walk through making your account Unrestricted so you can change your Spam Filter settings.&lt;br&gt;&lt;b&gt;STEP 4:&lt;/b&gt; Click &lt;b&gt;Disable Spam filter&lt;/b&gt; and click &lt;b&gt;SAVE&lt;/b&gt;.  Then click &lt;b&gt;OK&lt;/b&gt; to confirm.&lt;br&gt;&lt;/dd&gt; &lt;/dl&gt;
+
+
+
+ &lt;h2 class="faq-section-title"&gt;&lt;a name="listings"&gt;Listings&lt;/a&gt;&lt;/h2&gt;
+
+
+
+ &lt;dl class="faq-section"&gt;
+
+
+
+     &lt;dt class="question"&gt;&lt;a name="faq0001"&gt;Q: How do I create a listing?&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;
+
+         Scroll to the very top of the page.
+
+         To the right of the logo is a button that says "Create a Listing" as shown in the image.
+
+         Alternatively, follow this link to &lt;a href="/posts/new"&gt;create a listing&lt;/a&gt;.
+
+         &lt;br&gt;&lt;br&gt;Enter your listing information. A confirmation email will be sent to the provided email address.
+
+         Activate your listing by clicking the link in this confirmation email.  Your listing will appear within a few minutes.&lt;br&gt;
+
+         &lt;img src="http://cdn2.armslist.com/sites/armslist/content/faqs/new-faq-create-listing.png" alt="" style="border: 1px solid #c0c0c0; margin: 1em;"&gt;
+
+     &lt;/dd&gt;
+
+
+
+     &lt;dt class="question"&gt;&lt;a name="faq0002"&gt;Q: I have created a listing, but why didn't I get the confirmation email?&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;Usually, emails are delivered without issue and within a few minutes. Please perform
+
+         the following actions:&lt;p&gt;&lt;/p&gt;
+
+         &lt;ol class="decimal-list"&gt;
+
+             &lt;li&gt;Ensure you are filling in the correct email address when creating your listing.&lt;/li&gt;
+
+             &lt;li&gt;Ensure you are checking the same email account that you used to create the listing&lt;/li&gt;
+
+             &lt;li&gt;Check your SPAM, JUNK or BULK MAIL folder.&lt;/li&gt;
+
+             &lt;li&gt;Use a free email service such as Google's GMail, AOL, or Hotmail.&lt;/li&gt;
+
+         &lt;/ol&gt;
+
+     &lt;/dd&gt;
+
+
+
+     &lt;dt class="question"&gt;&lt;a name="faq0004"&gt;Q: I've lost my confirmation email, how can I edit/delete my listing?&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;Your confirmation email can be resent by clicking the "Edit" link on your listing page.  Or you can access the &lt;a href="/post/resendactivation"&gt;Resend Confirmation&lt;/a&gt; page directly but you will need to enter
+
+         the ID for your listing.
+
+     &lt;/dd&gt;
+
+
+
+     &lt;dt class="question"&gt;&lt;a name="faq0005"&gt;Q: I have created/update a listing and do not see it, what should I do?&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;Be patient. For performance reasons, the listings pages are only updated
+
+         every few minutes.  If it has been more than an hour and you do not see your listing, please contact us as your listing
+
+         may have been trapped in our spam filters.
+
+     &lt;/dd&gt;
+
+
+
+     &lt;dt class="question"&gt;&lt;a name="faq0006"&gt;Q: How do I completely remove a listing?&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;There is no way to completely remove a listing, but you can deactivate your listing. Deactivating your listings will prevent buyers from being
+
+         able to contact your and will remove your listings from displaying in searches.
+
+     &lt;/dd&gt;
+
+
+
+     &lt;dt class="question"&gt;&lt;a name="faq0007"&gt;Q: Can you increase the size limit to allow me to upload more than 1 picture?&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;The size limit is to reduce the amount of processing our servers have to perform. If you would
+
+         like to upload more pictures, please resize your images to 800x600 prior to uploading them.
+
+     &lt;/dd&gt;
+
+
+
+     &lt;dt class="question"&gt;&lt;a name="faq0012"&gt;Q: What is the correct category for my listing?&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;The "Guns" classifieds section is for the sale, trade, or intended purchase
+
+         of firearms, parts, and ammunition only. Posting items in this section that are
+
+         NOT firearms, parts, or ammunition is in direct violation of these terms.
+
+         &lt;br&gt;&lt;br&gt;The "Outdoors Gear" classifieds section is for the sale, trade, or
+
+         intended purchase of outdoors equipment.  Posting items that are NOT
+
+         outdoors equipment is in direct violation of these terms.
+
+         &lt;br&gt;&lt;br&gt;Items that are do not fit into "Guns" or "Outdoors Gear" that are for sale or
+
+         trade in exchange for firearms should be posted in the "Other Items" section.
+
+     &lt;/dd&gt;
+
+
+
+     &lt;dt class="question"&gt;&lt;a name="faq0012"&gt;Q: Can I post my listing in multiple locations?&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;No.  You should create the listing &lt;strong&gt;in the location where you and your item are physically located.&lt;/strong&gt;&lt;/dd&gt;
+
+
+
+     &lt;dt class="question"&gt;&lt;a name="faq0012"&gt;Q: But what if I can ship my item?&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;No, one location, and one location only.  If someone finds it in their home location, they assume they can go to your location and make a deal.  If
+
+         they find it in a faraway location, they assume it must be shipped.  Your listing will still be found through searches.  There is also the option to select "Willing to Ship" when creating your listing.  Browsers are then able to filter by "Dealers that Ship" when searching for an item.&lt;/dd&gt;
+
+
+
+     &lt;dt class="question"&gt;&lt;a name="faq0012"&gt;Q: Can I post in nearby states?&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;No, this confuses people.  If they want to look at an item in your location, they will browse your location, or find it through searching.&lt;/dd&gt;
+
+
+
+     &lt;dt class="question"&gt;&lt;a name="faq0012"&gt;Q: What about nearby cities?&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;No, this also confuses people.  Users look at listings in the cities where they live and shop.&lt;/dd&gt;
+
+
+
+     &lt;dt class="question"&gt;&lt;a name="faq0012"&gt;Q: Can I re-post my items for sale once per day until they sell?&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;No, duplicate listings are not permitted.  You can use the built in bump feature keep your listing new.&lt;/dd&gt;
+
+
+
+     &lt;dt class="question"&gt;&lt;a name="faq0012"&gt;Q: Ok so tell me clear and simple, how does this work?&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;One item for sale = one listing, in one location.&lt;/dd&gt;
+
+
+
+     &lt;dt class="question"&gt;&lt;a name="faq0012"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;But what if I...&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;No&lt;/dd&gt;
+
+
+
+     &lt;dt class="question"&gt;&lt;a name="faq0012"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;But I saw a guy that...&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;No
+
+         &lt;br&gt;&lt;br&gt;
+
+         One item, one listing, one location, period. Play by the rules.&lt;/dd&gt;
+
+ &lt;/dl&gt;
+
+
+
+ &lt;h2 class="faq-section-title"&gt;&lt;a name="transactions"&gt;Transactions&lt;/a&gt;&lt;/h2&gt;
+
+
+
+ &lt;dl class="faq-section"&gt;
+
+     &lt;dt class="question"&gt;&lt;a name="faq1001"&gt;Q: Can ARMSLIST help me conduct a transaction?&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;ARMSLIST is purely a service provider that allow sellers to list items.  As such, ARMSLIST &lt;em&gt;can not&lt;/em&gt; and &lt;em&gt;will not&lt;/em&gt; be
+
+         a party in transactions. It is the sole responsibility of the buyer and seller to conduct safe and legal transactions.
+
+     &lt;/dd&gt;
+
+
+
+     &lt;dt class="question"&gt;&lt;a name="faq1002"&gt;Q: Can ARMSLIST contact a seller for me or provide me with information about a user?&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;Due to our privacy policy, ARMSLIST can only provide information to law enforcement
+
+         during due process of law.
+
+     &lt;/dd&gt;
+
+
+
+     &lt;dt class="question"&gt;&lt;a name="faq1003"&gt;Q: How can I ensure transactions are conducted safely and legally?&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;Please contact your local sheriff's office and ATF branch office to learn how to conduct proper transfers in your area.&lt;/dd&gt;
+
+
+
+     &lt;dt class="question"&gt;&lt;a name="faq1004"&gt;Q: What is the safest way to conduct out-of-area transfers?&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;ARMSLIST was designed for local interactions, please use the site accordingly.&lt;/dd&gt;
+
+ &lt;/dl&gt;
+
+
+
+ &lt;h2 class="faq-section-title"&gt;&lt;a name="scams"&gt;Scams&lt;/a&gt;&lt;/h2&gt;
+
+
+
+ &lt;dl class="faq-section"&gt;
+
+     &lt;dt class="question"&gt;&lt;a name="faq2001"&gt;Q: What should I do if I suspect a listing is a scam?&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;Please flag the listing as "scam", this will remove the listing from the site.
+
+         Please &lt;a href="/info/contact?reason=scam"&gt;contact us&lt;/a&gt; with a link to the listing so we can remove the listing.
+
+     &lt;/dd&gt;
+
+
+
+     &lt;dt class="question"&gt;&lt;a name="faq2002"&gt;Q: How do I avoid scams?&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;Follow these common sense rules to help avoid getting scammed:
+
+         &lt;ul class="disc-list"&gt;
+
+             &lt;li&gt;&lt;strong&gt;Deal locally and transact in person&lt;/strong&gt; - This will help you avoid almost all scams&lt;/li&gt;
+
+             &lt;li&gt;&lt;strong&gt;Never&lt;/strong&gt; send Cashiers Checks or Money Orders to sellers&lt;/li&gt;
+
+             &lt;li&gt;&lt;strong&gt;Never&lt;/strong&gt; wire money via Western Union, Moneygram, or other wire services&lt;/li&gt;
+
+             &lt;li&gt;&lt;strong&gt;Never&lt;/strong&gt; accept Cashiers Checks or Money Orders as they can be easily faked&lt;/li&gt;
+
+             &lt;li&gt;&lt;strong&gt;Never&lt;/strong&gt; give out financial information&lt;/li&gt;
+
+             &lt;li&gt;Avoid deals involving shipping or escrow services&lt;/li&gt;
+
+             &lt;li&gt;If a deal is too good to be true, it probably is&lt;/li&gt;
+
+             &lt;li&gt;ARMSLIST is not involved in any transaction, we do not handle payments, guarantee transactions, provide escrow services, or offer
+
+                 "buyer protection" or "seller certification"&lt;/li&gt;
+
+         &lt;/ul&gt;
+
+     &lt;/dd&gt;
+
+
+
+     &lt;dt class="question"&gt;&lt;a name="faq2003"&gt;Q: What should I do if I've been scammed?&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;Please do the following:
+
+         &lt;ul class="disc-list"&gt;
+
+             &lt;li&gt;Contact your local police department via their non-emergency number&lt;/li&gt;
+
+             &lt;li&gt;File a report via the &lt;a href="http://www.ic3.gov"&gt;Internet Fraud Complaint Center&lt;/a&gt;&lt;/li&gt;
+
+             &lt;li&gt;&lt;a href="/info/contact?reason=scam"&gt;Contact us&lt;/a&gt; and include the URL to the listing
+
+                 so we can remove the listing.
+
+             &lt;/li&gt;
+
+         &lt;/ul&gt;
+
+     &lt;/dd&gt;
+
+
+
+     &lt;dt class="question"&gt;&lt;a name="faq2004"&gt;Q: Can ARMSLIST help if I've been scammed?&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;We take every precaution to prevent scammers from using the site. Unfortunately, beyond our efforts to prevent scammers there is little we can do.
+
+         &lt;br&gt;&lt;br&gt;You are the best resource to prevent and stop scammers.  Please take the steps listed previously if you are the victim of a scam. Also, please refer to our tips and heed the warnings on the site on how to prevent getting scammed.
+
+     &lt;/dd&gt;
+
+
+
+     &lt;dt class="question"&gt;&lt;a name="faq2005"&gt;Q: Can ARMSLIST provide me with more information about a scammer?&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;Due to our privacy policy, ARMSLIST can only provide information to law enforcement
+
+         during due process of law.
+
+     &lt;/dd&gt;
+
+ &lt;/dl&gt;
+
+
+
+ &lt;h2 class="faq-section-title"&gt;&lt;a name="flagging"&gt;Flagging&lt;/a&gt;&lt;/h2&gt;
+
+
+
+ &lt;dl class="faq-section"&gt;
+
+     &lt;dt class="question"&gt;&lt;a name="faq3001"&gt;Q: Why was my listing flagged?&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;Flagging is a result of peer review. Numerous users of the site must flag a listing before it is deactivated. Please refer to the
+
+         following FAQ answers for explanation of what rules apply to each flagging rule.
+
+     &lt;/dd&gt;
+
+
+
+     &lt;dt class="question"&gt;&lt;a name="faq3002"&gt;Q: My listing was incorrectly flagged, can ARMSLIST reinstate it?&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;Due to our policies, ARMSLIST cannot reinstate your listing. Please relist your item, it is a free site.&lt;/dd&gt;
+
+
+
+     &lt;dt class="question"&gt;&lt;a name="faq3003"&gt;Q: My listing has been flagged several times, what should I do?&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;Please address any issues with your listing as defined in the flagging rules below. If it continues to be repeatedly flagged, please
+
+         stop creating the listing or usage of the site may be suspended.
+
+     &lt;/dd&gt;
+
+
+
+     &lt;dt class="question"&gt;&lt;a name="faq3004"&gt;Q: I am no longer able to create listings, why is this?&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;Your privileges may have been removed as a result of your listings being repeatedly flagged.&lt;/dd&gt;
+
+
+
+     &lt;dt class="question"&gt;&lt;a name="faq3005"&gt;Q: What is spamming?&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;Spamming includes but is not limited to listings that do not pertain
+
+         to the subject matter of the site (firearms and outdoors activities),
+
+         posting the same material in more than one category, and posting the same
+
+         material in more than one location.  The site is designed to allow searching across
+
+         local, state, the entire country.  DO NOT create listings in more than one location.
+
+     &lt;/dd&gt;
+
+
+
+     &lt;dt class="question"&gt;&lt;a name="faq3006"&gt;Q: What are inflammatory listings?&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;Inflammatory listings include but are not limited to listings directly
+
+         addressing an individual or group of persons, listings that use profanity,
+
+         or are not goods for sale, trade, or intended purchase.
+
+     &lt;/dd&gt;
+
+
+
+     &lt;dt class="question"&gt;&lt;a name="faq3007"&gt;Q: Why was my listing moved to a different category?&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;Your listing may be moved to a different category if several users flag it and move it to a new category.
+
+
+
+     &lt;/dd&gt;&lt;dt class="question"&gt;&lt;a name="faq3008"&gt;Q: Why was my non-firearm related item flagged?&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;The users of this site control which items are removed. This site is intended for firearms, ammunition, and accessories.
+
+         If your non-firearms related item is repeatedly flagged, please take it to a site that was designed for that type of item.
+
+     &lt;/dd&gt;
+
+
+
+     &lt;dt class="question"&gt;&lt;a name="faq3009"&gt;Q: My listing is not appearing, why is this?&lt;/a&gt;&lt;/dt&gt;
+
+     &lt;dd class="answer"&gt;We have a number of filters that prevent listings from appearing on the site. Attempting to SPAM the site or using profanity
+
+         are the most likely causes of a listing not appearing.
+
+     &lt;/dd&gt;
+
+ &lt;/dl&gt;
+
+
+
+&lt;/div&gt;
+
+
+
+                &lt;/div&gt;
+
+            &lt;/main&gt;
+
+
+
+
+
+
+
+
+
+        
+
+
+
+        &lt;footer id="footer" style="display: table;"&gt;
+
+            &lt;div class="top-hold hidden-xs"&gt;
+
+                &lt;div class="container-fluid"&gt;
+
+                    &lt;div class="row"&gt;
+
+                        &lt;div class="col-md-3 col-sm-6 col-lg-offset-1 col-md-offset-0"&gt;
+
+    &lt;h3 class="text-uppercase"&gt;ACCOUNT &amp;amp; LISTINGS &lt;/h3&gt;
+
+    &lt;ul class="nav-footer"&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/accountlogin/new"&gt;Account Login&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/account/new"&gt;New Account&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/posts/new"&gt;Create a New Listing&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/posts/resendactivation"&gt;Edit or Remove a Listing&lt;/a&gt;&lt;/li&gt;
+
+    &lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;div class="col-lg-2 col-md-3 col-sm-6"&gt;
+
+    &lt;h3 class="text-uppercase"&gt;ABOUT &amp;amp; HELP&lt;/h3&gt;
+
+    &lt;ul class="nav-footer"&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/info/faqs"&gt;FAQs&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/info/contact"&gt;Contact Armslist&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/info/privacy"&gt;Privacy Policy&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/info/terms"&gt;Terms of Use&lt;/a&gt;&lt;/li&gt;
+
+    &lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;div class="col-md-3 col-sm-6"&gt;
+
+    &lt;h3 class="text-uppercase"&gt;MORE ARMSLIST LINKS &lt;/h3&gt;
+
+    &lt;ul class="nav-footer"&gt;
+
+        &lt;li&gt;&lt;a href="http://forum.armslist.com/"&gt;Armslist Discussion Forum&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="http://www.armslist.com/contests/"&gt;Armslist Contests&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="http://www.armslistlegaldefensefund.com/"&gt;Armslist Legal Defense Fund&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/info/advertise"&gt;Advertising with Armslist&lt;/a&gt;&lt;/li&gt;
+
+    &lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;div class="col-md-3 col-sm-6"&gt;
+
+    &lt;h3 class="text-uppercase"&gt;PARTNER SITES&lt;/h3&gt;
+
+    &lt;ul class="nav-footer"&gt;
+
+        &lt;li&gt;&lt;a href="http://www.torquelist.com/"&gt;Torquelist Vehicle Trader&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="http://www.rangemonkey.com/"&gt;Range Monkey&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="http://www.invictusgearcompany.com/"&gt;Invictus Gear &lt;/a&gt;&lt;/li&gt;
+
+    &lt;/ul&gt;
+
+&lt;/div&gt;
+
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+            &lt;div class="container-fluid"&gt;
+
+                &lt;div class="row"&gt;
+
+                    &lt;div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2"&gt;
+
+                        &lt;ul class="social-list"&gt;
+
+                            &lt;li&gt;
+
+                                    &lt;a target="_blank" href="http://www.youtube.com/user/armslistmedia?sub_confirmation=1" title="Armslist Youtube channel" class="icon-youtube"&gt;&lt;/a&gt;
+
+                            &lt;/li&gt;
+
+                            &lt;li&gt;
+
+                                    &lt;a target="_blank" href="https://instagram.com/armslist/" title="Armslist on Instagram" class="icon-instagram"&gt;&lt;/a&gt;
+
+                            &lt;/li&gt;
+
+                            &lt;li&gt;
+
+                                    &lt;a target="_blank" href="https://www.facebook.com/armslist" title="Armslist on Facebook" class="icon-facebook"&gt;&lt;/a&gt;
+
+                            &lt;/li&gt;
+
+                            &lt;li&gt;
+
+                                    &lt;a target="_blank" href="https://twitter.com/armslist" title="Armslist Twitter page" class="icon-twitter"&gt;&lt;/a&gt;
+
+                            &lt;/li&gt;
+
+                            &lt;li&gt;
+
+                                    &lt;a target="_blank" href="https://plus.google.com/103978926144598391141/posts" title="Armslist on Google+" class="icon-google-plus"&gt;&lt;/a&gt;
+
+                            &lt;/li&gt;
+
+                        &lt;/ul&gt;
+
+                        &lt;div class="text-block"&gt;
+
+                            &lt;p&gt;Always comply with local, state, federal, and international law.
+
+ARMSLIST does not become involved in transactions between parties. Review our 
+
+&lt;a href="/info/privacy"&gt;privacy policy&lt;/a&gt; and &lt;a href="/info/terms"&gt;terms of use&lt;/a&gt; for more
+
+information. Report Illegal Firearms Activity to 1-800-ATF-GUNS.  &lt;/p&gt;
+
+
+
+                        &lt;/div&gt;
+
+                        &lt;span class="copy"&gt;
+
+                            Copyright © 2016 Armslist, LLC |
+
+                            | Version: 15.0.2
+
+                        &lt;/span&gt;
+
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+        &lt;/footer&gt;
+
+
+
+
+
+
+
+
+
+    &lt;/div&gt;
+
+    &lt;div class="loader-box"&gt;
+
+        &lt;img src="https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/images/loader.gif" height="64" width="64" alt="loader"&gt;
+
+    &lt;/div&gt;
+
+
+
+    &lt;script&gt;   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');    ga('create', 'UA-5138407-1', 'auto');   ga('send', 'pageview');  &lt;/script&gt;
+
+
+
+
+
+
+
+
+
+
+&lt;div class="modal-backdrop fade in"&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</raw_content>
+
+

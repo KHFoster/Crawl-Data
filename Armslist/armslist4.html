@@ -1,0 +1,1974 @@
+<raw_content>&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;
+
+        &lt;meta charset="utf-8"&gt;
+
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+
+        &lt;title&gt;
+
+    ARMSLIST - Contact Armslist
+
+&lt;/title&gt;
+
+        &lt;link href="https://s3.amazonaws.com/mgm-content/sites/armslist/content/system/favicon.ico" rel="shortcut icon"&gt;
+
+        &lt;link rel="stylesheet" href="https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/css/bootstrap.css"&gt;
+
+        &lt;link rel="stylesheet" href="https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/css/all.css"&gt;
+
+        &lt;link href="//fonts.googleapis.com/css?family=Oswald:400,300%7CLato:400,700" rel="stylesheet" type="text/css"&gt;
+
+        &lt;link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"&gt;
+
+        &lt;div class="fit-vids-style" id="fit-vids-style" style="display: none;"&gt;­&lt;style&gt;.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}&lt;/style&gt;&lt;/div&gt;&lt;script async="" src="//www.google-analytics.com/analytics.js"&gt;&lt;/script&gt;&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"&gt;&lt;/script&gt;
+
+        &lt;script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"&gt;&lt;/script&gt;
+
+        &lt;script type="text/javascript" src="https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/js/jquery.main.js"&gt;&lt;/script&gt;
+
+
+
+        
+
+        &lt;script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"&gt;&lt;/script&gt;
+
+
+
+        
+
+        &lt;script type="text/javascript" src="https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/scripts/lib/jquery-cookie.js"&gt;&lt;/script&gt;
+
+
+
+        &lt;script type="text/javascript" src="https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/scripts/listmill-app.js"&gt;&lt;/script&gt;
+
+        &lt;script type="text/javascript" src="https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/scripts/jquery-listmill.js"&gt;&lt;/script&gt;
+
+        
+
+
+
+
+
+        &lt;script type="text/javascript"&gt;
+
+            var appOptions = {
+
+                showTermsOnLoad: "true" == "true" ? true : false,
+
+                showTermsOnLoadTimeout: 0};
+
+        
+
+
+
+            $(function () {
+
+                if(appOptions.showTermsOnLoad) {
+
+                    //listmill.app.checkTerms();
+
+                    //alert("show terms");
+
+                    checkTerms();
+
+                    
+
+                }
+
+                //listmill.app.themePreview();
+
+                //listmill.datatations.initialize();
+
+            });
+
+            function checkTerms() {
+
+                if ((document.cookie.length == 0 || document.cookie.indexOf("terms=agreed") == -1)
+
+                    &amp;&amp; window.location.href.indexOf("/info/terms") == -1
+
+                    &amp;&amp; document.cookie.indexOf("listmill_auth") == -1) {
+
+                    showTerms();
+
+                } else
+
+                    acceptTerms();
+
+            }
+
+            function acceptTerms() {
+
+                var dateStr = "";
+
+                if (appOptions.showTermsOnLoadTimeout &gt; 0) {
+
+                    date = new Date();
+
+                    date.setHours(date.getHours() + appOptions.showTermsOnLoadTimeout);
+
+                    dateStr = "; expires=" + date.toUTCString();
+
+                };
+
+                document.cookie = "terms=agreed" + dateStr + "; path=/";
+
+
+
+                $('#termsModal').modal('hide');
+
+            }
+
+
+
+            function showTerms() {
+
+                //termsModalContainer
+
+                $.ajax({
+
+                    url: "/info/termsagreement",
+
+                    dataType: "html",
+
+                    success: function (data) {
+
+                        $("#termsModalContainer").html(data);
+
+                        /*$("#termsagreement")
+
+                                .html("&lt;h2&gt;TERMS OF USE&lt;/h2&gt;" + data + "&lt;p style='font-size: 7pt; margin-top: 2em;'&gt;* COOKIES MUST BE ENABLED FOR THIS SITE TO WORK.&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;We recommend the use of Google Chrome, Firefox 3.0+, or Internet Explorer 7.0+ for the best browsing experience.&lt;/p&gt;")
+
+                                .dialog({
+
+                                    closeOnEscape: false,
+
+                                    modal: true,
+
+                                    title: "Please read and agree to our Terms of Use:",
+
+                                    width: Math.min(800, $(window).width() - 30),
+
+                                    height: Math.min(400, $(window).height() - 30),
+
+                                    buttons: {
+
+                                        "I Agree": function () { agreeTerms(); $(this).dialog("close"); },
+
+                                        "I Do Not Agree": function () { window.location = "http://www.google.com" }
+
+                                    }
+
+                                });*/
+
+                        //$(".ui-dialog-titlebar-close").hide();
+
+                        $('#termsModal').modal({
+
+                            backdrop: 'static',
+
+                            keyboard: false
+
+                        });
+
+
+
+                        $('#termsModal').modal('show');
+
+                    }});
+
+                
+
+            }
+
+        &lt;/script&gt;
+
+
+
+         
+
+
+
+
+
+        &lt;!-- --&gt;
+
+
+
+        &lt;!--                &lt;style type="text/css"&gt;
+
+        .footer-social {  width: 100px;  margin-right: 0px !important;}
+
+        &lt;/style&gt;
+
+--&gt;
+
+        &lt;style type="text/css"&gt;
+
+            #h3Overrides h3 {
+
+                margin-top: 0px;
+
+                color: #000000;
+
+            }
+
+        &lt;/style&gt;
+
+    &lt;/head&gt;
+
+
+
+
+
+    &lt;body style="-webkit-overflow-scrolling: touch;" class="modal-open"&gt;
+
+        &lt;div id="termsModal" class="modal fade in" role="dialog" style="color: rgb(101, 93, 91) !important; display: block;"&gt;
+
+            &lt;div class="modal-dialog"&gt;
+
+
+
+                &lt;!-- Modal content--&gt;
+
+                &lt;div class="modal-content"&gt;
+
+                    &lt;div class="modal-header"&gt;
+
+                        &lt;h4 style="color: #655d5b"&gt;TERMS OF USE&lt;/h4&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;div class="modal-body"&gt;
+
+                        &lt;div id="termsModalContainer"&gt;&lt;ol class="terms"&gt;                
+
+    &lt;li&gt;I am 18 years of age or older.&lt;/li&gt;
+
+    &lt;li&gt;I understand that ARMSLIST DOES NOT become involved in transactions between parties and does not certify, investigate, or in any way guarantee the legal capacity of any party to transact.&lt;/li&gt;
+
+    &lt;li&gt;I am responsible for obeying all applicable enforcement mechanisms, including, but not limited to federal, state, municipal, and tribal statutes, rules, regulations, ordinances, and judicial decisions, any applicable Presidential Executive Orders, including compliance with all applicable licensing requirements.&lt;/li&gt;
+
+    &lt;li&gt;I will not use Armslist.com for any illegal purpose.&lt;/li&gt;
+
+    &lt;li&gt;If I am at all unsure about firearm sales or transfers, I will contact the Bureau of Alcohol, Tobacco, Firearms, and Explosive at 1-800-ATF-GUNS and visit the ATF website at http://www.atf.gov.&lt;/li&gt;
+
+    &lt;li&gt;I will help to ensure the overall openness and accessibility of the site to all users through a peer-review process.  I understand that failure to adhere to proper internet protocol and etiquette may result in removal of my listings or more severe corrective action.&lt;/li&gt;
+
+    &lt;li&gt;ARMSLIST may edit or remove information, including my listings, from the site without notice.&lt;/li&gt;        
+
+    &lt;li&gt;If I violate these terms, ARMSLIST may permanently remove me from the site or, depending on the nature and severity of the violation, avail itself of such remedies as are prescribed by law.  Whilst ARMSLIST ABSOLUTELY BELIEVES AND CHAMPIONS "the right of the people to keep and bear Arms," ARMSLIST will comply with federal, state, municipal, and tribal law enforcement entities pursuant to the Constitution of the United States and Due Process of Law.&lt;/li&gt;
+
+    &lt;li&gt;I agree to abide by the spam and listing policies. I may only have one account and may only list an item once, in the correct category, and in my physical location. &lt;/li&gt; 
+
+    &lt;li&gt;I understand that the sale or trade of animals on Armslist is prohibited. &lt;/li&gt; 
+
+    &lt;li&gt;I take responsibility for my actions whilst using Armslist.com.  I also take responsibility for any and all of my actions related to, or resulting from, my use of Armslist.com.  Further, I am solely responsible for any and all consequences of such my actions.&lt;/li&gt; 
+
+    &lt;li&gt;I indemnify and hold harmless ARMSLIST and all of its owners, directors, officers, employees, and agents for any and all loss, harm, damage, costs, liability, and expense caused to them, whether intentionally or unintentionally, by my use of Armslist.com, including but not limited to direct or indirect results of violations of any and all applicable laws.&lt;/li&gt;
+
+    &lt;li&gt;ARMSLIST may make changes to these terms at any time without notifying me.  As a user, I am solely responsible for reading the most current version of the terms and conditions.&lt;/li&gt;        
+
+    &lt;li&gt;By clicking "I agree," I electronically represent ("sign") that I agree to the above terms and further certify that I have read, and completely agree, to be legally bound by the ARMSLIST Terms of Use&lt;/li&gt;
+
+&lt;/ol&gt;
+
+&lt;/div&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;div class="modal-footer"&gt;
+
+                        &lt;button type="button" class="btn btn-default" onclick="acceptTerms()"&gt;Accept&lt;/button&gt;
+
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+
+
+
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+
+        &lt;div id="promotionModal" class="modal fade" role="dialog" style="color: #655D5B !important;"&gt;
+
+            &lt;div class="modal-dialog"&gt;
+
+
+
+                &lt;!-- Modal content--&gt;
+
+                &lt;div class="modal-content"&gt;
+
+                    &lt;div class="modal-header"&gt;
+
+                        &lt;h4 style="color: #655d5b"&gt;PROMOTIONAL LINK&lt;/h4&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;div class="modal-body"&gt;
+
+                        &lt;div id="promotionModalContainer"&gt;&lt;/div&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;div class="modal-footer"&gt;
+
+                        &lt;button type="button" class="btn btn-default" data-dismiss="modal"&gt;Close&lt;/button&gt;
+
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+
+
+
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+
+        &lt;div id="filterByModal" class="modal fade" role="dialog" style="color: #655D5B !important;"&gt;
+
+        &lt;div class="modal-dialog"&gt;
+
+
+
+            &lt;!-- Modal content--&gt;
+
+            &lt;div class="modal-content"&gt;
+
+                &lt;div class="modal-header"&gt;
+
+                    &lt;button type="button" class="close" data-dismiss="modal"&gt;×&lt;/button&gt;
+
+                    &lt;h4 style="color: #655d5b"&gt;Filter By&lt;/h4&gt;
+
+                &lt;/div&gt;
+
+                &lt;div class="modal-body"&gt;
+
+                    &lt;div id="filterByContainer"&gt;&lt;/div&gt;
+
+                &lt;/div&gt;
+
+                &lt;div class="modal-footer"&gt;
+
+                    &lt;button type="button" class="btn btn-default" data-dismiss="modal"&gt;Close&lt;/button&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+
+
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+
+
+
+    &lt;div id="contactSellerEmailModal" class="modal fade" role="dialog" style="color: #655D5B !important;"&gt;
+
+        &lt;div class="modal-dialog"&gt;
+
+
+
+            &lt;!-- Modal content--&gt;
+
+            &lt;div class="modal-content"&gt;
+
+                &lt;div class="modal-header"&gt;
+
+                    &lt;button type="button" class="close" data-dismiss="modal"&gt;×&lt;/button&gt;
+
+                    &lt;h4 style="color: #655d5b"&gt;Contact Seller&lt;/h4&gt;
+
+                &lt;/div&gt;
+
+                &lt;div class="modal-body"&gt;
+
+                    &lt;div id="messageSellerContainer"&gt;&lt;/div&gt;
+
+                &lt;/div&gt;
+
+                &lt;div class="modal-footer"&gt;
+
+                    &lt;button id="contactFormSubmitBtn" type="button" class="pull-left btn btn-default" onclick="doMessageSend()"&gt;Send&lt;/button&gt;
+
+                    &lt;button type="button" class="btn btn-default" data-dismiss="modal"&gt;Cancel&lt;/button&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+
+
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+
+    &lt;div id="searchAlertModal" class="modal fade" role="dialog" style="color: #655D5B !important;"&gt;
+
+        &lt;div class="modal-dialog"&gt;
+
+
+
+            &lt;!-- Modal content--&gt;
+
+            &lt;div class="modal-content"&gt;
+
+                &lt;div class="modal-header"&gt;
+
+                    &lt;button type="button" class="close" data-dismiss="modal"&gt;×&lt;/button&gt;
+
+                    &lt;h4 style="color: #655d5b"&gt;Search Alert&lt;/h4&gt;
+
+                &lt;/div&gt;
+
+                &lt;div class="modal-body"&gt;
+
+                    &lt;div id="searchAlertContainer"&gt;&lt;/div&gt;
+
+                &lt;/div&gt;
+
+                &lt;div class="modal-footer"&gt;
+
+                    &lt;button id="searchAlertFormSubmitBtn" type="button" class="pull-left btn btn-default" onclick="createSearchAlert()"&gt;Create&lt;/button&gt;
+
+                    &lt;button type="button" class="btn btn-default" data-dismiss="modal"&gt;Cancel&lt;/button&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+
+
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+
+    &lt;div id="wrapper"&gt;
+
+        &lt;header id="header" class="navbar-default text-uppercase" role="navigation"&gt;
+
+            &lt;div class="top-holder"&gt;
+
+                &lt;div class="container-fluid"&gt;
+
+                    &lt;button type="button" class="navbar-toggle text-uppercase pull-left" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" id="popoverMobileViewMainMenu" data-original-title="" title=""&gt;
+
+                        &lt;span class="icon-bar"&gt;&lt;/span&gt;
+
+                        &lt;span class="icon-bar"&gt;&lt;/span&gt;
+
+                        &lt;span class="icon-bar"&gt;&lt;/span&gt;
+
+                        &lt;span class="text"&gt;Menu&lt;/span&gt;
+
+                    &lt;/button&gt;
+
+                    &lt;div id="popovercontentMobileViewMainMenu" style="display: none;"&gt;
+
+                        &lt;div class="container-fluid"&gt;
+
+                            &lt;div class="row" id="h3Overrides"&gt;
+
+                                &lt;div class="col-md-3 col-sm-6 col-lg-offset-1 col-md-offset-0"&gt;
+
+    &lt;h3 class="text-uppercase"&gt;ACCOUNT &amp;amp; LISTINGS &lt;/h3&gt;
+
+    &lt;ul class="nav-footer"&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/accountlogin/new"&gt;Account Login&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/account/new"&gt;New Account&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/posts/new"&gt;Create a New Listing&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/posts/resendactivation"&gt;Edit or Remove a Listing&lt;/a&gt;&lt;/li&gt;
+
+    &lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;div class="col-lg-2 col-md-3 col-sm-6"&gt;
+
+    &lt;h3 class="text-uppercase"&gt;ABOUT &amp;amp; HELP&lt;/h3&gt;
+
+    &lt;ul class="nav-footer"&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/info/faqs"&gt;FAQs&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/info/contact"&gt;Contact Armslist&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/info/privacy"&gt;Privacy Policy&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/info/terms"&gt;Terms of Use&lt;/a&gt;&lt;/li&gt;
+
+    &lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;div class="col-md-3 col-sm-6"&gt;
+
+    &lt;h3 class="text-uppercase"&gt;MORE ARMSLIST LINKS &lt;/h3&gt;
+
+    &lt;ul class="nav-footer"&gt;
+
+        &lt;li&gt;&lt;a href="http://forum.armslist.com/"&gt;Armslist Discussion Forum&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="http://www.armslist.com/contests/"&gt;Armslist Contests&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="http://www.armslistlegaldefensefund.com/"&gt;Armslist Legal Defense Fund&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/info/advertise"&gt;Advertising with Armslist&lt;/a&gt;&lt;/li&gt;
+
+    &lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;div class="col-md-3 col-sm-6"&gt;
+
+    &lt;h3 class="text-uppercase"&gt;PARTNER SITES&lt;/h3&gt;
+
+    &lt;ul class="nav-footer"&gt;
+
+        &lt;li&gt;&lt;a href="http://www.torquelist.com/"&gt;Torquelist Vehicle Trader&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="http://www.rangemonkey.com/"&gt;Range Monkey&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="http://www.invictusgearcompany.com/"&gt;Invictus Gear &lt;/a&gt;&lt;/li&gt;
+
+    &lt;/ul&gt;
+
+&lt;/div&gt;
+
+                            &lt;/div&gt;
+
+                        &lt;/div&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;script type="text/javascript"&gt;
+
+                        $(document).ready(function () {
+
+
+
+                            $("#popoverMobileViewMainMenu").popover({
+
+                                html: true,
+
+                                container: 'body',
+
+                                content: function () {
+
+                                    return $('#popovercontentMobileViewMainMenu').html();
+
+                                }
+
+                            });
+
+
+
+                            $('html').on('click', function (e) {
+
+                                if (typeof $(e.target).data('original-title') == 'undefined' &amp;&amp;
+
+                                    !$(e.target).parents().is('.popover.in') &amp;&amp;
+
+                                    $(e.target).parent().attr("id") !== "popoverMobileViewMainMenu") {
+
+                                    $('[data-original-title]').popover('hide');
+
+                                }
+
+                            });
+
+                        });
+
+
+
+                    &lt;/script&gt;
+
+
+
+                    &lt;div class="pull-right align-right"&gt;
+
+&lt;form action="/classifieds/search" class="search-form navbar-form hidden-xs" method="get" role="search"&gt;                            &lt;fieldset&gt;
+
+                                &lt;div class="form-group"&gt;
+
+
+
+                                    &lt;input type="text" name="search" class="form-control" placeholder="Search listings" value=""&gt;
+
+                                    &lt;input type="hidden" name="location" value="usa"&gt;
+
+                                    &lt;input type="hidden" name="category" value="all"&gt;
+
+                                    &lt;input type="hidden" name="posttype" value="7"&gt;
+
+                                    &lt;input type="hidden" name="ships" value="False"&gt;
+
+                                &lt;/div&gt;
+
+                                &lt;button type="submit" class="btn btn-default icon-search"&gt;&lt;/button&gt;
+
+                            &lt;/fieldset&gt;
+
+&lt;/form&gt;                        
+
+                        &lt;a href="/posts/new" class="btn btn-warning create-btn text-uppercase"&gt;&lt;span class="hidden-sm hidden-xs"&gt;CREATE A LISTING&lt;/span&gt; &lt;i class="icon-pencil"&gt;&lt;/i&gt; &lt;span class="visible-sm visible-xs"&gt;list&lt;/span&gt;&lt;/a&gt;
+
+
+
+                        
+
+&lt;ul class="users-list hidden-xs"&gt;
+
+
+
+        &lt;li&gt;&lt;a href="/account/new"&gt;CREATE AN ACCOUNT&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="/accountlogin"&gt;LOGIN&lt;/a&gt;&lt;/li&gt;
+
+&lt;/ul&gt;
+
+
+
+
+
+                        &lt;button type="button" class="btn btn-warning create-btn text-uppercase visible-xs" onclick="showHideSearchMobile()"&gt;&lt;i class="icon-search"&gt;&lt;/i&gt; &lt;span class="visible-xs"&gt;search&lt;/span&gt;&lt;/button&gt;
+
+                        &lt;script type="text/javascript"&gt;
+
+                            function showHideSearchMobile() {
+
+                                $("#searchMobileView").fadeToggle();
+
+                            }
+
+                        &lt;/script&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;div id="logo" class="pull-left"&gt;
+
+                        &lt;a href="/" title="ARMSLIST - Firearms Classifieds"&gt;
+
+                            &lt;picture&gt;
+
+                                    &lt;!--[if IE 9]&gt;&lt;video style="display: none;"&gt;&lt;![endif]--&gt;
+
+                                    &lt;source srcset="https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/images/logo-mobile.png, https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/images/logo-mobile@2x.png 2x" media="(max-width: 767px)"&gt;
+
+                                    &lt;source srcset="https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/images/logo-desktop.png, https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/images/logo-desktop@2x.png 2x"&gt;
+
+                                    &lt;!--[if IE 9]&gt;&lt;/video&gt;&lt;![endif]--&gt;
+
+                                    &lt;img src="https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/images/logo-desktop.png" alt="armslist firearms marketplace" width="260" height="66"&gt;
+
+                            &lt;/picture&gt;
+
+                        &lt;/a&gt;
+
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+            &lt;div class="alert " id="mainMessageContainer" style="display: none; margin-bottom: 0px;"&gt;
+
+                
+
+                &lt;div id="mainMessageContainer_Message" style="text-align: center;"&gt;&lt;/div&gt;
+
+            &lt;/div&gt;
+
+            
+
+            &lt;div style="padding: 20px 10px 10px 20px; text-align: center; display: none;" class="hidden-sm hidden-md hidden-lg" id="searchMobileView"&gt;
+
+
+
+&lt;form action="/classifieds/search" class="search-form" method="get" role="search" style="width: 75% !important;"&gt;                    &lt;fieldset&gt;
+
+                        &lt;div class="form-group"&gt;
+
+                            &lt;input type="text" name="search" class="form-control" placeholder="Search listings" value=""&gt;
+
+                            &lt;input type="hidden" name="location" value="usa"&gt;
+
+                            &lt;input type="hidden" name="category" value="all"&gt;
+
+                            &lt;input type="hidden" name="posttype" value="7"&gt;
+
+                            &lt;input type="hidden" name="ships" value="False"&gt;
+
+                        &lt;/div&gt;
+
+                        &lt;button type="submit" class="btn btn-default icon-search"&gt;&lt;/button&gt;
+
+                    &lt;/fieldset&gt;
+
+&lt;/form&gt;                &lt;br&gt;
+
+
+
+                &lt;div id="myCarousel" class="carousel slide" data-ride="carousel" style="padding-top: 20px;"&gt;
+
+
+
+
+
+                    &lt;!-- Wrapper for slides --&gt;
+
+                    &lt;div class="carousel-inner" role="listbox"&gt;
+
+                        &lt;div class="item"&gt;
+
+                            &lt;div style="text-align: center; font: 300 16px/19px &amp;quot;Oswald&amp;quot;, &amp;quot;Arial&amp;quot;, &amp;quot;Helvetica&amp;quot;, sans-serif; text-decoration: none; text-transform: uppercase;"&gt;
+
+                                &lt;a style="color: #e5e0bf; padding-right: 10px; display: inline-block;" href="/classifieds/search?category=handguns&amp;amp;location=usa&amp;amp;posttype=7&amp;amp;ships=False"&gt;HANDGUNS &lt;br&gt;&lt;i class="icon-handguns"&gt;&lt;/i&gt;&lt;/a&gt;
+
+                                &lt;a style="color: #e5e0bf; padding-right: 10px; display: inline-block;" href="/classifieds/search?category=shotguns&amp;amp;location=usa&amp;amp;posttype=7&amp;amp;ships=False"&gt;SHOTGUNS &lt;br&gt;&lt;i class="icon-shotguns"&gt;&lt;/i&gt;&lt;/a&gt;
+
+                                &lt;a style="color: #e5e0bf; display: inline-block;" href="/classifieds/search?category=rifles&amp;amp;location=usa&amp;amp;posttype=7&amp;amp;ships=False"&gt;RIFLES &lt;br&gt;&lt;i class="icon-rifles"&gt;&lt;/i&gt;&lt;/a&gt;
+
+                            &lt;/div&gt;
+
+                        &lt;/div&gt;
+
+
+
+                        &lt;div class="item active"&gt;
+
+                            &lt;div style="text-align: center; font: 300 16px/19px &amp;quot;Oswald&amp;quot;, &amp;quot;Arial&amp;quot;, &amp;quot;Helvetica&amp;quot;, sans-serif; text-decoration: none; text-transform: uppercase;"&gt;
+
+                                &lt;a style="color: #e5e0bf; padding-right: 10px; display: inline-block;" href="/classifieds/search?category=firearm-accessories&amp;amp;location=usa&amp;amp;posttype=7&amp;amp;ships=False"&gt;ACCESSORIES &lt;br&gt;&lt;i class="icon-scope"&gt;&lt;/i&gt;&lt;/a&gt;
+
+                                &lt;a style="color: #e5e0bf; display: inline-block;" href="/classifieds/search?category=outdoors&amp;amp;location=usa&amp;amp;posttype=7&amp;amp;ships=False"&gt;GEAR + MORE &lt;br&gt;&lt;i class="icon-gear"&gt;&lt;/i&gt;&lt;/a&gt;
+
+                            &lt;/div&gt;
+
+                        &lt;/div&gt;
+
+                    &lt;/div&gt;
+
+
+
+                    &lt;!-- Left and right controls --&gt;
+
+                    &lt;a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"&gt;
+
+                        &lt;span class="glyphicon glyphicon-chevron-left" aria-hidden="true"&gt;&lt;/span&gt;
+
+                        &lt;span class="sr-only"&gt;Previous&lt;/span&gt;
+
+                    &lt;/a&gt;
+
+                    &lt;a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"&gt;
+
+                        &lt;span class="glyphicon glyphicon-chevron-right" aria-hidden="true"&gt;&lt;/span&gt;
+
+                        &lt;span class="sr-only"&gt;Next&lt;/span&gt;
+
+                    &lt;/a&gt;
+
+                &lt;/div&gt;
+
+                &lt;style type="text/css"&gt;
+
+                    .carousel-control.left, .carousel-control.right {
+
+                        background-image: none;
+
+                    }
+
+                &lt;/style&gt;
+
+            &lt;/div&gt;
+
+        &lt;/header&gt;
+
+        
+
+
+
+        
+
+            &lt;main id="main"&gt;
+
+                &lt;div class="container-fluid" style="color: #655D5B;"&gt;
+
+                    
+
+
+
+
+
+
+
+
+
+&lt;h1&gt;Contact Armslist&lt;/h1&gt;
+
+
+
+&lt;p&gt;&lt;strong&gt;* Please read the &lt;a href="/info/faqs"&gt;Frequently Asked Questions (FAQ)&lt;/a&gt; before contacting us. *&lt;/strong&gt;&lt;/p&gt;
+
+
+
+&lt;p&gt;Due to the high volume of emails we recieve, we will not respond to questions already answered in the FAQ.&lt;/p&gt;
+
+
+
+&lt;p&gt;In accordance with our &lt;a href="/info/privacy"&gt;Privacy Policy&lt;/a&gt; and &lt;a href="/info/terms"&gt;Terms of Use&lt;/a&gt;:&lt;/p&gt;
+
+
+
+&lt;ul class="disc-list"&gt;
+
+    &lt;li&gt;We do not get involved with transactions&lt;/li&gt; 
+
+    &lt;li&gt;We cannot release user information except during due process of law&lt;/li&gt;
+
+&lt;/ul&gt;
+
+
+
+
+
+
+
+&lt;form method="post" action="/info/contact" class="float-left"&gt;    
+
+
+
+    
+
+
+
+&lt;dl class="label-value-list right-label clear-fix"&gt;
+
+    &lt;dt&gt;&lt;label for="Name"&gt;Name:&lt;/label&gt;&lt;/dt&gt;
+
+    &lt;dd&gt;&lt;input id="Name" name="Name" type="text" value=""&gt;
+
+        
+
+    &lt;/dd&gt;
+
+    
+
+    &lt;dt&gt;&lt;label for="Email"&gt;Email:&lt;/label&gt;&lt;/dt&gt;
+
+    &lt;dd&gt;&lt;input id="Email" name="Email" type="text" value=""&gt;
+
+        
+
+    &lt;/dd&gt;
+
+    
+
+    &lt;dt&gt;&lt;label for="Location"&gt;Location:&lt;/label&gt;&lt;/dt&gt;
+
+    &lt;dd&gt;&lt;select id="location" name="location"&gt;&lt;option value="1"&gt;United States&lt;/option&gt;
+
+&lt;option value="14"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Alabama&lt;/option&gt;
+
+&lt;option value="439"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Auburn&lt;/option&gt;
+
+&lt;option value="20"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Birmingham&lt;/option&gt;
+
+&lt;option value="25"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Dothan&lt;/option&gt;
+
+&lt;option value="384"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Gadsden&lt;/option&gt;
+
+&lt;option value="23"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Huntsville&lt;/option&gt;
+
+&lt;option value="22"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Mobile&lt;/option&gt;
+
+&lt;option value="21"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Montgomery&lt;/option&gt;
+
+&lt;option value="328"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Muscle Shoals Area&lt;/option&gt;
+
+&lt;option value="239"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Phenix City&lt;/option&gt;
+
+&lt;option value="24"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Tuscaloosa&lt;/option&gt;
+
+&lt;option value="15"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Alaska&lt;/option&gt;
+
+&lt;option value="68"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Anchorage&lt;/option&gt;
+
+&lt;option value="69"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Fairbanks&lt;/option&gt;
+
+&lt;option value="171"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Juneau&lt;/option&gt;
+
+&lt;option value="16"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Arizona&lt;/option&gt;
+
+&lt;option value="65"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Flagstaff&lt;/option&gt;
+
+&lt;option value="373"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Mohave Valley&lt;/option&gt;
+
+&lt;option value="437"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Payson&lt;/option&gt;
+
+&lt;option value="66"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Phoenix&lt;/option&gt;
+
+&lt;option value="330"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Prescott Valley&lt;/option&gt;
+
+&lt;option value="334"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Sierra Vista&lt;/option&gt;
+
+&lt;option value="67"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Tucson&lt;/option&gt;
+
+&lt;option value="422"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;White Mountains&lt;/option&gt;
+
+&lt;option value="410"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Wickenburg&lt;/option&gt;
+
+&lt;option value="235"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Yuma&lt;/option&gt;
+
+&lt;option value="18"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Arkansas&lt;/option&gt;
+
+&lt;option value="394"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;El Dorado&lt;/option&gt;
+
+&lt;option value="179"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Fayetteville&lt;/option&gt;
+
+&lt;option value="266"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Fort Smith&lt;/option&gt;
+
+&lt;option value="178"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Jonesboro&lt;/option&gt;
+
+&lt;option value="17"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Little Rock&lt;/option&gt;
+
+&lt;option value="180"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Texarkana&lt;/option&gt;
+
+&lt;option value="19"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;California&lt;/option&gt;
+
+&lt;option value="383"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Bakersfield&lt;/option&gt;
+
+&lt;option value="212"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Fresno&lt;/option&gt;
+
+&lt;option value="378"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Inland Empire&lt;/option&gt;
+
+&lt;option value="209"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Los Angeles&lt;/option&gt;
+
+&lt;option value="329"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Orange County&lt;/option&gt;
+
+&lt;option value="214"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Redding&lt;/option&gt;
+
+&lt;option value="213"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Riverside&lt;/option&gt;
+
+&lt;option value="211"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Sacramento&lt;/option&gt;
+
+&lt;option value="208"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;San Diego&lt;/option&gt;
+
+&lt;option value="210"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;San Francisco&lt;/option&gt;
+
+&lt;option value="367"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;San Luis Obispo&lt;/option&gt;
+
+&lt;option value="420"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Ventura&lt;/option&gt;
+
+&lt;option value="79"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Colorado&lt;/option&gt;
+
+&lt;option value="113"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Colorado Springs&lt;/option&gt;
+
+&lt;option value="112"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Denver&lt;/option&gt;
+
+&lt;option value="111"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Fort Collins&lt;/option&gt;
+
+&lt;option value="261"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Pueblo&lt;/option&gt;
+
+&lt;option value="249"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Western Slope&lt;/option&gt;
+
+&lt;option value="158"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Connecticut&lt;/option&gt;
+
+&lt;option value="172"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Bridgeport&lt;/option&gt;
+
+&lt;option value="173"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Hartford&lt;/option&gt;
+
+&lt;option value="174"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;New Haven&lt;/option&gt;
+
+&lt;option value="350"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;New London&lt;/option&gt;
+
+&lt;option value="177"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Norwalk&lt;/option&gt;
+
+&lt;option value="175"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Stamford&lt;/option&gt;
+
+&lt;option value="176"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Waterbury&lt;/option&gt;
+
+&lt;option value="244"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Delaware&lt;/option&gt;
+
+&lt;option value="26"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Florida&lt;/option&gt;
+
+&lt;option value="32"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Gainesville&lt;/option&gt;
+
+&lt;option value="27"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Jacksonville&lt;/option&gt;
+
+&lt;option value="339"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Ocala&lt;/option&gt;
+
+&lt;option value="331"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Okaloosa County&lt;/option&gt;
+
+&lt;option value="28"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Orlando&lt;/option&gt;
+
+&lt;option value="30"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Panama City&lt;/option&gt;
+
+&lt;option value="29"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Pensacola&lt;/option&gt;
+
+&lt;option value="250"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;South Florida&lt;/option&gt;
+
+&lt;option value="251"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Broward&lt;/option&gt;
+
+&lt;option value="34"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Miami-Dade&lt;/option&gt;
+
+&lt;option value="252"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Palm Beach&lt;/option&gt;
+
+&lt;option value="35"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;South West Florida&lt;/option&gt;
+
+&lt;option value="31"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Tallahassee&lt;/option&gt;
+
+&lt;option value="207"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Tampa/St. Pete&lt;/option&gt;
+
+&lt;option value="40"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Georgia&lt;/option&gt;
+
+&lt;option value="48"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Albany&lt;/option&gt;
+
+&lt;option value="42"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Athens&lt;/option&gt;
+
+&lt;option value="41"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Atlanta&lt;/option&gt;
+
+&lt;option value="43"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Augusta&lt;/option&gt;
+
+&lt;option value="238"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Columbus, GA&lt;/option&gt;
+
+&lt;option value="368"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Dalton&lt;/option&gt;
+
+&lt;option value="47"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Macon&lt;/option&gt;
+
+&lt;option value="349"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Rome&lt;/option&gt;
+
+&lt;option value="46"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Savannah&lt;/option&gt;
+
+&lt;option value="49"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Valdosta&lt;/option&gt;
+
+&lt;option value="409"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Guam&lt;/option&gt;
+
+&lt;option value="194"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Hawaii&lt;/option&gt;
+
+&lt;option value="196"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Hawaii Island&lt;/option&gt;
+
+&lt;option value="198"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Honolulu&lt;/option&gt;
+
+&lt;option value="197"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Kauai&lt;/option&gt;
+
+&lt;option value="392"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Maui&lt;/option&gt;
+
+&lt;option value="195"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Oahu&lt;/option&gt;
+
+&lt;option value="81"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Idaho&lt;/option&gt;
+
+&lt;option value="97"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Boise&lt;/option&gt;
+
+&lt;option value="322"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Coeur D' Alene&lt;/option&gt;
+
+&lt;option value="96"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Idaho Falls&lt;/option&gt;
+
+&lt;option value="411"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Lewiston&lt;/option&gt;
+
+&lt;option value="428"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Twin Falls&lt;/option&gt;
+
+&lt;option value="234"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Illinois&lt;/option&gt;
+
+&lt;option value="275"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Bloomington&lt;/option&gt;
+
+&lt;option value="274"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Champaign / Urbana&lt;/option&gt;
+
+&lt;option value="268"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Chicago&lt;/option&gt;
+
+&lt;option value="276"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Decatur&lt;/option&gt;
+
+&lt;option value="272"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;La Salle&lt;/option&gt;
+
+&lt;option value="271"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Peoria&lt;/option&gt;
+
+&lt;option value="270"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Quad Cities&lt;/option&gt;
+
+&lt;option value="269"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Rockford&lt;/option&gt;
+
+&lt;option value="298"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Southern Illinois&lt;/option&gt;
+
+&lt;option value="273"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Springfield&lt;/option&gt;
+
+&lt;option value="277"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;St. Louis&lt;/option&gt;
+
+&lt;option value="278"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Western Illinois&lt;/option&gt;
+
+&lt;option value="188"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Indiana&lt;/option&gt;
+
+&lt;option value="407"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Anderson&lt;/option&gt;
+
+&lt;option value="336"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Bloomington&lt;/option&gt;
+
+&lt;option value="323"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Crown Point&lt;/option&gt;
+
+&lt;option value="190"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Evansville&lt;/option&gt;
+
+&lt;option value="193"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Fort Wayne&lt;/option&gt;
+
+&lt;option value="254"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Gary&lt;/option&gt;
+
+&lt;option value="189"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Indianapolis&lt;/option&gt;
+
+&lt;option value="397"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Kokomo&lt;/option&gt;
+
+&lt;option value="255"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Lafayette&lt;/option&gt;
+
+&lt;option value="386"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Lawrenceburg&lt;/option&gt;
+
+&lt;option value="388"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Muncie&lt;/option&gt;
+
+&lt;option value="335"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;New Albany&lt;/option&gt;
+
+&lt;option value="191"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;South Bend&lt;/option&gt;
+
+&lt;option value="192"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Terre Haute&lt;/option&gt;
+
+&lt;option value="340"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Valparaiso&lt;/option&gt;
+
+&lt;option value="226"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Iowa&lt;/option&gt;
+
+&lt;option value="231"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Cedar Rapids&lt;/option&gt;
+
+&lt;option value="312"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Davenport&lt;/option&gt;
+
+&lt;option value="230"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Des Moines&lt;/option&gt;
+
+&lt;option value="376"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Waterloo&lt;/option&gt;
+
+&lt;option value="311"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Western Iowa&lt;/option&gt;
+
+&lt;option value="8"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Kansas&lt;/option&gt;
+
+&lt;option value="406"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Ft. Riley&lt;/option&gt;
+
+&lt;option value="245"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Kansas City&lt;/option&gt;
+
+&lt;option value="248"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Northwest, KS&lt;/option&gt;
+
+&lt;option value="246"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Southeast, KS&lt;/option&gt;
+
+&lt;option value="247"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Southwest, KS&lt;/option&gt;
+
+&lt;option value="217"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Topeka&lt;/option&gt;
+
+&lt;option value="11"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Wichita&lt;/option&gt;
+
+&lt;option value="82"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Kentucky&lt;/option&gt;
+
+&lt;option value="127"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Bowling Green&lt;/option&gt;
+
+&lt;option value="448"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Elizabethtown&lt;/option&gt;
+
+&lt;option value="431"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Fort Campbell&lt;/option&gt;
+
+&lt;option value="128"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Lexington&lt;/option&gt;
+
+&lt;option value="260"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Louisville&lt;/option&gt;
+
+&lt;option value="297"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Northern Kentucky&lt;/option&gt;
+
+&lt;option value="325"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Owensboro&lt;/option&gt;
+
+&lt;option value="441"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Western KY&lt;/option&gt;
+
+&lt;option value="114"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Louisiana&lt;/option&gt;
+
+&lt;option value="377"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Alexandria&lt;/option&gt;
+
+&lt;option value="321"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Baton Rouge&lt;/option&gt;
+
+&lt;option value="117"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Lake Charles&lt;/option&gt;
+
+&lt;option value="389"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Leesville&lt;/option&gt;
+
+&lt;option value="115"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;New Orleans&lt;/option&gt;
+
+&lt;option value="116"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Shreveport&lt;/option&gt;
+
+&lt;option value="237"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Maine&lt;/option&gt;
+
+&lt;option value="227"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Maryland&lt;/option&gt;
+
+&lt;option value="228"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Baltimore&lt;/option&gt;
+
+&lt;option value="229"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Frederick&lt;/option&gt;
+
+&lt;option value="242"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Massachusetts&lt;/option&gt;
+
+&lt;option value="83"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Michigan&lt;/option&gt;
+
+&lt;option value="129"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Detroit&lt;/option&gt;
+
+&lt;option value="132"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Flint&lt;/option&gt;
+
+&lt;option value="130"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Grand Rapids&lt;/option&gt;
+
+&lt;option value="131"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Kalamazoo&lt;/option&gt;
+
+&lt;option value="309"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Lansing&lt;/option&gt;
+
+&lt;option value="308"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Northern Lower Peninsula&lt;/option&gt;
+
+&lt;option value="387"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Port Huron&lt;/option&gt;
+
+&lt;option value="446"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;St. Joseph&lt;/option&gt;
+
+&lt;option value="265"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Upper Peninsula&lt;/option&gt;
+
+&lt;option value="88"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Minnesota&lt;/option&gt;
+
+&lt;option value="337"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Bemidji&lt;/option&gt;
+
+&lt;option value="187"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Bloomington&lt;/option&gt;
+
+&lt;option value="324"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Brainerd&lt;/option&gt;
+
+&lt;option value="338"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Duluth&lt;/option&gt;
+
+&lt;option value="333"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Mankato&lt;/option&gt;
+
+&lt;option value="103"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Minneapolis / St. Paul&lt;/option&gt;
+
+&lt;option value="393"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Moorhead&lt;/option&gt;
+
+&lt;option value="186"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Rochester, MN&lt;/option&gt;
+
+&lt;option value="426"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;St. Cloud&lt;/option&gt;
+
+&lt;option value="159"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Mississippi&lt;/option&gt;
+
+&lt;option value="299"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Greenville&lt;/option&gt;
+
+&lt;option value="162"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Gulfport / Biloxi&lt;/option&gt;
+
+&lt;option value="161"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Hattiesburg&lt;/option&gt;
+
+&lt;option value="160"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Jackson&lt;/option&gt;
+
+&lt;option value="301"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Meridian&lt;/option&gt;
+
+&lt;option value="164"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;North East Mississippi&lt;/option&gt;
+
+&lt;option value="163"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;North West Mississippi&lt;/option&gt;
+
+&lt;option value="302"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;South West Mississippi&lt;/option&gt;
+
+&lt;option value="84"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Missouri&lt;/option&gt;
+
+&lt;option value="374"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Cape Girardeau&lt;/option&gt;
+
+&lt;option value="447"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Chillicothe&lt;/option&gt;
+
+&lt;option value="206"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Columbia&lt;/option&gt;
+
+&lt;option value="396"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Fort Leonard Wood&lt;/option&gt;
+
+&lt;option value="398"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Joplin&lt;/option&gt;
+
+&lt;option value="110"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Kansas City&lt;/option&gt;
+
+&lt;option value="109"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Springfield&lt;/option&gt;
+
+&lt;option value="304"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;St. Joseph&lt;/option&gt;
+
+&lt;option value="108"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;St. Louis&lt;/option&gt;
+
+&lt;option value="85"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Montana&lt;/option&gt;
+
+&lt;option value="123"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Billings&lt;/option&gt;
+
+&lt;option value="124"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Bozeman&lt;/option&gt;
+
+&lt;option value="121"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Great Falls&lt;/option&gt;
+
+&lt;option value="432"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Havre&lt;/option&gt;
+
+&lt;option value="225"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Helena&lt;/option&gt;
+
+&lt;option value="412"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Kalispell&lt;/option&gt;
+
+&lt;option value="122"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Missoula&lt;/option&gt;
+
+&lt;option value="86"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Nebraska&lt;/option&gt;
+
+&lt;option value="400"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Bellevue&lt;/option&gt;
+
+&lt;option value="403"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Fremont&lt;/option&gt;
+
+&lt;option value="401"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Grand Island&lt;/option&gt;
+
+&lt;option value="402"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Kearney&lt;/option&gt;
+
+&lt;option value="126"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Lincoln&lt;/option&gt;
+
+&lt;option value="433"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Norfolk&lt;/option&gt;
+
+&lt;option value="404"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;North Platte&lt;/option&gt;
+
+&lt;option value="125"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Omaha&lt;/option&gt;
+
+&lt;option value="405"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Scottsbluff&lt;/option&gt;
+
+&lt;option value="87"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Nevada&lt;/option&gt;
+
+&lt;option value="135"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Elko&lt;/option&gt;
+
+&lt;option value="133"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Las Vegas&lt;/option&gt;
+
+&lt;option value="134"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Reno&lt;/option&gt;
+
+&lt;option value="80"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;New Hampshire&lt;/option&gt;
+
+&lt;option value="170"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Concord&lt;/option&gt;
+
+&lt;option value="443"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Keene&lt;/option&gt;
+
+&lt;option value="136"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Manchester&lt;/option&gt;
+
+&lt;option value="169"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Nashua&lt;/option&gt;
+
+&lt;option value="419"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Portsmouth&lt;/option&gt;
+
+&lt;option value="438"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Salem&lt;/option&gt;
+
+&lt;option value="241"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;New Jersey&lt;/option&gt;
+
+&lt;option value="89"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;New Mexico&lt;/option&gt;
+
+&lt;option value="430"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Alamogordo&lt;/option&gt;
+
+&lt;option value="137"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Albuquerque&lt;/option&gt;
+
+&lt;option value="445"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Gallup&lt;/option&gt;
+
+&lt;option value="139"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Las Cruces&lt;/option&gt;
+
+&lt;option value="138"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Roswell&lt;/option&gt;
+
+&lt;option value="417"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Santa Fe&lt;/option&gt;
+
+&lt;option value="199"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;New York&lt;/option&gt;
+
+&lt;option value="205"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Adirondacks&lt;/option&gt;
+
+&lt;option value="204"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Albany&lt;/option&gt;
+
+&lt;option value="202"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Binghamton&lt;/option&gt;
+
+&lt;option value="200"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Buffalo&lt;/option&gt;
+
+&lt;option value="306"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Hudson Valley&lt;/option&gt;
+
+&lt;option value="279"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Long Island&lt;/option&gt;
+
+&lt;option value="215"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Rochester&lt;/option&gt;
+
+&lt;option value="203"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Syracuse&lt;/option&gt;
+
+&lt;option value="357"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Tri-state area&lt;/option&gt;
+
+&lt;option value="332"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Watertown&lt;/option&gt;
+
+&lt;option value="55"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;North Carolina&lt;/option&gt;
+
+&lt;option value="56"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Asheville&lt;/option&gt;
+
+&lt;option value="399"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Boone&lt;/option&gt;
+
+&lt;option value="58"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Charlotte&lt;/option&gt;
+
+&lt;option value="64"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Fayetteville&lt;/option&gt;
+
+&lt;option value="59"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Greensboro&lt;/option&gt;
+
+&lt;option value="61"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Greenville&lt;/option&gt;
+
+&lt;option value="57"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Hickory / Lenoir&lt;/option&gt;
+
+&lt;option value="62"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Jacksonville&lt;/option&gt;
+
+&lt;option value="424"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Mooresville&lt;/option&gt;
+
+&lt;option value="415"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;New Bern&lt;/option&gt;
+
+&lt;option value="365"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Outer Banks&lt;/option&gt;
+
+&lt;option value="60"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Raleigh / Durham / CH&lt;/option&gt;
+
+&lt;option value="440"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Richlands&lt;/option&gt;
+
+&lt;option value="63"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Wilmington&lt;/option&gt;
+
+&lt;option value="280"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Winston Salem&lt;/option&gt;
+
+&lt;option value="90"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;North Dakota&lt;/option&gt;
+
+&lt;option value="104"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Bismarck&lt;/option&gt;
+
+&lt;option value="105"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Fargo&lt;/option&gt;
+
+&lt;option value="106"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Grand Forks&lt;/option&gt;
+
+&lt;option value="9"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Ohio&lt;/option&gt;
+
+&lt;option value="319"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Akron&lt;/option&gt;
+
+&lt;option value="449"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Ashtabula&lt;/option&gt;
+
+&lt;option value="150"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Cincinnati&lt;/option&gt;
+
+&lt;option value="149"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Cleveland&lt;/option&gt;
+
+&lt;option value="10"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Columbus&lt;/option&gt;
+
+&lt;option value="253"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Dayton&lt;/option&gt;
+
+&lt;option value="303"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Lima&lt;/option&gt;
+
+&lt;option value="425"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Marietta&lt;/option&gt;
+
+&lt;option value="295"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Sandusky&lt;/option&gt;
+
+&lt;option value="236"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Toledo&lt;/option&gt;
+
+&lt;option value="327"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Youngstown&lt;/option&gt;
+
+&lt;option value="4"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Oklahoma&lt;/option&gt;
+
+&lt;option value="414"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;El Reno&lt;/option&gt;
+
+&lt;option value="293"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Fort Smith, AR&lt;/option&gt;
+
+&lt;option value="292"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Lawton&lt;/option&gt;
+
+&lt;option value="291"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Northwest, OK&lt;/option&gt;
+
+&lt;option value="5"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Oklahoma City&lt;/option&gt;
+
+&lt;option value="294"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Texoma&lt;/option&gt;
+
+&lt;option value="6"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Tulsa&lt;/option&gt;
+
+&lt;option value="78"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Oregon&lt;/option&gt;
+
+&lt;option value="263"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Bend&lt;/option&gt;
+
+&lt;option value="288"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Corvallis / Albany&lt;/option&gt;
+
+&lt;option value="264"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;East Oregon&lt;/option&gt;
+
+&lt;option value="141"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Eugene&lt;/option&gt;
+
+&lt;option value="380"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Klamath falls&lt;/option&gt;
+
+&lt;option value="262"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Medford&lt;/option&gt;
+
+&lt;option value="267"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Oregon Coast&lt;/option&gt;
+
+&lt;option value="140"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Portland&lt;/option&gt;
+
+&lt;option value="320"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Roseburg&lt;/option&gt;
+
+&lt;option value="289"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Salem&lt;/option&gt;
+
+&lt;option value="2"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Pennsylvania&lt;/option&gt;
+
+&lt;option value="345"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Allentown&lt;/option&gt;
+
+&lt;option value="286"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Altoona / Johnstown&lt;/option&gt;
+
+&lt;option value="285"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Cumberland Valley&lt;/option&gt;
+
+&lt;option value="341"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;East Stroudsburg&lt;/option&gt;
+
+&lt;option value="107"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Erie&lt;/option&gt;
+
+&lt;option value="77"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Harrisburg&lt;/option&gt;
+
+&lt;option value="435"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Lancaster&lt;/option&gt;
+
+&lt;option value="296"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Meadville / Grove City&lt;/option&gt;
+
+&lt;option value="287"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;North Central, PA&lt;/option&gt;
+
+&lt;option value="3"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Pittsburgh&lt;/option&gt;
+
+&lt;option value="76"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Southeastern, PA&lt;/option&gt;
+
+&lt;option value="284"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;State College&lt;/option&gt;
+
+&lt;option value="427"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;West, PA&lt;/option&gt;
+
+&lt;option value="240"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Wilkes-Barre/Scranton&lt;/option&gt;
+
+&lt;option value="444"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;York&lt;/option&gt;
+
+&lt;option value="408"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Puerto Rico&lt;/option&gt;
+
+&lt;option value="243"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Rhode Island&lt;/option&gt;
+
+&lt;option value="50"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;South Carolina&lt;/option&gt;
+
+&lt;option value="52"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Charleston&lt;/option&gt;
+
+&lt;option value="51"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Columbia&lt;/option&gt;
+
+&lt;option value="54"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Florence&lt;/option&gt;
+
+&lt;option value="44"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Greenville&lt;/option&gt;
+
+&lt;option value="416"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Greenwood&lt;/option&gt;
+
+&lt;option value="423"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Hilton Head&lt;/option&gt;
+
+&lt;option value="395"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Jacksonboro&lt;/option&gt;
+
+&lt;option value="53"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Myrtle Beach&lt;/option&gt;
+
+&lt;option value="45"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Rock Hill&lt;/option&gt;
+
+&lt;option value="233"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;South Dakota&lt;/option&gt;
+
+&lt;option value="91"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Tennessee&lt;/option&gt;
+
+&lt;option value="307"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Chattanooga&lt;/option&gt;
+
+&lt;option value="318"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Clarksville&lt;/option&gt;
+
+&lt;option value="366"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Cookeville&lt;/option&gt;
+
+&lt;option value="310"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Jackson&lt;/option&gt;
+
+&lt;option value="142"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Knoxville&lt;/option&gt;
+
+&lt;option value="144"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Memphis&lt;/option&gt;
+
+&lt;option value="434"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Murfreesboro&lt;/option&gt;
+
+&lt;option value="143"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Nashville&lt;/option&gt;
+
+&lt;option value="281"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Tri-cities&lt;/option&gt;
+
+&lt;option value="7"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Texas&lt;/option&gt;
+
+&lt;option value="343"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Abilene&lt;/option&gt;
+
+&lt;option value="155"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Amarillo&lt;/option&gt;
+
+&lt;option value="153"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Austin&lt;/option&gt;
+
+&lt;option value="157"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Corpus Christi&lt;/option&gt;
+
+&lt;option value="12"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Dallas&lt;/option&gt;
+
+&lt;option value="313"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;East Texas&lt;/option&gt;
+
+&lt;option value="154"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;El Paso&lt;/option&gt;
+
+&lt;option value="13"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Houston&lt;/option&gt;
+
+&lt;option value="156"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Lubbock&lt;/option&gt;
+
+&lt;option value="421"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;McAllen&lt;/option&gt;
+
+&lt;option value="371"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Midland&lt;/option&gt;
+
+&lt;option value="348"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;San Angelo&lt;/option&gt;
+
+&lt;option value="152"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;San Antonio&lt;/option&gt;
+
+&lt;option value="418"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Wichita Falls&lt;/option&gt;
+
+&lt;option value="73"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Utah&lt;/option&gt;
+
+&lt;option value="75"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Provo&lt;/option&gt;
+
+&lt;option value="74"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Salt Lake City&lt;/option&gt;
+
+&lt;option value="165"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Vermont&lt;/option&gt;
+
+&lt;option value="168"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Barre&lt;/option&gt;
+
+&lt;option value="166"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Burlington&lt;/option&gt;
+
+&lt;option value="167"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Rutland&lt;/option&gt;
+
+&lt;option value="93"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Virginia&lt;/option&gt;
+
+&lt;option value="379"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Bristol&lt;/option&gt;
+
+&lt;option value="346"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Charlottesville&lt;/option&gt;
+
+&lt;option value="145"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Hampton Roads&lt;/option&gt;
+
+&lt;option value="347"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Harrisonburg&lt;/option&gt;
+
+&lt;option value="364"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Lynchburg&lt;/option&gt;
+
+&lt;option value="148"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Northern Virginia&lt;/option&gt;
+
+&lt;option value="146"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Richmond&lt;/option&gt;
+
+&lt;option value="147"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Roanoke&lt;/option&gt;
+
+&lt;option value="429"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Winchester&lt;/option&gt;
+
+&lt;option value="70"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Washington&lt;/option&gt;
+
+&lt;option value="385"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Bellingham&lt;/option&gt;
+
+&lt;option value="436"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Bremerton&lt;/option&gt;
+
+&lt;option value="369"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Everett&lt;/option&gt;
+
+&lt;option value="351"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Mount Vernon&lt;/option&gt;
+
+&lt;option value="391"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Olympia&lt;/option&gt;
+
+&lt;option value="372"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Olympic Peninsula&lt;/option&gt;
+
+&lt;option value="375"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Pullman&lt;/option&gt;
+
+&lt;option value="72"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Seattle&lt;/option&gt;
+
+&lt;option value="283"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Southwest Washington&lt;/option&gt;
+
+&lt;option value="71"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Spokane&lt;/option&gt;
+
+&lt;option value="390"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Tacoma&lt;/option&gt;
+
+&lt;option value="342"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Tri-Cities&lt;/option&gt;
+
+&lt;option value="442"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Vancouver&lt;/option&gt;
+
+&lt;option value="370"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Yakima&lt;/option&gt;
+
+&lt;option value="92"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;West Virginia&lt;/option&gt;
+
+&lt;option value="118"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Charleston&lt;/option&gt;
+
+&lt;option value="290"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Huntington / Ashland&lt;/option&gt;
+
+&lt;option value="232"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Martinsburg&lt;/option&gt;
+
+&lt;option value="120"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Morgantown&lt;/option&gt;
+
+&lt;option value="326"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Parkersburg&lt;/option&gt;
+
+&lt;option value="119"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Wheeling&lt;/option&gt;
+
+&lt;option value="94"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Wisconsin&lt;/option&gt;
+
+&lt;option value="381"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Appleton&lt;/option&gt;
+
+&lt;option value="100"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Eau Claire&lt;/option&gt;
+
+&lt;option value="102"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Green Bay&lt;/option&gt;
+
+&lt;option value="282"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Janesville&lt;/option&gt;
+
+&lt;option value="184"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Kenosha&lt;/option&gt;
+
+&lt;option value="305"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;La Crosse&lt;/option&gt;
+
+&lt;option value="183"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Madison&lt;/option&gt;
+
+&lt;option value="101"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Milwaukee&lt;/option&gt;
+
+&lt;option value="259"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Northern WI&lt;/option&gt;
+
+&lt;option value="185"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Racine&lt;/option&gt;
+
+&lt;option value="256"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Sheboygan&lt;/option&gt;
+
+&lt;option value="344"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Superior&lt;/option&gt;
+
+&lt;option value="257"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Wausau&lt;/option&gt;
+
+&lt;option value="95"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Wyoming&lt;/option&gt;
+
+&lt;option value="98"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Casper&lt;/option&gt;
+
+&lt;option value="99"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Cheyenne&lt;/option&gt;
+
+&lt;option value="181"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Gillette&lt;/option&gt;
+
+&lt;option value="182"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Laramie&lt;/option&gt;
+
+&lt;/select&gt;
+
+    &lt;/dd&gt;
+
+
+
+    &lt;dt&gt;&lt;label for="reason"&gt;Reason for contact:&lt;/label&gt;&lt;/dt&gt;
+
+    &lt;dd&gt;&lt;select id="Reason" name="Reason"&gt;&lt;option value=""&gt;&lt;/option&gt;
+
+&lt;option value="help"&gt;Support&lt;/option&gt;
+
+&lt;option value="bug"&gt;Bug Report&lt;/option&gt;
+
+&lt;option value="feature"&gt;Feature Request&lt;/option&gt;
+
+&lt;option value="advertising"&gt;Advertising Request&lt;/option&gt;
+
+&lt;option value="vendor"&gt;Vendor Account Request&lt;/option&gt;
+
+&lt;option value="scam"&gt;Scam Report&lt;/option&gt;
+
+&lt;option value="legal"&gt;Legal Request&lt;/option&gt;
+
+&lt;/select&gt;
+
+        
+
+    &lt;/dd&gt;
+
+    
+
+    &lt;dt&gt;&lt;label for="Url"&gt;Link to listing (if applicable):&lt;/label&gt;&lt;/dt&gt;
+
+    &lt;dd&gt;&lt;input id="Url" name="Url" type="text" value=""&gt;
+
+        
+
+    &lt;/dd&gt;
+
+    
+
+    &lt;dt&gt;&lt;label for="Message"&gt;Message:&lt;/label&gt;&lt;/dt&gt;
+
+    &lt;dd&gt;&lt;textarea cols="20" id="Message" name="Message" rows="2"&gt;&lt;/textarea&gt;
+
+        
+
+    &lt;/dd&gt;        
+
+    
+
+&lt;/dl&gt;    
+
+    &lt;div class="buttons"&gt;                
+
+        &lt;input type="submit" value="Submit"&gt;                                
+
+    &lt;/div&gt;
+
+&lt;/form&gt;
+
+
+
+                &lt;/div&gt;
+
+            &lt;/main&gt;
+
+
+
+
+
+
+
+
+
+        
+
+
+
+        &lt;footer id="footer" style="display: table;"&gt;
+
+            &lt;div class="top-hold hidden-xs"&gt;
+
+                &lt;div class="container-fluid"&gt;
+
+                    &lt;div class="row"&gt;
+
+                        &lt;div class="col-md-3 col-sm-6 col-lg-offset-1 col-md-offset-0"&gt;
+
+    &lt;h3 class="text-uppercase"&gt;ACCOUNT &amp;amp; LISTINGS &lt;/h3&gt;
+
+    &lt;ul class="nav-footer"&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/accountlogin/new"&gt;Account Login&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/account/new"&gt;New Account&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/posts/new"&gt;Create a New Listing&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/posts/resendactivation"&gt;Edit or Remove a Listing&lt;/a&gt;&lt;/li&gt;
+
+    &lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;div class="col-lg-2 col-md-3 col-sm-6"&gt;
+
+    &lt;h3 class="text-uppercase"&gt;ABOUT &amp;amp; HELP&lt;/h3&gt;
+
+    &lt;ul class="nav-footer"&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/info/faqs"&gt;FAQs&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/info/contact"&gt;Contact Armslist&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/info/privacy"&gt;Privacy Policy&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/info/terms"&gt;Terms of Use&lt;/a&gt;&lt;/li&gt;
+
+    &lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;div class="col-md-3 col-sm-6"&gt;
+
+    &lt;h3 class="text-uppercase"&gt;MORE ARMSLIST LINKS &lt;/h3&gt;
+
+    &lt;ul class="nav-footer"&gt;
+
+        &lt;li&gt;&lt;a href="http://forum.armslist.com/"&gt;Armslist Discussion Forum&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="http://www.armslist.com/contests/"&gt;Armslist Contests&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="http://www.armslistlegaldefensefund.com/"&gt;Armslist Legal Defense Fund&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/info/advertise"&gt;Advertising with Armslist&lt;/a&gt;&lt;/li&gt;
+
+    &lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;div class="col-md-3 col-sm-6"&gt;
+
+    &lt;h3 class="text-uppercase"&gt;PARTNER SITES&lt;/h3&gt;
+
+    &lt;ul class="nav-footer"&gt;
+
+        &lt;li&gt;&lt;a href="http://www.torquelist.com/"&gt;Torquelist Vehicle Trader&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="http://www.rangemonkey.com/"&gt;Range Monkey&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="http://www.invictusgearcompany.com/"&gt;Invictus Gear &lt;/a&gt;&lt;/li&gt;
+
+    &lt;/ul&gt;
+
+&lt;/div&gt;
+
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+            &lt;div class="container-fluid"&gt;
+
+                &lt;div class="row"&gt;
+
+                    &lt;div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2"&gt;
+
+                        &lt;ul class="social-list"&gt;
+
+                            &lt;li&gt;
+
+                                    &lt;a target="_blank" href="http://www.youtube.com/user/armslistmedia?sub_confirmation=1" title="Armslist Youtube channel" class="icon-youtube"&gt;&lt;/a&gt;
+
+                            &lt;/li&gt;
+
+                            &lt;li&gt;
+
+                                    &lt;a target="_blank" href="https://instagram.com/armslist/" title="Armslist on Instagram" class="icon-instagram"&gt;&lt;/a&gt;
+
+                            &lt;/li&gt;
+
+                            &lt;li&gt;
+
+                                    &lt;a target="_blank" href="https://www.facebook.com/armslist" title="Armslist on Facebook" class="icon-facebook"&gt;&lt;/a&gt;
+
+                            &lt;/li&gt;
+
+                            &lt;li&gt;
+
+                                    &lt;a target="_blank" href="https://twitter.com/armslist" title="Armslist Twitter page" class="icon-twitter"&gt;&lt;/a&gt;
+
+                            &lt;/li&gt;
+
+                            &lt;li&gt;
+
+                                    &lt;a target="_blank" href="https://plus.google.com/103978926144598391141/posts" title="Armslist on Google+" class="icon-google-plus"&gt;&lt;/a&gt;
+
+                            &lt;/li&gt;
+
+                        &lt;/ul&gt;
+
+                        &lt;div class="text-block"&gt;
+
+                            &lt;p&gt;Always comply with local, state, federal, and international law.
+
+ARMSLIST does not become involved in transactions between parties. Review our 
+
+&lt;a href="/info/privacy"&gt;privacy policy&lt;/a&gt; and &lt;a href="/info/terms"&gt;terms of use&lt;/a&gt; for more
+
+information. Report Illegal Firearms Activity to 1-800-ATF-GUNS.  &lt;/p&gt;
+
+
+
+                        &lt;/div&gt;
+
+                        &lt;span class="copy"&gt;
+
+                            Copyright © 2016 Armslist, LLC |
+
+                            | Version: 15.0.2
+
+                        &lt;/span&gt;
+
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+        &lt;/footer&gt;
+
+
+
+
+
+
+
+
+
+    &lt;/div&gt;
+
+    &lt;div class="loader-box"&gt;
+
+        &lt;img src="https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/images/loader.gif" height="64" width="64" alt="loader"&gt;
+
+    &lt;/div&gt;
+
+
+
+    &lt;script&gt;   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');    ga('create', 'UA-5138407-1', 'auto');   ga('send', 'pageview');  &lt;/script&gt;
+
+
+
+
+
+
+
+
+
+
+&lt;div class="modal-backdrop fade in"&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</raw_content>
+
+

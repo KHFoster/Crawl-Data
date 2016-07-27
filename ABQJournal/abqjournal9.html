@@ -1,0 +1,2382 @@
+<raw_content>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;&lt;html xmlns="http://www.w3.org/1999/xhtml" xmlns:owc="http://www.olivesoftware.com/schema/owc.xsd" style="overflow:visible;width:100%;height: 100%;"&gt;&lt;head&gt;&lt;title&gt;&lt;/title&gt;
+
+
+
+&lt;!-- &lt;meta HTTP-EQUIV="REFRESH" content="0; URL=http://www.abqjournal.com/magazines" /&gt; --&gt;
+
+
+
+&lt;script&gt;
+
+////Added this to get IPad IPhone Dorid and Blackberry devices to go to old skin
+
+ 
+
+	//if( (navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPad/i)) || (navigator.userAgent.match(/Droid/i)) || (navigator.userAgent.match(/Silk/i)) || (navigator.userAgent.match(/Kindle/i)) || (navigator.userAgent.match(/BlackBerry/i)) ){ 
+
+	var isMobile = navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|SGH|SCH|Silk|Touch)/i);
+
+	if( isMobile ){		
+
+		
+
+		var FullPubUrl = location.href.toString();
+
+
+
+			//for links info if = line "publication=SPE"
+
+		if( FullPubUrl.match(/publication\=/i) != null ){
+
+			var GetPubName = FullPubUrl.match(/publication\=[a-zA-Z]*/i).toString();
+
+			var PubName = GetPubName.replace(/publication/i, "pub");
+
+			window.location = "http://epaper.abqjournal.com/Olive/Tablet/Magazine/Default.aspx?"+PubName+"#";
+
+		}else if( FullPubUrl.match(/href\=*/i) !=null ){
+
+			////Get the incoming url and setup the href to the Date of the Magazine	
+
+					////Gets the href=MAGE/yyy/mm/dd
+
+			var PubLocation = location.href.match(/href\=[a-zA-Z 0-9 / &amp; =]*/i).toString();
+
+
+
+				//remove the &amp;view=document from the end of the string
+
+			var NewPubLoc = PubLocation.replace(/\&amp;view\=document/i, "");
+
+			var NewPubPage = NewPubLoc.replace(/\&amp;pageno\=/i, "#");
+
+			
+
+			//window.location = "http://epaper.abqjournal.com/Olive/Tablet/Magazine/Default.aspx?"+NewPubPage+"#";
+
+			//window.location = "http://epaper.abqjournal.com/Olive/Tablet/Magazine/Default.aspx?"+PubLocation+"#";
+
+window.location = "http://epaper.abqjournal.com/Olive/Tablet/Magazine/Default.aspx?pub=SPE#";
+
+		}else { 
+
+			window.location = "http://epaper.abqjournal.com/Olive/Tablet/Magazine/Default.aspx?pub=SPE#";
+
+		}
+
+			
+
+	}
+
+
+
+&lt;/script&gt;
+
+    &lt;meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"&gt;&lt;script src="http://www.google-analytics.com/urchin.js" type="text/javascript"&gt;&lt;/script&gt;&lt;/head&gt;
+
+&lt;body style="font-family: Arial;font-size: 10pt;background: #ffffff;color: #000000;margin: 0px 0px 0px 0px;padding: 0px 0px 0px 0px;position: absolute;left: 0px;top: 0px;width: 100%;height: 100%;overflow: hidden;"&gt;
+
+    &lt;!-- Splash screen, removed in postInitialize --&gt;
+
+        
+
+
+
+      &lt;!-- ====== Show different splash screen for application first time loading (by checking cookie) ====== --&gt;
+
+      &lt;script language="javascript" type="text/javascript"&gt;
+
+      document.getElementById("splashscreenImg").src = ((!document.cookie) || (document.cookie.indexOf("first_launch") == -1)) ? "styles/images/First_Time_Splash_Screen.gif" : "styles/images/Splash_Screen.gif"; 
+
+      document.getElementById("splashscreenImg").style.visibility = "visible";
+
+      &lt;/script&gt;
+
+    
+
+    &lt;!-- ===== Scripts - after the splash screen but before the iframes for performance ======= --&gt;
+
+    &lt;script language="javascript" type="text/javascript" src="/Olive/WebComponents/OwcBind.js"&gt;&lt;/script&gt;&lt;link type="text/css" rel="stylesheet" href="http://epaper.abqjournal.com/Olive/WebComponents/Layout/OwcDefault.css"&gt;
+
+&lt;link type="text/css" rel="stylesheet" href="http://epaper.abqjournal.com/Olive/WebComponents/Layout/OwcDefault-NonIE.css"&gt;
+
+    
+
+    &lt;script language="javascript" type="text/javascript" src="/Olive/WebComponents/OwcCustomBookmarkAdapters.js"&gt;&lt;/script&gt;
+
+    &lt;script language="javascript" type="text/javascript" src="/Olive/WebComponents/OwcPanes.js"&gt;&lt;/script&gt;
+
+    &lt;script language="javascript" type="text/javascript" src="/Olive/WebComponents/OwcInformationComponentViewer.js"&gt;&lt;/script&gt;		
+
+    &lt;script language="javascript" type="text/javascript" src="/Olive/WebComponents/OwcActivityProvider.js"&gt;&lt;/script&gt;
+
+    &lt;script language="javascript" type="text/javascript" src="/Olive/WebComponents/OwcReporter.js"&gt;&lt;/script&gt;
+
+    &lt;script language="javascript" type="text/javascript" src="/Olive/WebComponents/OwcGoogleReporter.js"&gt;&lt;/script&gt;
+
+    &lt;!--script language="javascript" type="text/javascript" src="/Olive/WebComponents/OwcFileReporter.js"&gt;&lt;/script--&gt;
+
+    &lt;!-- ** adds css files with writeln **--&gt;&lt;script language="javascript" type="text/javascript" src="OliveAppClass.js"&gt;&lt;/script&gt;&lt;link type="text/css" rel="stylesheet" href="styles/Application.css"&gt;
+
+&lt;link type="text/css" rel="stylesheet" href="styles/Thumbnails.css"&gt;
+
+&lt;link type="text/css" rel="stylesheet" href="styles/OwcPopupWindowDefault.css"&gt;
+
+&lt;link type="text/css" rel="stylesheet" href="styles/Viewer.css"&gt;
+
+&lt;link type="text/css" rel="stylesheet" href="styles/Menus.css"&gt;
+
+
+
+    &lt;script language="javascript" type="text/javascript" src="OliveAppInst.js"&gt;&lt;/script&gt;	
+
+
+
+    &lt;!-- Preload menu icons decorations --&gt;
+
+    &lt;div class="Hidden"&gt;
+
+	    &lt;img style="width: 1px; height: 1px;" src="styles/images/Toolbar.png" alt=""&gt;
+
+	    &lt;img style="width: 1px; height: 1px;" src="styles/images/Icons.gif" alt=""&gt;
+
+	    &lt;img style="width: 1px; height: 1px;" src="/Olive/WebComponents/Layout/images/transparent.gif" alt=""&gt;
+
+    &lt;/div&gt;
+
+    &lt;!-- End preloading menu icons decorations --&gt;
+
+    &lt;div owc:control="pane-list" owc:kind="rows" id="paneListMain" class=" PaneRoot" style="width: 1000px; height: 744px;"&gt;
+
+	    &lt;!--&lt;iframe id="header" owc:control="pane" frameborder="0" src="Header.htm" owc:resizable="false" class="headerFrame"&gt;&lt;/iframe&gt;--&gt;
+
+	    &lt;div id="contentdiv"&gt;	&lt;!-- TODO: remove "contentdiv" div - not in use any more --&gt;	
+
+	        &lt;div id="paneListRoot" owc:control="pane-list" owc:kind="rows" class=" PaneListRow" style="width: 1000px; height: 739px;"&gt;
+
+	            &lt;div id="ctrlDocumentViewer" owc:control="doc-viewer-agg" owc:double-mode-on-gotopage="true" owc:double-mode-on-flipping="true"&gt;  
+
+	                &lt;!-- Top Banner --&gt;
+
+					&lt;div id="TopAdPane" owc:control="pane" owc:resizable="false" align="center" class=" PaneListRow Hidden" style="display: none;"&gt;
+
+						&lt;iframe id="TopAdIFrame" src="Banners/TopBanners.htm" marginheight="0" marginwidth="0" scrolling="no" frameborder="0" align="middle"&gt;
+
+						&lt;/iframe&gt;						
+
+					&lt;/div&gt;     
+
+		            &lt;!-- Toolbar --&gt;						
+
+		            &lt;div id="paneToolbar" owc:control="pane" owc:resizable="false" class="toolbarPaneContainer PaneListRow" style="width: 1000px;"&gt;
+
+		                &lt;div class="toolbarTop"&gt;&amp;nbsp;&lt;/div&gt;			            
+
+		                &lt;table class="toolbarPane toolbarPaneHeight" border="0" cellspacing="0" cellpadding="0" width="100%"&gt;						
+
+			                &lt;tbody&gt;				    
+
+			                    &lt;tr class="toolbarMainHeight"&gt;
+
+				                    &lt;td class="toolbar-bg-left-image"&gt;&lt;img class="OwcPlaceholderImgLeftRight" src="styles/images/t.gif" alt=""&gt;&lt;/td&gt;
+
+				                    &lt;td class="tab-bar-cell"&gt;
+
+					                    &lt;div owc:control="TabStrip" owc:decorate-with-table="true" class="DecoratedTabStrip" id="mainTabStrip"&gt;&lt;table class="OwcTab" cellspacing="0" cellpadding="0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="OwcTabContent"&gt;
+
+						                    &lt;table border="0" cellspacing="0" cellpadding="0"&gt;
+
+						                        &lt;tbody&gt;&lt;tr&gt;
+
+						                            &lt;td owc:control="TabItem" owc:init-state="Active" class=" ActiveTab OwcTabItem"&gt;&lt;span owc:ui="tabpos" class=" FirstTab"&gt;&lt;table cellspacing="0" cellpadding="0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="TabLeft"&gt;&lt;img src="http://epaper.abqjournal.com/Olive/WebComponents/Layout/empty.gif" class="OwcPlaceholderImgLeftRight" alt=""&gt;&lt;/td&gt;&lt;td class="TabBody"&gt;
+
+						                                &lt;span id="TabItem_Contents"&gt;Contents&lt;/span&gt;
+
+						                            &lt;/td&gt;&lt;td class="TabRight"&gt;&lt;img src="http://epaper.abqjournal.com/Olive/WebComponents/Layout/empty.gif" class="OwcPlaceholderImgLeftRight" alt=""&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/span&gt;&lt;/td&gt;							
+
+						                            &lt;td owc:control="TabItem" class=" OwcTabItem"&gt;&lt;span owc:ui="tabpos" class=" LastTab"&gt;&lt;table cellspacing="0" cellpadding="0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="TabLeft"&gt;&lt;img src="http://epaper.abqjournal.com/Olive/WebComponents/Layout/empty.gif" class="OwcPlaceholderImgLeftRight" alt=""&gt;&lt;/td&gt;&lt;td class="TabBody"&gt;
+
+						                                &lt;span id="TabItem_Search"&gt;Search&lt;/span&gt;
+
+						                            &lt;/td&gt;&lt;td class="TabRight"&gt;&lt;img src="http://epaper.abqjournal.com/Olive/WebComponents/Layout/empty.gif" class="OwcPlaceholderImgLeftRight" alt=""&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/span&gt;&lt;/td&gt; 
+
+
+
+						                        &lt;/tr&gt;
+
+						                    &lt;/tbody&gt;&lt;/table&gt;							
+
+					                    &lt;/td&gt;&lt;td class="OwcTabEnd"&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;						
+
+				                    &lt;/td&gt;  
+
+				                    
+
+
+
+					                &lt;!-- More Publications and Issues --&gt;
+
+					                
+
+                                    &lt;td class="item OwcMenuButton date-bar-cell" owc:control="command" owc:command="MoreIssues"&gt;
+
+                                        &lt;table cellspacing="0" cellpadding="0"&gt;
+
+                                            &lt;tbody&gt;&lt;tr&gt;
+
+                                                &lt;td class="OwcMenuButtonLeft"&gt;
+
+                                                    &lt;img alt="" class="OwcPlaceholderImgLeftRight" src="styles/images/t.gif"&gt;&lt;/td&gt;
+
+                                                &lt;td class="OwcMenuButtonBody"&gt;
+
+                                                    &lt;table cellspacing="0" cellpadding="0"&gt;
+
+                                                        &lt;tbody&gt;&lt;tr id="Command_MoreIssue"&gt;
+
+						                                    &lt;td class="currentIssue"&gt;&lt;span id="Command_Library" title="Click to access other publications and issues"&gt;Back Issues&lt;/span&gt;&lt;/td&gt;
+
+                                                            &lt;td&gt;&lt;img class="icon-MoreIssues" src="styles/images/t.gif"&gt;&lt;/td&gt;
+
+                                                        &lt;/tr&gt;
+
+                                                    &lt;/tbody&gt;&lt;/table&gt;
+
+                                                &lt;/td&gt;
+
+                                                &lt;td class="OwcMenuButtonRight"&gt;
+
+                                                    &lt;img alt="" class="OwcPlaceholderImgLeftRight" src="styles/images/t.gif"&gt;
+
+                                                &lt;/td&gt;
+
+                                            &lt;/tr&gt;   
+
+                                        &lt;/tbody&gt;&lt;/table&gt;
+
+                                    &lt;/td&gt;
+
+									
+
+
+
+				                    &lt;td class="viwer-bar-cell" align="right"&gt;
+
+				                        &lt;table id="ctrlDocViewerBar" owc:control="menu" class="command-bar" border="0" cellspacing="0" cellpadding="0"&gt;
+
+					                        &lt;tbody&gt;&lt;tr&gt;
+
+
+
+												&lt;td owc:control="menuitem" owc:command="gotofirstpage" class=" Disabled"&gt;
+
+							                        &lt;img class="cmd-icon icon-Goto-first-page" src="styles/images/t.gif" alt="" id="MenuItem_GoToFirstPage" title="Go To The First Page"&gt;
+
+						                        &lt;/td&gt;
+
+						                        &lt;td owc:control="menuitem" owc:command="gotoprevpage" class=" Disabled"&gt;
+
+							                        &lt;img class="cmd-icon icon-Goto-previous-page" src="styles/images/t.gif" alt="" id="MenuItem_GoToPreviousPage" title="Go To The Previous Page"&gt;
+
+						                        &lt;/td&gt;
+
+						                        &lt;td class="bg-page-Selection"&gt;
+
+							                        &lt;input type="text" class="input-page Disabled" owc:control="menuitem-edit" owc:command="gotopagebylabel" id="MenuItem_GoToPage" disabled="" title="Go To Page"&gt;								    
+
+						                        &lt;/td&gt;
+
+						                        &lt;td owc:control="menuitem" owc:command="gotonextpage" class=" Disabled"&gt;
+
+							                        &lt;img class="cmd-icon icon-Goto-next-page" src="styles/images/t.gif" alt="" id="MenuItem_GoToNextPage" title="Go To The Next Page"&gt;
+
+						                        &lt;/td&gt;
+
+						                        &lt;td owc:control="menuitem" owc:command="gotolastpage" class=" Disabled"&gt;
+
+							                        &lt;img class="cmd-icon icon-Goto-last-page" src="styles/images/t.gif" alt="" id="MenuItem_GoToLastPage" title="Go To The Last Page"&gt;
+
+						                        &lt;/td&gt;
+
+						                        &lt;td class="td-spaced-between-flipcontrol-and-zoom-buttons"&gt;&lt;/td&gt; 
+
+						                        &lt;td&gt;
+
+                                                    &lt;img class="icon-Toolbar-divider" src="styles/images/t.gif" alt=""&gt;
+
+                                                &lt;/td&gt;
+
+                                                &lt;td class="icon-Toolbar-space"&gt;&lt;/td&gt;
+
+                                                &lt;td class="itemPair Disabled" owc:control="menuitem" owc:command="zoomFitHeight"&gt;
+
+							                        &lt;span owc:ui="CommandCheckMark" class="owcCommandUnchecked"&gt;
+
+							                            &lt;img class="cmd-icon icon-FitToHeightMode" src="styles/images/t.gif" alt="" id="MenuItem_FitToHeight" title="Fit to Page Height"&gt;
+
+							                        &lt;/span&gt;
+
+						                        &lt;/td&gt;
+
+						                        &lt;td class="itemPair Disabled" owc:control="menuitem" owc:command="zoomFitWidth"&gt;
+
+							                        &lt;span owc:ui="CommandCheckMark" class="owcCommandUnchecked"&gt;
+
+							                            &lt;img class="cmd-icon icon-FitToWidthMode" src="styles/images/t.gif" alt="" id="MenuItem_FitToWidth" title="Fit to Page Width"&gt;
+
+							                        &lt;/span&gt;
+
+						                        &lt;/td&gt;
+
+						                        &lt;td class="icon-Toolbar-space"&gt;&lt;/td&gt;
+
+						                        &lt;td class="itemPair Disabled" owc:control="menuitem" owc:command="zoomOut"&gt;
+
+							                        &lt;img class="icon-SmallZoomOut" src="styles/images/t.gif" alt="" id="MenuItem_ZoomOut" title="Zoom Out"&gt;
+
+						                        &lt;/td&gt;
+
+						                        &lt;td class="itemPair Disabled" owc:control="menuitem" owc:command="zoomIn"&gt;
+
+							                        &lt;img class="icon-SmallZoomIn" src="styles/images/t.gif" alt="" id="MenuItem_ZoomIn" title="Zoom In"&gt;
+
+						                        &lt;/td&gt;						                        
+
+						                        &lt;td class="icon-Toolbar-space"&gt;&lt;/td&gt;
+
+                                                &lt;td class="itemPair Disabled" owc:control="menuitem" owc:command="ChangeDoublePageMode" owc:commandparams="false"&gt;
+
+							                        &lt;span owc:ui="CommandCheckMark" class="owcCommandUnchecked"&gt;
+
+							                            &lt;img class="cmd-icon icon-SinglePageMode" src="styles/images/t.gif" alt="" id="MenuItem_SinglewMode" title="Switch to Single Page Mode"&gt;
+
+							                        &lt;/span&gt;
+
+						                        &lt;/td&gt;
+
+                                                &lt;td class="itemPair Disabled" owc:control="menuitem" owc:command="ChangeDoublePageMode" owc:commandparams="true"&gt;
+
+							                        &lt;span owc:ui="CommandCheckMark" class="owcCommandUnchecked"&gt;
+
+							                            &lt;img class="cmd-icon icon-DoublePageMode" src="styles/images/t.gif" alt="" id="MenuItem_DoubleMode" title="Switch to Double Page Mode"&gt;
+
+							                        &lt;/span&gt;
+
+						                        &lt;/td&gt;
+
+						                        &lt;td class="icon-Toolbar-space"&gt;&lt;/td&gt;
+
+						                        &lt;td&gt;
+
+                                                    &lt;img class="icon-Toolbar-divider" src="styles/images/t.gif" alt=""&gt;
+
+                                                &lt;/td&gt;
+
+                                                &lt;td class="td-spaced-between-zoom-buttons-and-E-mail-button"&gt;&lt;/td&gt;
+
+                                                &lt;td&gt;
+
+                                                    &lt;img class="icon-Toolbar-divider" src="styles/images/t.gif" alt=""&gt;
+
+                                                &lt;/td&gt;
+
+						                        &lt;td class="item" owc:control="menuitem" owc:command="SendMail"&gt;
+
+						                            &lt;table&gt;
+
+						                                &lt;tbody&gt;&lt;tr&gt;
+
+						                                    &lt;td&gt;&lt;img class="cmd-icon icon-Email" src="styles/images/t.gif" alt="" id="MenuItem_EMailImage" title="Send a Link by E-mail"&gt;&lt;/td&gt;
+
+						                                &lt;/tr&gt;
+
+						                            &lt;/tbody&gt;&lt;/table&gt;								    
+
+						                        &lt;/td&gt;
+
+						                        &lt;td class="item" owc:control="menuitem" owc:command="PrintDocument"&gt;
+
+						                            &lt;table&gt;
+
+						                                &lt;tbody&gt;&lt;tr&gt;
+
+						                                    &lt;td&gt;&lt;img class="cmd-icon icon-Print" src="styles/images/t.gif" alt="" id="MenuItem_PrintImage" title="Print the Whole Document"&gt;&lt;/td&gt;
+
+						                                &lt;/tr&gt;
+
+						                            &lt;/tbody&gt;&lt;/table&gt;
+
+						                        &lt;/td&gt;
+
+						                        &lt;td class="item" owc:control="menuitem"&gt;
+
+                                                    &lt;table cellpadding="0"&gt;
+
+				                                        &lt;tbody&gt;&lt;tr&gt;
+
+				                                            &lt;td&gt;&lt;img class="cmd-icon icon-Save" src="styles/images/t.gif" alt="" id="MenuItem_SaveImage" title="Save Application Link. Click to open the options."&gt;&lt;/td&gt;
+
+				                                            &lt;td&gt;&lt;img class="cmd-icon icon-Arrow" src="styles/images/t.gif" alt="" id="MenuItem_SaveArrow" title="Save Application Link. Click to open the options."&gt;&lt;/td&gt;
+
+				                                        &lt;/tr&gt;
+
+				                                    &lt;/tbody&gt;&lt;/table&gt;
+
+                                                    &lt;table owc:control="menu" class="popup-menu Hidden" owc:menutype="popup" cellspacing="0" cellpadding="0"&gt;													            
+
+					                                    &lt;tbody&gt;&lt;tr owc:control="menuitem" owc:command="PDFDocDownload" class="MenuItemContent Disabled"&gt;
+
+					                                        &lt;td class="icon-cell"&gt;&lt;img class="cmd-icon icon-DownloadPDF" src="styles/images/t.gif" alt=""&gt;&lt;/td&gt;
+
+					                                        &lt;td id="MenuItem_DownloadPDF"&gt;Download Paper PDF&lt;/td&gt;
+
+				                                        &lt;/tr&gt;
+
+				                                       &lt;!-- &lt;tr owc:control="menuitem" owc:command="PDFPageDownload" class="MenuItemContent"&gt;
+
+					                                        &lt;td class="icon-cell"&gt;&lt;img class="cmd-icon icon-DownloadPDF" src="styles/images/t.gif" alt="" /&gt;&lt;/td&gt;
+
+					                                        &lt;td id="MenuItem_DownloadPagePDF"&gt;&lt;/td&gt;
+
+				                                        &lt;/tr&gt;
+
+				                                        &lt;tr owc:control="menuitem" owc:command="SaveForOfflinePage" class="MenuItemContent"&gt;
+
+						                                    &lt;td class="icon-cell"&gt;&lt;img class="cmd-icon icon-OfflineBrowsing" src="styles/images/t.gif" alt="" /&gt;&lt;/td&gt;
+
+						                                    &lt;td id="MenuItem_Offline"&gt;&lt;/td&gt;
+
+					                                    &lt;/tr&gt;
+
+					                                    &lt;tr owc:control="menuitem" owc:command="AddToFavorites" class="MenuItemContent"&gt;
+
+						                                    &lt;td class="icon-cell"&gt;&lt;img class="cmd-icon icon-Bookmark" src="styles/images/t.gif" alt="" /&gt;&lt;/td&gt;
+
+						                                    &lt;td id="MenuItem_Bookmark"&gt;&lt;/td&gt;
+
+					                                    &lt;/tr&gt;--&gt;											            
+
+				                                    &lt;/tbody&gt;&lt;/table&gt;
+
+                                                &lt;/td&gt;
+
+                                                &lt;td class="item" owc:control="menuitem"&gt;
+
+                                                    &lt;table cellpadding="0"&gt;
+
+				                                        &lt;tbody&gt;&lt;tr&gt;
+
+				                                            &lt;td&gt;&lt;img class="cmd-icon icon-Share" src="styles/images/t.gif" alt="" id="MenuItem_ShareImage" title="Share Application Link. Click to open the options."&gt;&lt;/td&gt;
+
+				                                            &lt;td&gt;&lt;img class="cmd-icon icon-Arrow" src="styles/images/t.gif" alt="" id="MenuItem_ShareArrow" title="Share Application Link. Click to open the options."&gt;&lt;/td&gt;
+
+				                                        &lt;/tr&gt;
+
+				                                    &lt;/tbody&gt;&lt;/table&gt;
+
+                                                    &lt;table owc:control="menu" class="popup-menu Hidden" owc:menutype="popup" cellspacing="0" cellpadding="0"&gt;													            
+
+					                                    &lt;tbody&gt;&lt;tr owc:control="menuitem" owc:command="DoBookmark" owc:commandparams="DiggThis" class="MenuItemContent"&gt;
+
+						                                    &lt;td class="icon-cell"&gt;&lt;img class="cmd-icon icon-DiggThis" src="styles/images/t.gif" alt=""&gt;&lt;/td&gt;
+
+						                                    &lt;td id="MenuItem_Digg"&gt;Digg this&lt;/td&gt;
+
+					                                    &lt;/tr&gt;
+
+					                                    &lt;tr owc:control="menuitem" owc:command="DoBookmark" owc:commandparams="PostDel" class="MenuItemContent"&gt;
+
+						                                    &lt;td class="icon-cell"&gt;&lt;img class="cmd-icon icon-Del_icio_us" src="styles/images/t.gif" alt=""&gt;&lt;/td&gt;
+
+						                                    &lt;td id="MenuItem_PostToDel"&gt;Post to del.icio.us&lt;/td&gt;
+
+					                                    &lt;/tr&gt;
+
+					                                    &lt;tr owc:control="menuitem" owc:command="CopyLink" class="MenuItemContent Disabled"&gt;
+
+						                                    &lt;td class="icon-cell"&gt;&lt;img class="cmd-icon icon-Copy" src="styles/images/t.gif" alt=""&gt;&lt;/td&gt;
+
+						                                    &lt;td id="MenuItem_CopyToClipBoard"&gt;Copy Link to Clipboard&lt;/td&gt;
+
+					                                    &lt;/tr&gt;											            
+
+				                                    &lt;/tbody&gt;&lt;/table&gt;
+
+                                                &lt;/td&gt;
+
+                                                &lt;td&gt;
+
+                                                    &lt;img class="icon-Toolbar-divider" src="styles/images/t.gif" alt=""&gt;
+
+                                                &lt;/td&gt;
+
+                                                &lt;!-- Olive Software Logo --&gt;
+
+                                                &lt;td owc:control="menuitem"&gt; &lt;!-- owc:command="OpenOliveSoftwareWebsite"&gt; --&gt;  
+
+						                            &lt;table cellspacing="0" cellpadding="0"&gt;
+
+						                                &lt;tbody&gt;&lt;tr&gt;
+
+						                                    &lt;td&gt;&lt;img class="icon-OliveLogo" src="styles/images/t.gif"&gt;&lt;/td&gt; &lt;!-- alt="" id="MenuItem_OliveSoftwareWebsite"/&gt;&lt;/td&gt; --&gt;
+
+						                                &lt;/tr&gt;
+
+						                            &lt;/tbody&gt;&lt;/table&gt;	      						    
+
+						                        &lt;/td&gt;      
+
+                                            &lt;/tr&gt;
+
+				                        &lt;/tbody&gt;&lt;/table&gt;
+
+			                        &lt;/td&gt;
+
+				                    &lt;td class="toolbar-bg-right-image"&gt;&lt;/td&gt;
+
+			                    &lt;/tr&gt;				        
+
+			                &lt;/tbody&gt;
+
+		                &lt;/table&gt;
+
+		            &lt;/div&gt;
+
+		            &lt;!-- Frames --&gt;
+
+		            &lt;table id="paneViewerFrames" owc:control="pane-list" owc:kind="columns" owc:ui="ViewerRootPanel" cellpadding="0" cellspacing="0" border="0" class=" PaneListRow" style="width: 1000px; height: 704px;"&gt;
+
+			            &lt;tbody&gt;&lt;tr&gt;
+
+				            &lt;td id="BorderLeftTable" class="main-border-left PaneListColumn" owc:control="pane" owc:resizable="false" style="height: 704px;"&gt;					
+
+				                &lt;table class="main-border-left" border="0" cellpadding="0" cellspacing="0"&gt;
+
+				                    &lt;tbody&gt;
+
+					                    &lt;tr class="main-left-column"&gt;
+
+	                                        &lt;td class="main-bg-left-stretch"&gt;&lt;/td&gt;
+
+                                        &lt;/tr&gt;
+
+				                    &lt;/tbody&gt;
+
+				                &lt;/table&gt;
+
+				            &lt;/td&gt;
+
+				            &lt;!-- Left Banner 4 height and width go into OlvApplication.config.xml  --&gt; 
+
+				            &lt;td id="LeftAdPane" owc:control="pane" owc:resizable="false" align="left" valign="middle" class="LeftBanner PaneListColumn Hidden" height="600" width="160" style="display: none;"&gt;
+
+								&lt;div id="LeftAdDiv"&gt;	
+
+									&lt;iframe id="LeftAdIFrame" src="Banners/LeftBanners.htm" marginheight="0" marginwidth="0" scrolling="no" width="160" height="600" frameborder="0"&gt;
+
+									&lt;/iframe&gt;
+
+								&lt;/div&gt;
+
+				            &lt;/td&gt; 					        
+
+				            &lt;td id="paneNavigate" owc:control="pane-list" owc:ui="ViewerNavigationPanel" owc:kind="columns" style="vertical-align: top; width: 421px; height: 704px;" owc:pane-size="43%" class=" PaneListColumn"&gt;      
+
+					            &lt;div owc:control="pageswitcher" id="mainPageSwitcher" style="width: 421px; height: 704px;"&gt;
+
+						            &lt;div owc:control="pageitem" id="ctrlAllContents" class="Visible" style="width: 421px; height: 704px;"&gt;
+
+							            &lt;div owc:control="pane" id="ctrlContentsPane" class=" PaneListColumn" style="width: 421px; height: 704px;"&gt;
+
+								            &lt;div owc:ui="header" class="ContentsHeader unscrollable" style="width: 421px;"&gt;
+
+									                &lt;table class="navigation-table" cellspacing="0" cellpadding="0" align="center"&gt;
+
+                                                        &lt;tbody&gt;      
+
+                                                            &lt;tr&gt;
+
+                                                                &lt;td class="tabs-menu"&gt;
+
+                                                                  &lt;table id="contentsMainTabStrip" class="tab-strip-menu" cellspacing="0" cellpadding="0" owc:control="TabStrip" align="left"&gt;
+
+                                                                        &lt;tbody&gt;
+
+                                                                            &lt;tr&gt;
+
+                                                                                &lt;td class="tab-item-menu tab-item-menu-cover ActiveTab" owc:init-state="Active" owc:control="TabItem"&gt;
+
+                                                                                    &lt;span id="TabItem_Cover" title="Show the Introduction Page"&gt;Introduction&lt;/span&gt;
+
+                                                                                &lt;/td&gt;
+
+                                                                                &lt;td class="tab-separator-menu"&gt;|&amp;nbsp;&lt;/td&gt;
+
+                                                                                &lt;td class="tab-item-menu tab-item-menu-toc" owc:control="TabItem"&gt;
+
+                                                                                    &lt;span id="TabItem_TableOfContents" title="Show the Table of Contents Page"&gt;Table of Contents&lt;/span&gt;
+
+                                                                                &lt;/td&gt;
+
+                                                                                &lt;td class="tab-separator-menu"&gt;|&amp;nbsp;&lt;/td&gt; 
+
+                                                                                &lt;td class="tab-item-menu tab-item-menu-help" owc:control="TabItem"&gt;
+
+                                                                                    &lt;span id="TabItem_Help" title="Show the Help Page"&gt;Help&lt;/span&gt;
+
+                                                                                &lt;/td&gt;
+
+                                                                            &lt;/tr&gt;
+
+                                                                        &lt;/tbody&gt;
+
+                                                                    &lt;/table&gt;
+
+                                                                    &lt;!-- Content Pane Close Button --&gt;
+
+                                                                    &lt;table align="right" cellspacing="0" cellpadding="0"&gt;
+
+                                                                        &lt;tbody&gt;
+
+                                                                            &lt;tr&gt;
+
+                                                                                &lt;td&gt;
+
+                                                                                  &lt;div class="tab-item-menu" owc:control="command" owc:command="HideContentPane"&gt;
+
+                                                                                    &lt;span id="Button_Close" class="Label" title="Close"&gt;Close&lt;/span&gt;&amp;nbsp;&lt;span&gt;&lt;img id="Button_Close_Image" class="ContentPaneCloseButton" alt="" src="styles/images/t.gif" title="Close"&gt;&lt;/span&gt;
+
+                                                                                  &lt;/div&gt;                    
+
+                                                                                &lt;/td&gt;
+
+                                                                            &lt;/tr&gt;
+
+                                                                        &lt;/tbody&gt;
+
+                                                                    &lt;/table&gt;
+
+                                                                    &lt;!-- End Content Pane Close Button --&gt;
+
+                                                                &lt;/td&gt;
+
+                                                            &lt;/tr&gt; 
+
+                                                            &lt;tr&gt;
+
+                                                                &lt;td&gt;&lt;span&gt;&amp;nbsp;&lt;/span&gt;&lt;/td&gt;
+
+                                                            &lt;/tr&gt;
+
+                                                            &lt;tr&gt;
+
+                                                                &lt;td&gt;
+
+                                                                    &lt;!--&lt;span class="dynamicTitleDate" id="contentsPublicationName" owc:control="value" owc:datatype="publication-name"&gt;&lt;/span&gt;--&gt;
+
+                                                                    &lt;center&gt;&lt;span class="dynamicTitleDate" id="contentsTitle" owc:control="value" owc:datatype="date"&gt;&lt;/span&gt;&lt;/center&gt;
+
+                                                                &lt;/td&gt;
+
+                                                            &lt;/tr&gt;                                                                  
+
+                                                        &lt;/tbody&gt;
+
+                                                    &lt;/table&gt;										            
+
+								                &lt;/div&gt;
+
+								                &lt;div owc:ui="content" class="all-contents-pane-content unscrollable" style="height: 619px; width: 421px;"&gt;
+
+									                &lt;div owc:control="pageswitcher" id="contentsMainPageSwitcher" style="width: 100%;
+
+										                height: 100%"&gt;
+
+										                &lt;div owc:control="pageitem" id="pageItemCover" class="scrollable Visible" style="width: 100%;height: 100%"&gt;
+
+											                &lt;iframe id="cover" src="Cover/Cover.htm" frameborder="0" style="width: 100%; height: 100%; overflow: auto"&gt;&lt;/iframe&gt;
+
+										                &lt;/div&gt;											            
+
+										                &lt;div owc:control="pageitem" id="pageItemContents" style="width: 100%; height: 100%" class="Invisible"&gt;
+
+											                &lt;iframe id="contentsFrame" src="ContentsPane.htm" frameborder="0" style="width: 100%; height: 100%;"&gt;&lt;/iframe&gt;
+
+										                &lt;/div&gt;
+
+										                &lt;div owc:control="pageitem" id="pageItemHelp" class="scrollable Invisible" style="width: 100%; height: 100%"&gt;
+
+											                &lt;iframe id="help" frameborder="0" style="width: 100%; height: 100%; overflow: auto"&gt;&lt;/iframe&gt;
+
+										                &lt;/div&gt;
+
+									                &lt;/div&gt;
+
+								                &lt;/div&gt;
+
+							            &lt;/div&gt;
+
+						            &lt;/div&gt;
+
+						            &lt;div owc:control="pageitem" id="pageItemSearch" class="SearchPane Invisible"&gt;			        								        
+
+					                    &lt;span id="SearchPane_Empty" class="inline-message"&gt;Loading...&lt;/span&gt;
+
+					                    &lt;iframe id="searchFrame" frameborder="0" style="width: 100%; height: 100%;"&gt;&lt;/iframe&gt; 
+
+				                    &lt;/div&gt;
+
+					            &lt;/div&gt;
+
+				            &lt;/td&gt;					        
+
+				            &lt;td owc:control="pane-splitter" owc:ui="ViewerSplitter" class="PaneSplitterControl PaneListColumn" style="vertical-align: top" id="paneSplitter"&gt;&lt;img class="PaneColsSplitter" src="styles/images/t.gif" alt=""&gt;&lt;/td&gt;
+
+				            &lt;td id="paneContent" owc:control="pane" owc:ui="ViewerContentPanel" style="vertical-align: top; width: 558px; height: 704px;" class=" PaneListColumn"&gt;
+
+		                        &lt;!-- Viewer control --&gt;
+
+		                        &lt;div id="ctrlFlashViewer" owc:control="FlashViewer" owc:flashcontentoptions="ReaderStyle=ViewPoint||OnePageMode=1||ClearHitsOnFlipping=1" owc:bgcolor="#7A7A7A" owc:hits-for-whole-document="false"&gt;
+
+			                        &lt;span id="FlashPane_NoDocument" class="inline-message"&gt;There is no document loaded.&lt;/span&gt;
+
+		                        &lt;/div&gt;
+
+				            &lt;/td&gt;	
+
+				            &lt;!-- Right Banner --&gt;
+
+				            &lt;td id="RightAdPane" owc:control="pane" owc:resizable="false" align="right" valign="middle" class="RightBanner PaneListColumn Hidden" style="display: none;"&gt;	
+
+								&lt;div id="RightAdDiv"&gt;
+
+									&lt;iframe id="RightAdIFrame" src="Banners/RightBanners.htm" marginheight="0" marginwidth="0" scrolling="no" width="0px" height="0px" frameborder="0"&gt;
+
+									&lt;/iframe&gt;
+
+								&lt;/div&gt;	
+
+				            &lt;/td&gt;			
+
+				            &lt;td id="BorderRightTable" class="main-border-right PaneListColumn" owc:control="pane" owc:resizable="false" align="right" style="height: 704px;"&gt;
+
+				                &lt;table class="main-border-right" border="0" cellpadding="0" cellspacing="0"&gt;
+
+				                    &lt;tbody&gt;
+
+					                    &lt;tr class="main-right-column"&gt;
+
+	                                        &lt;td class="main-bg-right-stretch"&gt;&lt;/td&gt;
+
+                                        &lt;/tr&gt;
+
+				                    &lt;/tbody&gt;
+
+				                &lt;/table&gt;
+
+				            &lt;/td&gt;
+
+			            &lt;/tr&gt;
+
+		            &lt;/tbody&gt;&lt;/table&gt;
+
+	            &lt;/div&gt;
+
+            &lt;/div&gt;	   
+
+            &lt;div owc:control="pane" id="paneBottom" owc:resizable="false" class="footerPane PaneListRow" style="width: 1000px;"&gt;
+
+            
+
+                  &lt;table class="footerPane" border="0" cellpadding="0" cellspacing="0"&gt;
+
+                        &lt;tbody&gt;
+
+                              &lt;tr class="main-bottom"&gt;
+
+                                    &lt;td class="main-bg-left-bottom"&gt;&lt;/td&gt;
+
+                                    &lt;td class="main-bg-bottom"&gt;&lt;img src="styles/images/t.gif" alt=""&gt;&lt;/td&gt;
+
+                                    &lt;td class="main-bg-right-bottom"&gt;&lt;/td&gt;
+
+                              &lt;/tr&gt;
+
+                        &lt;/tbody&gt;
+
+                  &lt;/table&gt;
+
+            &lt;/div&gt;
+
+	    &lt;/div&gt;     	   
+
+    &lt;/div&gt;  
+
+    
+
+    &lt;!-- ========== Popup windows ========== --&gt;
+
+&lt;div id="popup_componentViewer" owc:control="PopupWindow" owc:contenttype="URL" owc:createframe="false" owc:preservecontent="false" owc:caption="Article Window" owc:maximal-width-percent="95" owc:maximal-height-percent="95" style="left: 100px; top: 80px; height: 500px; width: 600px; display: none;" class=" PopupWindow Hidden"&gt;
+
+    &lt;div class="PopupWindowFrame PopupWindowResizable"&gt;
+
+        &lt;div class="PopupWindowFrameTop"&gt;
+
+            &lt;div owc:ui="popupwindowtopleftcorner" class="PopupWindowTopLeftCorner"&gt;
+
+            &lt;/div&gt;
+
+            &lt;div owc:ui="popupwindowtopborder" class="PopupWindowTopBorder"&gt;
+
+            &lt;/div&gt;
+
+            &lt;div owc:ui="popupwindowtoprightcorner" class="PopupWindowTopRightCorner"&gt;
+
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+
+        &lt;div class="PopupWindowFrameContent"&gt;
+
+            &lt;div owc:ui="popupwindowcaption" class="PopupWindowCaption"&gt;
+
+                &lt;div owc:ui="captionleftborder" class="CaptionLeftBorder"&gt;&lt;/div&gt;
+
+                &lt;div owc:ui="captionrightborder" class="CaptionRightBorder"&gt;&lt;/div&gt;                    
+
+                &lt;div owc:ui="captioncontent" class="CaptionContent"&gt;&lt;/div&gt;
+
+                &lt;span owc:ui="popupwindowtitle" class="PopupWindowTitle"&gt;Article Window&lt;/span&gt;
+
+                &lt;div owc:ui="popupwindowclosebutton" class="PopupWindowClose"&gt;
+
+                    &lt;span class="Label"&gt;Close&lt;/span&gt;
+
+                    &lt;img class="icon" src="styles/images/t.gif" alt=""&gt;
+
+                &lt;/div&gt;
+
+                &lt;div class="PopupWindowDragArea"&gt;&lt;/div&gt;                    
+
+            &lt;/div&gt;
+
+            &lt;div owc:ui="popupwindowcontentleftborder" class="PopupWindowContentLeftBorder"&gt;
+
+            &lt;/div&gt;
+
+            &lt;div class="PopupWindowContent"&gt;
+
+                &lt;div owc:ui="client" class="PopupWindowClient"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="mask" class="PopupWindowMask"&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+            &lt;div owc:ui="popupwindowcontentrightborder" class="PopupWindowContentRightBorder"&gt;
+
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+
+        &lt;div class="PopupWindowFrameBottom"&gt;
+
+            &lt;div owc:ui="popupwindowbottomleftcorner" class="PopupWindowBottomLeftCorner"&gt;
+
+            &lt;/div&gt;
+
+            &lt;div owc:ui="popupwindowbottomborder" class="PopupWindowBottomBorder"&gt;
+
+            &lt;/div&gt;
+
+            &lt;div owc:ui="popupwindowbottomrightcorner" class="PopupWindowBottomRightCorner"&gt;
+
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+
+    &lt;/div&gt;            
+
+&lt;/div&gt;	
+
+
+
+&lt;div id="popup_Library" owc:caption="More Issues" owc:contenttype="HTML" owc:control="PopupWindow" owc:createframe="false" owc:preservecontent="false" owc:maximal-height-percent="90" style="left: 100px; top: 125px; display: none;" class=" PopupWindow Hidden"&gt;
+
+    &lt;div class="PopupWindowFrame PopupWindowResizable"&gt;
+
+        &lt;div class="PopupWindowFrameTop"&gt;
+
+            &lt;div owc:ui="popupwindowtopleftcorner" class="PopupWindowTopLeftCorner"&gt;
+
+            &lt;/div&gt;
+
+            &lt;div owc:ui="popupwindowtopborder" class="PopupWindowTopBorder"&gt;
+
+            &lt;/div&gt;
+
+            &lt;div owc:ui="popupwindowtoprightcorner" class="PopupWindowTopRightCorner"&gt;
+
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+
+        &lt;div class="PopupWindowFrameContent"&gt;
+
+            &lt;div owc:ui="popupwindowcaption" class="PopupWindowCaption"&gt;
+
+                &lt;div owc:ui="captionleftborder" class="CaptionLeftBorder"&gt;&lt;/div&gt;
+
+                &lt;div owc:ui="captionrightborder" class="CaptionRightBorder"&gt;&lt;/div&gt;                    
+
+                &lt;div owc:ui="captioncontent" class="CaptionContent"&gt;&lt;/div&gt;
+
+                &lt;span owc:ui="popupwindowtitle" class="PopupWindowTitle"&gt;More Issues&lt;/span&gt;
+
+                &lt;div owc:ui="popupwindowclosebutton" class="PopupWindowClose"&gt;
+
+                    &lt;span class="Label"&gt;Close&lt;/span&gt;
+
+                    &lt;img class="icon" src="styles/images/t.gif" alt=""&gt;
+
+                &lt;/div&gt;
+
+                &lt;div class="PopupWindowDragArea"&gt;&lt;/div&gt;                    
+
+            &lt;/div&gt;
+
+            &lt;div owc:ui="popupwindowcontentleftborder" class="PopupWindowContentLeftBorder"&gt;
+
+            &lt;/div&gt;
+
+            &lt;div class="PopupWindowContent"&gt;
+
+                &lt;div owc:ui="client" class="PopupWindowClient"&gt;
+
+                    &lt;table class="more-issues-container" style="width: 100%"&gt;
+
+						
+
+						&lt;tbody&gt;&lt;tr&gt;
+
+		                    &lt;td&gt;
+
+								&lt;div&gt;
+
+									&lt;table&gt;
+
+										
+
+												
+
+										&lt;tbody&gt;&lt;tr class="headerYearSelection" id="headerYearSelection" style="visibility:hidden"&gt;
+
+											&lt;td&gt;&lt;span&gt;Choose Year:&amp;nbsp;&lt;/span&gt;&lt;/td&gt;
+
+											&lt;td&gt;&lt;span id="ctrlYearSelection" owc:control="yearlist" owc:command="cmdYearChanged"&gt;&lt;/span&gt;&lt;/td&gt;
+
+										&lt;/tr&gt;
+
+										
+
+									&lt;/tbody&gt;&lt;/table&gt;
+
+								&lt;/div&gt;
+
+							&lt;/td&gt;
+
+                         &lt;/tr&gt;
+
+                        &lt;tr&gt;
+
+                            &lt;td&gt;
+
+                                &lt;div id="LibraryThumbnailList" class="ArchiveThumblist" style="height: 360px; width: 400px" owc:control="thumb-list" owc:usepagination="true" owc:selection-highlighting="true" owc:list-item-css="thumbnail-item" owc:list-item-css-selected="thumbnail-item-selected" owc:page-criterion="cover:1" owc:templateid="ThumbListRepository"&gt;
+
+                                &lt;/div&gt;							
+
+                            &lt;/td&gt;
+
+                        &lt;/tr&gt;
+
+                    &lt;/tbody&gt;&lt;/table&gt;   
+
+                  &lt;/div&gt;
+
+                &lt;div owc:ui="mask" class="PopupWindowMask"&gt;
+
+                &lt;/div&gt;                    
+
+            &lt;/div&gt;
+
+            &lt;div owc:ui="popupwindowcontentrightborder" class="PopupWindowContentRightBorder"&gt;
+
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+
+        &lt;div class="PopupWindowFrameBottom"&gt;
+
+            &lt;div owc:ui="popupwindowbottomleftcorner" class="PopupWindowBottomLeftCorner"&gt;
+
+            &lt;/div&gt;
+
+            &lt;div owc:ui="popupwindowbottomborder" class="PopupWindowBottomBorder"&gt;
+
+            &lt;/div&gt;
+
+            &lt;div owc:ui="popupwindowbottomrightcorner" class="PopupWindowBottomRightCorner"&gt;
+
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+
+    &lt;!-- ========== Magnifier for archive thumbnails list ========== --&gt;
+
+    &lt;div id="ctrlMagnifier" owc:control="Magnifier" class="ThumbFloater" style="visibility: hidden; z-index: -10;"&gt;&lt;/div&gt;    
+
+   &lt;/div&gt;
+
+
+
+&lt;div id="popup_copyrightWarning" owc:caption="" owc:contenttype="HTML" owc:control="PopupWindow" owc:createframe="false" owc:preservecontent="false" owc:maximal-height-percent="90" style="left: 100px; top: 80px; display: none;" class=" PopupWindow Hidden"&gt;
+
+    &lt;div class="PopupWindowFrame PopupWindowResizable"&gt;
+
+        &lt;div class="PopupWindowFrameTop"&gt;
+
+            &lt;div owc:ui="popupwindowtopleftcorner" class="PopupWindowTopLeftCorner"&gt;
+
+            &lt;/div&gt;
+
+            &lt;div owc:ui="popupwindowtopborder" class="PopupWindowTopBorder"&gt;
+
+            &lt;/div&gt;
+
+            &lt;div owc:ui="popupwindowtoprightcorner" class="PopupWindowTopRightCorner"&gt;
+
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+
+        &lt;div class="PopupWindowFrameContent"&gt;
+
+            &lt;div owc:ui="popupwindowcaption" class="PopupWindowCaption"&gt;
+
+                &lt;div owc:ui="captionleftborder" class="CaptionLeftBorder"&gt;&lt;/div&gt;
+
+                &lt;div owc:ui="captionrightborder" class="CaptionRightBorder"&gt;&lt;/div&gt;                    
+
+                &lt;div owc:ui="captioncontent" class="CaptionContent"&gt;&lt;/div&gt;
+
+                &lt;span owc:ui="popupwindowtitle" class="PopupWindowTitle"&gt;&lt;/span&gt;
+
+                &lt;div owc:ui="popupwindowclosebutton" class="PopupWindowClose"&gt;
+
+                    &lt;span class="Label"&gt;Close&lt;/span&gt;
+
+                    &lt;img class="icon" src="styles/images/t.gif" alt=""&gt;
+
+                &lt;/div&gt;
+
+                &lt;div class="PopupWindowDragArea"&gt;&lt;/div&gt;                    
+
+            &lt;/div&gt;
+
+            &lt;div owc:ui="popupwindowcontentleftborder" class="PopupWindowContentLeftBorder"&gt;
+
+            &lt;/div&gt;
+
+            &lt;div class="PopupWindowContent"&gt;
+
+                &lt;div owc:ui="client" class="PopupWindowClient"&gt;
+
+					&lt;div id="Popup_Copyright_Warning_Content" class="copyright-warning"&gt;This Material is Not Available Due to Copyright&lt;/div&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="mask" class="PopupWindowMask"&gt;
+
+                &lt;/div&gt;                    
+
+            &lt;/div&gt;
+
+            &lt;div owc:ui="popupwindowcontentrightborder" class="PopupWindowContentRightBorder"&gt;
+
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+
+        &lt;div class="PopupWindowFrameBottom"&gt;
+
+            &lt;div owc:ui="popupwindowbottomleftcorner" class="PopupWindowBottomLeftCorner"&gt;
+
+            &lt;/div&gt;
+
+            &lt;div owc:ui="popupwindowbottomborder" class="PopupWindowBottomBorder"&gt;
+
+            &lt;/div&gt;
+
+            &lt;div owc:ui="popupwindowbottomrightcorner" class="PopupWindowBottomRightCorner"&gt;
+
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+
+   &lt;/div&gt;     
+
+
+
+   &lt;!-- === Popup for more publications available === --&gt;
+
+   &lt;div id="popup_morePublications" owc:caption="More Publications" owc:contenttype="URL" owc:control="PopupWindow" owc:createframe="false" owc:preservecontent="false" owc:maximal-height-percent="90" style="left: 100px; top: 80px; display: none;" class=" PopupWindow Hidden"&gt;
+
+    &lt;div class="PopupWindowFrame PopupWindowResizable"&gt;
+
+        &lt;div class="PopupWindowFrameTop"&gt;
+
+            &lt;div owc:ui="popupwindowtopleftcorner" class="PopupWindowTopLeftCorner"&gt;
+
+            &lt;/div&gt;
+
+            &lt;div owc:ui="popupwindowtopborder" class="PopupWindowTopBorder"&gt;
+
+            &lt;/div&gt;
+
+            &lt;div owc:ui="popupwindowtoprightcorner" class="PopupWindowTopRightCorner"&gt;
+
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+
+        &lt;div class="PopupWindowFrameContent"&gt;
+
+            &lt;div owc:ui="popupwindowcaption" class="PopupWindowCaption"&gt;
+
+                &lt;div owc:ui="captionleftborder" class="CaptionLeftBorder"&gt;&lt;/div&gt;
+
+                &lt;div owc:ui="captionrightborder" class="CaptionRightBorder"&gt;&lt;/div&gt;                    
+
+                &lt;div owc:ui="captioncontent" class="CaptionContent"&gt;&lt;/div&gt;
+
+                &lt;span owc:ui="popupwindowtitle" class="PopupWindowTitle"&gt;More Publications&lt;/span&gt;
+
+                &lt;div owc:ui="popupwindowclosebutton" class="PopupWindowClose"&gt;
+
+                    &lt;span class="Label"&gt;Close&lt;/span&gt;
+
+                    &lt;img class="icon" src="styles/images/t.gif" alt=""&gt;
+
+                &lt;/div&gt;
+
+                &lt;div class="PopupWindowDragArea"&gt;&lt;/div&gt;                    
+
+            &lt;/div&gt;
+
+            &lt;div owc:ui="popupwindowcontentleftborder" class="PopupWindowContentLeftBorder"&gt;
+
+            &lt;/div&gt;
+
+            &lt;div class="PopupWindowContent"&gt;
+
+                &lt;div owc:ui="client" class="PopupWindowClient"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="mask" class="PopupWindowMask"&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+            &lt;div owc:ui="popupwindowcontentrightborder" class="PopupWindowContentRightBorder"&gt;
+
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+
+        
+
+        &lt;div class="PopupWindowFrameBottom"&gt;
+
+            &lt;div owc:ui="popupwindowbottomleftcorner" class="PopupWindowBottomLeftCorner"&gt;
+
+            &lt;/div&gt;
+
+            &lt;div owc:ui="popupwindowbottomborder" class="PopupWindowBottomBorder"&gt;
+
+            &lt;/div&gt;
+
+            &lt;div owc:ui="popupwindowbottomrightcorner" class="PopupWindowBottomRightCorner"&gt;
+
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+
+   &lt;/div&gt;  
+
+               
+
+    &lt;div id="popup_printForm" owc:control="PopupWindow" owc:contenttype="URL" owc:createframe="false" owc:preservecontent="false" owc:caption="Print Document" style="display: none;" class=" PopupWindow Hidden"&gt;
+
+        &lt;div class="PopupWindowFrame PopupWindowResizable"&gt;
+
+            &lt;div class="PopupWindowFrameTop"&gt;
+
+                &lt;div owc:ui="popupwindowtopleftcorner" class="PopupWindowTopLeftCorner"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowtopborder" class="PopupWindowTopBorder"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowtoprightcorner" class="PopupWindowTopRightCorner"&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+            &lt;div class="PopupWindowFrameContent"&gt;
+
+                &lt;div owc:ui="popupwindowcaption" class="PopupWindowCaption"&gt;
+
+                    &lt;div owc:ui="captionleftborder" class="CaptionLeftBorder"&gt;&lt;/div&gt;
+
+                    &lt;div owc:ui="captionrightborder" class="CaptionRightBorder"&gt;&lt;/div&gt;                    
+
+                    &lt;div owc:ui="captioncontent" class="CaptionContent"&gt;&lt;/div&gt;
+
+                    &lt;span owc:ui="popupwindowtitle" class="PopupWindowTitle"&gt;Print Document&lt;/span&gt;
+
+                    &lt;div owc:ui="popupwindowclosebutton" class="PopupWindowClose"&gt;
+
+                        &lt;span class="Label"&gt;Close&lt;/span&gt;
+
+                        &lt;img class="icon" src="styles/images/t.gif" alt=""&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;div class="PopupWindowDragArea"&gt;&lt;/div&gt;                    
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowcontentleftborder" class="PopupWindowContentLeftBorder"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div class="PopupWindowContent"&gt;
+
+                    &lt;div owc:ui="client" class="PopupWindowClient"&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;div owc:ui="mask" class="PopupWindowMask"&gt;
+
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowcontentrightborder" class="PopupWindowContentRightBorder"&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+            &lt;div class="PopupWindowFrameBottom"&gt;
+
+                &lt;div owc:ui="popupwindowbottomleftcorner" class="PopupWindowBottomLeftCorner"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowbottomborder" class="PopupWindowBottomBorder"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowbottomrightcorner" class="PopupWindowBottomRightCorner"&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+
+    &lt;/div&gt; 
+
+    &lt;div id="popup_printDocumentView" owc:control="PopupWindow" owc:contenttype="URL" owc:caption="Print Preview" owc:createframe="false" owc:preservecontent="false" style="left: 300px; top: 50px; width: 500px; height: 520px; display: none;" class=" PopupWindow Hidden"&gt;			
+
+        &lt;div class="PopupWindowFrame PopupWindowResizable"&gt;
+
+            &lt;div class="PopupWindowFrameTop"&gt;
+
+                &lt;div owc:ui="popupwindowtopleftcorner" class="PopupWindowTopLeftCorner"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowtopborder" class="PopupWindowTopBorder"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowtoprightcorner" class="PopupWindowTopRightCorner"&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+            &lt;div class="PopupWindowFrameContent"&gt;
+
+                &lt;div owc:ui="popupwindowcaption" class="PopupWindowCaption"&gt;
+
+                    &lt;div owc:ui="captionleftborder" class="CaptionLeftBorder"&gt;&lt;/div&gt;
+
+                    &lt;div owc:ui="captionrightborder" class="CaptionRightBorder"&gt;&lt;/div&gt;                    
+
+                    &lt;div owc:ui="captioncontent" class="CaptionContent"&gt;&lt;/div&gt;
+
+                    &lt;span owc:ui="popupwindowtitle" class="PopupWindowTitle"&gt;Print Preview&lt;/span&gt;
+
+                    &lt;div owc:ui="popupwindowclosebutton" class="PopupWindowClose"&gt;
+
+                        &lt;span class="Label"&gt;Close&lt;/span&gt;
+
+                        &lt;img class="icon" src="styles/images/t.gif" alt=""&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;div class="PopupWindowDragArea"&gt;&lt;/div&gt;                    
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowcontentleftborder" class="PopupWindowContentLeftBorder"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div class="PopupWindowContent"&gt;
+
+                    &lt;div owc:ui="client" class="PopupWindowClient"&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;div owc:ui="mask" class="PopupWindowMask"&gt;
+
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowcontentrightborder" class="PopupWindowContentRightBorder"&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+            &lt;div class="PopupWindowFrameBottom"&gt;
+
+                &lt;div owc:ui="popupwindowbottomleftcorner" class="PopupWindowBottomLeftCorner"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowbottomborder" class="PopupWindowBottomBorder"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowbottomrightcorner" class="PopupWindowBottomRightCorner"&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+        &lt;/div&gt;		    
+
+    &lt;/div&gt;
+
+    &lt;div id="popup_mailForm" owc:control="PopupWindow" owc:contenttype="URL" owc:caption="Send this article..." owc:createframe="false" owc:preservecontent="false" style="left: 300px; top: 120px; display: none;" class=" PopupWindow Hidden"&gt;		    
+
+        &lt;div class="PopupWindowFrame PopupWindowResizable"&gt;
+
+            &lt;div class="PopupWindowFrameTop"&gt;
+
+                &lt;div owc:ui="popupwindowtopleftcorner" class="PopupWindowTopLeftCorner"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowtopborder" class="PopupWindowTopBorder"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowtoprightcorner" class="PopupWindowTopRightCorner"&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+            &lt;div class="PopupWindowFrameContent"&gt;
+
+                &lt;div owc:ui="popupwindowcaption" class="PopupWindowCaption"&gt;
+
+                    &lt;div owc:ui="captionleftborder" class="CaptionLeftBorder"&gt;&lt;/div&gt;
+
+                    &lt;div owc:ui="captionrightborder" class="CaptionRightBorder"&gt;&lt;/div&gt;                    
+
+                    &lt;div owc:ui="captioncontent" class="CaptionContent"&gt;&lt;/div&gt;
+
+                    &lt;span owc:ui="popupwindowtitle" class="PopupWindowTitle"&gt;Send this article...&lt;/span&gt;
+
+                    &lt;div owc:ui="popupwindowclosebutton" class="PopupWindowClose"&gt;
+
+                        &lt;span class="Label"&gt;Close&lt;/span&gt;
+
+                        &lt;img class="icon" src="styles/images/t.gif" alt=""&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;div class="PopupWindowDragArea"&gt;&lt;/div&gt;                    
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowcontentleftborder" class="PopupWindowContentLeftBorder"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div class="PopupWindowContent"&gt;
+
+                    &lt;div owc:ui="client" class="PopupWindowClient"&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;div owc:ui="mask" class="PopupWindowMask"&gt;
+
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowcontentrightborder" class="PopupWindowContentRightBorder"&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+            &lt;div class="PopupWindowFrameBottom"&gt;
+
+                &lt;div owc:ui="popupwindowbottomleftcorner" class="PopupWindowBottomLeftCorner"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowbottomborder" class="PopupWindowBottomBorder"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowbottomrightcorner" class="PopupWindowBottomRightCorner"&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+
+    &lt;div id="popup_printComponentForm" owc:control="PopupWindow" owc:contenttype="URL" owc:createframe="false" owc:preservecontent="false" owc:resizable="false" style="display: none;" class=" PopupWindow Hidden"&gt;
+
+      &lt;div class="PopupWindowFrame PopupWindowResizable"&gt;
+
+        &lt;div class="PopupWindowFrameTop"&gt;
+
+            &lt;div owc:ui="popupwindowtopleftcorner" class="PopupWindowTopLeftCorner"&gt;
+
+            &lt;/div&gt;
+
+            &lt;div owc:ui="popupwindowtopborder" class="PopupWindowTopBorder"&gt;
+
+            &lt;/div&gt;
+
+            &lt;div owc:ui="popupwindowtoprightcorner" class="PopupWindowTopRightCorner"&gt;
+
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+
+        &lt;div class="PopupWindowFrameContent"&gt;
+
+            &lt;div owc:ui="popupwindowcaption" class="PopupWindowCaption"&gt;
+
+                &lt;div owc:ui="captionleftborder" class="CaptionLeftBorder"&gt;&lt;/div&gt;
+
+                &lt;div owc:ui="captionrightborder" class="CaptionRightBorder"&gt;&lt;/div&gt;                    
+
+                &lt;div owc:ui="captioncontent" class="CaptionContent"&gt;&lt;/div&gt;
+
+                &lt;span owc:ui="popupwindowtitle" class="PopupWindowTitle"&gt;&lt;/span&gt;
+
+                &lt;div owc:ui="popupwindowclosebutton" class="PopupWindowClose"&gt;
+
+                    &lt;span class="Label"&gt;Close&lt;/span&gt;
+
+                    &lt;img class="icon" src="styles/images/t.gif" alt=""&gt;
+
+                &lt;/div&gt;
+
+                &lt;div class="PopupWindowDragArea"&gt;&lt;/div&gt;                    
+
+            &lt;/div&gt;
+
+            &lt;div owc:ui="popupwindowcontentleftborder" class="PopupWindowContentLeftBorder"&gt;
+
+            &lt;/div&gt;
+
+            &lt;div class="PopupWindowContent"&gt;
+
+                &lt;div owc:ui="client" class="PopupWindowClient"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="mask" class="PopupWindowMask"&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+            &lt;div owc:ui="popupwindowcontentrightborder" class="PopupWindowContentRightBorder"&gt;
+
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+
+        &lt;div class="PopupWindowFrameBottom"&gt;
+
+            &lt;div owc:ui="popupwindowbottomleftcorner" class="PopupWindowBottomLeftCorner"&gt;
+
+            &lt;/div&gt;
+
+            &lt;div owc:ui="popupwindowbottomborder" class="PopupWindowBottomBorder"&gt;
+
+            &lt;/div&gt;
+
+            &lt;div owc:ui="popupwindowbottomrightcorner" class="PopupWindowBottomRightCorner"&gt;
+
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+
+      &lt;/div&gt;		    
+
+    &lt;/div&gt;
+
+    &lt;div id="popup_printComponentView" owc:control="PopupWindow" owc:contenttype="URL" owc:createframe="false" owc:preservecontent="false" owc:caption="Print entity" style="left: 300px; top: 50px; height: 520px; width: 500px; display: none;" class=" PopupWindow Hidden"&gt;
+
+        &lt;div class="PopupWindowFrame PopupWindowResizable"&gt;
+
+            &lt;div class="PopupWindowFrameTop"&gt;
+
+                &lt;div owc:ui="popupwindowtopleftcorner" class="PopupWindowTopLeftCorner"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowtopborder" class="PopupWindowTopBorder"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowtoprightcorner" class="PopupWindowTopRightCorner"&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+            &lt;div class="PopupWindowFrameContent"&gt;
+
+                &lt;div owc:ui="popupwindowcaption" class="PopupWindowCaption"&gt;
+
+                    &lt;div owc:ui="captionleftborder" class="CaptionLeftBorder"&gt;&lt;/div&gt;
+
+                    &lt;div owc:ui="captionrightborder" class="CaptionRightBorder"&gt;&lt;/div&gt;                    
+
+                    &lt;div owc:ui="captioncontent" class="CaptionContent"&gt;&lt;/div&gt;
+
+                    &lt;span owc:ui="popupwindowtitle" class="PopupWindowTitle"&gt;Print entity&lt;/span&gt;
+
+                    &lt;div owc:ui="popupwindowclosebutton" class="PopupWindowClose"&gt;
+
+                        &lt;span class="Label"&gt;Close&lt;/span&gt;
+
+                        &lt;img class="icon" src="styles/images/t.gif" alt=""&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;div class="PopupWindowDragArea"&gt;&lt;/div&gt;                    
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowcontentleftborder" class="PopupWindowContentLeftBorder"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div class="PopupWindowContent"&gt;
+
+                    &lt;div owc:ui="client" class="PopupWindowClient"&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;div owc:ui="mask" class="PopupWindowMask"&gt;
+
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowcontentrightborder" class="PopupWindowContentRightBorder"&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+            &lt;div class="PopupWindowFrameBottom"&gt;
+
+                &lt;div owc:ui="popupwindowbottomleftcorner" class="PopupWindowBottomLeftCorner"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowbottomborder" class="PopupWindowBottomBorder"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowbottomrightcorner" class="PopupWindowBottomRightCorner"&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+        &lt;/div&gt;		    
+
+    &lt;/div&gt;	
+
+    &lt;div id="popup_SaveForOffline" owc:control="PopupWindow" owc:contenttype="URL" owc:createframe="false" owc:preservecontent="false" owc:caption="Save For Offline" style="left: 120px; top: 120px; height: 390px; width: 500px; display: none;" class=" PopupWindow Hidden"&gt;
+
+        &lt;div class="PopupWindowFrame PopupWindowResizable"&gt;
+
+            &lt;div class="PopupWindowFrameTop"&gt;
+
+                &lt;div owc:ui="popupwindowtopleftcorner" class="PopupWindowTopLeftCorner"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowtopborder" class="PopupWindowTopBorder"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowtoprightcorner" class="PopupWindowTopRightCorner"&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+            &lt;div class="PopupWindowFrameContent"&gt;
+
+                &lt;div owc:ui="popupwindowcaption" class="PopupWindowCaption"&gt;
+
+                    &lt;div owc:ui="captionleftborder" class="CaptionLeftBorder"&gt;&lt;/div&gt;
+
+                    &lt;div owc:ui="captionrightborder" class="CaptionRightBorder"&gt;&lt;/div&gt;                    
+
+                    &lt;div owc:ui="captioncontent" class="CaptionContent"&gt;&lt;/div&gt;
+
+                    &lt;span owc:ui="popupwindowtitle" class="PopupWindowTitle"&gt;Save For Offline&lt;/span&gt;
+
+                    &lt;div owc:ui="popupwindowclosebutton" class="PopupWindowClose"&gt;
+
+                        &lt;span class="Label"&gt;Close&lt;/span&gt;
+
+                        &lt;img class="icon" src="styles/images/t.gif" alt=""&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;div class="PopupWindowDragArea"&gt;&lt;/div&gt;                    
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowcontentleftborder" class="PopupWindowContentLeftBorder"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div class="PopupWindowContent"&gt;
+
+                    &lt;div owc:ui="client" class="PopupWindowClient"&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;div owc:ui="mask" class="PopupWindowMask"&gt;
+
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowcontentrightborder" class="PopupWindowContentRightBorder"&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+            &lt;div class="PopupWindowFrameBottom"&gt;
+
+                &lt;div owc:ui="popupwindowbottomleftcorner" class="PopupWindowBottomLeftCorner"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowbottomborder" class="PopupWindowBottomBorder"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowbottomrightcorner" class="PopupWindowBottomRightCorner"&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+        &lt;/div&gt;		    		    
+
+    &lt;/div&gt;
+
+    &lt;div id="popup_AccessNotification" owc:control="PopupWindow" owc:contenttype="URL" owc:createframe="false" owc:preservecontent="false" owc:caption="Access Notification" style="left: 120px; top: 120px; height: 600px; width: 600px; display: none;" class=" PopupWindow Hidden"&gt;
+
+        &lt;div class="PopupWindowFrame PopupWindowResizable"&gt;
+
+            &lt;div class="PopupWindowFrameTop"&gt;
+
+                &lt;div owc:ui="popupwindowtopleftcorner" class="PopupWindowTopLeftCorner"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowtopborder" class="PopupWindowTopBorder"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowtoprightcorner" class="PopupWindowTopRightCorner"&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+            &lt;div class="PopupWindowFrameContent"&gt;
+
+                &lt;div owc:ui="popupwindowcaption" class="PopupWindowCaption"&gt;
+
+                    &lt;div owc:ui="captionleftborder" class="CaptionLeftBorder"&gt;&lt;/div&gt;
+
+                    &lt;div owc:ui="captionrightborder" class="CaptionRightBorder"&gt;&lt;/div&gt;                    
+
+                    &lt;div owc:ui="captioncontent" class="CaptionContent"&gt;&lt;/div&gt;
+
+                    &lt;span owc:ui="popupwindowtitle" class="PopupWindowTitle"&gt;Access Notification&lt;/span&gt;
+
+                    &lt;div owc:ui="popupwindowclosebutton" class="PopupWindowClose"&gt;
+
+                        &lt;span class="Label"&gt;Close&lt;/span&gt;
+
+                        &lt;img class="icon" src="styles/images/t.gif" alt=""&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;div class="PopupWindowDragArea"&gt;&lt;/div&gt;                    
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowcontentleftborder" class="PopupWindowContentLeftBorder"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div class="PopupWindowContent"&gt;
+
+                    &lt;div owc:ui="client" class="PopupWindowClient"&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;div owc:ui="mask" class="PopupWindowMask"&gt;
+
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowcontentrightborder" class="PopupWindowContentRightBorder"&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+            &lt;div class="PopupWindowFrameBottom"&gt;
+
+                &lt;div owc:ui="popupwindowbottomleftcorner" class="PopupWindowBottomLeftCorner"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowbottomborder" class="PopupWindowBottomBorder"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowbottomrightcorner" class="PopupWindowBottomRightCorner"&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+        &lt;/div&gt;		    
+
+    &lt;/div&gt;	
+
+    &lt;div id="PostDel_window" owc:control="PopupWindow" owc:contenttype="URL" owc:createframe="false" owc:preservecontent="false" owc:caption="Post to del.icio.us" owc:maximal-width-percent="95" owc:maximal-height-percent="95" style="left: 100px; top: 80px; height: 500px; width: 600px; display: none;" class=" PopupWindow Hidden"&gt;
+
+        &lt;div class="PopupWindowFrame PopupWindowResizable"&gt;
+
+            &lt;div class="PopupWindowFrameTop"&gt;
+
+                &lt;div owc:ui="popupwindowtopleftcorner" class="PopupWindowTopLeftCorner"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowtopborder" class="PopupWindowTopBorder"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowtoprightcorner" class="PopupWindowTopRightCorner"&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+            &lt;div class="PopupWindowFrameContent"&gt;
+
+                &lt;div owc:ui="popupwindowcaption" class="PopupWindowCaption"&gt;
+
+                    &lt;div owc:ui="captionleftborder" class="CaptionLeftBorder"&gt;&lt;/div&gt;
+
+                    &lt;div owc:ui="captionrightborder" class="CaptionRightBorder"&gt;&lt;/div&gt;                    
+
+                    &lt;div owc:ui="captioncontent" class="CaptionContent"&gt;&lt;/div&gt;
+
+                    &lt;span owc:ui="popupwindowtitle" class="PopupWindowTitle"&gt;Post to del.icio.us&lt;/span&gt;
+
+                    &lt;div owc:ui="popupwindowclosebutton" class="PopupWindowClose"&gt;
+
+                        &lt;span class="Label"&gt;Close&lt;/span&gt;
+
+                        &lt;img class="icon" src="styles/images/t.gif" alt=""&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;div class="PopupWindowDragArea"&gt;&lt;/div&gt;                    
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowcontentleftborder" class="PopupWindowContentLeftBorder"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div class="PopupWindowContent"&gt;
+
+                    &lt;div owc:ui="client" class="PopupWindowClient"&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;div owc:ui="mask" class="PopupWindowMask"&gt;
+
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowcontentrightborder" class="PopupWindowContentRightBorder"&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+            &lt;div class="PopupWindowFrameBottom"&gt;
+
+                &lt;div owc:ui="popupwindowbottomleftcorner" class="PopupWindowBottomLeftCorner"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowbottomborder" class="PopupWindowBottomBorder"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowbottomrightcorner" class="PopupWindowBottomRightCorner"&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+
+    &lt;div id="DiggThis_window" owc:control="PopupWindow" owc:contenttype="URL" owc:createframe="false" owc:preservecontent="false" owc:caption="Digg this" owc:maximal-width-percent="95" owc:maximal-height-percent="95" style="left: 100px; top: 80px; height: 500px; width: 600px; display: none;" class=" PopupWindow Hidden"&gt;
+
+        &lt;div class="PopupWindowFrame PopupWindowResizable"&gt;
+
+            &lt;div class="PopupWindowFrameTop"&gt;
+
+                &lt;div owc:ui="popupwindowtopleftcorner" class="PopupWindowTopLeftCorner"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowtopborder" class="PopupWindowTopBorder"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowtoprightcorner" class="PopupWindowTopRightCorner"&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+            &lt;div class="PopupWindowFrameContent"&gt;
+
+                &lt;div owc:ui="popupwindowcaption" class="PopupWindowCaption"&gt;
+
+                    &lt;div owc:ui="captionleftborder" class="CaptionLeftBorder"&gt;&lt;/div&gt;
+
+                    &lt;div owc:ui="captionrightborder" class="CaptionRightBorder"&gt;&lt;/div&gt;                    
+
+                    &lt;div owc:ui="captioncontent" class="CaptionContent"&gt;&lt;/div&gt;
+
+                    &lt;span owc:ui="popupwindowtitle" class="PopupWindowTitle"&gt;Digg this&lt;/span&gt;
+
+                    &lt;div owc:ui="popupwindowclosebutton" class="PopupWindowClose"&gt;
+
+                        &lt;span class="Label"&gt;Close&lt;/span&gt;
+
+                        &lt;img class="icon" src="styles/images/t.gif" alt=""&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;div class="PopupWindowDragArea"&gt;&lt;/div&gt;                    
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowcontentleftborder" class="PopupWindowContentLeftBorder"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div class="PopupWindowContent"&gt;
+
+                    &lt;div owc:ui="client" class="PopupWindowClient"&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;div owc:ui="mask" class="PopupWindowMask"&gt;
+
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowcontentrightborder" class="PopupWindowContentRightBorder"&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+            &lt;div class="PopupWindowFrameBottom"&gt;
+
+                &lt;div owc:ui="popupwindowbottomleftcorner" class="PopupWindowBottomLeftCorner"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowbottomborder" class="PopupWindowBottomBorder"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowbottomrightcorner" class="PopupWindowBottomRightCorner"&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+
+    &lt;div id="popup_OkToChangeIssue" owc:control="PopupWindow" owc:caption="Do you want to view a different issue?" owc:contenttype="HTML" owc:createframe="false" owc:preservecontent="false" style="left: 120px; top: 100px; display: none;" class=" PopupWindow Hidden"&gt;
+
+              &lt;div class="PopupWindowFrame PopupWindowResizable"&gt;
+
+            &lt;div class="PopupWindowFrameTop"&gt;
+
+                &lt;div owc:ui="popupwindowtopleftcorner" class="PopupWindowTopLeftCorner"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowtopborder" class="PopupWindowTopBorder"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowtoprightcorner" class="PopupWindowTopRightCorner"&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+            &lt;div class="PopupWindowFrameContent"&gt;
+
+                &lt;div owc:ui="popupwindowcaption" class="PopupWindowCaption"&gt;
+
+                    &lt;div owc:ui="captionleftborder" class="CaptionLeftBorder"&gt;&lt;/div&gt;
+
+                    &lt;div owc:ui="captionrightborder" class="CaptionRightBorder"&gt;&lt;/div&gt;                    
+
+                    &lt;div owc:ui="captioncontent" class="CaptionContent"&gt;&lt;/div&gt;
+
+                    &lt;span owc:ui="popupwindowtitle" class="PopupWindowTitle"&gt;Do you want to view a different issue?&lt;/span&gt;
+
+                    &lt;div owc:ui="popupwindowclosebutton" class="PopupWindowClose"&gt;
+
+                        &lt;span class="Label"&gt;Close&lt;/span&gt;
+
+                        &lt;img class="icon" src="styles/images/t.gif" alt=""&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;div class="PopupWindowDragArea"&gt;&lt;/div&gt;                    
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowcontentleftborder" class="PopupWindowContentLeftBorder"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div class="PopupWindowContent"&gt;
+
+                    &lt;div owc:ui="client" class="PopupWindowClient"&gt;
+
+                        &lt;div&gt;The issue "&lt;span owc:control="value" id="newpublication" class="selected-text"&gt;&lt;/span&gt;&lt;span owc:control="value" id="newdate" owc:format="%B %d, %Y" owc:datatype="date" class="selected-text"&gt;&lt;/span&gt;" will replace the issue "&lt;span owc:control="value" id="priorpublication" class="selected-text"&gt;&lt;/span&gt;&lt;span owc:control="value" id="priordate" owc:format="%B %d, %Y" owc:datatype="date" class="selected-text"&gt;&lt;/span&gt;" as your current issue. 
+
+                      Please press &lt;span class="selected-text"&gt;OK&lt;/span&gt; to continue or &lt;span class="selected-text"&gt;Cancel&lt;/span&gt; to exit.  
+
+                       &lt;br&gt;
+
+                       &lt;br&gt;
+
+                        &lt;/div&gt;
+
+                        &lt;table style="width:100%"&gt;
+
+	                        &lt;tbody&gt;&lt;tr align="right"&gt;
+
+		                        &lt;td&gt;
+
+		                            &lt;table&gt;
+
+		                                &lt;tbody&gt;&lt;tr&gt;
+
+		                                    &lt;td&gt;
+
+			                                    &lt;span owc:control="commandbutton" owc:decorate-with-table="true" owc:command="OK_ChangeIssue" class=" OwcButton"&gt;&lt;table cellspacing="0" cellpadding="0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="OwcButtonLeft"&gt;&lt;img src="http://epaper.abqjournal.com/Olive/WebComponents/Layout/empty.gif" class="OwcPlaceholderImgLeftRight" alt=""&gt;&lt;/td&gt;&lt;td class="OwcButtonBody"&gt;OK&lt;/td&gt;&lt;td class="OwcButtonRight"&gt;&lt;img src="http://epaper.abqjournal.com/Olive/WebComponents/Layout/empty.gif" class="OwcPlaceholderImgLeftRight" alt=""&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/span&gt;
+
+		                                    &lt;/td&gt;
+
+		                                    &lt;td&gt;
+
+			                                    &lt;span owc:control="commandbutton" owc:decorate-with-table="true" owc:command="Cancel_ChangeIssue" class=" OwcButton"&gt;&lt;table cellspacing="0" cellpadding="0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="OwcButtonLeft"&gt;&lt;img src="http://epaper.abqjournal.com/Olive/WebComponents/Layout/empty.gif" class="OwcPlaceholderImgLeftRight" alt=""&gt;&lt;/td&gt;&lt;td class="OwcButtonBody"&gt;Cancel&lt;/td&gt;&lt;td class="OwcButtonRight"&gt;&lt;img src="http://epaper.abqjournal.com/Olive/WebComponents/Layout/empty.gif" class="OwcPlaceholderImgLeftRight" alt=""&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/span&gt;
+
+		                                    &lt;/td&gt;
+
+		                                &lt;/tr&gt;
+
+		                            &lt;/tbody&gt;&lt;/table&gt;
+
+		                        &lt;/td&gt;
+
+	                        &lt;/tr&gt;
+
+	                        &lt;tr&gt;
+
+	                            &lt;td class="notes"&gt; 
+
+			                        &lt;input type="checkbox" owc:control="Value" owc:datatype="Boolean" id="bDoNotAskAgain_ChangeIssue"&gt;
+
+			                        &lt;span&gt;Do not show this window again&lt;/span&gt;
+
+	                            &lt;/td&gt;
+
+	                        &lt;/tr&gt;
+
+                        &lt;/tbody&gt;&lt;/table&gt;                    
+
+                    &lt;/div&gt;
+
+                    &lt;div owc:ui="mask" class="PopupWindowMask"&gt;
+
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowcontentrightborder" class="PopupWindowContentRightBorder"&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+            &lt;div class="PopupWindowFrameBottom"&gt;
+
+                &lt;div owc:ui="popupwindowbottomleftcorner" class="PopupWindowBottomLeftCorner"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowbottomborder" class="PopupWindowBottomBorder"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowbottomrightcorner" class="PopupWindowBottomRightCorner"&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+
+    &lt;/div&gt;	 
+
+    &lt;!-- Popup dialog with info about bookmarks in Firefox browser --&gt;
+
+    &lt;div id="popup_BookmarkInFirefoxNote" owc:control="PopupWindow" owc:caption="Bookmark info in Firefox browser" owc:contenttype="HTML" owc:createframe="false" owc:preservecontent="false" style="left: 120px; top: 100px; display: none;" class=" PopupWindow Hidden"&gt;
+
+              &lt;div class="PopupWindowFrame PopupWindowResizable"&gt;
+
+            &lt;div class="PopupWindowFrameTop"&gt;
+
+                &lt;div owc:ui="popupwindowtopleftcorner" class="PopupWindowTopLeftCorner"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowtopborder" class="PopupWindowTopBorder"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowtoprightcorner" class="PopupWindowTopRightCorner"&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+            &lt;div class="PopupWindowFrameContent"&gt;
+
+                &lt;div owc:ui="popupwindowcaption" class="PopupWindowCaption"&gt;
+
+                    &lt;div owc:ui="captionleftborder" class="CaptionLeftBorder"&gt;&lt;/div&gt;
+
+                    &lt;div owc:ui="captionrightborder" class="CaptionRightBorder"&gt;&lt;/div&gt;                    
+
+                    &lt;div owc:ui="captioncontent" class="CaptionContent"&gt;&lt;/div&gt;
+
+                    &lt;span owc:ui="popupwindowtitle" class="PopupWindowTitle"&gt;Bookmark info in Firefox browser&lt;/span&gt;
+
+                    &lt;div owc:ui="popupwindowclosebutton" class="PopupWindowClose"&gt;
+
+                        &lt;span class="Label"&gt;Close&lt;/span&gt;
+
+                        &lt;img class="icon" src="styles/images/t.gif" alt=""&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;div class="PopupWindowDragArea"&gt;&lt;/div&gt;                    
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowcontentleftborder" class="PopupWindowContentLeftBorder"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div class="PopupWindowContent"&gt;
+
+                    &lt;div owc:ui="client" class="PopupWindowClient"&gt;
+
+                        &lt;br&gt;      
+
+                        &lt;div&gt;&lt;span id="PopupInfo_Firefox_Bookmarks_Introduction"&gt;By default, selecting a bookmarked page shows it in the Firefox sidebar.&lt;/span&gt;&lt;/div&gt;                        
+
+                        &lt;br&gt;
+
+                        &lt;div&gt;&lt;span id="PopupInfo_Firefox_Bookmarks_Info"&gt;To open a bookmarked page in the main window:&lt;/span&gt;&lt;/div&gt;
+
+                        &lt;div&gt;&lt;span id="PopupInfo_Firefox_Bookmarks_HowTo1"&gt;1. Click the&amp;nbsp;&lt;/span&gt;&lt;span id="PopupInfo_Firefox_Bookmarks_HowTo1_WORD_Bookmarks" class="selected-text"&gt;Bookmarks&amp;nbsp;&lt;/span&gt;&lt;span id="PopupInfo_Firefox_Bookmarks_HowTo1_WORD_menu"&gt;menu,&amp;nbsp;&lt;/span&gt;&lt;span id="PopupInfo_Firefox_Bookmarks_HowTo1_WORD_right_click" class="selected-text"&gt;right-click&amp;nbsp;&lt;/span&gt;&lt;span id="PopupInfo_Firefox_Bookmarks_HowTo1_WORDS"&gt;the bookmark, and select&amp;nbsp;&lt;/span&gt;&lt;span id="PopupInfo_Firefox_Bookmarks_HowTo1_WORD_Properties" class="selected-text"&gt;Properties&lt;/span&gt;.&lt;/div&gt;
+
+                        &lt;div&gt;&lt;span id="PopupInfo_Firefox_Bookmarks_HowTo2"&gt;2. Uncheck&amp;nbsp;&lt;/span&gt;&lt;span id="PopupInfo_Firefox_Bookmarks_HowTo2_WORDS" class="selected-text"&gt;Load this bookmark in the sidebar&lt;/span&gt;.&lt;/div&gt;
+
+                        &lt;div&gt;&lt;span id="PopupInfo_Firefox_Bookmarks_HowTo3"&gt;3. Click&amp;nbsp;&lt;/span&gt;&lt;span id="PopupInfo_Firefox_Bookmarks_WORD_OK" class="selected-text"&gt;OK&lt;/span&gt;.&lt;/div&gt;                            
+
+                        &lt;br&gt;
+
+                        &lt;table&gt;
+
+	                        &lt;tbody&gt;&lt;tr&gt;
+
+		                        &lt;td&gt;
+
+			                        &lt;span owc:control="commandbutton" owc:decorate-with-table="true" owc:command="OK_BookmarkInFirefoxNote" class=" OwcButton"&gt;&lt;table cellspacing="0" cellpadding="0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="OwcButtonLeft"&gt;&lt;img src="http://epaper.abqjournal.com/Olive/WebComponents/Layout/empty.gif" class="OwcPlaceholderImgLeftRight" alt=""&gt;&lt;/td&gt;&lt;td class="OwcButtonBody"&gt;OK&lt;/td&gt;&lt;td class="OwcButtonRight"&gt;&lt;img src="http://epaper.abqjournal.com/Olive/WebComponents/Layout/empty.gif" class="OwcPlaceholderImgLeftRight" alt=""&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/span&gt;
+
+		                        &lt;/td&gt;
+
+	                        &lt;/tr&gt;
+
+	                        &lt;tr&gt;
+
+	                            &lt;td class="notes"&gt; 
+
+			                        &lt;input type="checkbox" owc:control="Value" owc:datatype="Boolean" id="bDoNotAskAgain_BookmarkInFirefoxNote"&gt;
+
+			                        &lt;span id="PopupInfo_Firefox_Bookmarks_Checkbox"&gt;Do not show this window again&lt;/span&gt;
+
+	                            &lt;/td&gt;
+
+	                        &lt;/tr&gt;
+
+                        &lt;/tbody&gt;&lt;/table&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;div owc:ui="mask" class="PopupWindowMask"&gt;
+
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowcontentrightborder" class="PopupWindowContentRightBorder"&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+            &lt;div class="PopupWindowFrameBottom"&gt;
+
+                &lt;div owc:ui="popupwindowbottomleftcorner" class="PopupWindowBottomLeftCorner"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowbottomborder" class="PopupWindowBottomBorder"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowbottomrightcorner" class="PopupWindowBottomRightCorner"&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+
+    &lt;!-- Popup dialog for translation --&gt;
+
+    &lt;div id="popup_translation" owc:control="PopupWindow" owc:contenttype="URL" owc:createframe="false" owc:preservecontent="false" owc:maximal-width-percent="95" owc:maximal-height-percent="95" style="display: none;" class=" PopupWindow Hidden"&gt;
+
+        &lt;div class="PopupWindowFrame PopupWindowResizable"&gt;
+
+            &lt;div class="PopupWindowFrameTop"&gt;
+
+                &lt;div owc:ui="popupwindowtopleftcorner" class="PopupWindowTopLeftCorner"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowtopborder" class="PopupWindowTopBorder"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowtoprightcorner" class="PopupWindowTopRightCorner"&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+            &lt;div class="PopupWindowFrameContent"&gt;
+
+                &lt;div owc:ui="popupwindowcaption" class="PopupWindowCaption"&gt;
+
+                    &lt;div owc:ui="captionleftborder" class="CaptionLeftBorder"&gt;&lt;/div&gt;
+
+                    &lt;div owc:ui="captionrightborder" class="CaptionRightBorder"&gt;&lt;/div&gt;                    
+
+                    &lt;div owc:ui="captioncontent" class="CaptionContent"&gt;&lt;/div&gt;
+
+                    &lt;span owc:ui="popupwindowtitle" class="PopupWindowTitle"&gt;&lt;/span&gt;
+
+                    &lt;div owc:ui="popupwindowclosebutton" class="PopupWindowClose"&gt;
+
+                        &lt;span class="Label"&gt;Close&lt;/span&gt;
+
+                        &lt;img class="icon" src="styles/images/t.gif" alt=""&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;div class="PopupWindowDragArea"&gt;&lt;/div&gt;                    
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowcontentleftborder" class="PopupWindowContentLeftBorder"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div class="PopupWindowContent"&gt;
+
+                    &lt;div owc:ui="client" class="PopupWindowClient"&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;div owc:ui="mask" class="PopupWindowMask"&gt;
+
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowcontentrightborder" class="PopupWindowContentRightBorder"&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+            &lt;div class="PopupWindowFrameBottom"&gt;
+
+                &lt;div owc:ui="popupwindowbottomleftcorner" class="PopupWindowBottomLeftCorner"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowbottomborder" class="PopupWindowBottomBorder"&gt;
+
+                &lt;/div&gt;
+
+                &lt;div owc:ui="popupwindowbottomrightcorner" class="PopupWindowBottomRightCorner"&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+        &lt;/div&gt;            
+
+    &lt;/div&gt;
+
+    &lt;script language="javascript" type="text/javascript" src="/Olive/WebComponents/OwcFlashViewer.js"&gt;&lt;/script&gt;
+
+    &lt;script language="javascript" type="text/javascript" src="/Olive/WebComponents/OwcDocViewerAgg.js"&gt;&lt;/script&gt;	
+
+    &lt;script language="javascript" type="text/javascript" src="/Olive/WebComponents/OwcPopupWindow.js"&gt;&lt;/script&gt;
+
+    &lt;script language="javascript" type="text/javascript" src="/Olive/WebComponents/OwcPrintForm.js"&gt;&lt;/script&gt;	
+
+    &lt;script language="javascript" type="text/javascript" src="/Olive/WebComponents/OwcThumbList.js"&gt;&lt;/script&gt;
+
+    &lt;script language="javascript" type="text/javascript" src="/Olive/WebComponents/OwcPublicationDatetime.js"&gt;&lt;/script&gt;
+
+    &lt;script language="javascript" type="text/javascript" src="/Olive/WebComponents/OwcMagnifier.js"&gt;&lt;/script&gt;		   
+
+    &lt;script language="javascript" type="text/javascript" src="Default.aspx.js"&gt;&lt;/script&gt;
+
+
+
+
+&lt;/body&gt;&lt;/html&gt;</raw_content>
+
+

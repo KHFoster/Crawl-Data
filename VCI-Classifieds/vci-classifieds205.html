@@ -1,0 +1,1976 @@
+<raw_content>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;&lt;head&gt;&lt;title&gt;VCI Classifieds - Buy, Sell, Trade... Locally&lt;/title&gt;
+
+&lt;link rel="apple-touch-icon" href="/apple-touch-icon-precomposed.png"&gt;
+
+&lt;meta property="fb:admins" content="1128387145"&gt;
+
+&lt;!-- 81F311A5-1E23-4208-84D5-29263F6185F6 --&gt;
+
+&lt;link rel="stylesheet" type="text/css" href="/stylesheet.css?a=1"&gt;
+
+&lt;script id="facebook-jssdk" src="//connect.facebook.net/en_US/sdk.js#xfbml=1&amp;amp;version=v2.3&amp;amp;appId=210589908993150" style=""&gt;&lt;/script&gt;&lt;script async="" src="//www.google-analytics.com/analytics.js"&gt;&lt;/script&gt;&lt;script type="text/javascript" src="/js/jquery.min.js"&gt;&lt;/script&gt;
+
+&lt;script type="text/javascript" src="/js/jquery.cookie.js"&gt;&lt;/script&gt;
+
+&lt;script type="text/javascript" src="/js/a.js?1=1"&gt;&lt;/script&gt;
+
+&lt;script type="text/javaScript" src="/js/overlib.js"&gt;&lt;/script&gt;
+
+&lt;script type="text/javascript" src="/js/ddmegamenu.js"&gt;&lt;/script&gt;
+
+&lt;script language="JavaScript"&gt;
+
+
+
+  function CheckQuery()
+
+    {
+
+     var url = window.location.href;
+
+     var hash = url.substring(url.indexOf('#')+1);
+
+     if ( !isNaN(hash) &amp;&amp; hash &gt; 0 )
+
+        { GetAd(hash) }
+
+    }
+
+
+
+  function ToggleMenu(opt)
+
+    {
+
+     if ( opt == "Login" )
+
+        { 
+
+         document.getElementById("existingtable").className = "showdiv";
+
+         document.getElementById("newtable").className = "hidediv";
+
+         document.getElementById("existinghref").className = "focusbutton";
+
+         document.getElementById("newhref").className = "blurbutton";
+
+        }
+
+     else
+
+        {
+
+         document.getElementById("newtable").className = "showdiv";
+
+         document.getElementById("existingtable").className = "hidediv";
+
+         document.getElementById("existinghref").className = "blurbutton";
+
+         document.getElementById("newhref").className = "focusbutton";
+
+        }
+
+     return (false);
+
+    }
+
+
+
+  function ToggleTrends(opt)
+
+    {
+
+     if ( opt == "popcat" )
+
+        {
+
+         document.getElementById("popcatdiv").className = "showdiv";
+
+         document.getElementById("numvisdiv").className = "hidediv";
+
+         document.getElementById("recseadiv").className = "hidediv";
+
+         document.getElementById("popcattd").className = "focusbutton";
+
+         document.getElementById("numvistd").className = "blurbutton";
+
+         document.getElementById("recseatd").className = "blurbutton";
+
+        }
+
+     else if ( opt == "recsea" )
+
+        {
+
+         document.getElementById("popcatdiv").className = "hidediv";
+
+         document.getElementById("numvisdiv").className = "hidediv";
+
+         document.getElementById("recseadiv").className = "showdiv";
+
+         document.getElementById("popcattd").className = "blurbutton";
+
+         document.getElementById("numvistd").className = "blurbutton";
+
+         document.getElementById("recseatd").className = "focusbutton";
+
+        }
+
+     else if ( opt == "numvis" )
+
+        {
+
+         document.getElementById("popcatdiv").className = "hidediv";
+
+         document.getElementById("numvisdiv").className = "showdiv";
+
+         document.getElementById("recseadiv").className = "hidediv";
+
+         document.getElementById("popcattd").className = "blurbutton";
+
+         document.getElementById("numvistd").className = "focusbutton";
+
+         document.getElementById("recseatd").className = "blurbutton";
+
+        }
+
+     return (false);
+
+    }
+
+
+
+  function Validate()
+
+    {
+
+     if ( document.loginform.email.value == "" )
+
+        {
+
+         alert("Please enter your email address.");
+
+         document.loginform.email.focus();
+
+         return (false);
+
+        }
+
+     var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+     if ( !filter.test(document.loginform.email.value) )
+
+        {
+
+         alert("This does not appear to be a valid email address.");
+
+         document.loginform.email.focus();
+
+         return (false);
+
+        }
+
+     if ( document.loginform.password.value == "" )
+
+        {
+
+         alert("Please enter your password.");
+
+         document.loginform.password.focus();
+
+         return (false);
+
+        }
+
+     return (true);
+
+    }
+
+&lt;/script&gt;
+
+   &lt;style&gt;
+
+     .focusbutton { font-size:12px;text-decoration:none;float:none;margin:1px 0px 0 0;font-weight:bold; padding:2px 6px 2px;color:#000;text-shadow:0 1px 0 #fff;background-color:#cecece;background-image:-moz-linear-gradient(bottom,#f9f9f9, #cecece);background-image:-webkit-gradient(linear,left bottom,left top,from(#cecece),to(#cecece));border-bottom:1pt solid black }
+
+     .blurbutton { font-size:12px;text-decoration:none;float:none;margin:1px 0px 0 0;padding:2px 6px 2px;color:#000;text-shadow:0 1px 0 #fff;background-color:#ffffff; border-bottom:1pt solid black }
+
+   &lt;/style&gt;
+
+&lt;style type="text/css"&gt;.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset&gt;div{overflow:hidden}.fb_link img{border:none}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f6f7f9;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title&gt;span{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{width:auto;height:auto;min-height:initial;min-width:initial;background:none}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{color:#fff;display:block;padding-top:20px;clear:both;font-size:18px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;bottom:0;left:0;right:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29487d;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f9;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v2/yD/r/t-wz8gw1xG1.png);background-repeat:no-repeat;background-position:50% 50%;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}&lt;/style&gt;&lt;script type="text/javascript" charset="UTF-8" src="https://maps.google.com/maps-api-v3/api/js/25/9/common.js"&gt;&lt;/script&gt;&lt;script type="text/javascript" charset="UTF-8" src="https://maps.google.com/maps-api-v3/api/js/25/9/util.js"&gt;&lt;/script&gt;&lt;script type="text/javascript" charset="UTF-8" src="https://maps.google.com/maps-api-v3/api/js/25/9/stats.js"&gt;&lt;/script&gt;&lt;script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps/api/js/AuthenticationService.Authenticate?1shttps%3A%2F%2Fwww.vci-classifieds.com%2F%3Fmatch%3Dexact%26searchtext%3D%2B&amp;amp;callback=_xdc_._e0deij&amp;amp;token=33362"&gt;&lt;/script&gt;&lt;/head&gt;
+
+
+
+&lt;body onload="CheckQuery()" link="#0000ff" vlink="#0000ff" alink="#0000dd"&gt;
+
+
+
+&lt;script type="text/javascript" src="https://maps.google.com/maps/api/js"&gt;&lt;/script&gt;
+
+&lt;table width="100%" align="center" bgcolor="#ffffff" style="border-bottom: 2px solid #000000" cellpadding="0" cellspacing="0"&gt;
+
+&lt;tbody&gt;&lt;tr&gt;&lt;td align="center"&gt;
+
+&lt;table width="965" align="center" bgcolor="#ffffff" cellpadding="0" cellspacing="0"&gt;
+
+&lt;tbody&gt;&lt;tr&gt;
+
+  &lt;td valign="top" width="648"&gt;&lt;img alt="VCI Classifieds" src="/Images/poweredby.jpg"&gt;&lt;/td&gt;
+
+  &lt;td align="right" valign="top" width="317"&gt;
+
+
+
+&lt;div style="float:left; height:50px"&gt;
+
+&lt;font size="2" face="verdana"&gt;
+
+
+
+&lt;font face="verdana" size="2"&gt;&lt;b&gt;Online Users:&lt;/b&gt; 112&lt;br&gt;&lt;b&gt;Users Logged In:&lt;/b&gt; 13&lt;/font&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style="height:50px"&gt;&lt;br&gt;&lt;a id="mymenulink" style="background-color:#27E20E;padding:2px;color:#000000;font-family:verdana;font-size:10pt" href="Javascript:DisplayLogin()" rel="mymenumenu"&gt;&lt;b&gt;Login&lt;/b&gt;&lt;img src="/Images/arrow-black.gif" border="0"&gt;&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;a href="/signup.php"&gt;&lt;font size="2" face="verdana"&gt;Signup&lt;/font&gt;&lt;/a&gt;
+
+&lt;/div&gt;
+
+&lt;br&gt;
+
+  &lt;form action="/search.php" method="GET" style="margin:2px" onsubmit="if (this.searchtext.value.length &amp;lt; 2) { alert('Search text must contain at least 2 characters');  return (false); }"&gt;
+
+  &lt;input type="hidden" name="match" value="exact"&gt;
+
+  &lt;input type="text" name="searchtext" size="15" style="font-family:verdana;font-size:8pt"&gt;
+
+  &lt;input type="submit" value="Quick Search »" style="font-family:verdana;font-size:8pt"&gt;
+
+  &lt;/form&gt;
+
+&lt;/td&gt;&lt;/tr&gt;
+
+&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+
+
+
+&lt;script type="text/javascript" src="/js/jquery.cookie.js"&gt;&lt;/script&gt;
+
+&lt;div id="fb-root" class=" fb_reset"&gt;&lt;div style="position: absolute; top: -10000px; height: 0px; width: 0px;"&gt;&lt;div&gt;&lt;iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="https://staticxx.facebook.com/connect/xd_arbiter/r/bz-D0tzmBsw.js?version=42#channel=f12dde5e94&amp;amp;origin=https%3A%2F%2Fwww.vci-classifieds.com" style="border: none;"&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style="position: absolute; top: -10000px; height: 0px; width: 0px;"&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;script&gt;
+
+(function(d, s, id) {
+
+  var js, fjs = d.getElementsByTagName(s)[0];
+
+  if (d.getElementById(id)) return;
+
+  js = d.createElement(s); js.id = id;
+
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v2.3&amp;appId=210589908993150";
+
+  fjs.parentNode.insertBefore(js, fjs);
+
+}(document, 'script', 'facebook-jssdk'));
+
+&lt;/script&gt;
+
+
+
+&lt;table bgcolor="#DE0705" background="/Images/bg-red.jpg" border="0" align="center" width="965" cellpadding="3" cellspacing="0" style="font-family:verdana;font-size:8pt;"&gt;
+
+&lt;tbody&gt;&lt;tr&gt;
+
+	&lt;td height="25"&gt;
+
+	&lt;a href="/" style="color:#ffffcf"&gt;&lt;b&gt;Home&lt;/b&gt;&lt;/a&gt;
+
+	&amp;nbsp; | &amp;nbsp; 
+
+	&lt;a id="categorylink" style="color:#ffffcf" href="#" rel="categorymenu"&gt;&lt;b&gt;Ad Categories &lt;/b&gt;&lt;img src="/Images/arrow-red.gif" border="0"&gt;&lt;/a&gt;
+
+	&amp;nbsp; | &amp;nbsp; 
+
+	&lt;a href="/mail.php" style="color:#ffffcf"&gt;&lt;b&gt;Contact VCI&lt;/b&gt;&lt;/a&gt;
+
+	&amp;nbsp; | &amp;nbsp; 
+
+	&lt;a href="/directory.php" style="color:#ffffcf" id="prodirectorylink" rel="prodirectorymenu"&gt;&lt;b&gt;Pro Directory&lt;/b&gt; &lt;img src="/Images/arrow-red.gif" border="0"&gt;&lt;/a&gt;
+
+	&amp;nbsp; | &amp;nbsp; 
+
+	&lt;a id="helplink" style="color:#ffffcf" href="#" rel="helpmenu"&gt;&lt;b&gt;Help &lt;img src="/Images/arrow-red.gif" border="0"&gt;&lt;/b&gt;&lt;/a&gt;
+
+	&lt;/td&gt;
+
+	&lt;td align="right"&gt;
+
+	&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;tr&gt;&lt;td bgcolor="green"&gt;&lt;font color="white"&gt;&lt;b&gt;Quick Links:&lt;/b&gt; &lt;a href="/" class="quicklink"&gt;Top 25&lt;/a&gt; / &lt;a href="Javascript:ShowAllCats()" class="quicklink"&gt;Categories&lt;/a&gt; / &lt;a href="/search.php" class="quicklink"&gt;Search Ads&lt;/a&gt; / &lt;a href="javascript:GetCategoryDirector('Recent')" class="quicklink"&gt;Recent Ads&lt;/a&gt; / &lt;a href="/myfavactivity.php" class="quicklink"&gt;Favorite User Activity&lt;/a&gt; / &lt;a href="/maps.php" class="quicklink"&gt;Category Map&lt;/a&gt;  &lt;/font&gt;&lt;/td&gt;&lt;td bgcolor="green" align="right"&gt;
+
+
+
+
+
+&lt;/td&gt;&lt;/tr&gt;
+
+&lt;/tbody&gt;&lt;/table&gt;
+
+
+
+
+
+
+
+
+
+&lt;script language="Javascript"&gt;
+
+ddmegamenu.docinit({
+
+        menuid:'categorylink',
+
+        dur:500,
+
+        easing:'easeInOutCirc',
+
+	trigger:'click'
+
+})
+
+&lt;/script&gt;
+
+
+
+
+
+&lt;script language="Javascript"&gt;
+
+ddmegamenu.docinit({
+
+        menuid:'helplink',
+
+        dur:500,
+
+        easing:'easeInOutCirc',
+
+	trigger:'click'
+
+})
+
+&lt;/script&gt;
+
+
+
+
+
+
+
+
+
+
+
+&lt;script language="Javascript"&gt;
+
+ddmegamenu.docinit({
+
+        menuid:'prodirectorylink',
+
+        dur:500,
+
+        easing:'easeInOutCirc',
+
+	trigger:'click'
+
+})
+
+&lt;/script&gt;
+
+
+
+    &lt;div id="container"&gt;
+
+    &lt;div class="hidediv" id="loginpopupdiv"&gt;
+
+       &lt;table width="400" cellpadding="2" cellspacing="0" style="font-size:10pt;font-family:verdana"&gt;
+
+       &lt;form name="loginpopupform" action="#" method="POST" onsubmit="return JSONValidate(this)"&gt;&lt;/form&gt;
+
+       &lt;tbody&gt;&lt;tr&gt;&lt;td colspan="2" align="right"&gt;&lt;a href="Javascript:$('#loginpopupdiv').hide();grayOut(false)"&gt;&lt;b&gt;X&lt;/b&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+
+       &lt;tr&gt;&lt;td bgcolor="#efefef" colspan="2" align="center"&gt;&lt;font size="3"&gt;&lt;b&gt;Please Login&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+
+       &lt;input type="hidden" name="redirect" value=""&gt;
+
+       &lt;input type="hidden" name="login" value="1"&gt;
+
+       &lt;tr&gt;&lt;td width="30%" align="right"&gt;&lt;b&gt;Email Address:&lt;/b&gt;&lt;/td&gt;&lt;td width="70%"&gt;&lt;input type="text" name="email" size="30" maxlength="50" onblur="this.value=this.value.replace(/\s+/g, '')"&gt;&lt;/td&gt;&lt;/tr&gt;
+
+       &lt;tr&gt;&lt;td align="right"&gt;&lt;b&gt;Password:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;input type="password" name="password" size="20" maxlength="40"&gt;&lt;/td&gt;&lt;/tr&gt;
+
+       &lt;tr&gt;&lt;td colspan="2" align="center"&gt;&lt;br&gt;&lt;input type="submit" value="Login »"&gt;&lt;/td&gt;&lt;/tr&gt;
+
+       &lt;tr&gt;&lt;td align="center" colspan="2"&gt;&lt;a href="/signup.php?forgotpassword=1"&gt;&lt;font size="1"&gt;Forgot password?&lt;/font&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+
+       &lt;tr&gt;&lt;td colspan="2" align="center"&gt;&lt;span id="loginerror"&gt;&lt;br&gt;&lt;h3&gt;New Account Signup&lt;/h3&gt;&lt;p align="left"&gt;You must signup to place ads, reply to ads or advertise with a text banner. Signup only takes a few minutes. A valid email address is required. The following account types are available:&lt;/p&gt;&lt;p align="left"&gt;&lt;/p&gt;&lt;li&gt;&lt;b&gt;Classic Account&lt;/b&gt; - Free account after $5.99 signup fee.&lt;br&gt;&lt;/li&gt;&lt;li&gt;&lt;b&gt;Pro Account&lt;/b&gt; - $9.99/month paid quarterly ($29.97)&lt;br&gt;&lt;br&gt;&lt;a href="/signup.php"&gt;Signup&lt;/a&gt; &amp;nbsp; &amp;nbsp; &amp;nbsp; | &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;a href="/accounts.php"&gt;All Account Details&lt;/a&gt;&lt;p&gt;&lt;/p&gt;&lt;/li&gt;&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;
+
+       
+
+       &lt;/tbody&gt;&lt;/table&gt;
+
+    &lt;/div&gt;
+
+    &lt;/div&gt;
+
+
+
+&lt;table border="0" width="965" bgcolor="#ffffff" align="center" cellpadding="2" cellspacing="0" style="font-size:8pt;font-family:verdana"&gt;
+
+&lt;tbody&gt;&lt;tr&gt;&lt;td bgcolor="#ffffff" valign="top"&gt;
+
+&lt;div id="content" class="hidediv"&gt;&lt;/div&gt;
+
+&lt;div id="adlist" class="showdiv"&gt;
+
+&lt;table border="0" width="100%" cellpadding="0" cellspacing="0"&gt;
+
+&lt;tbody&gt;&lt;tr&gt;&lt;td width="50%" valign="top"&gt;
+
+
+
+&lt;table width="100%" cellpadding="0" cellspacing="0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="header" align="center"&gt;&lt;img src="/Images/top25.gif" style="vertical-align:middle"&gt; &amp;nbsp; Today's Top 25 Ads&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+
+
+
+&lt;table border="0" bgcolor="#efefef" cellpadding="2" cellspacing="0" width="100%" style="font-size:8pt"&gt;
+
+&lt;tbody&gt;&lt;tr onclick="Javascript:GetAd('872875')" onmouseover="$(this).addClass('yellow')" onmouseout="$(this).removeClass('yellow')" class="gray"&gt;&lt;td width="75"&gt;&lt;img src="/thumbs/100x100/54817/54817-009-1469102713.jpg" width="100" height="100" border="0"&gt;&lt;/td&gt;&lt;td width="377"&gt;&lt;a href="Javascript:GetAd(872875)"&gt;&lt;b&gt;2013 JOHN DEERE 1025R 4X4 LOADER BELLY MOWER WITH 390HR&lt;/b&gt;&lt;/a&gt;&lt;br&gt;$12,600.00 -  Calvert City, KY&lt;br&gt;&lt;i&gt;&lt;span id="span1" class="showdiv"&gt;1 OWNER - LIKE NEW 1025R JOHN DEERE 4X4 WITH HYDROSTAT TRANS, 3PT HITCH, TILT STEERING, AND QUICK ATTACH LOADER.  JUST HAD ALL OIL CHANGED AND BLADES SHARPENED.  THIS IS A MOW...&lt;/span&gt;&lt;/i&gt;&lt;/td&gt;
+
+&lt;/tr&gt;&lt;tr onclick="Javascript:GetAd('872873')" onmouseover="$(this).addClass('yellow')" onmouseout="$(this).removeClass('yellow')" class="blue"&gt;&lt;td width="75"&gt;&lt;img src="/thumbs/100x100/31363/31363-image-1468277831.jpeg" width="100" height="100" border="0"&gt;&lt;/td&gt;&lt;td width="377"&gt;&lt;a href="Javascript:GetAd(872873)"&gt;&lt;b&gt;Kimber 8400 Advanced Tactical .300 Win. Mag.&lt;/b&gt;&lt;/a&gt;&lt;br&gt;$1,800.00 -  Murray, KY&lt;br&gt;&lt;i&gt;&lt;span id="span2" class="showdiv"&gt;Last chance for a Kimber 8400 Advanced Tactical in .300 Win. Mag.. This gun has been shot 47 times since I purchased it new and it would still pass as a new gun. Priced to inc...&lt;/span&gt;&lt;/i&gt;&lt;/td&gt;
+
+&lt;/tr&gt;&lt;tr onclick="Javascript:GetAd('872895')" onmouseover="$(this).addClass('yellow')" onmouseout="$(this).removeClass('yellow')" class="gray"&gt;&lt;td width="75"&gt;&lt;img src="/thumbs/100x100/60717/Pontoon.jpg" width="100" height="100" border="0"&gt;&lt;/td&gt;&lt;td width="377"&gt;&lt;a href="Javascript:GetAd(872895)"&gt;&lt;b&gt;2007 Manitou Oasis 23 SHP Tritoon&lt;/b&gt;&lt;/a&gt;&lt;br&gt;$23,000.00 -  Calvert City, KY&lt;br&gt;&lt;i&gt;&lt;span id="span3" class="showdiv"&gt;2007 Manitou Oasis 23 SHP 24ft Tritoon with 2014 trailer. Boat has been completely restored from the deck up. It is a completely one off Tritoon. There is not another boat on ...&lt;/span&gt;&lt;/i&gt;&lt;/td&gt;
+
+&lt;/tr&gt;&lt;tr onclick="Javascript:GetAd('872889')" onmouseover="$(this).addClass('yellow')" onmouseout="$(this).removeClass('yellow')" class="blue"&gt;&lt;td width="75"&gt;&lt;img src="/thumbs/100x100/39669/39669-dscn5510-1469066449.jpg" width="100" height="100" border="0"&gt;&lt;/td&gt;&lt;td width="377"&gt;&lt;a href="Javascript:GetAd(872889)"&gt;&lt;b&gt;NICE  STAINLESS   STEEL   TABLE&lt;/b&gt;&lt;/a&gt;&lt;br&gt;$225.00 -  Paducah, KY&lt;br&gt;&lt;i&gt;&lt;span id="span4" class="showdiv"&gt;8' STAINLESS PREP TABLE WITH SHELF'S, GOOD COND. ONLY $225.00 CASH CALL (270)443-8136&lt;/span&gt;&lt;/i&gt;&lt;/td&gt;
+
+&lt;/tr&gt;&lt;tr onclick="Javascript:GetAd('872893')" onmouseover="$(this).addClass('yellow')" onmouseout="$(this).removeClass('yellow')" class="gray"&gt;&lt;td width="75"&gt;&lt;img src="/thumbs/100x100/47585/47585-mh2-1469109623.jpg" width="100" height="100" border="0"&gt;&lt;/td&gt;&lt;td width="377"&gt;&lt;a href="Javascript:GetAd(872893)"&gt;&lt;b&gt;1998 Fleetwood Mobile Home 16x80&lt;/b&gt;&lt;/a&gt;&lt;br&gt;$6,500.00 -  Almo, KY&lt;br&gt;&lt;i&gt;&lt;span id="span5" class="showdiv"&gt;For Sale:
+
+
+
+1998 Fleetwood Sunpointe 16x80 mobile home.  3 bedroom 2 bath with a separate utility room.  Mobile Home comes with both porches, washer and dryer, and working AC...&lt;/span&gt;&lt;/i&gt;&lt;/td&gt;
+
+&lt;/tr&gt;&lt;tr onclick="Javascript:GetAd('872874')" onmouseover="$(this).addClass('yellow')" onmouseout="$(this).removeClass('yellow')" class="blue"&gt;&lt;td width="75"&gt;&lt;img src="/thumbs/100x100/36751/36751-unknown-1-1468207161.jpeg" width="100" height="100" border="0"&gt;&lt;/td&gt;&lt;td width="377"&gt;&lt;a href="Javascript:GetAd(872874)"&gt;&lt;b&gt;weathertech  mats&lt;/b&gt;&lt;/a&gt;&lt;br&gt;$100.00 -  Princeton, KY&lt;br&gt;&lt;i&gt;&lt;span id="span6" class="showdiv"&gt;front  and middle buckets weather tech for 2013 tahoe  tan like new  100.00 270-871-6865&lt;/span&gt;&lt;/i&gt;&lt;/td&gt;
+
+&lt;/tr&gt;&lt;tr onclick="Javascript:GetAd('872901')" onmouseover="$(this).addClass('yellow')" onmouseout="$(this).removeClass('yellow')" class="gray"&gt;&lt;td width="75"&gt;&lt;img src="/thumbs/100x100/37520/37520-039-1469110701.jpg" width="100" height="100" border="0"&gt;&lt;/td&gt;&lt;td width="377"&gt;&lt;a href="Javascript:GetAd(872901)"&gt;&lt;b&gt;High Pressure Sodium light fixtures&lt;/b&gt;&lt;/a&gt;&lt;br&gt;$15.00 -  Barlow, KY&lt;br&gt;&lt;i&gt;&lt;span id="span7" class="showdiv"&gt;we have 110 - 150 Watt High Pressure Sodium light fixtures.  &lt;/span&gt;&lt;/i&gt;&lt;/td&gt;
+
+&lt;/tr&gt;&lt;tr onclick="Javascript:GetAd('865732')" onmouseover="$(this).addClass('yellow')" onmouseout="$(this).removeClass('yellow')" class="blue"&gt;&lt;td width="75"&gt;&lt;img src="/thumbs/100x100/39632/39632-img_20160621_110504227-1466647668.jpg" width="100" height="100" border="0"&gt;&lt;/td&gt;&lt;td width="377"&gt;&lt;a href="Javascript:GetAd(865732)"&gt;&lt;b&gt;True refrigerated prep table&lt;/b&gt;&lt;/a&gt;&lt;br&gt;$1,000.00 -  Benton, KY&lt;br&gt;&lt;i&gt;&lt;span id="span8" class="showdiv"&gt;For sale is a True 48in refrigerated prep table. 48 in wide includes twelve pans and cross bars.  $1000.00
+
+Machine is in good working order.  2702274598&lt;/span&gt;&lt;/i&gt;&lt;/td&gt;
+
+&lt;/tr&gt;&lt;tr onclick="Javascript:GetAd('872887')" onmouseover="$(this).addClass('yellow')" onmouseout="$(this).removeClass('yellow')" class="gray"&gt;&lt;td width="75"&gt;&lt;img src="/thumbs/100x100/35371/35371-img_0342-1469106703.jpg" width="100" height="100" border="0"&gt;&lt;/td&gt;&lt;td width="377"&gt;&lt;a href="Javascript:GetAd(872887)"&gt;&lt;b&gt;COUCH and Matching CHAIR  Excellent Condition&lt;/b&gt;&lt;/a&gt;&lt;br&gt;$450.00 -  Mayfield, KY&lt;br&gt;&lt;i&gt;&lt;span id="span9" class="showdiv"&gt;This is a new looking excellent condition Couch and matching Chair. I bought this set from Gillium Thompson at Mayfield and it hasn't been used much at all since it is in my f...&lt;/span&gt;&lt;/i&gt;&lt;/td&gt;
+
+&lt;/tr&gt;&lt;tr onclick="Javascript:GetAd('872892')" onmouseover="$(this).addClass('yellow')" onmouseout="$(this).removeClass('yellow')" class="blue"&gt;&lt;td width="75"&gt;&lt;img src="/thumbs/100x100/8048/8048-dscn27781-1469108611.jpg" width="100" height="100" border="0"&gt;&lt;/td&gt;&lt;td width="377" class="prouser"&gt;&lt;a href="Javascript:GetAd(872892)"&gt;&lt;b&gt;Polaris Of Benton 16 Honda Pioneer 1000 Deluxe-5&lt;/b&gt;&lt;/a&gt;&lt;br&gt;$13,999.00 -  Benton, KY&lt;br&gt;&lt;i&gt;&lt;span id="span10" class="showdiv"&gt;This is a Honda Pioneer 1000 deluxe-5.This machine is manul or auto. 2 OR 4wd.The back adds as a bed or extra room for passengers with fold down seats.Includes HIghlifter high...&lt;/span&gt;&lt;/i&gt;&lt;/td&gt;
+
+&lt;/tr&gt;&lt;tr onclick="Javascript:GetAd('872876')" onmouseover="$(this).addClass('yellow')" onmouseout="$(this).removeClass('yellow')" class="gray"&gt;&lt;td width="75"&gt;&lt;img src="/thumbs/100x100/22151/22151-img_7969-1469103385.jpeg" width="100" height="100" border="0"&gt;&lt;/td&gt;&lt;td width="377"&gt;&lt;a href="Javascript:GetAd(872876)"&gt;&lt;b&gt;BUSH HOG RDTH Finish Mower 72"&lt;/b&gt;&lt;/a&gt;&lt;br&gt;$1,400.00 -  Cunningham, KY&lt;br&gt;&lt;i&gt;&lt;span id="span11" class="showdiv"&gt;BUSH HOG RDTH 72" finish mower. Call or Txt 270.562.0615 with any questions.
+
+
+
+Price: $1400.00&lt;/span&gt;&lt;/i&gt;&lt;/td&gt;
+
+&lt;/tr&gt;&lt;tr onclick="Javascript:GetAd('872886')" onmouseover="$(this).addClass('yellow')" onmouseout="$(this).removeClass('yellow')" class="blue"&gt;&lt;td width="75"&gt;&lt;img src="/thumbs/100x100/49491/49491-image-1469107551.jpeg" width="100" height="100" border="0"&gt;&lt;/td&gt;&lt;td width="377"&gt;&lt;a href="Javascript:GetAd(872886)"&gt;&lt;b&gt;1998 Honda Civic LX&lt;/b&gt;&lt;/a&gt;&lt;br&gt;$1,250.00 -  Benton, KY&lt;br&gt;&lt;i&gt;&lt;span id="span12" class="showdiv"&gt;1998 Honda Civic LX 211,000 miles no AC clean interior no mechanical issues 
+
+I have owned the car for 14 years with no issues except AC, but I haven't tried to fix it. I'm ve...&lt;/span&gt;&lt;/i&gt;&lt;/td&gt;
+
+&lt;/tr&gt;&lt;tr onclick="Javascript:GetAd('859749')" onmouseover="$(this).addClass('yellow')" onmouseout="$(this).removeClass('yellow')" class="gray"&gt;&lt;td width="75"&gt;&lt;img src="/thumbs/100x100/20634/20634-20150507_154009-1464641123.jpg" width="100" height="100" border="0"&gt;&lt;/td&gt;&lt;td width="377"&gt;&lt;a href="Javascript:GetAd(859749)"&gt;&lt;b&gt;Square Baled Hay&lt;/b&gt;&lt;/a&gt;&lt;br&gt; Benton, KY&lt;br&gt;&lt;i&gt;&lt;span id="span13" class="showdiv"&gt;Orchard grass, clover and timothy. Baled 5/24/16  Never rained on. My horses love it. Large bales,you will get your monies worth.Fairdealing area
+
+$5.00 a bale
+
+Jerry
+
+H 270 3...&lt;/span&gt;&lt;/i&gt;&lt;/td&gt;
+
+&lt;/tr&gt;&lt;tr onclick="Javascript:GetAd('872894')" onmouseover="$(this).addClass('yellow')" onmouseout="$(this).removeClass('yellow')" class="blue"&gt;&lt;td width="75"&gt;&lt;img src="/thumbs/100x100/18700/18700-img-0592_orig-1469110372.jpg" width="100" height="100" border="0"&gt;&lt;/td&gt;&lt;td width="377" class="prouser"&gt;&lt;a href="Javascript:GetAd(872894)"&gt;&lt;b&gt;Must see Lifted EZGO Gas Street Ready 4 pass golf cart&lt;/b&gt;&lt;/a&gt;&lt;br&gt;$5,995.00 -  Makanda, IL&lt;br&gt;&lt;i&gt;&lt;span id="span14" class="showdiv"&gt;One of a kind Lifted E-Z GO Gas Street Ready 4 pass golf cart
+
+www.bbgolfcarts.com
+
+2010 Custom E-Z GO TXT with 13 hp Kawasaki motor, custom airbrushed body, new 6" lift, new ...&lt;/span&gt;&lt;/i&gt;&lt;/td&gt;
+
+&lt;/tr&gt;&lt;tr onclick="Javascript:GetAd('872903')" onmouseover="$(this).addClass('yellow')" onmouseout="$(this).removeClass('yellow')" class="gray"&gt;&lt;td width="75"&gt;&lt;img src="/thumbs/100x100/34521/34521-image-1469111449.jpeg" width="100" height="100" border="0"&gt;&lt;/td&gt;&lt;td width="377"&gt;&lt;a href="Javascript:GetAd(872903)"&gt;&lt;b&gt;Suzuki RM 250 Two Stroke &lt;/b&gt;&lt;/a&gt;&lt;br&gt;$2,000.00 -  Benton, KY&lt;br&gt;&lt;i&gt;&lt;span id="span15" class="showdiv"&gt;FOR SALE: Suzuki RM 250 Two stroke. Great condition. Ready to ride. Will consider trades for a decent running motorcycle or fourwheeler. Call or text 270-205-5701. &lt;/span&gt;&lt;/i&gt;&lt;/td&gt;
+
+&lt;/tr&gt;&lt;tr onclick="Javascript:GetAd('872913')" onmouseover="$(this).addClass('yellow')" onmouseout="$(this).removeClass('yellow')" class="blue"&gt;&lt;td width="75"&gt;&lt;img src="/thumbs/100x100/9373/9373-img_34731-1469112950.jpg" width="100" height="100" border="0"&gt;&lt;/td&gt;&lt;td width="377" class="prouser"&gt;&lt;a href="Javascript:GetAd(872913)"&gt;&lt;b&gt;2005 CHEVROLET 1500 4X4 Z71&lt;/b&gt;&lt;/a&gt;&lt;br&gt;$15,800.00 -  Paducah, KY&lt;br&gt;&lt;i&gt;&lt;span id="span16" class="showdiv"&gt;2005 CHEVROLET 1500 LT 4X4 Z71&amp;nbsp;5.3 ENGINE WITH 146000 MILES. FULLY LOADED EXCEPT MOON ROOF. KENWOOD RECEIVER WITH NAVAGATION, BLUETOOTH AND BOTH HEADRESTS HAVE MONITORS S...&lt;/span&gt;&lt;/i&gt;&lt;/td&gt;
+
+&lt;/tr&gt;&lt;tr onclick="Javascript:GetAd('872918')" onmouseover="$(this).addClass('yellow')" onmouseout="$(this).removeClass('yellow')" class="gray"&gt;&lt;td width="75"&gt;&lt;img src="/thumbs/100x100/26418/26418-sureshot8701-1467306286.jpg" width="100" height="100" border="0"&gt;&lt;/td&gt;&lt;td width="377"&gt;&lt;a href="Javascript:GetAd(872918)"&gt;&lt;b&gt;Remington 870 Sure Shot Camo Stock&lt;/b&gt;&lt;/a&gt;&lt;br&gt; Murray, KY&lt;br&gt;&lt;i&gt;&lt;span id="span17" class="showdiv"&gt;Remington 12 ga. Sure Shot Stock and forearm.  Like new in mossy oak green camo, boxed, Fits Remington 870 12 ga.  $65  email bowace1@aol.com or reply via VCI.&lt;/span&gt;&lt;/i&gt;&lt;/td&gt;
+
+&lt;/tr&gt;&lt;tr onclick="Javascript:GetAd('872885')" onmouseover="$(this).addClass('yellow')" onmouseout="$(this).removeClass('yellow')" class="blue"&gt;&lt;td width="75"&gt;&lt;img src="/thumbs/100x100/39669/39669-dscn5601-1469066261.jpg" width="100" height="100" border="0"&gt;&lt;/td&gt;&lt;td width="377"&gt;&lt;a href="Javascript:GetAd(872885)"&gt;&lt;b&gt;JEEP  LIBERTY  WHEELS &amp;amp; TIRES&lt;/b&gt;&lt;/a&gt;&lt;br&gt;$135.00 -  Paducah, KY&lt;br&gt;&lt;i&gt;&lt;span id="span18" class="showdiv"&gt;JEEP LIBERTY TIRES &amp;amp; WHEELS WITH CENTER CAPS, SIZE 235/70/R16 $135.00 CASH CALL (270)443-8136&lt;/span&gt;&lt;/i&gt;&lt;/td&gt;
+
+&lt;/tr&gt;&lt;tr onclick="Javascript:GetAd('872900')" onmouseover="$(this).addClass('yellow')" onmouseout="$(this).removeClass('yellow')" class="gray"&gt;&lt;td width="75"&gt;&lt;img src="/thumbs/100x100/13033/13033-dscf5804-1469111250.jpg" width="100" height="100" border="0"&gt;&lt;/td&gt;&lt;td width="377"&gt;&lt;a href="Javascript:GetAd(872900)"&gt;&lt;b&gt;Glass Copenhagen Sign&lt;/b&gt;&lt;/a&gt;&lt;br&gt;$100.00 -  Calvert City, KY&lt;br&gt;&lt;i&gt;&lt;span id="span19" class="showdiv"&gt;Here you have a nice framed glass Copenhagen sign for your man cave or bar. Call 270-395-7213 or 270-703-4555&lt;/span&gt;&lt;/i&gt;&lt;/td&gt;
+
+&lt;/tr&gt;&lt;tr onclick="Javascript:GetAd('872879')" onmouseover="$(this).addClass('yellow')" onmouseout="$(this).removeClass('yellow')" class="blue"&gt;&lt;td width="75"&gt;&lt;img src="/thumbs/100x100/39087/39087-image-1469105431.jpg" width="100" height="100" border="0"&gt;&lt;/td&gt;&lt;td width="377"&gt;&lt;a href="Javascript:GetAd(872879)"&gt;&lt;b&gt;Priced to sell &lt;/b&gt;&lt;/a&gt;&lt;br&gt;$40.00 -  Kevil, KY&lt;br&gt;&lt;i&gt;&lt;span id="span20" class="showdiv"&gt;Washing machine- works- hoses included- frame of washer needs a standard screw that's the only minor issue which of course would cost about a quarter to fix. You haul it! &lt;/span&gt;&lt;/i&gt;&lt;/td&gt;
+
+&lt;/tr&gt;&lt;tr onclick="Javascript:GetAd('809243')" onmouseover="$(this).addClass('yellow')" onmouseout="$(this).removeClass('yellow')" class="gray"&gt;&lt;td width="75"&gt;&lt;img src="/thumbs/100x100/43214/43214-img_1838-1468505686.jpg" width="100" height="100" border="0"&gt;&lt;/td&gt;&lt;td width="377" class="prouser"&gt;&lt;a href="Javascript:GetAd(809243)"&gt;&lt;b&gt;Take it Down&lt;/b&gt;&lt;/a&gt;&lt;br&gt; Murray, KY&lt;br&gt;&lt;i&gt;&lt;span id="span21" class="showdiv"&gt;Trees are beautiful but can be dangerous if not taken care of. IF you can't stand to loose it then let us trim it up, no matter how tall we have the equipment to take care of ...&lt;/span&gt;&lt;/i&gt;&lt;/td&gt;
+
+&lt;/tr&gt;&lt;tr onclick="Javascript:GetAd('872925')" onmouseover="$(this).addClass('yellow')" onmouseout="$(this).removeClass('yellow')" class="blue"&gt;&lt;td width="75"&gt;&lt;img src="/thumbs/100x100/25396/25396-image-1469115378.jpeg" width="100" height="100" border="0"&gt;&lt;/td&gt;&lt;td width="377"&gt;&lt;a href="Javascript:GetAd(872925)"&gt;&lt;b&gt;2014 GMC Acadia&lt;/b&gt;&lt;/a&gt;&lt;br&gt;$21,000.00 -  Hickory, KY&lt;br&gt;&lt;i&gt;&lt;span id="span22" class="showdiv"&gt;2014 GMC Acadia for sale: 70,000 mi, nice leather interior, heated seats, keyless entry, remote start, backup camera, third row seating (seats 7). Roomy enough for the whole f...&lt;/span&gt;&lt;/i&gt;&lt;/td&gt;
+
+&lt;/tr&gt;&lt;tr onclick="Javascript:GetAd('866581')" onmouseover="$(this).addClass('yellow')" onmouseout="$(this).removeClass('yellow')" class="gray"&gt;&lt;td width="75"&gt;&lt;img src="/thumbs/100x100/36289/36289-img_4063-1466907784.jpg" width="100" height="100" border="0"&gt;&lt;/td&gt;&lt;td width="377"&gt;&lt;a href="Javascript:GetAd(866581)"&gt;&lt;b&gt;Antique Oak Vanity w/ Haeger Bowl / Kohler Faucet&lt;/b&gt;&lt;/a&gt;&lt;br&gt;$949.00 -  Boaz, KY&lt;br&gt;&lt;i&gt;&lt;span id="span23" class="showdiv"&gt;A WONDERFUL ANTIQUE OAK CIRCA 1890'S  3-DRAWER VICTORIAN DRESSER WHICH HAS BEEN CONVERTED TO A FUNCTIONAL ONE-OF-A-KIND BATHROOM VANITY.  THE VANITY HAS BEEN COMPLETELY REFINI...&lt;/span&gt;&lt;/i&gt;&lt;/td&gt;
+
+&lt;/tr&gt;&lt;tr onclick="Javascript:GetAd('872883')" onmouseover="$(this).addClass('yellow')" onmouseout="$(this).removeClass('yellow')" class="blue"&gt;&lt;td width="75"&gt;&lt;img src="/thumbs/100x100/39669/39669-dscn5599-1469065986.jpg" width="100" height="100" border="0"&gt;&lt;/td&gt;&lt;td width="377"&gt;&lt;a href="Javascript:GetAd(872883)"&gt;&lt;b&gt;NEW   SWIVEL    DUMP     CART&lt;/b&gt;&lt;/a&gt;&lt;br&gt;$120.00 -  Paducah, KY&lt;br&gt;&lt;i&gt;&lt;span id="span24" class="showdiv"&gt;OHIO STEEL 10 CU. FT. SWIVEL DUMP CART ONLY $120.00 CASH CALL (270)443-8136&lt;/span&gt;&lt;/i&gt;&lt;/td&gt;
+
+&lt;/tr&gt;&lt;tr onclick="Javascript:GetAd('661830')" onmouseover="$(this).addClass('yellow')" onmouseout="$(this).removeClass('yellow')" class="gray"&gt;&lt;td width="75"&gt;&lt;img src="/thumbs/100x100/34066/34066-ptdc0075-1460813783.jpg" width="100" height="100" border="0"&gt;&lt;/td&gt;&lt;td width="377"&gt;&lt;a href="Javascript:GetAd(661830)"&gt;&lt;b&gt;Metal Shop&lt;/b&gt;&lt;/a&gt;&lt;br&gt; Metropolis, IL&lt;br&gt;&lt;i&gt;&lt;span id="span25" class="showdiv"&gt;Metal Rack for Flat Sheet Material Heavy Duty Caster Wheels 80" Tall Made to Hold
+
+      4' X 12'  Sheets 5 holding stables Martial not Included Rack Only $300
+
+
+
+      Calls ...&lt;/span&gt;&lt;/i&gt;&lt;/td&gt;
+
+
+
+&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;/td&gt;&lt;td width="2%"&gt;&amp;nbsp;&lt;/td&gt;&lt;td valign="top" width="50%"&gt;
+
+
+
+&lt;table width="100%" cellpadding="0" cellspacing="0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td valign="top" width="50%"&gt;&lt;table class="bannerstyle6" cellpadding="2" cellspacing="0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td valign="top" style="cursor:pointer; text-align:left;"&gt;&lt;font color="#000000" face="verdana, arial" size="2"&gt;&lt;strong&gt;&lt;a href="banner-click.php?id=334" style="color:#0000FF; text-decoration:none;"&gt;Bushhog Service&lt;/a&gt;&lt;/strong&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td valign="top" style="cursor:pointer; font:11px verdana, tahoma; text-align:left; color:#000000;"&gt;&lt;a href="banner-click.php?id=334" style="color:#0000FF; text-decoration:none;"&gt;All West Ky, Free estimates. Cash, Check or credit card. Insured, Text or Call
+
+270-559-4788&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td valign="top" style="cursor:pointer; font:11px verdana, tahoma; text-align:left; color:#499f4c;"&gt;&lt;a href="banner-click.php?id=334" style="color:#000000; text-decoration:none;font-weight:bold"&gt;McKinney and McKinney&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;font size="1"&gt;&lt;a href="/banner-pricing.php"&gt;Advertise Here&lt;/a&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;/td&gt;&lt;td valign="top" align="right"&gt;&lt;table class="bannerstyle1" cellpadding="2" cellspacing="0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td valign="top" style="cursor:pointer; text-align:left;"&gt;&lt;font color="#000000" face="verdana, arial" size="2"&gt;&lt;strong&gt;&lt;a href="banner-click.php?id=255" style="color:#0000FF; text-decoration:none;"&gt;Banner Advertising&lt;/a&gt;&lt;/strong&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td valign="top" style="cursor:pointer; font:11px verdana, tahoma; text-align:left; color:#000000;"&gt;&lt;a href="banner-click.php?id=255" style="color:#0000FF; text-decoration:none;"&gt;Need a cheaper source of advertising for your business? VCI banner ads start at just $9.99&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td valign="top" style="cursor:pointer; font:11px verdana, tahoma; text-align:left; color:#499f4c;"&gt;&lt;a href="banner-click.php?id=255" style="color:#000000; text-decoration:none;font-weight:bold"&gt;www.vci-classifieds.com&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;font size="1"&gt;&lt;a href="/banner-pricing.php"&gt;Advertise Here&lt;/a&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+
+
+
+&lt;hr size="1" style="margin:20px; color:#E11B1C"&gt;
+
+
+
+&lt;table border="0" cellpadding="2" cellspacing="0" width="100%" style="font-size:8pt"&gt;
+
+&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;img src="/Images/icon-search.jpg" align="absmiddle"&gt; &lt;b&gt;&lt;font size="3" color="#dd0000"&gt;Search Ads&lt;/font&gt;&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;
+
+&lt;form name="searchform" action="/search.php" method="GET"&gt;&lt;/form&gt;
+
+&lt;tr&gt;&lt;td align="right"&gt;&lt;b&gt;Search For:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;input type="text" name="searchtext" size="15"&gt;&lt;/td&gt;&lt;/tr&gt;
+
+&lt;tr&gt;&lt;td align="right"&gt;&lt;b&gt;Item Location:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;select name="searchcity"&gt;&lt;option value="All"&gt;All&lt;/option&gt;
+
+
+
+&lt;option value="Almo, KY"&gt; Almo, KY
+
+&lt;/option&gt;&lt;option value="Arlington, KY"&gt; Arlington, KY
+
+&lt;/option&gt;&lt;option value="Auburn, KY"&gt; Auburn, KY
+
+&lt;/option&gt;&lt;option value="Bardwell, KY"&gt; Bardwell, KY
+
+&lt;/option&gt;&lt;option value="Barlow, KY"&gt; Barlow, KY
+
+&lt;/option&gt;&lt;option value="Beechmont, KY"&gt; Beechmont, KY
+
+&lt;/option&gt;&lt;option value="Belknap, IL"&gt; Belknap, IL
+
+&lt;/option&gt;&lt;option value="Benton, KY"&gt; Benton, KY
+
+&lt;/option&gt;&lt;option value="Boaz, KY"&gt; Boaz, KY
+
+&lt;/option&gt;&lt;option value="Brookport, IL"&gt; Brookport, IL
+
+&lt;/option&gt;&lt;option value="Bruceton, TN"&gt; Bruceton, TN
+
+&lt;/option&gt;&lt;option value="Buchanan, TN"&gt; Buchanan, TN
+
+&lt;/option&gt;&lt;option value="Burna, KY"&gt; Burna, KY
+
+&lt;/option&gt;&lt;option value="Cadiz, KY"&gt; Cadiz, KY
+
+&lt;/option&gt;&lt;option value="Cairo, IL"&gt; Cairo, IL
+
+&lt;/option&gt;&lt;option value="Calvert City, KY"&gt; Calvert City, KY
+
+&lt;/option&gt;&lt;option value="Cape Girardeau, MO"&gt; Cape Girardeau, MO
+
+&lt;/option&gt;&lt;option value="Carbondale, IL"&gt; Carbondale, IL
+
+&lt;/option&gt;&lt;option value="Carmi, IL"&gt; Carmi, IL
+
+&lt;/option&gt;&lt;option value="Caulfield, MO"&gt; Caulfield, MO
+
+&lt;/option&gt;&lt;option value="Clarksville, TN"&gt; Clarksville, TN
+
+&lt;/option&gt;&lt;option value="Clinton, KY"&gt; Clinton, KY
+
+&lt;/option&gt;&lt;option value="Columbus, KY"&gt; Columbus, KY
+
+&lt;/option&gt;&lt;option value="Cottage Grove, TN"&gt; Cottage Grove, TN
+
+&lt;/option&gt;&lt;option value="Crayne, KY"&gt; Crayne, KY
+
+&lt;/option&gt;&lt;option value="Cunningham, KY"&gt; Cunningham, KY
+
+&lt;/option&gt;&lt;option value="Dawson Springs, KY"&gt; Dawson Springs, KY
+
+&lt;/option&gt;&lt;option value="Dexter, KY"&gt; Dexter, KY
+
+&lt;/option&gt;&lt;option value="Dongola, IL"&gt; Dongola, IL
+
+&lt;/option&gt;&lt;option value="Dover, TN"&gt; Dover, TN
+
+&lt;/option&gt;&lt;option value="Dresden, TN"&gt; Dresden, TN
+
+&lt;/option&gt;&lt;option value="Dukedom, TN"&gt; Dukedom, TN
+
+&lt;/option&gt;&lt;option value="Dyersburg, TN"&gt; Dyersburg, TN
+
+&lt;/option&gt;&lt;option value="Eddyville, IL"&gt; Eddyville, IL
+
+&lt;/option&gt;&lt;option value="Eddyville, KY"&gt; Eddyville, KY
+
+&lt;/option&gt;&lt;option value="Eldorado, IL"&gt; Eldorado, IL
+
+&lt;/option&gt;&lt;option value="Evansville, IN"&gt; Evansville, IN
+
+&lt;/option&gt;&lt;option value="Fancy Farm, KY"&gt; Fancy Farm, KY
+
+&lt;/option&gt;&lt;option value="Farmington, KY"&gt; Farmington, KY
+
+&lt;/option&gt;&lt;option value="Franklin, TN"&gt; Franklin, TN
+
+&lt;/option&gt;&lt;option value="Fredonia, KY"&gt; Fredonia, KY
+
+&lt;/option&gt;&lt;option value="Fulton, KY"&gt; Fulton, KY
+
+&lt;/option&gt;&lt;option value="Gilbertsville, KY"&gt; Gilbertsville, KY
+
+&lt;/option&gt;&lt;option value="Golconda, IL"&gt; Golconda, IL
+
+&lt;/option&gt;&lt;option value="Goreville, IL"&gt; Goreville, IL
+
+&lt;/option&gt;&lt;option value="Graham, KY"&gt; Graham, KY
+
+&lt;/option&gt;&lt;option value="Grand Rivers, KY"&gt; Grand Rivers, KY
+
+&lt;/option&gt;&lt;option value="Grantsburg, IL"&gt; Grantsburg, IL
+
+&lt;/option&gt;&lt;option value="Greenville, KY"&gt; Greenville, KY
+
+&lt;/option&gt;&lt;option value="Hampton, KY"&gt; Hampton, KY
+
+&lt;/option&gt;&lt;option value="Hanson, KY"&gt; Hanson, KY
+
+&lt;/option&gt;&lt;option value="Hardin, KY"&gt; Hardin, KY
+
+&lt;/option&gt;&lt;option value="Harrisburg, IL"&gt; Harrisburg, IL
+
+&lt;/option&gt;&lt;option value="Hazel, KY"&gt; Hazel, KY
+
+&lt;/option&gt;&lt;option value="Henderson, KY"&gt; Henderson, KY
+
+&lt;/option&gt;&lt;option value="Henry, TN"&gt; Henry, TN
+
+&lt;/option&gt;&lt;option value="Hickman, KY"&gt; Hickman, KY
+
+&lt;/option&gt;&lt;option value="Hickory, KY"&gt; Hickory, KY
+
+&lt;/option&gt;&lt;option value="Hopkinsville, KY"&gt; Hopkinsville, KY
+
+&lt;/option&gt;&lt;option value="Island, KY"&gt; Island, KY
+
+&lt;/option&gt;&lt;option value="Jackson, MO"&gt; Jackson, MO
+
+&lt;/option&gt;&lt;option value="Joppa, IL"&gt; Joppa, IL
+
+&lt;/option&gt;&lt;option value="Karnak, IL"&gt; Karnak, IL
+
+&lt;/option&gt;&lt;option value="Kenton, TN"&gt; Kenton, TN
+
+&lt;/option&gt;&lt;option value="Kevil, KY"&gt; Kevil, KY
+
+&lt;/option&gt;&lt;option value="Kirksey, KY"&gt; Kirksey, KY
+
+&lt;/option&gt;&lt;option value="Kuttawa, KY"&gt; Kuttawa, KY
+
+&lt;/option&gt;&lt;option value="La Center, KY"&gt; La Center, KY
+
+&lt;/option&gt;&lt;option value="Ledbetter, KY"&gt; Ledbetter, KY
+
+&lt;/option&gt;&lt;option value="Livingston, KY"&gt; Livingston, KY
+
+&lt;/option&gt;&lt;option value="Louisville, KY"&gt; Louisville, KY
+
+&lt;/option&gt;&lt;option value="Lovelaceville, KY"&gt; Lovelaceville, KY
+
+&lt;/option&gt;&lt;option value="Lowes, KY"&gt; Lowes, KY
+
+&lt;/option&gt;&lt;option value="Madisonville, KY"&gt; Madisonville, KY
+
+&lt;/option&gt;&lt;option value="Makanda, IL"&gt; Makanda, IL
+
+&lt;/option&gt;&lt;option value="Mansfield, TN"&gt; Mansfield, TN
+
+&lt;/option&gt;&lt;option value="Marion, IL"&gt; Marion, IL
+
+&lt;/option&gt;&lt;option value="Marion, KY"&gt; Marion, KY
+
+&lt;/option&gt;&lt;option value="Marston, MO"&gt; Marston, MO
+
+&lt;/option&gt;&lt;option value="Martin, TN"&gt; Martin, TN
+
+&lt;/option&gt;&lt;option value="Mayfield, KY"&gt; Mayfield, KY
+
+&lt;/option&gt;&lt;option value="McKenzie, TN"&gt; McKenzie, TN
+
+&lt;/option&gt;&lt;option value="Melber, KY"&gt; Melber, KY
+
+&lt;/option&gt;&lt;option value="Metropolis, IL"&gt; Metropolis, IL
+
+&lt;/option&gt;&lt;option value="Mounds, IL"&gt; Mounds, IL
+
+&lt;/option&gt;&lt;option value="Murray, KY"&gt; Murray, KY
+
+&lt;/option&gt;&lt;option value="Nashville, TN"&gt; Nashville, TN
+
+&lt;/option&gt;&lt;option value="Nebo, KY"&gt; Nebo, KY
+
+&lt;/option&gt;&lt;option value="New Concord, KY"&gt; New Concord, KY
+
+&lt;/option&gt;&lt;option value="Nortonville, KY"&gt; Nortonville, KY
+
+&lt;/option&gt;&lt;option value="Obion, TN"&gt; Obion, TN
+
+&lt;/option&gt;&lt;option value="Olmsted, IL"&gt; Olmsted, IL
+
+&lt;/option&gt;&lt;option value="Ozark, IL"&gt; Ozark, IL
+
+&lt;/option&gt;&lt;option value="Paducah, KY"&gt; Paducah, KY
+
+&lt;/option&gt;&lt;option value="Palmersville, TN"&gt; Palmersville, TN
+
+&lt;/option&gt;&lt;option value="Paris, TN"&gt; Paris, TN
+
+&lt;/option&gt;&lt;option value="Poplar Bluff, MO"&gt; Poplar Bluff, MO
+
+&lt;/option&gt;&lt;option value="Princeton, KY"&gt; Princeton, KY
+
+&lt;/option&gt;&lt;option value="Puryear, TN"&gt; Puryear, TN
+
+&lt;/option&gt;&lt;option value="Rives, TN"&gt; Rives, TN
+
+&lt;/option&gt;&lt;option value="Salem, KY"&gt; Salem, KY
+
+&lt;/option&gt;&lt;option value="Sedalia, KY"&gt; Sedalia, KY
+
+&lt;/option&gt;&lt;option value="Smithland, KY"&gt; Smithland, KY
+
+&lt;/option&gt;&lt;option value="South Fulton, TN"&gt; South Fulton, TN
+
+&lt;/option&gt;&lt;option value="Springville, TN"&gt; Springville, TN
+
+&lt;/option&gt;&lt;option value="Sturgis, KY"&gt; Sturgis, KY
+
+&lt;/option&gt;&lt;option value="Symsonia, KY"&gt; Symsonia, KY
+
+&lt;/option&gt;&lt;option value="Tiline, KY"&gt; Tiline, KY
+
+&lt;/option&gt;&lt;option value="Troy, TN"&gt; Troy, TN
+
+&lt;/option&gt;&lt;option value="Union City, TN"&gt; Union City, TN
+
+&lt;/option&gt;&lt;option value="Vienna, IL"&gt; Vienna, IL
+
+&lt;/option&gt;&lt;option value="Water Valley, KY"&gt; Water Valley, KY
+
+&lt;/option&gt;&lt;option value="West Paducah, KY"&gt; West Paducah, KY
+
+&lt;/option&gt;&lt;option value="White Plains, KY"&gt; White Plains, KY
+
+&lt;/option&gt;&lt;option value="Wickliffe, KY"&gt; Wickliffe, KY
+
+&lt;/option&gt;&lt;option value="Wingo, KY"&gt; Wingo, KY
+
+&lt;/option&gt;&lt;/select&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align="right"&gt;&lt;b&gt;Category:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;select name="searchcategory"&gt;&lt;option value="All"&gt;All&lt;/option&gt;&lt;option value="Aircraft"&gt; Aircraft
+
+&lt;/option&gt;&lt;option value="Antiques"&gt; Antiques
+
+&lt;/option&gt;&lt;option value="Appliances/Dishwasher"&gt; Appliances/Dishwasher
+
+&lt;/option&gt;&lt;option value="Appliances/Dryer"&gt; Appliances/Dryer
+
+&lt;/option&gt;&lt;option value="Appliances/Freezer"&gt; Appliances/Freezer
+
+&lt;/option&gt;&lt;option value="Appliances/Fridge"&gt; Appliances/Fridge
+
+&lt;/option&gt;&lt;option value="Appliances/Microwave"&gt; Appliances/Microwave
+
+&lt;/option&gt;&lt;option value="Appliances/Stove"&gt; Appliances/Stove
+
+&lt;/option&gt;&lt;option value="Appliances/Washer"&gt; Appliances/Washer
+
+&lt;/option&gt;&lt;option value="Appliances/Other"&gt; Appliances/Other
+
+&lt;/option&gt;&lt;option value="Arts and Crafts"&gt; Arts and Crafts
+
+&lt;/option&gt;&lt;option value="Auto Parts/Body"&gt; Auto Parts/Body
+
+&lt;/option&gt;&lt;option value="Auto Parts/Electronics"&gt; Auto Parts/Electronics
+
+&lt;/option&gt;&lt;option value="Auto Parts/Engine"&gt; Auto Parts/Engine
+
+&lt;/option&gt;&lt;option value="Auto Parts/Interior"&gt; Auto Parts/Interior
+
+&lt;/option&gt;&lt;option value="Auto Parts/Parting Out"&gt; Auto Parts/Parting Out
+
+&lt;/option&gt;&lt;option value="Auto Parts/Tires and Wheels"&gt; Auto Parts/Tires and Wheels
+
+&lt;/option&gt;&lt;option value="Auto Parts/Transmission"&gt; Auto Parts/Transmission
+
+&lt;/option&gt;&lt;option value="Auto Parts/Other"&gt; Auto Parts/Other
+
+&lt;/option&gt;&lt;option value="Autos/Classic"&gt; Autos/Classic
+
+&lt;/option&gt;&lt;option value="Autos/Commercial"&gt; Autos/Commercial
+
+&lt;/option&gt;&lt;option value="Autos/Convertible"&gt; Autos/Convertible
+
+&lt;/option&gt;&lt;option value="Autos/Coupe"&gt; Autos/Coupe
+
+&lt;/option&gt;&lt;option value="Autos/Crossover"&gt; Autos/Crossover
+
+&lt;/option&gt;&lt;option value="Autos/Hybrid"&gt; Autos/Hybrid
+
+&lt;/option&gt;&lt;option value="Autos/Luxury"&gt; Autos/Luxury
+
+&lt;/option&gt;&lt;option value="Autos/Pickup Truck"&gt; Autos/Pickup Truck
+
+&lt;/option&gt;&lt;option value="Autos/Sedan"&gt; Autos/Sedan
+
+&lt;/option&gt;&lt;option value="Autos/Sports Car"&gt; Autos/Sports Car
+
+&lt;/option&gt;&lt;option value="Autos/SUV"&gt; Autos/SUV
+
+&lt;/option&gt;&lt;option value="Autos/Vans"&gt; Autos/Vans
+
+&lt;/option&gt;&lt;option value="Autos/Wagons and Hatchbacks"&gt; Autos/Wagons and Hatchbacks
+
+&lt;/option&gt;&lt;option value="Autos/Other"&gt; Autos/Other
+
+&lt;/option&gt;&lt;option value="Baby Items"&gt; Baby Items
+
+&lt;/option&gt;&lt;option value="Bicycles"&gt; Bicycles
+
+&lt;/option&gt;&lt;option value="Boats"&gt; Boats
+
+&lt;/option&gt;&lt;option value="Books"&gt; Books
+
+&lt;/option&gt;&lt;option value="Campers and RVs"&gt; Campers and RVs
+
+&lt;/option&gt;&lt;option value="Church"&gt; Church
+
+&lt;/option&gt;&lt;option value="Clothing/Children"&gt; Clothing/Children
+
+&lt;/option&gt;&lt;option value="Clothing/Men"&gt; Clothing/Men
+
+&lt;/option&gt;&lt;option value="Clothing/Women"&gt; Clothing/Women
+
+&lt;/option&gt;&lt;option value="Clothing/Formalwear"&gt; Clothing/Formalwear
+
+&lt;/option&gt;&lt;option value="Clothing/Wedding Apparel"&gt; Clothing/Wedding Apparel
+
+&lt;/option&gt;&lt;option value="Clothing/Accessories"&gt; Clothing/Accessories
+
+&lt;/option&gt;&lt;option value="Collectibles"&gt; Collectibles
+
+&lt;/option&gt;&lt;option value="Computers and Accessories/Desktops"&gt; Computers and Accessories/Desktops
+
+&lt;/option&gt;&lt;option value="Computers and Accessories/Internet Equipment"&gt; Computers and Accessories/Internet Equipment
+
+&lt;/option&gt;&lt;option value="Computers and Accessories/Laptops"&gt; Computers and Accessories/Laptops
+
+&lt;/option&gt;&lt;option value="Computers and Accessories/Monitors"&gt; Computers and Accessories/Monitors
+
+&lt;/option&gt;&lt;option value="Computers and Accessories/Multifunction"&gt; Computers and Accessories/Multifunction
+
+&lt;/option&gt;&lt;option value="Computers and Accessories/Printers"&gt; Computers and Accessories/Printers
+
+&lt;/option&gt;&lt;option value="Computers and Accessories/Tablets"&gt; Computers and Accessories/Tablets
+
+&lt;/option&gt;&lt;option value="Computers and Accessories/Other"&gt; Computers and Accessories/Other
+
+&lt;/option&gt;&lt;option value="Education"&gt; Education
+
+&lt;/option&gt;&lt;option value="Electronics/Cameras"&gt; Electronics/Cameras
+
+&lt;/option&gt;&lt;option value="Electronics/Cell Phones"&gt; Electronics/Cell Phones
+
+&lt;/option&gt;&lt;option value="Electronics/Game Systems"&gt; Electronics/Game Systems
+
+&lt;/option&gt;&lt;option value="Electronics/GPS"&gt; Electronics/GPS
+
+&lt;/option&gt;&lt;option value="Electronics/Music Players"&gt; Electronics/Music Players
+
+&lt;/option&gt;&lt;option value="Electronics/Stereos"&gt; Electronics/Stereos
+
+&lt;/option&gt;&lt;option value="Electronics/TVs"&gt; Electronics/TVs
+
+&lt;/option&gt;&lt;option value="Electronics/VCR and DVD Players"&gt; Electronics/VCR and DVD Players
+
+&lt;/option&gt;&lt;option value="Electronics/Other"&gt; Electronics/Other
+
+&lt;/option&gt;&lt;option value="Employment/Jobs Offered"&gt; Employment/Jobs Offered
+
+&lt;/option&gt;&lt;option value="Employment/Jobs Wanted"&gt; Employment/Jobs Wanted
+
+&lt;/option&gt;&lt;option value="Events"&gt; Events
+
+&lt;/option&gt;&lt;option value="Farm/Implements"&gt; Farm/Implements
+
+&lt;/option&gt;&lt;option value="Farm/Services"&gt; Farm/Services
+
+&lt;/option&gt;&lt;option value="Farm/Tractors"&gt; Farm/Tractors
+
+&lt;/option&gt;&lt;option value="Farm/Trailers"&gt; Farm/Trailers
+
+&lt;/option&gt;&lt;option value="Farm/Trucks"&gt; Farm/Trucks
+
+&lt;/option&gt;&lt;option value="Farm/Other"&gt; Farm/Other
+
+&lt;/option&gt;&lt;option value="Firearms/Handguns"&gt; Firearms/Handguns
+
+&lt;/option&gt;&lt;option value="Firearms/Long Guns"&gt; Firearms/Long Guns
+
+&lt;/option&gt;&lt;option value="Firearms/Accessories"&gt; Firearms/Accessories
+
+&lt;/option&gt;&lt;option value="Free"&gt; Free
+
+&lt;/option&gt;&lt;option value="Furniture/Bedroom"&gt; Furniture/Bedroom
+
+&lt;/option&gt;&lt;option value="Furniture/Commercial"&gt; Furniture/Commercial
+
+&lt;/option&gt;&lt;option value="Furniture/Dining Room"&gt; Furniture/Dining Room
+
+&lt;/option&gt;&lt;option value="Furniture/Home Office"&gt; Furniture/Home Office
+
+&lt;/option&gt;&lt;option value="Furniture/Kids Stuff"&gt; Furniture/Kids Stuff
+
+&lt;/option&gt;&lt;option value="Furniture/Kitchen"&gt; Furniture/Kitchen
+
+&lt;/option&gt;&lt;option value="Furniture/Living Room"&gt; Furniture/Living Room
+
+&lt;/option&gt;&lt;option value="Furniture/Outdoor"&gt; Furniture/Outdoor
+
+&lt;/option&gt;&lt;option value="Health and Beauty"&gt; Health and Beauty
+
+&lt;/option&gt;&lt;option value="Heavy Equipment"&gt; Heavy Equipment
+
+&lt;/option&gt;&lt;option value="Holiday and Seasonal"&gt; Holiday and Seasonal
+
+&lt;/option&gt;&lt;option value="Home/Building and Hardware"&gt; Home/Building and Hardware
+
+&lt;/option&gt;&lt;option value="Home/Flooring"&gt; Home/Flooring
+
+&lt;/option&gt;&lt;option value="Home/Home Decor"&gt; Home/Home Decor
+
+&lt;/option&gt;&lt;option value="Home/Household Items"&gt; Home/Household Items
+
+&lt;/option&gt;&lt;option value="Home/Miscellaneous"&gt; Home/Miscellaneous
+
+&lt;/option&gt;&lt;option value="Home/Services"&gt; Home/Services
+
+&lt;/option&gt;&lt;option value="Home/Wedding Supplies"&gt; Home/Wedding Supplies
+
+&lt;/option&gt;&lt;option value="Hunting and Fishing"&gt; Hunting and Fishing
+
+&lt;/option&gt;&lt;option value="HVAC/AC-HP Split Systems"&gt; HVAC/AC-HP Split Systems
+
+&lt;/option&gt;&lt;option value="HVAC/Dual Fuel"&gt; HVAC/Dual Fuel
+
+&lt;/option&gt;&lt;option value="HVAC/Heat Pumps"&gt; HVAC/Heat Pumps
+
+&lt;/option&gt;&lt;option value="HVAC/Gas Furnaces"&gt; HVAC/Gas Furnaces
+
+&lt;/option&gt;&lt;option value="HVAC/Geothermal"&gt; HVAC/Geothermal
+
+&lt;/option&gt;&lt;option value="HVAC/Parts"&gt; HVAC/Parts
+
+&lt;/option&gt;&lt;option value="Jewelry"&gt; Jewelry
+
+&lt;/option&gt;&lt;option value="Lawn and Garden"&gt; Lawn and Garden
+
+&lt;/option&gt;&lt;option value="Memorabilia"&gt; Memorabilia
+
+&lt;/option&gt;&lt;option value="Motorcycles/Accessories"&gt; Motorcycles/Accessories
+
+&lt;/option&gt;&lt;option value="Motorcycles/Clothing"&gt; Motorcycles/Clothing
+
+&lt;/option&gt;&lt;option value="Motorcycles/Parts"&gt; Motorcycles/Parts
+
+&lt;/option&gt;&lt;option value="Motorcycles/Off-Road"&gt; Motorcycles/Off-Road
+
+&lt;/option&gt;&lt;option value="Motorcycles/On-Road"&gt; Motorcycles/On-Road
+
+&lt;/option&gt;&lt;option value="Motorcycles/Scooters"&gt; Motorcycles/Scooters
+
+&lt;/option&gt;&lt;option value="Motorcycles/Trailers"&gt; Motorcycles/Trailers
+
+&lt;/option&gt;&lt;option value="Musical"&gt; Musical
+
+&lt;/option&gt;&lt;option value="Other"&gt; Other
+
+&lt;/option&gt;&lt;option value="Powersports/3 Wheelers"&gt; Powersports/3 Wheelers
+
+&lt;/option&gt;&lt;option value="Powersports/4 Wheelers"&gt; Powersports/4 Wheelers
+
+&lt;/option&gt;&lt;option value="Powersports/Golf Carts"&gt; Powersports/Golf Carts
+
+&lt;/option&gt;&lt;option value="Powersports/Parts"&gt; Powersports/Parts
+
+&lt;/option&gt;&lt;option value="Powersports/Trailers"&gt; Powersports/Trailers
+
+&lt;/option&gt;&lt;option value="Powersports/Utility"&gt; Powersports/Utility
+
+&lt;/option&gt;&lt;option value="Powersports/Other"&gt; Powersports/Other
+
+&lt;/option&gt;&lt;option value="Racing/Body and Fabrication"&gt; Racing/Body and Fabrication
+
+&lt;/option&gt;&lt;option value="Racing/Cars"&gt; Racing/Cars
+
+&lt;/option&gt;&lt;option value="Racing/Drive Train"&gt; Racing/Drive Train
+
+&lt;/option&gt;&lt;option value="Racing/Services"&gt; Racing/Services
+
+&lt;/option&gt;&lt;option value="Racing/Other"&gt; Racing/Other
+
+&lt;/option&gt;&lt;option value="Real Estate/Commercial"&gt; Real Estate/Commercial
+
+&lt;/option&gt;&lt;option value="Real Estate/Land"&gt; Real Estate/Land
+
+&lt;/option&gt;&lt;option value="Real Estate/Manufactured"&gt; Real Estate/Manufactured
+
+&lt;/option&gt;&lt;option value="Real Estate/Residential"&gt; Real Estate/Residential
+
+&lt;/option&gt;&lt;option value="Real Estate/Vacation"&gt; Real Estate/Vacation
+
+&lt;/option&gt;&lt;option value="Real Estate/Rent or Lease"&gt; Real Estate/Rent or Lease
+
+&lt;/option&gt;&lt;option value="Services"&gt; Services
+
+&lt;/option&gt;&lt;option value="Sports"&gt; Sports
+
+&lt;/option&gt;&lt;option value="Tools"&gt; Tools
+
+&lt;/option&gt;&lt;option value="Toys"&gt; Toys
+
+&lt;/option&gt;&lt;option value="Trade or Barter"&gt; Trade or Barter
+
+&lt;/option&gt;&lt;option value="Vacation Packages"&gt; Vacation Packages
+
+&lt;/option&gt;&lt;option value="Wanted"&gt; Wanted
+
+&lt;/option&gt;&lt;option value="Yard Sale"&gt; Yard Sale
+
+&lt;/option&gt;&lt;/select&gt;&lt;/td&gt;&lt;/tr&gt;
+
+&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;input type="submit" value="Search &amp;gt;&amp;gt;" style="font-size:8pt"&gt;&lt;/td&gt;&lt;/tr&gt;
+
+
+
+&lt;/tbody&gt;&lt;/table&gt;
+
+
+
+&lt;hr size="1" style="margin:20px;color:#E11B1C"&gt;
+
+&lt;a href="http://www.pumasfutbolclub.com/Default.aspx?tabid=632805"&gt;&lt;img src="/Images/banner-puma.jpg"&gt;&lt;/a&gt;&lt;br&gt;&lt;br&gt;
+
+&lt;img src="/Images/banner-fiber.jpg"&gt;&lt;br&gt;&lt;br&gt;
+
+&lt;!-- &lt;a href=/mail.php&gt;&lt;img src=/Images/banner-forrent.jpg&gt;&lt;/a&gt; --&gt;
+
+
+
+
+
+
+
+&lt;hr size="1" style="margin:20px;color:#E11B1C"&gt;
+
+&lt;table border="0" cellpadding="2" cellspacing="0" width="100%" style="font-size:8pt"&gt;
+
+&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;img src="/Images/icon-stats.jpg" align="absmiddle"&gt; &lt;b&gt;&lt;font size="3" color="#dd0000"&gt;Statistics&lt;/font&gt;&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;
+
+&lt;tr&gt;&lt;td&gt;&lt;div class="dots"&gt;&lt;span class="field"&gt;Registered Users&lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;td&gt;30,122&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;div class="dots"&gt;&lt;span class="field"&gt; &amp;nbsp; &amp;nbsp; &amp;nbsp; Pro Users&lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;td&gt;252&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;div class="dots"&gt;&lt;span class="field"&gt; &amp;nbsp; &amp;nbsp; &amp;nbsp; Classic Users&lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;td&gt;29,870&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;div class="dots"&gt;&lt;span class="field"&gt;Live Ads&lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;td&gt;9,411&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;div class="dots"&gt;&lt;span class="field"&gt;Ads with Pics&lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;td&gt;6,153&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;div class="dots"&gt;&lt;span class="field"&gt;Ads Expiring&lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;td&gt;208&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;div class="dots"&gt;&lt;span class="field"&gt;New Users in 7 Days&lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;td&gt;50&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;div class="dots"&gt;&lt;span class="field"&gt;Email Replies Last 24 Hours&lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;td&gt;60&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+
+
+
+&lt;hr size="1" style="margin:20px;color:#E11B1C"&gt;
+
+&lt;table border="0" cellpadding="2" cellspacing="0" width="100%" style="font-size:8pt"&gt;
+
+&lt;tbody&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;img src="/Images/icon-trends.jpg" align="absmiddle"&gt; &lt;b&gt;&lt;font size="3" color="#dd0000"&gt;Trends&lt;/font&gt;&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;
+
+&lt;tr&gt;&lt;td width="33%" id="popcattd" class="focusbutton"&gt;&lt;a href="javascript:void(0)" onclick="ToggleTrends('popcat')" id="popcathref"&gt;Popular Categories&lt;/a&gt;&lt;/td&gt;&lt;td width="33%" id="numvistd" class="blurbutton"&gt;&lt;a href="javascript:void(0)" onclick="ToggleTrends('numvis')" id="numvishref"&gt;Visitor Traffic&lt;/a&gt;&lt;/td&gt;&lt;td width="33%" id="recseatd" class="blurbutton"&gt;&lt;a href="javascript:void(0)" onclick="ToggleTrends('recsea')" id="recseahref"&gt;Recent Searches&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+
+&lt;tr&gt;&lt;td colspan="3" valign="top"&gt;
+
+
+
+&lt;div id="popcatdiv" style="height:300px" class="showdiv"&gt;
+
+&lt;table border="0" cellpadding="2" cellspacing="0" width="100%" style="font-size:8pt"&gt;
+
+&lt;tbody&gt;&lt;tr&gt;&lt;td width="8%"&gt;&lt;b&gt;Views&lt;/b&gt;&lt;/td&gt;&lt;td width="47%"&gt;&lt;b&gt;Category&lt;/b&gt;&lt;/td&gt;&lt;td align="center" rowspan="11" width="45%" valign="top"&gt;&lt;b&gt;Why Is This Important?&lt;/b&gt;&lt;br&gt;This list shows the top 10 categories that are viewed the most. This list is created from actual views over the last few hours.&lt;/td&gt;&lt;/tr&gt;
+
+
+
+&lt;tr bgcolor="#efefef"&gt;&lt;td&gt;1355&lt;/td&gt;&lt;td&gt;Recent Ads&lt;/td&gt;&lt;/tr&gt;&lt;tr bgcolor="#ffffff"&gt;&lt;td&gt;306&lt;/td&gt;&lt;td&gt;Autos/Pickup Truck&lt;/td&gt;&lt;/tr&gt;&lt;tr bgcolor="#efefef"&gt;&lt;td&gt;256&lt;/td&gt;&lt;td&gt;Boats&lt;/td&gt;&lt;/tr&gt;&lt;tr bgcolor="#ffffff"&gt;&lt;td&gt;198&lt;/td&gt;&lt;td&gt;Firearms/Handguns&lt;/td&gt;&lt;/tr&gt;&lt;tr bgcolor="#efefef"&gt;&lt;td&gt;198&lt;/td&gt;&lt;td&gt;Firearms/Long Guns&lt;/td&gt;&lt;/tr&gt;&lt;tr bgcolor="#ffffff"&gt;&lt;td&gt;146&lt;/td&gt;&lt;td&gt;Campers and RVs&lt;/td&gt;&lt;/tr&gt;&lt;tr bgcolor="#efefef"&gt;&lt;td&gt;128&lt;/td&gt;&lt;td&gt;Employment/Jobs Offered&lt;/td&gt;&lt;/tr&gt;&lt;tr bgcolor="#ffffff"&gt;&lt;td&gt;127&lt;/td&gt;&lt;td&gt;Powersports/4 Wheelers&lt;/td&gt;&lt;/tr&gt;&lt;tr bgcolor="#efefef"&gt;&lt;td&gt;123&lt;/td&gt;&lt;td&gt;Hunting and Fishing&lt;/td&gt;&lt;/tr&gt;&lt;tr bgcolor="#ffffff"&gt;&lt;td&gt;123&lt;/td&gt;&lt;td&gt;Real Estate/Rent or Lease&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;/div&gt;
+
+&lt;div style="height:300px" id="numvisdiv" class="hidediv"&gt;&lt;img src="/Images/stats.png"&gt;&lt;/div&gt;
+
+&lt;div style="height:300px" id="recseadiv" class="hidediv"&gt;
+
+&lt;table border="0" cellpadding="2" cellspacing="0" width="100%" style="font-size:8pt"&gt;
+
+&lt;tbody&gt;&lt;tr&gt;&lt;td width="15%" valign="top"&gt;&lt;b&gt;Searches&lt;/b&gt;&lt;/td&gt;&lt;td width="40%" valign="top"&gt;&lt;b&gt;Search Words&lt;/b&gt;&lt;/td&gt;&lt;td align="center" valign="top" rowspan="11" width="45%"&gt;&lt;b&gt;Why Is This Important?&lt;/b&gt;&lt;br&gt;This list shows the most common searches made by Classifieds visitors over the past few hours. It's a great way to see what buyers are looking for.&lt;/td&gt;&lt;/tr&gt;
+
+
+
+&lt;tr bgcolor="#efefef"&gt;&lt;td&gt;37&lt;/td&gt;&lt;td&gt;Jeep&lt;/td&gt;&lt;/tr&gt;&lt;tr bgcolor="#ffffff"&gt;&lt;td&gt;14&lt;/td&gt;&lt;td&gt;honda&lt;/td&gt;&lt;/tr&gt;&lt;tr bgcolor="#efefef"&gt;&lt;td&gt;12&lt;/td&gt;&lt;td&gt;z71&lt;/td&gt;&lt;/tr&gt;&lt;tr bgcolor="#ffffff"&gt;&lt;td&gt;11&lt;/td&gt;&lt;td&gt;golf cart&lt;/td&gt;&lt;/tr&gt;&lt;tr bgcolor="#efefef"&gt;&lt;td&gt;11&lt;/td&gt;&lt;td&gt;canoe&lt;/td&gt;&lt;/tr&gt;&lt;tr bgcolor="#ffffff"&gt;&lt;td&gt;10&lt;/td&gt;&lt;td&gt;ford&lt;/td&gt;&lt;/tr&gt;&lt;tr bgcolor="#efefef"&gt;&lt;td&gt;8&lt;/td&gt;&lt;td&gt;Nissan&lt;/td&gt;&lt;/tr&gt;&lt;tr bgcolor="#ffffff"&gt;&lt;td&gt;8&lt;/td&gt;&lt;td&gt;Toyota &lt;/td&gt;&lt;/tr&gt;&lt;tr bgcolor="#efefef"&gt;&lt;td&gt;8&lt;/td&gt;&lt;td&gt;houses for rent in paducah ky&lt;/td&gt;&lt;/tr&gt;&lt;tr bgcolor="#ffffff"&gt;&lt;td&gt;8&lt;/td&gt;&lt;td&gt;tractor&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;/div&gt;
+
+&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+
+
+
+&lt;hr size="1" style="margin:20px;color:#E11B1C"&gt;
+
+
+
+&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+
+
+
+&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+
+
+
+
+
+
+
+
+
+&lt;table bgcolor="#104e8b" border="0" cellpadding="5" style="font-family:verdana;font-size:8pt" cellspacing="0" width="965" align="center"&gt;
+
+  &lt;tbody&gt;&lt;tr width="40%" rowspan="3"&gt;&lt;td align="center"&gt;
+
+      &lt;img src="/Images/logo-footer.jpg"&gt;&lt;br&gt;
+
+      &lt;font size="1" face="verdana" color="white"&gt;&lt;b&gt;607 Broadway &amp;nbsp;  Paducah, KY &amp;nbsp; 42001&lt;br&gt;270-442-0060&lt;br&gt;
+
+      © 1995 - 2016  e-Tel, LLC.&lt;br&gt;All Rights Reserved.&lt;/b&gt;&lt;/font&gt;&lt;br&gt;
+
+	&lt;/td&gt;
+
+	&lt;td valign="top" width="20%"&gt;&lt;font color="#ffffff"&gt;&lt;b&gt;HELP&lt;/b&gt;&lt;br&gt;
+
+        	&lt;a href="/faq.php" class="footerlink"&gt;FAQs&lt;/a&gt;&lt;br&gt;
+
+                &lt;a href="/help/signup.php" class="footerlink"&gt;Signup&lt;/a&gt;&lt;br&gt;
+
+                &lt;a href="/help/newads.php" class="footerlink"&gt;Placing Ads&lt;/a&gt;&lt;br&gt;
+
+                &lt;a href="/help/security.php" class="footerlink"&gt;Security&lt;/a&gt;&lt;br&gt;
+
+		&lt;/font&gt;
+
+	&lt;/td&gt;
+
+	&lt;td valign="top" width="20%"&gt;&lt;font color="#ffffff"&gt;&lt;b&gt;ADVERTISING&lt;/b&gt;&lt;br&gt;
+
+                &lt;a href="/advertising.php" class="footerlink"&gt;Advertising&lt;/a&gt;&lt;br&gt;
+
+                &lt;a href="/banner-steps.php" class="footerlink"&gt;Banners&lt;/a&gt;&lt;br&gt;
+
+                &lt;a href="/advertising.php" class="footerlink"&gt;Login Ad&lt;/a&gt;&lt;br&gt;
+
+		&lt;a href="/help/datafeeds.php" class="footerlink"&gt;Data Feeds&lt;/a&gt;&lt;br&gt;
+
+		&lt;a href="/help/rss.php" class="footerlink"&gt;RSS Feeds&lt;/a&gt;
+
+		&lt;/font&gt;
+
+	&lt;/td&gt;
+
+	&lt;td valign="top" width="20%"&gt;&lt;font color="#ffffff"&gt;&lt;b&gt;ABOUT US&lt;/b&gt;&lt;br&gt;
+
+		&lt;a href="/terms-of-service.php" class="footerlink"&gt;Terms of Service&lt;/a&gt;&lt;br&gt;
+
+		&lt;!--&lt;a href="/privacy.php" class="footerlink"&gt;Privacy Policy&lt;/a&gt;&lt;BR&gt; --&gt;
+
+		&lt;a href="/mail.php" class="footerlink"&gt;Contact Us&lt;/a&gt;&lt;br&gt;
+
+		&lt;/font&gt;
+
+        &lt;/td&gt;
+
+  &lt;/tr&gt;
+
+&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;br&gt;
+
+
+
+
+
+&lt;div class="megawrapper" style="z-index: 100; position: absolute; top: 0px; left: 0px; visibility: hidden; width: 724px; height: 726px;"&gt;&lt;div style="position:absolute;overflow:hidden;left:0;top:0;width:100%;height:100%;"&gt;&lt;div id="categorymenu" class="cats" style="visibility: inherit; top: -701px;"&gt;
+
+        &lt;div class="column"&gt;
+
+          &lt;ul&gt;
+
+            &lt;li&gt; &lt;a href="javascript:GetCategoryDirector('Recent')"&gt;&lt;b&gt;Recent Ads&lt;/b&gt;&lt;/a&gt; (151)&lt;/li&gt;&lt;li&gt; &lt;a href="/favorite.php"&gt;&lt;b&gt;Top 25 Fan Favorites&lt;/b&gt;&lt;/a&gt; (25)&lt;/li&gt;&lt;hr size="1"&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Aircraft')"&gt;Aircraft&lt;/a&gt; (1)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Antiques')"&gt;Antiques&lt;/a&gt; (139)&lt;/li&gt;
+
+&lt;li&gt; Appliances&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Appliances/Dishwasher')"&gt;&amp;nbsp; &amp;nbsp; -Dishwasher&lt;/a&gt; (5)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Appliances/Dryer')"&gt;&amp;nbsp; &amp;nbsp; -Dryer&lt;/a&gt; (17)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Appliances/Freezer')"&gt;&amp;nbsp; &amp;nbsp; -Freezer&lt;/a&gt; (3)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Appliances/Fridge')"&gt;&amp;nbsp; &amp;nbsp; -Fridge&lt;/a&gt; (18)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Appliances/Microwave')"&gt;&amp;nbsp; &amp;nbsp; -Microwave&lt;/a&gt; (5)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Appliances/Stove')"&gt;&amp;nbsp; &amp;nbsp; -Stove&lt;/a&gt; (13)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Appliances/Washer')"&gt;&amp;nbsp; &amp;nbsp; -Washer&lt;/a&gt; (15)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Appliances/Other')"&gt;&amp;nbsp; &amp;nbsp; -Other&lt;/a&gt; (68)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Arts and Crafts')"&gt;Arts and Crafts&lt;/a&gt; (20)&lt;/li&gt;
+
+&lt;li&gt; Auto Parts&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Auto Parts/Body')"&gt;&amp;nbsp; &amp;nbsp; -Body&lt;/a&gt; (64)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Auto Parts/Electronics')"&gt;&amp;nbsp; &amp;nbsp; -Electronics&lt;/a&gt; (12)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Auto Parts/Engine')"&gt;&amp;nbsp; &amp;nbsp; -Engine&lt;/a&gt; (52)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Auto Parts/Interior')"&gt;&amp;nbsp; &amp;nbsp; -Interior&lt;/a&gt; (20)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Auto Parts/Parting Out')"&gt;&amp;nbsp; &amp;nbsp; -Parting Out&lt;/a&gt; (18)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Auto Parts/Tires and Wheels')"&gt;&amp;nbsp; &amp;nbsp; -Tires and Wheels&lt;/a&gt; (174)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Auto Parts/Transmission')"&gt;&amp;nbsp; &amp;nbsp; -Transmission&lt;/a&gt; (9)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Auto Parts/Other')"&gt;&amp;nbsp; &amp;nbsp; -Other&lt;/a&gt; (69)&lt;/li&gt;
+
+&lt;li&gt; Autos&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Autos/Classic')"&gt;&amp;nbsp; &amp;nbsp; -Classic&lt;/a&gt; (70)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Autos/Commercial')"&gt;&amp;nbsp; &amp;nbsp; -Commercial&lt;/a&gt; (11)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Autos/Convertible')"&gt;&amp;nbsp; &amp;nbsp; -Convertible&lt;/a&gt; (38)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Autos/Coupe')"&gt;&amp;nbsp; &amp;nbsp; -Coupe&lt;/a&gt; (80)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Autos/Crossover')"&gt;&amp;nbsp; &amp;nbsp; -Crossover&lt;/a&gt; (25)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Autos/Hybrid')"&gt;&amp;nbsp; &amp;nbsp; -Hybrid&lt;/a&gt; (2)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Autos/Luxury')"&gt;&amp;nbsp; &amp;nbsp; -Luxury&lt;/a&gt; (29)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Autos/Pickup Truck')"&gt;&amp;nbsp; &amp;nbsp; -Pickup Truck&lt;/a&gt; (543)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Autos/Sedan')"&gt;&amp;nbsp; &amp;nbsp; -Sedan&lt;/a&gt; (535)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Autos/Sports Car')"&gt;&amp;nbsp; &amp;nbsp; -Sports Car&lt;/a&gt; (42)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Autos/SUV')"&gt;&amp;nbsp; &amp;nbsp; -SUV&lt;/a&gt; (550)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Autos/Vans')"&gt;&amp;nbsp; &amp;nbsp; -Vans&lt;/a&gt; (88)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Autos/Wagons and Hatchbacks')"&gt;&amp;nbsp; &amp;nbsp; -Wagons and Hatchbacks&lt;/a&gt; (44)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Autos/Other')"&gt;&amp;nbsp; &amp;nbsp; -Other&lt;/a&gt; (53)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Baby Items')"&gt;Baby Items&lt;/a&gt; (65)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Bicycles')"&gt;Bicycles&lt;/a&gt; (28)&lt;/li&gt;
+
+          &lt;/ul&gt;
+
+        &lt;/div&gt;
+
+        &lt;div class="column"&gt;
+
+          &lt;ul&gt;
+
+            &lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Boats')"&gt;Boats&lt;/a&gt; (254)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Books')"&gt;Books&lt;/a&gt; (10)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Campers and RVs')"&gt;Campers and RVs&lt;/a&gt; (105)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Church')"&gt;Church&lt;/a&gt; (4)&lt;/li&gt;
+
+&lt;li&gt; Clothing&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Clothing/Children')"&gt;&amp;nbsp; &amp;nbsp; -Children&lt;/a&gt; (17)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Clothing/Men')"&gt;&amp;nbsp; &amp;nbsp; -Men&lt;/a&gt; (20)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Clothing/Women')"&gt;&amp;nbsp; &amp;nbsp; -Women&lt;/a&gt; (27)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Clothing/Formalwear')"&gt;&amp;nbsp; &amp;nbsp; -Formalwear&lt;/a&gt; (12)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Clothing/Wedding Apparel')"&gt;&amp;nbsp; &amp;nbsp; -Wedding Apparel&lt;/a&gt; (13)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Clothing/Accessories')"&gt;&amp;nbsp; &amp;nbsp; -Accessories&lt;/a&gt; (21)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Collectibles')"&gt;Collectibles&lt;/a&gt; (98)&lt;/li&gt;
+
+&lt;li&gt; Computers and Accessories&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Computers and Accessories/Desktops')"&gt;&amp;nbsp; &amp;nbsp; -Desktops&lt;/a&gt; (28)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Computers and Accessories/Internet Equipment')"&gt;&amp;nbsp; &amp;nbsp; -Internet Equipment&lt;/a&gt; (4)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Computers and Accessories/Laptops')"&gt;&amp;nbsp; &amp;nbsp; -Laptops&lt;/a&gt; (20)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Computers and Accessories/Monitors')"&gt;&amp;nbsp; &amp;nbsp; -Monitors&lt;/a&gt; (3)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Computers and Accessories/Multifunction')"&gt;&amp;nbsp; &amp;nbsp; -Multifunction&lt;/a&gt; (3)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Computers and Accessories/Printers')"&gt;&amp;nbsp; &amp;nbsp; -Printers&lt;/a&gt; (2)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Computers and Accessories/Tablets')"&gt;&amp;nbsp; &amp;nbsp; -Tablets&lt;/a&gt; (4)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Computers and Accessories/Other')"&gt;&amp;nbsp; &amp;nbsp; -Other&lt;/a&gt; (19)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Education')"&gt;Education&lt;/a&gt; (7)&lt;/li&gt;
+
+&lt;li&gt; Electronics&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Electronics/Cameras')"&gt;&amp;nbsp; &amp;nbsp; -Cameras&lt;/a&gt; (9)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Electronics/Cell Phones')"&gt;&amp;nbsp; &amp;nbsp; -Cell Phones&lt;/a&gt; (30)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Electronics/Game Systems')"&gt;&amp;nbsp; &amp;nbsp; -Game Systems&lt;/a&gt; (29)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Electronics/GPS')"&gt;&amp;nbsp; &amp;nbsp; -GPS&lt;/a&gt; ()&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Electronics/Music Players')"&gt;&amp;nbsp; &amp;nbsp; -Music Players&lt;/a&gt; (10)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Electronics/Stereos')"&gt;&amp;nbsp; &amp;nbsp; -Stereos&lt;/a&gt; (20)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Electronics/TVs')"&gt;&amp;nbsp; &amp;nbsp; -TVs&lt;/a&gt; (12)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Electronics/VCR and DVD Players')"&gt;&amp;nbsp; &amp;nbsp; -VCR and DVD Players&lt;/a&gt; (3)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Electronics/Other')"&gt;&amp;nbsp; &amp;nbsp; -Other&lt;/a&gt; (30)&lt;/li&gt;
+
+&lt;li&gt; Employment&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Employment/Jobs Offered')"&gt;&amp;nbsp; &amp;nbsp; -Jobs Offered&lt;/a&gt; (66)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Employment/Jobs Wanted')"&gt;&amp;nbsp; &amp;nbsp; -Jobs Wanted&lt;/a&gt; (14)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Events')"&gt;Events&lt;/a&gt; (14)&lt;/li&gt;
+
+&lt;li&gt; Farm&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Farm/Implements')"&gt;&amp;nbsp; &amp;nbsp; -Implements&lt;/a&gt; (235)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Farm/Services')"&gt;&amp;nbsp; &amp;nbsp; -Services&lt;/a&gt; (49)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Farm/Tractors')"&gt;&amp;nbsp; &amp;nbsp; -Tractors&lt;/a&gt; (104)&lt;/li&gt;
+
+          &lt;/ul&gt;
+
+        &lt;/div&gt;
+
+        &lt;div class="column"&gt;
+
+          &lt;ul&gt;
+
+            &lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Farm/Trailers')"&gt;&amp;nbsp; &amp;nbsp; -Trailers&lt;/a&gt; (107)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Farm/Trucks')"&gt;&amp;nbsp; &amp;nbsp; -Trucks&lt;/a&gt; (19)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Farm/Other')"&gt;&amp;nbsp; &amp;nbsp; -Other&lt;/a&gt; (156)&lt;/li&gt;
+
+&lt;li&gt; Firearms&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Firearms/Handguns')"&gt;&amp;nbsp; &amp;nbsp; -Handguns&lt;/a&gt; (364)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Firearms/Long Guns')"&gt;&amp;nbsp; &amp;nbsp; -Long Guns&lt;/a&gt; (252)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Firearms/Accessories')"&gt;&amp;nbsp; &amp;nbsp; -Accessories&lt;/a&gt; (58)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Free')"&gt;Free&lt;/a&gt; (22)&lt;/li&gt;
+
+&lt;li&gt; Furniture&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Furniture/Bedroom')"&gt;&amp;nbsp; &amp;nbsp; -Bedroom&lt;/a&gt; (71)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Furniture/Commercial')"&gt;&amp;nbsp; &amp;nbsp; -Commercial&lt;/a&gt; (11)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Furniture/Dining Room')"&gt;&amp;nbsp; &amp;nbsp; -Dining Room&lt;/a&gt; (65)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Furniture/Home Office')"&gt;&amp;nbsp; &amp;nbsp; -Home Office&lt;/a&gt; (37)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Furniture/Kids Stuff')"&gt;&amp;nbsp; &amp;nbsp; -Kids Stuff&lt;/a&gt; (21)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Furniture/Kitchen')"&gt;&amp;nbsp; &amp;nbsp; -Kitchen&lt;/a&gt; (22)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Furniture/Living Room')"&gt;&amp;nbsp; &amp;nbsp; -Living Room&lt;/a&gt; (129)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Furniture/Outdoor')"&gt;&amp;nbsp; &amp;nbsp; -Outdoor&lt;/a&gt; (35)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Health and Beauty')"&gt;Health and Beauty&lt;/a&gt; (48)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Heavy Equipment')"&gt;Heavy Equipment&lt;/a&gt; (82)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Holiday and Seasonal')"&gt;Holiday and Seasonal&lt;/a&gt; (5)&lt;/li&gt;
+
+&lt;li&gt; Home&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Home/Building and Hardware')"&gt;&amp;nbsp; &amp;nbsp; -Building and Hardware&lt;/a&gt; (211)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Home/Flooring')"&gt;&amp;nbsp; &amp;nbsp; -Flooring&lt;/a&gt; (27)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Home/Home Decor')"&gt;&amp;nbsp; &amp;nbsp; -Home Decor&lt;/a&gt; (106)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Home/Household Items')"&gt;&amp;nbsp; &amp;nbsp; -Household Items&lt;/a&gt; (63)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Home/Miscellaneous')"&gt;&amp;nbsp; &amp;nbsp; -Miscellaneous&lt;/a&gt; (117)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Home/Services')"&gt;&amp;nbsp; &amp;nbsp; -Services&lt;/a&gt; (93)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Home/Wedding Supplies')"&gt;&amp;nbsp; &amp;nbsp; -Wedding Supplies&lt;/a&gt; (11)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Hunting and Fishing')"&gt;Hunting and Fishing&lt;/a&gt; (101)&lt;/li&gt;
+
+&lt;li&gt; HVAC&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('HVAC/AC-HP Split Systems')"&gt;&amp;nbsp; &amp;nbsp; -AC-HP Split Systems&lt;/a&gt; (7)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('HVAC/Dual Fuel')"&gt;&amp;nbsp; &amp;nbsp; -Dual Fuel&lt;/a&gt; (1)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('HVAC/Heat Pumps')"&gt;&amp;nbsp; &amp;nbsp; -Heat Pumps&lt;/a&gt; (27)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('HVAC/Gas Furnaces')"&gt;&amp;nbsp; &amp;nbsp; -Gas Furnaces&lt;/a&gt; (60)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('HVAC/Geothermal')"&gt;&amp;nbsp; &amp;nbsp; -Geothermal&lt;/a&gt; (34)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('HVAC/Parts')"&gt;&amp;nbsp; &amp;nbsp; -Parts&lt;/a&gt; (114)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Jewelry')"&gt;Jewelry&lt;/a&gt; (31)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Lawn and Garden')"&gt;Lawn and Garden&lt;/a&gt; (359)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Memorabilia')"&gt;Memorabilia&lt;/a&gt; (6)&lt;/li&gt;
+
+          &lt;/ul&gt;
+
+        &lt;/div&gt;
+
+        &lt;div class="column"&gt;
+
+          &lt;ul&gt;
+
+            &lt;li&gt; Motorcycles&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Motorcycles/Accessories')"&gt;&amp;nbsp; &amp;nbsp; -Accessories&lt;/a&gt; (102)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Motorcycles/Clothing')"&gt;&amp;nbsp; &amp;nbsp; -Clothing&lt;/a&gt; (14)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Motorcycles/Parts')"&gt;&amp;nbsp; &amp;nbsp; -Parts&lt;/a&gt; (80)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Motorcycles/Off-Road')"&gt;&amp;nbsp; &amp;nbsp; -Off-Road&lt;/a&gt; (37)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Motorcycles/On-Road')"&gt;&amp;nbsp; &amp;nbsp; -On-Road&lt;/a&gt; (185)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Motorcycles/Scooters')"&gt;&amp;nbsp; &amp;nbsp; -Scooters&lt;/a&gt; (16)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Motorcycles/Trailers')"&gt;&amp;nbsp; &amp;nbsp; -Trailers&lt;/a&gt; (22)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Musical')"&gt;Musical&lt;/a&gt; (196)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Other')"&gt;Other&lt;/a&gt; (90)&lt;/li&gt;
+
+&lt;li&gt; Powersports&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Powersports/3 Wheelers')"&gt;&amp;nbsp; &amp;nbsp; -3 Wheelers&lt;/a&gt; (9)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Powersports/4 Wheelers')"&gt;&amp;nbsp; &amp;nbsp; -4 Wheelers&lt;/a&gt; (122)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Powersports/Golf Carts')"&gt;&amp;nbsp; &amp;nbsp; -Golf Carts&lt;/a&gt; (46)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Powersports/Parts')"&gt;&amp;nbsp; &amp;nbsp; -Parts&lt;/a&gt; (5)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Powersports/Trailers')"&gt;&amp;nbsp; &amp;nbsp; -Trailers&lt;/a&gt; (19)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Powersports/Utility')"&gt;&amp;nbsp; &amp;nbsp; -Utility&lt;/a&gt; (73)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Powersports/Other')"&gt;&amp;nbsp; &amp;nbsp; -Other&lt;/a&gt; (19)&lt;/li&gt;
+
+&lt;li&gt; Racing&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Racing/Body and Fabrication')"&gt;&amp;nbsp; &amp;nbsp; -Body and Fabrication&lt;/a&gt; (3)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Racing/Cars')"&gt;&amp;nbsp; &amp;nbsp; -Cars&lt;/a&gt; (4)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Racing/Drive Train')"&gt;&amp;nbsp; &amp;nbsp; -Drive Train&lt;/a&gt; (1)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Racing/Services')"&gt;&amp;nbsp; &amp;nbsp; -Services&lt;/a&gt; (4)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Racing/Other')"&gt;&amp;nbsp; &amp;nbsp; -Other&lt;/a&gt; (7)&lt;/li&gt;
+
+&lt;li&gt; Real Estate&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Real Estate/Commercial')"&gt;&amp;nbsp; &amp;nbsp; -Commercial&lt;/a&gt; (66)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Real Estate/Land')"&gt;&amp;nbsp; &amp;nbsp; -Land&lt;/a&gt; (120)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Real Estate/Manufactured')"&gt;&amp;nbsp; &amp;nbsp; -Manufactured&lt;/a&gt; (39)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Real Estate/Residential')"&gt;&amp;nbsp; &amp;nbsp; -Residential&lt;/a&gt; (227)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Real Estate/Vacation')"&gt;&amp;nbsp; &amp;nbsp; -Vacation&lt;/a&gt; (26)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Real Estate/Rent or Lease')"&gt;&amp;nbsp; &amp;nbsp; -Rent or Lease&lt;/a&gt; (97)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Services')"&gt;Services&lt;/a&gt; (180)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Sports')"&gt;Sports&lt;/a&gt; (82)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Tools')"&gt;Tools&lt;/a&gt; (184)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Toys')"&gt;Toys&lt;/a&gt; (63)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Trade or Barter')"&gt;Trade or Barter&lt;/a&gt; (14)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Vacation Packages')"&gt;Vacation Packages&lt;/a&gt; (8)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Wanted')"&gt;Wanted&lt;/a&gt; (58)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="Javascript:GetCategoryDirector('Yard Sale')"&gt;Yard Sale&lt;/a&gt; (30)&lt;/li&gt;
+
+&lt;hr size="1"&gt;&lt;li&gt; &lt;a href="/cities.php"&gt;Browse By City&lt;/a&gt;&lt;/li&gt;
+
+          &lt;/ul&gt;
+
+        &lt;/div&gt;
+
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="megawrapper" style="z-index: 100; position: absolute; top: 0px; left: 0px; visibility: hidden; width: 174px; height: 223px;"&gt;&lt;div style="position:absolute;overflow:hidden;left:0;top:0;width:100%;height:100%;"&gt;&lt;div id="helpmenu" class="helpclass" style="visibility: inherit; top: -198px;"&gt;
+
+   &lt;div class="column"&gt;
+
+      &lt;ul&gt;
+
+        &lt;li&gt; &lt;a href="/help/videos/"&gt;Help Videos&lt;/a&gt;&lt;/li&gt;
+
+	&lt;hr size="1"&gt;
+
+        &lt;li&gt; &lt;a href="/accounts.php"&gt;Account Types&lt;/a&gt;&lt;/li&gt;
+
+	&lt;hr size="1"&gt;
+
+        &lt;li&gt; &lt;a href="/help/"&gt;All Help Topics&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt; &lt;a href="/help/faqs.php"&gt;FAQ&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt; &lt;a href="/help/newads.php"&gt;Place New Ad&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt; &lt;a href="/help/uploading.php"&gt;Upload Images&lt;/a&gt;&lt;/li&gt;
+
+	&lt;hr size="1"&gt;
+
+      &lt;/ul&gt;
+
+      &lt;ul&gt;
+
+        &lt;li&gt; &lt;a href="/help/buying.php"&gt;Buyer Safety&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt; &lt;a href="/help/selling.php"&gt;Seller Safety&lt;/a&gt;&lt;/li&gt;
+
+	&lt;hr size="1"&gt;
+
+      &lt;/ul&gt;
+
+      &lt;ul&gt;
+
+        &lt;li&gt; &lt;a href="/help/history.php"&gt;VCI Classifieds History&lt;/a&gt;&lt;/li&gt;
+
+      &lt;/ul&gt;
+
+    &lt;/div&gt;
+
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="megawrapper" style="z-index: 100; position: absolute; top: 0px; left: 0px; visibility: hidden; width: 724px; height: 746px;"&gt;&lt;div style="position:absolute;overflow:hidden;left:0;top:0;width:100%;height:100%;"&gt;&lt;div id="prodirectorymenu" class="prodirectoryclass" style="visibility: inherit; top: -721px;"&gt;
+
+&lt;center&gt;&lt;b&gt;Choose from the following categories to view the Pros.&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;/center&gt;
+
+        &lt;div class="column"&gt;
+
+          &lt;ul&gt;
+
+            &lt;li&gt; &lt;a href="/directory.php?filter=Aircraft"&gt;Aircraft&lt;/a&gt; ()&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Antiques"&gt;Antiques&lt;/a&gt; (5)&lt;/li&gt;
+
+&lt;li&gt; Appliances&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Appliances/Dishwasher"&gt;&amp;nbsp; &amp;nbsp; -Dishwasher&lt;/a&gt; (2)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Appliances/Dryer"&gt;&amp;nbsp; &amp;nbsp; -Dryer&lt;/a&gt; (3)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Appliances/Freezer"&gt;&amp;nbsp; &amp;nbsp; -Freezer&lt;/a&gt; ()&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Appliances/Fridge"&gt;&amp;nbsp; &amp;nbsp; -Fridge&lt;/a&gt; (2)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Appliances/Microwave"&gt;&amp;nbsp; &amp;nbsp; -Microwave&lt;/a&gt; ()&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Appliances/Stove"&gt;&amp;nbsp; &amp;nbsp; -Stove&lt;/a&gt; (2)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Appliances/Washer"&gt;&amp;nbsp; &amp;nbsp; -Washer&lt;/a&gt; (1)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Appliances/Other"&gt;&amp;nbsp; &amp;nbsp; -Other&lt;/a&gt; (4)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Arts and Crafts"&gt;Arts and Crafts&lt;/a&gt; (2)&lt;/li&gt;
+
+&lt;li&gt; Auto Parts&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Auto Parts/Body"&gt;&amp;nbsp; &amp;nbsp; -Body&lt;/a&gt; (7)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Auto Parts/Electronics"&gt;&amp;nbsp; &amp;nbsp; -Electronics&lt;/a&gt; (2)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Auto Parts/Engine"&gt;&amp;nbsp; &amp;nbsp; -Engine&lt;/a&gt; (8)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Auto Parts/Interior"&gt;&amp;nbsp; &amp;nbsp; -Interior&lt;/a&gt; (3)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Auto Parts/Parting Out"&gt;&amp;nbsp; &amp;nbsp; -Parting Out&lt;/a&gt; (5)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Auto Parts/Tires and Wheels"&gt;&amp;nbsp; &amp;nbsp; -Tires and Wheels&lt;/a&gt; (8)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Auto Parts/Transmission"&gt;&amp;nbsp; &amp;nbsp; -Transmission&lt;/a&gt; (3)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Auto Parts/Other"&gt;&amp;nbsp; &amp;nbsp; -Other&lt;/a&gt; (5)&lt;/li&gt;
+
+&lt;li&gt; Autos&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Autos/Classic"&gt;&amp;nbsp; &amp;nbsp; -Classic&lt;/a&gt; (9)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Autos/Commercial"&gt;&amp;nbsp; &amp;nbsp; -Commercial&lt;/a&gt; (2)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Autos/Convertible"&gt;&amp;nbsp; &amp;nbsp; -Convertible&lt;/a&gt; (7)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Autos/Coupe"&gt;&amp;nbsp; &amp;nbsp; -Coupe&lt;/a&gt; (15)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Autos/Crossover"&gt;&amp;nbsp; &amp;nbsp; -Crossover&lt;/a&gt; (6)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Autos/Hybrid"&gt;&amp;nbsp; &amp;nbsp; -Hybrid&lt;/a&gt; (1)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Autos/Luxury"&gt;&amp;nbsp; &amp;nbsp; -Luxury&lt;/a&gt; (6)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Autos/Pickup Truck"&gt;&amp;nbsp; &amp;nbsp; -Pickup Truck&lt;/a&gt; (42)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Autos/Sedan"&gt;&amp;nbsp; &amp;nbsp; -Sedan&lt;/a&gt; (38)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Autos/Sports Car"&gt;&amp;nbsp; &amp;nbsp; -Sports Car&lt;/a&gt; (7)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Autos/SUV"&gt;&amp;nbsp; &amp;nbsp; -SUV&lt;/a&gt; (33)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Autos/Vans"&gt;&amp;nbsp; &amp;nbsp; -Vans&lt;/a&gt; (22)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Autos/Wagons and Hatchbacks"&gt;&amp;nbsp; &amp;nbsp; -Wagons and Hatchbacks&lt;/a&gt; (12)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Autos/Other"&gt;&amp;nbsp; &amp;nbsp; -Other&lt;/a&gt; (6)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Baby Items"&gt;Baby Items&lt;/a&gt; (3)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Bicycles"&gt;Bicycles&lt;/a&gt; ()&lt;/li&gt;
+
+          &lt;/ul&gt;
+
+        &lt;/div&gt;
+
+        &lt;div class="column"&gt;
+
+          &lt;ul&gt;
+
+            &lt;li&gt; &lt;a href="/directory.php?filter=Boats"&gt;Boats&lt;/a&gt; (10)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Books"&gt;Books&lt;/a&gt; ()&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Campers and RVs"&gt;Campers and RVs&lt;/a&gt; (10)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Church"&gt;Church&lt;/a&gt; ()&lt;/li&gt;
+
+&lt;li&gt; Clothing&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Clothing/Children"&gt;&amp;nbsp; &amp;nbsp; -Children&lt;/a&gt; ()&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Clothing/Men"&gt;&amp;nbsp; &amp;nbsp; -Men&lt;/a&gt; (1)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Clothing/Women"&gt;&amp;nbsp; &amp;nbsp; -Women&lt;/a&gt; (1)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Clothing/Formalwear"&gt;&amp;nbsp; &amp;nbsp; -Formalwear&lt;/a&gt; ()&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Clothing/Wedding Apparel"&gt;&amp;nbsp; &amp;nbsp; -Wedding Apparel&lt;/a&gt; (1)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Clothing/Accessories"&gt;&amp;nbsp; &amp;nbsp; -Accessories&lt;/a&gt; (1)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Collectibles"&gt;Collectibles&lt;/a&gt; (2)&lt;/li&gt;
+
+&lt;li&gt; Computers and Accessories&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Computers and Accessories/Desktops"&gt;&amp;nbsp; &amp;nbsp; -Desktops&lt;/a&gt; (2)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Computers and Accessories/Internet Equipment"&gt;&amp;nbsp; &amp;nbsp; -Internet Equipment&lt;/a&gt; ()&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Computers and Accessories/Laptops"&gt;&amp;nbsp; &amp;nbsp; -Laptops&lt;/a&gt; (2)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Computers and Accessories/Monitors"&gt;&amp;nbsp; &amp;nbsp; -Monitors&lt;/a&gt; ()&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Computers and Accessories/Multifunction"&gt;&amp;nbsp; &amp;nbsp; -Multifunction&lt;/a&gt; (2)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Computers and Accessories/Printers"&gt;&amp;nbsp; &amp;nbsp; -Printers&lt;/a&gt; ()&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Computers and Accessories/Tablets"&gt;&amp;nbsp; &amp;nbsp; -Tablets&lt;/a&gt; (1)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Computers and Accessories/Other"&gt;&amp;nbsp; &amp;nbsp; -Other&lt;/a&gt; (2)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Education"&gt;Education&lt;/a&gt; (2)&lt;/li&gt;
+
+&lt;li&gt; Electronics&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Electronics/Cameras"&gt;&amp;nbsp; &amp;nbsp; -Cameras&lt;/a&gt; (2)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Electronics/Cell Phones"&gt;&amp;nbsp; &amp;nbsp; -Cell Phones&lt;/a&gt; (2)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Electronics/Game Systems"&gt;&amp;nbsp; &amp;nbsp; -Game Systems&lt;/a&gt; (2)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Electronics/GPS"&gt;&amp;nbsp; &amp;nbsp; -GPS&lt;/a&gt; ()&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Electronics/Music Players"&gt;&amp;nbsp; &amp;nbsp; -Music Players&lt;/a&gt; (2)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Electronics/Stereos"&gt;&amp;nbsp; &amp;nbsp; -Stereos&lt;/a&gt; (1)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Electronics/TVs"&gt;&amp;nbsp; &amp;nbsp; -TVs&lt;/a&gt; ()&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Electronics/VCR and DVD Players"&gt;&amp;nbsp; &amp;nbsp; -VCR and DVD Players&lt;/a&gt; ()&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Electronics/Other"&gt;&amp;nbsp; &amp;nbsp; -Other&lt;/a&gt; (3)&lt;/li&gt;
+
+&lt;li&gt; Employment&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Employment/Jobs Offered"&gt;&amp;nbsp; &amp;nbsp; -Jobs Offered&lt;/a&gt; (5)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Employment/Jobs Wanted"&gt;&amp;nbsp; &amp;nbsp; -Jobs Wanted&lt;/a&gt; (3)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Events"&gt;Events&lt;/a&gt; ()&lt;/li&gt;
+
+&lt;li&gt; Farm&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Farm/Implements"&gt;&amp;nbsp; &amp;nbsp; -Implements&lt;/a&gt; (5)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Farm/Services"&gt;&amp;nbsp; &amp;nbsp; -Services&lt;/a&gt; (6)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Farm/Tractors"&gt;&amp;nbsp; &amp;nbsp; -Tractors&lt;/a&gt; (8)&lt;/li&gt;
+
+          &lt;/ul&gt;
+
+        &lt;/div&gt;
+
+        &lt;div class="column"&gt;
+
+          &lt;ul&gt;
+
+            &lt;li&gt; &lt;a href="/directory.php?filter=Farm/Trailers"&gt;&amp;nbsp; &amp;nbsp; -Trailers&lt;/a&gt; (5)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Farm/Trucks"&gt;&amp;nbsp; &amp;nbsp; -Trucks&lt;/a&gt; (3)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Farm/Other"&gt;&amp;nbsp; &amp;nbsp; -Other&lt;/a&gt; (6)&lt;/li&gt;
+
+&lt;li&gt; Firearms&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Firearms/Handguns"&gt;&amp;nbsp; &amp;nbsp; -Handguns&lt;/a&gt; (11)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Firearms/Long Guns"&gt;&amp;nbsp; &amp;nbsp; -Long Guns&lt;/a&gt; (9)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Firearms/Accessories"&gt;&amp;nbsp; &amp;nbsp; -Accessories&lt;/a&gt; (6)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Free"&gt;Free&lt;/a&gt; (4)&lt;/li&gt;
+
+&lt;li&gt; Furniture&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Furniture/Bedroom"&gt;&amp;nbsp; &amp;nbsp; -Bedroom&lt;/a&gt; (3)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Furniture/Commercial"&gt;&amp;nbsp; &amp;nbsp; -Commercial&lt;/a&gt; (1)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Furniture/Dining Room"&gt;&amp;nbsp; &amp;nbsp; -Dining Room&lt;/a&gt; (2)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Furniture/Home Office"&gt;&amp;nbsp; &amp;nbsp; -Home Office&lt;/a&gt; (1)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Furniture/Kids Stuff"&gt;&amp;nbsp; &amp;nbsp; -Kids Stuff&lt;/a&gt; (1)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Furniture/Kitchen"&gt;&amp;nbsp; &amp;nbsp; -Kitchen&lt;/a&gt; (2)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Furniture/Living Room"&gt;&amp;nbsp; &amp;nbsp; -Living Room&lt;/a&gt; (4)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Furniture/Outdoor"&gt;&amp;nbsp; &amp;nbsp; -Outdoor&lt;/a&gt; (8)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Health and Beauty"&gt;Health and Beauty&lt;/a&gt; (1)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Heavy Equipment"&gt;Heavy Equipment&lt;/a&gt; (4)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Holiday and Seasonal"&gt;Holiday and Seasonal&lt;/a&gt; ()&lt;/li&gt;
+
+&lt;li&gt; Home&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Home/Building and Hardware"&gt;&amp;nbsp; &amp;nbsp; -Building and Hardware&lt;/a&gt; (14)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Home/Flooring"&gt;&amp;nbsp; &amp;nbsp; -Flooring&lt;/a&gt; (2)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Home/Home Decor"&gt;&amp;nbsp; &amp;nbsp; -Home Decor&lt;/a&gt; (6)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Home/Household Items"&gt;&amp;nbsp; &amp;nbsp; -Household Items&lt;/a&gt; (2)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Home/Miscellaneous"&gt;&amp;nbsp; &amp;nbsp; -Miscellaneous&lt;/a&gt; (9)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Home/Services"&gt;&amp;nbsp; &amp;nbsp; -Services&lt;/a&gt; (11)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Home/Wedding Supplies"&gt;&amp;nbsp; &amp;nbsp; -Wedding Supplies&lt;/a&gt; ()&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Hunting and Fishing"&gt;Hunting and Fishing&lt;/a&gt; (10)&lt;/li&gt;
+
+&lt;li&gt; HVAC&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=HVAC/AC-HP Split Systems"&gt;&amp;nbsp; &amp;nbsp; -AC-HP Split Systems&lt;/a&gt; ()&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=HVAC/Dual Fuel"&gt;&amp;nbsp; &amp;nbsp; -Dual Fuel&lt;/a&gt; (1)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=HVAC/Heat Pumps"&gt;&amp;nbsp; &amp;nbsp; -Heat Pumps&lt;/a&gt; (2)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=HVAC/Gas Furnaces"&gt;&amp;nbsp; &amp;nbsp; -Gas Furnaces&lt;/a&gt; (1)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=HVAC/Geothermal"&gt;&amp;nbsp; &amp;nbsp; -Geothermal&lt;/a&gt; (1)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=HVAC/Parts"&gt;&amp;nbsp; &amp;nbsp; -Parts&lt;/a&gt; (1)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Jewelry"&gt;Jewelry&lt;/a&gt; (1)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Lawn and Garden"&gt;Lawn and Garden&lt;/a&gt; (17)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Memorabilia"&gt;Memorabilia&lt;/a&gt; (1)&lt;/li&gt;
+
+          &lt;/ul&gt;
+
+        &lt;/div&gt;
+
+        &lt;div class="column"&gt;
+
+          &lt;ul&gt;
+
+            &lt;li&gt; Motorcycles&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Motorcycles/Accessories"&gt;&amp;nbsp; &amp;nbsp; -Accessories&lt;/a&gt; (2)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Motorcycles/Clothing"&gt;&amp;nbsp; &amp;nbsp; -Clothing&lt;/a&gt; (1)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Motorcycles/Parts"&gt;&amp;nbsp; &amp;nbsp; -Parts&lt;/a&gt; (3)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Motorcycles/Off-Road"&gt;&amp;nbsp; &amp;nbsp; -Off-Road&lt;/a&gt; (1)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Motorcycles/On-Road"&gt;&amp;nbsp; &amp;nbsp; -On-Road&lt;/a&gt; (9)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Motorcycles/Scooters"&gt;&amp;nbsp; &amp;nbsp; -Scooters&lt;/a&gt; (3)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Motorcycles/Trailers"&gt;&amp;nbsp; &amp;nbsp; -Trailers&lt;/a&gt; (4)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Musical"&gt;Musical&lt;/a&gt; (5)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Other"&gt;Other&lt;/a&gt; (9)&lt;/li&gt;
+
+&lt;li&gt; Powersports&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Powersports/3 Wheelers"&gt;&amp;nbsp; &amp;nbsp; -3 Wheelers&lt;/a&gt; ()&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Powersports/4 Wheelers"&gt;&amp;nbsp; &amp;nbsp; -4 Wheelers&lt;/a&gt; (4)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Powersports/Golf Carts"&gt;&amp;nbsp; &amp;nbsp; -Golf Carts&lt;/a&gt; (2)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Powersports/Parts"&gt;&amp;nbsp; &amp;nbsp; -Parts&lt;/a&gt; (1)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Powersports/Trailers"&gt;&amp;nbsp; &amp;nbsp; -Trailers&lt;/a&gt; (3)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Powersports/Utility"&gt;&amp;nbsp; &amp;nbsp; -Utility&lt;/a&gt; (3)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Powersports/Other"&gt;&amp;nbsp; &amp;nbsp; -Other&lt;/a&gt; (2)&lt;/li&gt;
+
+&lt;li&gt; Racing&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Racing/Body and Fabrication"&gt;&amp;nbsp; &amp;nbsp; -Body and Fabrication&lt;/a&gt; ()&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Racing/Cars"&gt;&amp;nbsp; &amp;nbsp; -Cars&lt;/a&gt; ()&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Racing/Drive Train"&gt;&amp;nbsp; &amp;nbsp; -Drive Train&lt;/a&gt; ()&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Racing/Services"&gt;&amp;nbsp; &amp;nbsp; -Services&lt;/a&gt; (1)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Racing/Other"&gt;&amp;nbsp; &amp;nbsp; -Other&lt;/a&gt; (1)&lt;/li&gt;
+
+&lt;li&gt; Real Estate&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Real Estate/Commercial"&gt;&amp;nbsp; &amp;nbsp; -Commercial&lt;/a&gt; (9)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Real Estate/Land"&gt;&amp;nbsp; &amp;nbsp; -Land&lt;/a&gt; (9)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Real Estate/Manufactured"&gt;&amp;nbsp; &amp;nbsp; -Manufactured&lt;/a&gt; (4)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Real Estate/Residential"&gt;&amp;nbsp; &amp;nbsp; -Residential&lt;/a&gt; (19)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Real Estate/Vacation"&gt;&amp;nbsp; &amp;nbsp; -Vacation&lt;/a&gt; (3)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Real Estate/Rent or Lease"&gt;&amp;nbsp; &amp;nbsp; -Rent or Lease&lt;/a&gt; (7)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Services"&gt;Services&lt;/a&gt; (15)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Sports"&gt;Sports&lt;/a&gt; (3)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Tools"&gt;Tools&lt;/a&gt; (14)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Toys"&gt;Toys&lt;/a&gt; (3)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Trade or Barter"&gt;Trade or Barter&lt;/a&gt; (1)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Vacation Packages"&gt;Vacation Packages&lt;/a&gt; (1)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Wanted"&gt;Wanted&lt;/a&gt; (4)&lt;/li&gt;
+
+&lt;li&gt; &lt;a href="/directory.php?filter=Yard Sale"&gt;Yard Sale&lt;/a&gt; (2)&lt;/li&gt;
+
+          &lt;/ul&gt;
+
+        &lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</raw_content>
+
+

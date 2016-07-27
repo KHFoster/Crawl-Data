@@ -1,0 +1,1600 @@
+<raw_content>&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;
+
+        &lt;meta charset="utf-8"&gt;
+
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+
+        &lt;title&gt; ARMSLIST - Promotion Contest &lt;/title&gt;
+
+        &lt;link href="https://s3.amazonaws.com/mgm-content/sites/armslist/content/system/favicon.ico" rel="shortcut icon"&gt;
+
+        &lt;link rel="stylesheet" href="https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/css/bootstrap.css"&gt;
+
+        &lt;link rel="stylesheet" href="https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/css/all.css"&gt;
+
+        &lt;link href="//fonts.googleapis.com/css?family=Oswald:400,300%7CLato:400,700" rel="stylesheet" type="text/css"&gt;
+
+        &lt;link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"&gt;
+
+        &lt;div class="fit-vids-style" id="fit-vids-style" style="display: none;"&gt;­&lt;style&gt;.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}&lt;/style&gt;&lt;/div&gt;&lt;script async="" src="//www.google-analytics.com/analytics.js"&gt;&lt;/script&gt;&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"&gt;&lt;/script&gt;
+
+        &lt;script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"&gt;&lt;/script&gt;
+
+        &lt;script type="text/javascript" src="https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/js/jquery.main.js"&gt;&lt;/script&gt;
+
+
+
+        
+
+        &lt;script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"&gt;&lt;/script&gt;
+
+
+
+        
+
+        &lt;script type="text/javascript" src="https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/scripts/lib/jquery-cookie.js"&gt;&lt;/script&gt;
+
+
+
+        &lt;script type="text/javascript" src="https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/scripts/listmill-app.js"&gt;&lt;/script&gt;
+
+        &lt;script type="text/javascript" src="https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/scripts/jquery-listmill.js"&gt;&lt;/script&gt;
+
+        
+
+
+
+
+
+        &lt;script type="text/javascript"&gt;
+
+            var appOptions = {
+
+                showTermsOnLoad: "true" == "true" ? true : false,
+
+                showTermsOnLoadTimeout: 0};
+
+        
+
+
+
+            $(function () {
+
+                if(appOptions.showTermsOnLoad) {
+
+                    //listmill.app.checkTerms();
+
+                    //alert("show terms");
+
+                    checkTerms();
+
+                    
+
+                }
+
+                //listmill.app.themePreview();
+
+                //listmill.datatations.initialize();
+
+            });
+
+            function checkTerms() {
+
+                if ((document.cookie.length == 0 || document.cookie.indexOf("terms=agreed") == -1)
+
+                    &amp;&amp; window.location.href.indexOf("/info/terms") == -1
+
+                    &amp;&amp; document.cookie.indexOf("listmill_auth") == -1) {
+
+                    showTerms();
+
+                } else
+
+                    acceptTerms();
+
+            }
+
+            function acceptTerms() {
+
+                var dateStr = "";
+
+                if (appOptions.showTermsOnLoadTimeout &gt; 0) {
+
+                    date = new Date();
+
+                    date.setHours(date.getHours() + appOptions.showTermsOnLoadTimeout);
+
+                    dateStr = "; expires=" + date.toUTCString();
+
+                };
+
+                document.cookie = "terms=agreed" + dateStr + "; path=/";
+
+
+
+                $('#termsModal').modal('hide');
+
+            }
+
+
+
+            function showTerms() {
+
+                //termsModalContainer
+
+                $.ajax({
+
+                    url: "/info/termsagreement",
+
+                    dataType: "html",
+
+                    success: function (data) {
+
+                        $("#termsModalContainer").html(data);
+
+                        /*$("#termsagreement")
+
+                                .html("&lt;h2&gt;TERMS OF USE&lt;/h2&gt;" + data + "&lt;p style='font-size: 7pt; margin-top: 2em;'&gt;* COOKIES MUST BE ENABLED FOR THIS SITE TO WORK.&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;We recommend the use of Google Chrome, Firefox 3.0+, or Internet Explorer 7.0+ for the best browsing experience.&lt;/p&gt;")
+
+                                .dialog({
+
+                                    closeOnEscape: false,
+
+                                    modal: true,
+
+                                    title: "Please read and agree to our Terms of Use:",
+
+                                    width: Math.min(800, $(window).width() - 30),
+
+                                    height: Math.min(400, $(window).height() - 30),
+
+                                    buttons: {
+
+                                        "I Agree": function () { agreeTerms(); $(this).dialog("close"); },
+
+                                        "I Do Not Agree": function () { window.location = "http://www.google.com" }
+
+                                    }
+
+                                });*/
+
+                        //$(".ui-dialog-titlebar-close").hide();
+
+                        $('#termsModal').modal({
+
+                            backdrop: 'static',
+
+                            keyboard: false
+
+                        });
+
+
+
+                        $('#termsModal').modal('show');
+
+                    }});
+
+                
+
+            }
+
+        &lt;/script&gt;
+
+
+
+               
+
+
+
+
+
+        &lt;!-- --&gt;
+
+
+
+        &lt;!--                &lt;style type="text/css"&gt;
+
+        .footer-social {  width: 100px;  margin-right: 0px !important;}
+
+        &lt;/style&gt;
+
+--&gt;
+
+        &lt;style type="text/css"&gt;
+
+            #h3Overrides h3 {
+
+                margin-top: 0px;
+
+                color: #000000;
+
+            }
+
+        &lt;/style&gt;
+
+    &lt;/head&gt;
+
+
+
+
+
+    &lt;body style="-webkit-overflow-scrolling: touch;"&gt;
+
+        &lt;div id="termsModal" class="modal fade" role="dialog" style="color: #655D5B !important;"&gt;
+
+            &lt;div class="modal-dialog"&gt;
+
+
+
+                &lt;!-- Modal content--&gt;
+
+                &lt;div class="modal-content"&gt;
+
+                    &lt;div class="modal-header"&gt;
+
+                        &lt;h4 style="color: #655d5b"&gt;TERMS OF USE&lt;/h4&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;div class="modal-body"&gt;
+
+                        &lt;div id="termsModalContainer"&gt;&lt;/div&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;div class="modal-footer"&gt;
+
+                        &lt;button type="button" class="btn btn-default" onclick="acceptTerms()"&gt;Accept&lt;/button&gt;
+
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+
+
+
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+
+        &lt;div id="promotionModal" class="modal fade" role="dialog" style="color: #655D5B !important;"&gt;
+
+            &lt;div class="modal-dialog"&gt;
+
+
+
+                &lt;!-- Modal content--&gt;
+
+                &lt;div class="modal-content"&gt;
+
+                    &lt;div class="modal-header"&gt;
+
+                        &lt;h4 style="color: #655d5b"&gt;PROMOTIONAL LINK&lt;/h4&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;div class="modal-body"&gt;
+
+                        &lt;div id="promotionModalContainer"&gt;&lt;/div&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;div class="modal-footer"&gt;
+
+                        &lt;button type="button" class="btn btn-default" data-dismiss="modal"&gt;Close&lt;/button&gt;
+
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+
+
+
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+
+        &lt;div id="filterByModal" class="modal fade" role="dialog" style="color: #655D5B !important;"&gt;
+
+        &lt;div class="modal-dialog"&gt;
+
+
+
+            &lt;!-- Modal content--&gt;
+
+            &lt;div class="modal-content"&gt;
+
+                &lt;div class="modal-header"&gt;
+
+                    &lt;button type="button" class="close" data-dismiss="modal"&gt;×&lt;/button&gt;
+
+                    &lt;h4 style="color: #655d5b"&gt;Filter By&lt;/h4&gt;
+
+                &lt;/div&gt;
+
+                &lt;div class="modal-body"&gt;
+
+                    &lt;div id="filterByContainer"&gt;&lt;/div&gt;
+
+                &lt;/div&gt;
+
+                &lt;div class="modal-footer"&gt;
+
+                    &lt;button type="button" class="btn btn-default" data-dismiss="modal"&gt;Close&lt;/button&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+
+
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+
+
+
+    &lt;div id="contactSellerEmailModal" class="modal fade" role="dialog" style="color: #655D5B !important;"&gt;
+
+        &lt;div class="modal-dialog"&gt;
+
+
+
+            &lt;!-- Modal content--&gt;
+
+            &lt;div class="modal-content"&gt;
+
+                &lt;div class="modal-header"&gt;
+
+                    &lt;button type="button" class="close" data-dismiss="modal"&gt;×&lt;/button&gt;
+
+                    &lt;h4 style="color: #655d5b"&gt;Contact Seller&lt;/h4&gt;
+
+                &lt;/div&gt;
+
+                &lt;div class="modal-body"&gt;
+
+                    &lt;div id="messageSellerContainer"&gt;&lt;/div&gt;
+
+                &lt;/div&gt;
+
+                &lt;div class="modal-footer"&gt;
+
+                    &lt;button id="contactFormSubmitBtn" type="button" class="pull-left btn btn-default" onclick="doMessageSend()"&gt;Send&lt;/button&gt;
+
+                    &lt;button type="button" class="btn btn-default" data-dismiss="modal"&gt;Cancel&lt;/button&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+
+
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+
+    &lt;div id="searchAlertModal" class="modal fade" role="dialog" style="color: #655D5B !important;"&gt;
+
+        &lt;div class="modal-dialog"&gt;
+
+
+
+            &lt;!-- Modal content--&gt;
+
+            &lt;div class="modal-content"&gt;
+
+                &lt;div class="modal-header"&gt;
+
+                    &lt;button type="button" class="close" data-dismiss="modal"&gt;×&lt;/button&gt;
+
+                    &lt;h4 style="color: #655d5b"&gt;Search Alert&lt;/h4&gt;
+
+                &lt;/div&gt;
+
+                &lt;div class="modal-body"&gt;
+
+                    &lt;div id="searchAlertContainer"&gt;&lt;/div&gt;
+
+                &lt;/div&gt;
+
+                &lt;div class="modal-footer"&gt;
+
+                    &lt;button id="searchAlertFormSubmitBtn" type="button" class="pull-left btn btn-default" onclick="createSearchAlert()"&gt;Create&lt;/button&gt;
+
+                    &lt;button type="button" class="btn btn-default" data-dismiss="modal"&gt;Cancel&lt;/button&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+
+
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+
+    &lt;div id="wrapper"&gt;
+
+        &lt;header id="header" class="navbar-default text-uppercase" role="navigation"&gt;
+
+            &lt;div class="top-holder"&gt;
+
+                &lt;div class="container-fluid"&gt;
+
+                    &lt;button type="button" class="navbar-toggle text-uppercase pull-left" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" id="popoverMobileViewMainMenu" data-original-title="" title=""&gt;
+
+                        &lt;span class="icon-bar"&gt;&lt;/span&gt;
+
+                        &lt;span class="icon-bar"&gt;&lt;/span&gt;
+
+                        &lt;span class="icon-bar"&gt;&lt;/span&gt;
+
+                        &lt;span class="text"&gt;Menu&lt;/span&gt;
+
+                    &lt;/button&gt;
+
+                    &lt;div id="popovercontentMobileViewMainMenu" style="display: none;"&gt;
+
+                        &lt;div class="container-fluid"&gt;
+
+                            &lt;div class="row" id="h3Overrides"&gt;
+
+                                &lt;div class="col-md-3 col-sm-6 col-lg-offset-1 col-md-offset-0"&gt;
+
+    &lt;h3 class="text-uppercase"&gt;ACCOUNT &amp;amp; LISTINGS &lt;/h3&gt;
+
+    &lt;ul class="nav-footer"&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/accountlogin/new"&gt;Account Login&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/account/new"&gt;New Account&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/posts/new"&gt;Create a New Listing&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/posts/resendactivation"&gt;Edit or Remove a Listing&lt;/a&gt;&lt;/li&gt;
+
+    &lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;div class="col-lg-2 col-md-3 col-sm-6"&gt;
+
+    &lt;h3 class="text-uppercase"&gt;ABOUT &amp;amp; HELP&lt;/h3&gt;
+
+    &lt;ul class="nav-footer"&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/info/faqs"&gt;FAQs&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/info/contact"&gt;Contact Armslist&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/info/privacy"&gt;Privacy Policy&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/info/terms"&gt;Terms of Use&lt;/a&gt;&lt;/li&gt;
+
+    &lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;div class="col-md-3 col-sm-6"&gt;
+
+    &lt;h3 class="text-uppercase"&gt;MORE ARMSLIST LINKS &lt;/h3&gt;
+
+    &lt;ul class="nav-footer"&gt;
+
+        &lt;li&gt;&lt;a href="http://forum.armslist.com/"&gt;Armslist Discussion Forum&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="http://www.armslist.com/contests/"&gt;Armslist Contests&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="http://www.armslistlegaldefensefund.com/"&gt;Armslist Legal Defense Fund&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/info/advertise"&gt;Advertising with Armslist&lt;/a&gt;&lt;/li&gt;
+
+    &lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;div class="col-md-3 col-sm-6"&gt;
+
+    &lt;h3 class="text-uppercase"&gt;PARTNER SITES&lt;/h3&gt;
+
+    &lt;ul class="nav-footer"&gt;
+
+        &lt;li&gt;&lt;a href="http://www.torquelist.com/"&gt;Torquelist Vehicle Trader&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="http://www.rangemonkey.com/"&gt;Range Monkey&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="http://www.invictusgearcompany.com/"&gt;Invictus Gear &lt;/a&gt;&lt;/li&gt;
+
+    &lt;/ul&gt;
+
+&lt;/div&gt;
+
+                            &lt;/div&gt;
+
+                        &lt;/div&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;script type="text/javascript"&gt;
+
+                        $(document).ready(function () {
+
+
+
+                            $("#popoverMobileViewMainMenu").popover({
+
+                                html: true,
+
+                                container: 'body',
+
+                                content: function () {
+
+                                    return $('#popovercontentMobileViewMainMenu').html();
+
+                                }
+
+                            });
+
+
+
+                            $('html').on('click', function (e) {
+
+                                if (typeof $(e.target).data('original-title') == 'undefined' &amp;&amp;
+
+                                    !$(e.target).parents().is('.popover.in') &amp;&amp;
+
+                                    $(e.target).parent().attr("id") !== "popoverMobileViewMainMenu") {
+
+                                    $('[data-original-title]').popover('hide');
+
+                                }
+
+                            });
+
+                        });
+
+
+
+                    &lt;/script&gt;
+
+
+
+                    &lt;div class="pull-right align-right"&gt;
+
+&lt;form action="/classifieds/search" class="search-form navbar-form hidden-xs" method="get" role="search"&gt;                            &lt;fieldset&gt;
+
+                                &lt;div class="form-group"&gt;
+
+
+
+                                    &lt;input type="text" name="search" class="form-control" placeholder="Search listings" value=""&gt;
+
+                                    &lt;input type="hidden" name="location" value="usa"&gt;
+
+                                    &lt;input type="hidden" name="category" value="all"&gt;
+
+                                    &lt;input type="hidden" name="posttype" value="7"&gt;
+
+                                    &lt;input type="hidden" name="ships" value="False"&gt;
+
+                                &lt;/div&gt;
+
+                                &lt;button type="submit" class="btn btn-default icon-search"&gt;&lt;/button&gt;
+
+                            &lt;/fieldset&gt;
+
+&lt;/form&gt;                        
+
+                        &lt;a href="/posts/new" class="btn btn-warning create-btn text-uppercase"&gt;&lt;span class="hidden-sm hidden-xs"&gt;CREATE A LISTING&lt;/span&gt; &lt;i class="icon-pencil"&gt;&lt;/i&gt; &lt;span class="visible-sm visible-xs"&gt;list&lt;/span&gt;&lt;/a&gt;
+
+
+
+                        
+
+&lt;ul class="users-list hidden-xs"&gt;
+
+
+
+        &lt;li&gt;&lt;a href="/account/new"&gt;CREATE AN ACCOUNT&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="/accountlogin"&gt;LOGIN&lt;/a&gt;&lt;/li&gt;
+
+&lt;/ul&gt;
+
+
+
+
+
+                        &lt;button type="button" class="btn btn-warning create-btn text-uppercase visible-xs" onclick="showHideSearchMobile()"&gt;&lt;i class="icon-search"&gt;&lt;/i&gt; &lt;span class="visible-xs"&gt;search&lt;/span&gt;&lt;/button&gt;
+
+                        &lt;script type="text/javascript"&gt;
+
+                            function showHideSearchMobile() {
+
+                                $("#searchMobileView").fadeToggle();
+
+                            }
+
+                        &lt;/script&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;div id="logo" class="pull-left"&gt;
+
+                        &lt;a href="/" title="ARMSLIST - Firearms Classifieds"&gt;
+
+                            &lt;picture&gt;
+
+                                    &lt;!--[if IE 9]&gt;&lt;video style="display: none;"&gt;&lt;![endif]--&gt;
+
+                                    &lt;source srcset="https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/images/logo-mobile.png, https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/images/logo-mobile@2x.png 2x" media="(max-width: 767px)"&gt;
+
+                                    &lt;source srcset="https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/images/logo-desktop.png, https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/images/logo-desktop@2x.png 2x"&gt;
+
+                                    &lt;!--[if IE 9]&gt;&lt;/video&gt;&lt;![endif]--&gt;
+
+                                    &lt;img src="https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/images/logo-desktop.png" alt="armslist firearms marketplace" width="260" height="66"&gt;
+
+                            &lt;/picture&gt;
+
+                        &lt;/a&gt;
+
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+            &lt;div class="alert " id="mainMessageContainer" style="display: none; margin-bottom: 0px;"&gt;
+
+                
+
+                &lt;div id="mainMessageContainer_Message" style="text-align: center;"&gt;&lt;/div&gt;
+
+            &lt;/div&gt;
+
+            
+
+            &lt;div style="padding: 20px 10px 10px 20px; text-align: center; display: none;" class="hidden-sm hidden-md hidden-lg" id="searchMobileView"&gt;
+
+
+
+&lt;form action="/classifieds/search" class="search-form" method="get" role="search" style="width: 75% !important;"&gt;                    &lt;fieldset&gt;
+
+                        &lt;div class="form-group"&gt;
+
+                            &lt;input type="text" name="search" class="form-control" placeholder="Search listings" value=""&gt;
+
+                            &lt;input type="hidden" name="location" value="usa"&gt;
+
+                            &lt;input type="hidden" name="category" value="all"&gt;
+
+                            &lt;input type="hidden" name="posttype" value="7"&gt;
+
+                            &lt;input type="hidden" name="ships" value="False"&gt;
+
+                        &lt;/div&gt;
+
+                        &lt;button type="submit" class="btn btn-default icon-search"&gt;&lt;/button&gt;
+
+                    &lt;/fieldset&gt;
+
+&lt;/form&gt;                &lt;br&gt;
+
+
+
+                &lt;div id="myCarousel" class="carousel slide" data-ride="carousel" style="padding-top: 20px;"&gt;
+
+
+
+
+
+                    &lt;!-- Wrapper for slides --&gt;
+
+                    &lt;div class="carousel-inner" role="listbox"&gt;
+
+                        &lt;div class="item"&gt;
+
+                            &lt;div style="text-align: center; font: 300 16px/19px &amp;quot;Oswald&amp;quot;, &amp;quot;Arial&amp;quot;, &amp;quot;Helvetica&amp;quot;, sans-serif; text-decoration: none; text-transform: uppercase;"&gt;
+
+                                &lt;a style="color: #e5e0bf; padding-right: 10px; display: inline-block;" href="/classifieds/search?category=handguns&amp;amp;location=usa&amp;amp;posttype=7&amp;amp;ships=False"&gt;HANDGUNS &lt;br&gt;&lt;i class="icon-handguns"&gt;&lt;/i&gt;&lt;/a&gt;
+
+                                &lt;a style="color: #e5e0bf; padding-right: 10px; display: inline-block;" href="/classifieds/search?category=shotguns&amp;amp;location=usa&amp;amp;posttype=7&amp;amp;ships=False"&gt;SHOTGUNS &lt;br&gt;&lt;i class="icon-shotguns"&gt;&lt;/i&gt;&lt;/a&gt;
+
+                                &lt;a style="color: #e5e0bf; display: inline-block;" href="/classifieds/search?category=rifles&amp;amp;location=usa&amp;amp;posttype=7&amp;amp;ships=False"&gt;RIFLES &lt;br&gt;&lt;i class="icon-rifles"&gt;&lt;/i&gt;&lt;/a&gt;
+
+                            &lt;/div&gt;
+
+                        &lt;/div&gt;
+
+
+
+                        &lt;div class="item active"&gt;
+
+                            &lt;div style="text-align: center; font: 300 16px/19px &amp;quot;Oswald&amp;quot;, &amp;quot;Arial&amp;quot;, &amp;quot;Helvetica&amp;quot;, sans-serif; text-decoration: none; text-transform: uppercase;"&gt;
+
+                                &lt;a style="color: #e5e0bf; padding-right: 10px; display: inline-block;" href="/classifieds/search?category=firearm-accessories&amp;amp;location=usa&amp;amp;posttype=7&amp;amp;ships=False"&gt;ACCESSORIES &lt;br&gt;&lt;i class="icon-scope"&gt;&lt;/i&gt;&lt;/a&gt;
+
+                                &lt;a style="color: #e5e0bf; display: inline-block;" href="/classifieds/search?category=outdoors&amp;amp;location=usa&amp;amp;posttype=7&amp;amp;ships=False"&gt;GEAR + MORE &lt;br&gt;&lt;i class="icon-gear"&gt;&lt;/i&gt;&lt;/a&gt;
+
+                            &lt;/div&gt;
+
+                        &lt;/div&gt;
+
+                    &lt;/div&gt;
+
+
+
+                    &lt;!-- Left and right controls --&gt;
+
+                    &lt;a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"&gt;
+
+                        &lt;span class="glyphicon glyphicon-chevron-left" aria-hidden="true"&gt;&lt;/span&gt;
+
+                        &lt;span class="sr-only"&gt;Previous&lt;/span&gt;
+
+                    &lt;/a&gt;
+
+                    &lt;a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"&gt;
+
+                        &lt;span class="glyphicon glyphicon-chevron-right" aria-hidden="true"&gt;&lt;/span&gt;
+
+                        &lt;span class="sr-only"&gt;Next&lt;/span&gt;
+
+                    &lt;/a&gt;
+
+                &lt;/div&gt;
+
+                &lt;style type="text/css"&gt;
+
+                    .carousel-control.left, .carousel-control.right {
+
+                        background-image: none;
+
+                    }
+
+                &lt;/style&gt;
+
+            &lt;/div&gt;
+
+        &lt;/header&gt;
+
+        
+
+
+
+        
+
+            &lt;main id="main"&gt;
+
+                &lt;div class="container-fluid" style="color: #655D5B;"&gt;
+
+
+
+    
+
+                    
+
+
+
+
+
+
+
+
+
+         
+
+        
+
+    &lt;div id="tabs" class="ui-tabs ui-widget ui-widget-content ui-corner-all"&gt;
+
+        
+
+        &lt;ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist"&gt;
+
+            &lt;li class="ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="0" aria-controls="contest" aria-labelledby="ui-id-1" aria-selected="true" aria-expanded="true"&gt;&lt;a href="#contest" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-1"&gt;Contests&lt;/a&gt;&lt;/li&gt;
+
+            &lt;li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="how-to" aria-labelledby="ui-id-2" aria-selected="false" aria-expanded="false"&gt;&lt;a href="#how-to" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-2"&gt;How It Works&lt;/a&gt;&lt;/li&gt;
+
+            &lt;li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="terms" aria-labelledby="ui-id-3" aria-selected="false" aria-expanded="false"&gt;&lt;a href="#terms" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-3"&gt;Contest Terms&lt;/a&gt;&lt;/li&gt;                
+
+        &lt;/ul&gt;
+
+                                
+
+        &lt;div id="contest" aria-labelledby="ui-id-1" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="false"&gt;  
+
+        
+
+            &lt;div class="contest-selection"&gt;
+
+&lt;form action="/contests" method="get"&gt;&lt;select data-autosubmit="" id="idcontest" name="idcontest"&gt;&lt;option selected="selected" value="29"&gt;Independence Day Extravaganza!!!&lt;/option&gt;
+
+&lt;option value="28"&gt;Independence Day Extravaganza&lt;/option&gt;
+
+&lt;option value="27"&gt;Armslist 2015 Tax Season Giveaway&lt;/option&gt;
+
+&lt;option value="26"&gt;Christmas 2013 Contest&lt;/option&gt;
+
+&lt;option value="24"&gt;October 2012 - ATI Giveaway&lt;/option&gt;
+
+&lt;option value="21"&gt;September 2012 - Combat Saiga 12&lt;/option&gt;
+
+&lt;option value="20"&gt;July 2012 - Battle Blades&lt;/option&gt;
+
+&lt;option value="19"&gt;April 2012 - Springfield Armory XD-S Giveaway&lt;/option&gt;
+
+&lt;option value="18"&gt;March 2012 Mossberg Raffle&lt;/option&gt;
+
+&lt;option value="17"&gt;February 2012 Contest&lt;/option&gt;
+
+&lt;option value="16"&gt;January 2012 Contest, Hat and AMMO&lt;/option&gt;
+
+&lt;option value="15"&gt;The Armslist AK47 Giveaway!&lt;/option&gt;
+
+&lt;option value="14"&gt;November 2011 Contest&lt;/option&gt;
+
+&lt;option value="13"&gt;October 2011 Contest&lt;/option&gt;
+
+&lt;option value="12"&gt;September 2011 Contest&lt;/option&gt;
+
+&lt;option value="11"&gt;August 2011 Contest&lt;/option&gt;
+
+&lt;option value="10"&gt;July 2011 Contest&lt;/option&gt;
+
+&lt;option value="9"&gt;June 2011 Contest&lt;/option&gt;
+
+&lt;option value="8"&gt;April 2011 Contest&lt;/option&gt;
+
+&lt;option value="7"&gt;Jan-Mar 2011 Contest&lt;/option&gt;
+
+&lt;option value="6"&gt;November 2010 Contest&lt;/option&gt;
+
+&lt;option value="5"&gt;October 2010 Contest&lt;/option&gt;
+
+&lt;option value="4"&gt;September 2010 Contest&lt;/option&gt;
+
+&lt;option value="2"&gt;August 2010 Contest&lt;/option&gt;
+
+&lt;option value="1"&gt;July 2010 Contest&lt;/option&gt;
+
+&lt;option value="3"&gt;March 2010 Contest&lt;/option&gt;
+
+&lt;/select&gt;&lt;/form&gt;            &lt;/div&gt;     
+
+            
+
+            &lt;div class="contest-info"&gt;
+
+                
+
+&lt;style type="text/css"&gt;
+
+
+
+	.contest-info-body { 
+
+		background-image: url('http://cdn2.armslist.com/adserver/uploads/636028166082096767.jpg'); 
+
+		background-repeat: no-repeat; 
+
+		background-position: 10px 0;
+
+		height: 400px;		
+
+		margin-bottom: 2em;
+
+		margin-top: 1em;
+
+	}
+
+	.section-title { color: #941d1f !important; }	
+
+	.client-target { float: left; margin-top: 0px; margin-left: 0px; }
+
+	.client-target a { display: block; width: 800px; height: 266px; }	
+
+	
+
+	.contest-intro { position: absolute; top: 200px; width: 1000px; text-align: center; }
+
+	.contest-intro h1 { color: #ffffff; font-size: 600px; display: none; }
+
+
+
+	#contest { background-color: #000000; }
+
+	#contest p,
+
+	#contest div { color: #ffffff; }	
+
+	.contest-section { width: border-top-width: 2px; }
+
+    #contest a, #contest a:active, #contest a:visited { color: #f0f0f0; }
+
+	
+
+	.data { border-color: #303030; }
+
+	.data tr td, 
+
+	.data tr th { color: #FFFFFF; border-color: #303030; }
+
+	.data thead tr { background-color: #161616; }
+
+	.data tbody tr:nth-child(2n+1) { background-color: #262626; }
+
+	.data tbody tr:nth-child(2n) { background-color: #202020; }
+
+	
+
+
+
+	.prize { clear: both; padding-bottom: 3em; }	
+
+	.prize-intro { float: left; width: 300px; margin-right: 1.5em; }
+
+	.prize-info { float: left; width: 600px; }	
+
+
+
+	.prize h4 { color: #f0f0f0 !important; }	
+
+	.prize-number { font-size: 1.75em; }
+
+	.prize-title { font-size: 2em; margin-top: .25em; }
+
+
+
+	.prize-logo { max-width: 275px;}
+
+	.prize-pic { float: left; max-width: 600px; padding-bottom: .75em; padding-left: .75em; }	
+
+	.prize-info ul { list-style-type: disc; padding-left: 1.5em; }
+
+	.prize-4 .prize-pic { max-width: 290px; }
+
+
+
+       .message.info { background-color: #e0e0e0; margin: 1.5em 1.5em 0 }
+
+       .message .message-content { color: #505050 !important; }
+
+&lt;/style&gt;
+
+
+
+&lt;div class="message info"&gt;
+
+  &lt;div class="message-content"&gt;Welcome to the Armslist Independence Day Contest!&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;div class="contest-info-body"&gt;		
+
+	&lt;div class="contest-intro"&gt;		
+
+		&lt;h1&gt;Independence Day Extravaganza!!!&lt;/h1&gt;
+
+		&lt;p&gt;&lt;/p&gt;
+
+		&lt;p&gt;&lt;/p&gt;		
+
+	&lt;/div&gt;	
+
+	&lt;div class="client-target"&gt;
+
+		&lt;a href="" target="_blank" title=""&gt;&lt;/a&gt;
+
+	&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;div class="contest-section"&gt;	
+
+	&lt;h3 class="section-title"&gt;July 4th Extravaganza Contest Details&lt;/h3&gt;
+
+	
+
+	&lt;div class="prize prize-1 clear-fix"&gt;
+
+		&lt;div class="prize-intro"&gt;
+
+			&lt;h4&gt;
+
+				&lt;span class="prize-number"&gt;1st Prize:&lt;/span&gt;
+
+				&lt;br&gt;
+
+				Courtesy of &lt;a href="http://www.chkadels.com/Poly-Pistol-Frame-Jig-Kit-34904?sourcecode=ARMS416"&gt;CH Kadels&lt;/a&gt;
+
+			&lt;/h4&gt;
+
+			&lt;a href="http://www.chkadels.com/"&gt;
+
+			&lt;img class="prize-logo" src="http://cdn2.armslist.com/adserver/uploads/636028173893363171.png"&gt;
+
+			&lt;/a&gt;
+
+		&lt;/div&gt;	
+
+		&lt;div class="prize-info"&gt;
+
+			&lt;h4 class="prize-title"&gt;80% Glock Poly Pistol Frame Jig Kit&lt;/h4&gt;
+
+			&lt;ul&gt;
+
+	 			&lt;li&gt;80% polymer pistol frame&lt;/li&gt;
+
+				&lt;li&gt;Polymer jig&lt;/li&gt;
+
+				&lt;li&gt;Drill bits end-mill bits kit&lt;/li&gt;
+
+				&lt;li&gt;Locking block&lt;/li&gt;
+
+                                &lt;li&gt;No FFL required for purchase&lt;/li&gt;
+
+			&lt;/ul&gt;
+
+			&lt;img class="prize-pic" src="http://cdn2.armslist.com/adserver/uploads/636028179324563553.jpg"&gt;
+
+
+
+		&lt;/div&gt;
+
+	&lt;/div&gt;
+
+
+
+	&lt;div class="prize prize-2 clear-fix"&gt;
+
+		&lt;div class="prize-intro"&gt;
+
+			&lt;h4&gt;
+
+				&lt;span class="prize-number"&gt;2nd Prize:&lt;/span&gt;
+
+				&lt;br&gt;
+
+				Courtesy of &lt;a href="https://www.hogueinc.com/"&gt;Hogue Inc&lt;/a&gt;
+
+			&lt;/h4&gt;
+
+			&lt;a href="http://www.hogueinc.com"&gt;
+
+			&lt;img class="prize-logo" src="http://cdn2.armslist.com/adserver/uploads/636028182298044703.jpg"&gt;
+
+			&lt;/a&gt;
+
+		&lt;/div&gt;
+
+		&lt;div class="prize-info"&gt;
+
+			&lt;h4 class="prize-title"&gt;AR-15/M-16 Kit - Finger Groove Beavertail Grip and OverMolded Collapsible Buttstock - Fits Mil-Spec Buffer Tube - Flat Dark Earth Rubber&lt;/h4&gt;
+
+			&lt;ul&gt;
+
+				&lt;li&gt;AR15/M16 kit&lt;/li&gt;
+
+				&lt;li&gt;Finger groove beavertail grip&lt;/li&gt;
+
+				&lt;li&gt;Overmold collapsible buttstock&lt;/li&gt;
+
+				&lt;li&gt;Fits Mil-Spec buffer tube&lt;/li&gt;
+
+			&lt;/ul&gt;
+
+			&lt;img class="prize-pic" src="http://cdn2.armslist.com/adserver/uploads/636028187331759856.jpg"&gt;
+
+		&lt;/div&gt;
+
+	&lt;/div&gt;
+
+
+
+	&lt;div class="prize prize-3 clear-fix"&gt;
+
+		&lt;div class="prize-intro"&gt;
+
+			&lt;h4&gt;
+
+				&lt;span class="prize-number"&gt;3rd Prize:&lt;/span&gt;
+
+				&lt;br&gt;
+
+				Courtesy of &lt;a href="http://shop.gunprodeals.com/"&gt;GunPro Corporation&lt;/a&gt;
+
+			&lt;/h4&gt;
+
+			&lt;a href="http://shop.gunprodeals.com/"&gt;
+
+			&lt;img class="prize-logo" src="http://cdn2.armslist.com/adserver/uploads/635947845964198706.gif"&gt;
+
+			&lt;/a&gt;
+
+		&lt;/div&gt;
+
+		&lt;div class="prize-info"&gt;
+
+			&lt;h4 class="prize-title"&gt;GunPro Gear Pile&lt;/h4&gt;
+
+			&lt;p&gt;GunPro T-Shirt (L or XL), Koozie, and Skull Cap&lt;/p&gt;
+
+			&lt;img class="prize-pic" src="http://cdn2.armslist.com/adserver/uploads/636028213108751594.jpg"&gt;
+
+		&lt;/div&gt;
+
+	&lt;/div&gt;		
+
+		
+
+
+
+	&lt;div class="prize prize-4 clear-fix"&gt;
+
+		&lt;div class="prize-intro"&gt;
+
+			&lt;h4&gt;
+
+				&lt;span class="prize-number"&gt;4th Prize:&lt;/span&gt;
+
+				&lt;br&gt;
+
+				Courtesy of &lt;a href="http://www.invictusgearcompany.com/"&gt;Invictus Gear Company&lt;/a&gt;
+
+			&lt;/h4&gt;
+
+			&lt;a href="http://www.invictusgearcompany.com"&gt;				
+
+			&lt;img class="prize-logo" src="http://cdn2.armslist.com/adserver/uploads/636028206869613187.jpg"&gt;
+
+			&lt;/a&gt;
+
+		&lt;/div&gt;		
+
+		&lt;div class="prize-info"&gt;
+
+			&lt;h4 class="prize-title"&gt;Invictus AA Cree Flashlight&lt;/h4&gt;
+
+			&lt;p&gt;An updated version of the Cree LED flashlight that has been one of our best sellers.  Slightly smaller in size and the belt clip is easily removable.
+
+(batteries not included)&lt;/p&gt;
+
+			&lt;img class="prize-pic" src="http://cdn2.armslist.com/adserver/uploads/636028209135464585.png"&gt;		
+
+		&lt;/div&gt;
+
+	&lt;/div&gt;
+
+
+
+	&lt;div class="prize prize-5 clear-fix"&gt;
+
+		&lt;div class="prize-intro"&gt;
+
+			&lt;h4&gt;
+
+				&lt;span class="prize-number"&gt;5th Prize:&lt;/span&gt;
+
+				&lt;br&gt;
+
+				Courtesy of &lt;a href="http://www.armslist.com"&gt;ARMSLIST&lt;/a&gt;
+
+&lt;img class="prize-logo" src="http://cdn2.armslist.com/adserver/uploads/636028222061849736.jpg"&gt;
+
+			&lt;/h4&gt;
+
+		&lt;/div&gt;		
+
+		&lt;div class="prize-info"&gt;
+
+			&lt;h4 class="prize-title"&gt;Official First Edition ARMSLIST Morale Patch&lt;/h4&gt;
+
+			&lt;p&gt;&lt;a href="http://www.invictusgearcompany.com/products/official-armslist-patch"&gt;Official First Edition ARMSLIST Morale Patch&lt;/a&gt;&lt;/p&gt;
+
+			&lt;img class="prize-pic" src="http://cdn2.armslist.com/adserver/uploads/636028237832970600.JPG"&gt;
+
+		&lt;/div&gt;
+
+	&lt;/div&gt;
+
+
+
+	&lt;div style="clear: both;"&gt;&lt;/div&gt;
+
+
+
+	&lt;p&gt;The contest runs from July 1st, 2016 to July 21, 2016.&lt;/p&gt;
+
+	
+
+	&lt;p&gt;To learn how the contests works, please visit the "How it works" tab above.  Sign up and get busy!&lt;/p&gt;
+
+	
+
+&lt;/div&gt;
+
+&lt;div class="contest-section contest-add-info"&gt;
+
+	&lt;h3 class="section-title"&gt;Additional Information&lt;/h3&gt;
+
+	&lt;ul&gt;  
+
+	  &lt;li&gt;You must generate a new promotion link for this contest. Links created for past contests will not generate points in this contest.&lt;/li&gt;
+
+	  &lt;li&gt;Scores are calculated based upon quality as well as quantity of traffic.  Points will take at least 24 hours to be awarded.&lt;/li&gt;
+
+	  &lt;li&gt;Usage of traffic bots, traffic generating website, or violating any website's rules may result in elimination from the contest.&lt;/li&gt;  
+
+	  &lt;li&gt;Prize distribution and shipping will be subject to all applicable laws.  Please review the Contest Terms for further details.&lt;/li&gt;		  
+
+	&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;div class="contest-section"&gt;
+
+	&lt;h3 class="section-title"&gt;Frequently Asked Questions&lt;/h3&gt;
+
+	
+
+	&lt;p&gt;Q: How do I participate?
+
+	&lt;br&gt;A: Visit the "How it Works" tab at the top of this page.&lt;/p&gt;
+
+
+
+	&lt;p&gt;Q: Can I promote any page on ARMSLIST?
+
+	&lt;br&gt;A: Yes, you can create a promotion link for any page on the site.&lt;/p&gt;
+
+
+
+	&lt;p&gt;Q: Why do I not have any points yet?
+
+	&lt;br&gt;A: Points will take at least 24 hours to be awarded.&lt;/p&gt;
+
+
+
+	&lt;p&gt;Q: I think I should have more points than I do, what's up?
+
+	&lt;br&gt;A: This is normal, there are many components to the traffic that is generated. You earn points when you attract active users of the site. This is determined with some complicated software and maths.  The short answer is that having people merely click a contest link, probably won't get you any points.  Be sure to share the links with people that you know will like the site, and stay for a while.&lt;/p&gt;
+
+
+
+	&lt;p&gt;Q: Why did my points go down slightly?
+
+	&lt;br&gt;A: In addition to the normal maths, you are also competing with the other users, sometimes when they jump ahead, you can fall behind.&lt;/p&gt;
+
+
+
+	&lt;p&gt;Q: I think people are cheating, can you ban them?
+
+	&lt;br&gt;A: We closely monitor the contests and ban people that violate the rules.  Additionally, we have refined all the boring, behind the scenes scoring stuff, to keep everyone honest.&lt;/p&gt;
+
+
+
+	&lt;p&gt;Q: Can past winners particpate?
+
+	&lt;br&gt;A: Yes, have at it hoss.
+
+&lt;/p&gt;&lt;/div&gt;
+
+
+
+
+
+
+
+
+
+&lt;div class="contest-section contest-leaders"&gt;
+
+    &lt;h3 class="section-title"&gt;Contest Points&lt;/h3&gt;
+
+    &lt;p class="small-text no-margin-top"&gt;    &lt;em&gt;* Results are periodically updated&lt;/em&gt;&lt;br&gt;
+
+    &lt;em&gt;* Scores are calculated based upon quality and quantity of traffic driven to ARMSLIST&lt;/em&gt;&lt;/p&gt;
+
+    &lt;table id="promoters" class="data"&gt;    
+
+        &lt;thead&gt;
+
+            &lt;tr&gt;
+
+                &lt;td&gt;Rank&lt;/td&gt;
+
+                &lt;td&gt;Promoter&lt;/td&gt;
+
+                &lt;td&gt;Points Earned&lt;/td&gt;
+
+            &lt;/tr&gt;
+
+        &lt;/thead&gt;
+
+        &lt;tbody&gt;        
+
+        &lt;/tbody&gt;
+
+    &lt;/table&gt;    
+
+&lt;/div&gt;
+
+
+
+            &lt;/div&gt;   
+
+        &lt;/div&gt;
+
+            
+
+        &lt;div id="how-to" aria-labelledby="ui-id-2" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style="display: none;"&gt;
+
+            &lt;h2&gt;How the Promotion Contest Works&lt;/h2&gt;
+
+            &lt;p&gt;ARMSLIST continues to expand because our users share the site with other firearms enthusiasts.  We value our loyal users, and we work hard to provide valuable prizes every month through our contests.  To get started, simply click the "How It Works" tab to learn more and to get started.  Thanks, and good luck!&lt;/p&gt;&lt;p&gt;Getting recognition for your promotional efforts is simple:&lt;/p&gt;&lt;ol class="how-it-works-list"&gt;&lt;li&gt;&lt;p&gt;Log-in to your account... or create one if you don't have one.&lt;/p&gt;&lt;p&gt;&lt;img src="http://cdn2.armslist.com/sites/armslist/content/contests/info/new-contest-login2.png" alt="" style="border: 1px solid #a0a0a0;"&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Navigate to the promotion page.&lt;/p&gt;&lt;p&gt;&lt;img src="http://cdn2.armslist.com/sites/armslist/content/contests/info/new-contest-promotion2.png" alt="" style="border: 1px solid #a0a0a0;"&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Agree to the promotion terms.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Navigate to a page you want to share.  Click the "Promotion Link" link and share the provided link.&lt;/p&gt;&lt;p&gt;&lt;img src="http://cdn2.armslist.com/sites/armslist/content/contests/info/new-contest-promotion-link2.png" alt="" style="border: 1px solid #a0a0a0;"&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;We calculate your score several times per day. Scores are calculated on several factors of quality and quantity of traffic. Check the current contest for additional scoring rules.&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;
+
+        &lt;/div&gt;
+
+            
+
+        &lt;div id="terms" aria-labelledby="ui-id-3" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style="display: none;"&gt;
+
+            &lt;h2&gt;Promotion Contest Terms and Conditions&lt;/h2&gt;
+
+&lt;p&gt;Definitions:&lt;/p&gt;
+
+&lt;p&gt;
+
+	&lt;em&gt;ARMSLIST&lt;/em&gt;: ARMSLIST.com, ARMSLIST LLC, it's officer's agents, employees, assigns and successors.
+
+	&lt;br&gt;&lt;em&gt;Contest&lt;/em&gt;: The promotional contest described here: &lt;a href="/info/promote"&gt;Promotion Contest&lt;/a&gt;
+
+&lt;/p&gt;
+
+&lt;ol class="terms"&gt;
+
+	&lt;li&gt;ELIGIBILITY: Open only to citizens of the United States of America who are 21 years of age or older.&lt;/li&gt;
+
+	&lt;li&gt;RULES: If for any reason this Contest is not capable of running as planned due to infection by computer virus, bugs, tampering, unauthorized intervention, fraud, technical failures, or any other causes that may corrupt the contest or affect the administration, security, fairness, integrity, or proper conduct of this Contest, ARMSLIST reserve the right at its sole discretion, to reject any entry or any individual who tampers with the entry or judging process, and to cancel, terminate, modify or suspend the Contest and in the event of cancellation, select winners from eligible entries received prior to cancellation. ARMSLIST assumes no responsibility for any error, omission, interruption, deletion, defect, delay in operation or transmission or communications line failure that results in entry forms being inaccessible online. ARMSLIST is not responsible for any problems or technical malfunction of any telephone network or telephone lines, computer on-line systems, servers, or providers, computer equipment, software, failure of any e-mail to be received by participants on account of technical problems, human error or traffic congestion on the Internet or at any Website, or any combination thereof, including any injury or damage to participant's or any other person's computer relating to or resulting from participation in this Contest or downloading any materials in this Contest. &lt;/li&gt;
+
+	&lt;li&gt;Caution: Any attempt to deliberately damage any website or or undermind the operation of the contest may be a violation of criminal and civil code.  If such an attempt is made ARMSLIST and the contest sponsor(s) reserve the right to seek damages or other remedies from any person(s) responsible for the attempt.&lt;/li&gt;         
+
+	&lt;li&gt;By agreeing to these terms, you understand that you are acting on your own, independently of ARMSLIST. Contest participants are not agents of ARMSLIST and actions taken by contest participants are not expressly authorized by or approved by ARMSLIST.&lt;/li&gt;
+
+	&lt;li&gt;You hereby certify that you are at least 21 years of age.&lt;/li&gt;
+
+	&lt;li&gt;You agree to follow the rules and regulations of any and all vehicles, instruments, websites and other intermediary means used in any way associated with this contest or ARMSLIST in any way.&lt;/li&gt;
+
+	&lt;li&gt;You agree to only post links on websites where you are authorized to do so and in accordance with the terms of those sites. ARMSLIST is not liable for any participant's unauthorized activity, use, or actions on any website or other means of communication. All participants are responsible for their own actions.&lt;/li&gt;
+
+	&lt;li&gt;You agree to honestly represent the nature of any link to ARMSLIST and will in no way deceive others into clicking a link by making false representations.&lt;/li&gt;
+
+	&lt;li&gt;Traffic driven to ARMSLIST through any means in violation of these terms or the terms of another may not be counted.&lt;/li&gt;
+
+	&lt;li&gt;ARMSLIST may at any time adjust a score or reject an account if it is found to be in violation of the terms or if ARMSLIST in its sole discretion determines that the user has violated the spirit of the contest.&lt;/li&gt;
+
+	&lt;li&gt;There is no contractual agreement between ARMSLIST and the participants of the contest. In its sole discretion, ARMSLIST.com will choose the winner(s) based upon an array of factors.&lt;/li&gt;
+
+	&lt;li&gt;Inability or failure of chosen winners to communicate with ARMSLIST and/or Contest sponsors/donors in a timely fashion, not to exceed 10 business days after ARMSLIST sends email notification to such chosen winner, regarding sizing, shipping and other information may constitute a forfeiture of the prize.  ARMSLIST may substitute a prize of approximately equal value in its sole discretion or as required by law. The prize(s) will be shipped to the winner's address or FFL dealer of the winner's choice if necessary.  The winner shall be responsible for any and all fees, background checks or other processes required for the winner to acquire possession of the prize. The winner(s) may request different prize(s) of equal or lesser value.&lt;/li&gt;
+
+&lt;/ol&gt;
+
+        &lt;/div&gt;
+
+                                    
+
+    &lt;/div&gt;
+
+    &lt;script type="text/javascript"&gt;
+
+        $("#tabs").tabs();
+
+    &lt;/script&gt;     
+
+                &lt;/div&gt;
+
+            &lt;/main&gt;
+
+
+
+
+
+
+
+
+
+        
+
+
+
+        &lt;footer id="footer" style="display: table;"&gt;
+
+            &lt;div class="top-hold hidden-xs"&gt;
+
+                &lt;div class="container-fluid"&gt;
+
+                    &lt;div class="row"&gt;
+
+                        &lt;div class="col-md-3 col-sm-6 col-lg-offset-1 col-md-offset-0"&gt;
+
+    &lt;h3 class="text-uppercase"&gt;ACCOUNT &amp;amp; LISTINGS &lt;/h3&gt;
+
+    &lt;ul class="nav-footer"&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/accountlogin/new"&gt;Account Login&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/account/new"&gt;New Account&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/posts/new"&gt;Create a New Listing&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/posts/resendactivation"&gt;Edit or Remove a Listing&lt;/a&gt;&lt;/li&gt;
+
+    &lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;div class="col-lg-2 col-md-3 col-sm-6"&gt;
+
+    &lt;h3 class="text-uppercase"&gt;ABOUT &amp;amp; HELP&lt;/h3&gt;
+
+    &lt;ul class="nav-footer"&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/info/faqs"&gt;FAQs&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/info/contact"&gt;Contact Armslist&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/info/privacy"&gt;Privacy Policy&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/info/terms"&gt;Terms of Use&lt;/a&gt;&lt;/li&gt;
+
+    &lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;div class="col-md-3 col-sm-6"&gt;
+
+    &lt;h3 class="text-uppercase"&gt;MORE ARMSLIST LINKS &lt;/h3&gt;
+
+    &lt;ul class="nav-footer"&gt;
+
+        &lt;li&gt;&lt;a href="http://forum.armslist.com/"&gt;Armslist Discussion Forum&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="http://www.armslist.com/contests/"&gt;Armslist Contests&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="http://www.armslistlegaldefensefund.com/"&gt;Armslist Legal Defense Fund&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/info/advertise"&gt;Advertising with Armslist&lt;/a&gt;&lt;/li&gt;
+
+    &lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;div class="col-md-3 col-sm-6"&gt;
+
+    &lt;h3 class="text-uppercase"&gt;PARTNER SITES&lt;/h3&gt;
+
+    &lt;ul class="nav-footer"&gt;
+
+        &lt;li&gt;&lt;a href="http://www.torquelist.com/"&gt;Torquelist Vehicle Trader&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="http://www.rangemonkey.com/"&gt;Range Monkey&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="http://www.invictusgearcompany.com/"&gt;Invictus Gear &lt;/a&gt;&lt;/li&gt;
+
+    &lt;/ul&gt;
+
+&lt;/div&gt;
+
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+            &lt;div class="container-fluid"&gt;
+
+                &lt;div class="row"&gt;
+
+                    &lt;div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2"&gt;
+
+                        &lt;ul class="social-list"&gt;
+
+                            &lt;li&gt;
+
+                                    &lt;a target="_blank" href="http://www.youtube.com/user/armslistmedia?sub_confirmation=1" title="Armslist Youtube channel" class="icon-youtube"&gt;&lt;/a&gt;
+
+                            &lt;/li&gt;
+
+                            &lt;li&gt;
+
+                                    &lt;a target="_blank" href="https://instagram.com/armslist/" title="Armslist on Instagram" class="icon-instagram"&gt;&lt;/a&gt;
+
+                            &lt;/li&gt;
+
+                            &lt;li&gt;
+
+                                    &lt;a target="_blank" href="https://www.facebook.com/armslist" title="Armslist on Facebook" class="icon-facebook"&gt;&lt;/a&gt;
+
+                            &lt;/li&gt;
+
+                            &lt;li&gt;
+
+                                    &lt;a target="_blank" href="https://twitter.com/armslist" title="Armslist Twitter page" class="icon-twitter"&gt;&lt;/a&gt;
+
+                            &lt;/li&gt;
+
+                            &lt;li&gt;
+
+                                    &lt;a target="_blank" href="https://plus.google.com/103978926144598391141/posts" title="Armslist on Google+" class="icon-google-plus"&gt;&lt;/a&gt;
+
+                            &lt;/li&gt;
+
+                        &lt;/ul&gt;
+
+                        &lt;div class="text-block"&gt;
+
+                            &lt;p&gt;Always comply with local, state, federal, and international law.
+
+ARMSLIST does not become involved in transactions between parties. Review our 
+
+&lt;a href="/info/privacy"&gt;privacy policy&lt;/a&gt; and &lt;a href="/info/terms"&gt;terms of use&lt;/a&gt; for more
+
+information. Report Illegal Firearms Activity to 1-800-ATF-GUNS.  &lt;/p&gt;
+
+
+
+                        &lt;/div&gt;
+
+                        &lt;span class="copy"&gt;
+
+                            Copyright © 2016 Armslist, LLC |
+
+                            | Version: 15.0.2
+
+                        &lt;/span&gt;
+
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+        &lt;/footer&gt;
+
+
+
+
+
+
+
+
+
+    &lt;/div&gt;
+
+    &lt;div class="loader-box"&gt;
+
+        &lt;img src="https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/images/loader.gif" height="64" width="64" alt="loader"&gt;
+
+    &lt;/div&gt;
+
+
+
+    &lt;script&gt;   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');    ga('create', 'UA-5138407-1', 'auto');   ga('send', 'pageview');  &lt;/script&gt;
+
+
+
+
+
+
+
+
+
+
+&lt;/body&gt;&lt;/html&gt;</raw_content>
+
+

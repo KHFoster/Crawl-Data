@@ -1,0 +1,1168 @@
+<raw_content>&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;
+
+        &lt;meta charset="utf-8"&gt;
+
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+
+        &lt;title&gt;ARMSLIST - Jay Leno involved in a gnarly rollover crash, walks away &lt;/title&gt;
+
+        &lt;link href="https://s3.amazonaws.com/mgm-content/sites/armslist/content/system/favicon.ico" rel="shortcut icon"&gt;
+
+        &lt;link rel="stylesheet" href="https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/css/bootstrap.css"&gt;
+
+        &lt;link rel="stylesheet" href="https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/css/all.css"&gt;
+
+        &lt;link href="//fonts.googleapis.com/css?family=Oswald:400,300%7CLato:400,700" rel="stylesheet" type="text/css"&gt;
+
+        &lt;link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"&gt;
+
+        &lt;div class="fit-vids-style" id="fit-vids-style" style="display: none;"&gt;­&lt;style&gt;.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}&lt;/style&gt;&lt;/div&gt;&lt;script async="" src="//www.google-analytics.com/analytics.js"&gt;&lt;/script&gt;&lt;script type="text/javascript" async="" src="//tpc.googlesyndication.com/sodar/sbhK2lTE.js"&gt;&lt;/script&gt;&lt;script type="text/javascript" async="" src="//pagead2.googlesyndication.com/pagead/js/lidar.js"&gt;&lt;/script&gt;&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"&gt;&lt;/script&gt;
+
+        &lt;script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"&gt;&lt;/script&gt;
+
+        &lt;script type="text/javascript" src="https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/js/jquery.main.js"&gt;&lt;/script&gt;
+
+
+
+        
+
+        &lt;script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"&gt;&lt;/script&gt;
+
+
+
+        
+
+        &lt;script type="text/javascript" src="https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/scripts/lib/jquery-cookie.js"&gt;&lt;/script&gt;
+
+
+
+        &lt;script type="text/javascript" src="https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/scripts/listmill-app.js"&gt;&lt;/script&gt;
+
+        &lt;script type="text/javascript" src="https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/scripts/jquery-listmill.js"&gt;&lt;/script&gt;
+
+        
+
+
+
+
+
+        &lt;script type="text/javascript"&gt;
+
+            var appOptions = {
+
+                showTermsOnLoad: "true" == "true" ? true : false,
+
+                showTermsOnLoadTimeout: 0};
+
+        
+
+
+
+            $(function () {
+
+                if(appOptions.showTermsOnLoad) {
+
+                    //listmill.app.checkTerms();
+
+                    //alert("show terms");
+
+                    checkTerms();
+
+                    
+
+                }
+
+                //listmill.app.themePreview();
+
+                //listmill.datatations.initialize();
+
+            });
+
+            function checkTerms() {
+
+                if ((document.cookie.length == 0 || document.cookie.indexOf("terms=agreed") == -1)
+
+                    &amp;&amp; window.location.href.indexOf("/info/terms") == -1
+
+                    &amp;&amp; document.cookie.indexOf("listmill_auth") == -1) {
+
+                    showTerms();
+
+                } else
+
+                    acceptTerms();
+
+            }
+
+            function acceptTerms() {
+
+                var dateStr = "";
+
+                if (appOptions.showTermsOnLoadTimeout &gt; 0) {
+
+                    date = new Date();
+
+                    date.setHours(date.getHours() + appOptions.showTermsOnLoadTimeout);
+
+                    dateStr = "; expires=" + date.toUTCString();
+
+                };
+
+                document.cookie = "terms=agreed" + dateStr + "; path=/";
+
+
+
+                $('#termsModal').modal('hide');
+
+            }
+
+
+
+            function showTerms() {
+
+                //termsModalContainer
+
+                $.ajax({
+
+                    url: "/info/termsagreement",
+
+                    dataType: "html",
+
+                    success: function (data) {
+
+                        $("#termsModalContainer").html(data);
+
+                        /*$("#termsagreement")
+
+                                .html("&lt;h2&gt;TERMS OF USE&lt;/h2&gt;" + data + "&lt;p style='font-size: 7pt; margin-top: 2em;'&gt;* COOKIES MUST BE ENABLED FOR THIS SITE TO WORK.&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;We recommend the use of Google Chrome, Firefox 3.0+, or Internet Explorer 7.0+ for the best browsing experience.&lt;/p&gt;")
+
+                                .dialog({
+
+                                    closeOnEscape: false,
+
+                                    modal: true,
+
+                                    title: "Please read and agree to our Terms of Use:",
+
+                                    width: Math.min(800, $(window).width() - 30),
+
+                                    height: Math.min(400, $(window).height() - 30),
+
+                                    buttons: {
+
+                                        "I Agree": function () { agreeTerms(); $(this).dialog("close"); },
+
+                                        "I Do Not Agree": function () { window.location = "http://www.google.com" }
+
+                                    }
+
+                                });*/
+
+                        //$(".ui-dialog-titlebar-close").hide();
+
+                        $('#termsModal').modal({
+
+                            backdrop: 'static',
+
+                            keyboard: false
+
+                        });
+
+
+
+                        $('#termsModal').modal('show');
+
+                    }});
+
+                
+
+            }
+
+        &lt;/script&gt;
+
+
+
+        
+
+    &lt;meta name="description" content="Jay Leno involved in a gnarly rollover crash in 2500hp car capable of doing wheelies, he walks away, like a boss"&gt;
+
+    &lt;meta name="keywords" content="jay leno 2500hp wheelie crash rollover"&gt;
+
+
+
+
+
+        &lt;!-- --&gt;
+
+
+
+        &lt;!--                &lt;style type="text/css"&gt;
+
+        .footer-social {  width: 100px;  margin-right: 0px !important;}
+
+        &lt;/style&gt;
+
+--&gt;
+
+        &lt;style type="text/css"&gt;
+
+            #h3Overrides h3 {
+
+                margin-top: 0px;
+
+                color: #000000;
+
+            }
+
+        &lt;/style&gt;
+
+    &lt;/head&gt;
+
+
+
+
+
+    &lt;body style="-webkit-overflow-scrolling: touch;" class="modal-open"&gt;
+
+        &lt;div id="termsModal" class="modal fade in" role="dialog" style="color: rgb(101, 93, 91) !important; display: block;"&gt;
+
+            &lt;div class="modal-dialog"&gt;
+
+
+
+                &lt;!-- Modal content--&gt;
+
+                &lt;div class="modal-content"&gt;
+
+                    &lt;div class="modal-header"&gt;
+
+                        &lt;h4 style="color: #655d5b"&gt;TERMS OF USE&lt;/h4&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;div class="modal-body"&gt;
+
+                        &lt;div id="termsModalContainer"&gt;&lt;ol class="terms"&gt;                
+
+    &lt;li&gt;I am 18 years of age or older.&lt;/li&gt;
+
+    &lt;li&gt;I understand that ARMSLIST DOES NOT become involved in transactions between parties and does not certify, investigate, or in any way guarantee the legal capacity of any party to transact.&lt;/li&gt;
+
+    &lt;li&gt;I am responsible for obeying all applicable enforcement mechanisms, including, but not limited to federal, state, municipal, and tribal statutes, rules, regulations, ordinances, and judicial decisions, any applicable Presidential Executive Orders, including compliance with all applicable licensing requirements.&lt;/li&gt;
+
+    &lt;li&gt;I will not use Armslist.com for any illegal purpose.&lt;/li&gt;
+
+    &lt;li&gt;If I am at all unsure about firearm sales or transfers, I will contact the Bureau of Alcohol, Tobacco, Firearms, and Explosive at 1-800-ATF-GUNS and visit the ATF website at http://www.atf.gov.&lt;/li&gt;
+
+    &lt;li&gt;I will help to ensure the overall openness and accessibility of the site to all users through a peer-review process.  I understand that failure to adhere to proper internet protocol and etiquette may result in removal of my listings or more severe corrective action.&lt;/li&gt;
+
+    &lt;li&gt;ARMSLIST may edit or remove information, including my listings, from the site without notice.&lt;/li&gt;        
+
+    &lt;li&gt;If I violate these terms, ARMSLIST may permanently remove me from the site or, depending on the nature and severity of the violation, avail itself of such remedies as are prescribed by law.  Whilst ARMSLIST ABSOLUTELY BELIEVES AND CHAMPIONS "the right of the people to keep and bear Arms," ARMSLIST will comply with federal, state, municipal, and tribal law enforcement entities pursuant to the Constitution of the United States and Due Process of Law.&lt;/li&gt;
+
+    &lt;li&gt;I agree to abide by the spam and listing policies. I may only have one account and may only list an item once, in the correct category, and in my physical location. &lt;/li&gt; 
+
+    &lt;li&gt;I understand that the sale or trade of animals on Armslist is prohibited. &lt;/li&gt; 
+
+    &lt;li&gt;I take responsibility for my actions whilst using Armslist.com.  I also take responsibility for any and all of my actions related to, or resulting from, my use of Armslist.com.  Further, I am solely responsible for any and all consequences of such my actions.&lt;/li&gt; 
+
+    &lt;li&gt;I indemnify and hold harmless ARMSLIST and all of its owners, directors, officers, employees, and agents for any and all loss, harm, damage, costs, liability, and expense caused to them, whether intentionally or unintentionally, by my use of Armslist.com, including but not limited to direct or indirect results of violations of any and all applicable laws.&lt;/li&gt;
+
+    &lt;li&gt;ARMSLIST may make changes to these terms at any time without notifying me.  As a user, I am solely responsible for reading the most current version of the terms and conditions.&lt;/li&gt;        
+
+    &lt;li&gt;By clicking "I agree," I electronically represent ("sign") that I agree to the above terms and further certify that I have read, and completely agree, to be legally bound by the ARMSLIST Terms of Use&lt;/li&gt;
+
+&lt;/ol&gt;
+
+&lt;/div&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;div class="modal-footer"&gt;
+
+                        &lt;button type="button" class="btn btn-default" onclick="acceptTerms()"&gt;Accept&lt;/button&gt;
+
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+
+
+
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+
+        &lt;div id="promotionModal" class="modal fade" role="dialog" style="color: #655D5B !important;"&gt;
+
+            &lt;div class="modal-dialog"&gt;
+
+
+
+                &lt;!-- Modal content--&gt;
+
+                &lt;div class="modal-content"&gt;
+
+                    &lt;div class="modal-header"&gt;
+
+                        &lt;h4 style="color: #655d5b"&gt;PROMOTIONAL LINK&lt;/h4&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;div class="modal-body"&gt;
+
+                        &lt;div id="promotionModalContainer"&gt;&lt;/div&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;div class="modal-footer"&gt;
+
+                        &lt;button type="button" class="btn btn-default" data-dismiss="modal"&gt;Close&lt;/button&gt;
+
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+
+
+
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+
+        &lt;div id="filterByModal" class="modal fade" role="dialog" style="color: #655D5B !important;"&gt;
+
+        &lt;div class="modal-dialog"&gt;
+
+
+
+            &lt;!-- Modal content--&gt;
+
+            &lt;div class="modal-content"&gt;
+
+                &lt;div class="modal-header"&gt;
+
+                    &lt;button type="button" class="close" data-dismiss="modal"&gt;×&lt;/button&gt;
+
+                    &lt;h4 style="color: #655d5b"&gt;Filter By&lt;/h4&gt;
+
+                &lt;/div&gt;
+
+                &lt;div class="modal-body"&gt;
+
+                    &lt;div id="filterByContainer"&gt;&lt;/div&gt;
+
+                &lt;/div&gt;
+
+                &lt;div class="modal-footer"&gt;
+
+                    &lt;button type="button" class="btn btn-default" data-dismiss="modal"&gt;Close&lt;/button&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+
+
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+
+
+
+    &lt;div id="contactSellerEmailModal" class="modal fade" role="dialog" style="color: #655D5B !important;"&gt;
+
+        &lt;div class="modal-dialog"&gt;
+
+
+
+            &lt;!-- Modal content--&gt;
+
+            &lt;div class="modal-content"&gt;
+
+                &lt;div class="modal-header"&gt;
+
+                    &lt;button type="button" class="close" data-dismiss="modal"&gt;×&lt;/button&gt;
+
+                    &lt;h4 style="color: #655d5b"&gt;Contact Seller&lt;/h4&gt;
+
+                &lt;/div&gt;
+
+                &lt;div class="modal-body"&gt;
+
+                    &lt;div id="messageSellerContainer"&gt;&lt;/div&gt;
+
+                &lt;/div&gt;
+
+                &lt;div class="modal-footer"&gt;
+
+                    &lt;button id="contactFormSubmitBtn" type="button" class="pull-left btn btn-default" onclick="doMessageSend()"&gt;Send&lt;/button&gt;
+
+                    &lt;button type="button" class="btn btn-default" data-dismiss="modal"&gt;Cancel&lt;/button&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+
+
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+
+    &lt;div id="searchAlertModal" class="modal fade" role="dialog" style="color: #655D5B !important;"&gt;
+
+        &lt;div class="modal-dialog"&gt;
+
+
+
+            &lt;!-- Modal content--&gt;
+
+            &lt;div class="modal-content"&gt;
+
+                &lt;div class="modal-header"&gt;
+
+                    &lt;button type="button" class="close" data-dismiss="modal"&gt;×&lt;/button&gt;
+
+                    &lt;h4 style="color: #655d5b"&gt;Search Alert&lt;/h4&gt;
+
+                &lt;/div&gt;
+
+                &lt;div class="modal-body"&gt;
+
+                    &lt;div id="searchAlertContainer"&gt;&lt;/div&gt;
+
+                &lt;/div&gt;
+
+                &lt;div class="modal-footer"&gt;
+
+                    &lt;button id="searchAlertFormSubmitBtn" type="button" class="pull-left btn btn-default" onclick="createSearchAlert()"&gt;Create&lt;/button&gt;
+
+                    &lt;button type="button" class="btn btn-default" data-dismiss="modal"&gt;Cancel&lt;/button&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+
+
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+
+    &lt;div id="wrapper"&gt;
+
+        &lt;header id="header" class="navbar-default text-uppercase" role="navigation"&gt;
+
+            &lt;div class="top-holder"&gt;
+
+                &lt;div class="container-fluid"&gt;
+
+                    &lt;button type="button" class="navbar-toggle text-uppercase pull-left" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" id="popoverMobileViewMainMenu" data-original-title="" title=""&gt;
+
+                        &lt;span class="icon-bar"&gt;&lt;/span&gt;
+
+                        &lt;span class="icon-bar"&gt;&lt;/span&gt;
+
+                        &lt;span class="icon-bar"&gt;&lt;/span&gt;
+
+                        &lt;span class="text"&gt;Menu&lt;/span&gt;
+
+                    &lt;/button&gt;
+
+                    &lt;div id="popovercontentMobileViewMainMenu" style="display: none;"&gt;
+
+                        &lt;div class="container-fluid"&gt;
+
+                            &lt;div class="row" id="h3Overrides"&gt;
+
+                                &lt;div class="col-md-3 col-sm-6 col-lg-offset-1 col-md-offset-0"&gt;
+
+    &lt;h3 class="text-uppercase"&gt;ACCOUNT &amp;amp; LISTINGS &lt;/h3&gt;
+
+    &lt;ul class="nav-footer"&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/accountlogin/new"&gt;Account Login&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/account/new"&gt;New Account&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/posts/new"&gt;Create a New Listing&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/posts/resendactivation"&gt;Edit or Remove a Listing&lt;/a&gt;&lt;/li&gt;
+
+    &lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;div class="col-lg-2 col-md-3 col-sm-6"&gt;
+
+    &lt;h3 class="text-uppercase"&gt;ABOUT &amp;amp; HELP&lt;/h3&gt;
+
+    &lt;ul class="nav-footer"&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/info/faqs"&gt;FAQs&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/info/contact"&gt;Contact Armslist&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/info/privacy"&gt;Privacy Policy&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/info/terms"&gt;Terms of Use&lt;/a&gt;&lt;/li&gt;
+
+    &lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;div class="col-md-3 col-sm-6"&gt;
+
+    &lt;h3 class="text-uppercase"&gt;MORE ARMSLIST LINKS &lt;/h3&gt;
+
+    &lt;ul class="nav-footer"&gt;
+
+        &lt;li&gt;&lt;a href="http://forum.armslist.com/"&gt;Armslist Discussion Forum&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="http://www.armslist.com/contests/"&gt;Armslist Contests&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="http://www.armslistlegaldefensefund.com/"&gt;Armslist Legal Defense Fund&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/info/advertise"&gt;Advertising with Armslist&lt;/a&gt;&lt;/li&gt;
+
+    &lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;div class="col-md-3 col-sm-6"&gt;
+
+    &lt;h3 class="text-uppercase"&gt;PARTNER SITES&lt;/h3&gt;
+
+    &lt;ul class="nav-footer"&gt;
+
+        &lt;li&gt;&lt;a href="http://www.torquelist.com/"&gt;Torquelist Vehicle Trader&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="http://www.rangemonkey.com/"&gt;Range Monkey&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="http://www.invictusgearcompany.com/"&gt;Invictus Gear &lt;/a&gt;&lt;/li&gt;
+
+    &lt;/ul&gt;
+
+&lt;/div&gt;
+
+                            &lt;/div&gt;
+
+                        &lt;/div&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;script type="text/javascript"&gt;
+
+                        $(document).ready(function () {
+
+
+
+                            $("#popoverMobileViewMainMenu").popover({
+
+                                html: true,
+
+                                container: 'body',
+
+                                content: function () {
+
+                                    return $('#popovercontentMobileViewMainMenu').html();
+
+                                }
+
+                            });
+
+
+
+                            $('html').on('click', function (e) {
+
+                                if (typeof $(e.target).data('original-title') == 'undefined' &amp;&amp;
+
+                                    !$(e.target).parents().is('.popover.in') &amp;&amp;
+
+                                    $(e.target).parent().attr("id") !== "popoverMobileViewMainMenu") {
+
+                                    $('[data-original-title]').popover('hide');
+
+                                }
+
+                            });
+
+                        });
+
+
+
+                    &lt;/script&gt;
+
+
+
+                    &lt;div class="pull-right align-right"&gt;
+
+&lt;form action="/classifieds/search" class="search-form navbar-form hidden-xs" method="get" role="search"&gt;                            &lt;fieldset&gt;
+
+                                &lt;div class="form-group"&gt;
+
+
+
+                                    &lt;input type="text" name="search" class="form-control" placeholder="Search listings" value=""&gt;
+
+                                    &lt;input type="hidden" name="location" value="usa"&gt;
+
+                                    &lt;input type="hidden" name="category" value="all"&gt;
+
+                                    &lt;input type="hidden" name="posttype" value="7"&gt;
+
+                                    &lt;input type="hidden" name="ships" value="False"&gt;
+
+                                &lt;/div&gt;
+
+                                &lt;button type="submit" class="btn btn-default icon-search"&gt;&lt;/button&gt;
+
+                            &lt;/fieldset&gt;
+
+&lt;/form&gt;                        
+
+                        &lt;a href="/posts/new" class="btn btn-warning create-btn text-uppercase"&gt;&lt;span class="hidden-sm hidden-xs"&gt;CREATE A LISTING&lt;/span&gt; &lt;i class="icon-pencil"&gt;&lt;/i&gt; &lt;span class="visible-sm visible-xs"&gt;list&lt;/span&gt;&lt;/a&gt;
+
+
+
+                        
+
+&lt;ul class="users-list hidden-xs"&gt;
+
+
+
+        &lt;li&gt;&lt;a href="/account/new"&gt;CREATE AN ACCOUNT&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="/accountlogin"&gt;LOGIN&lt;/a&gt;&lt;/li&gt;
+
+&lt;/ul&gt;
+
+
+
+
+
+                        &lt;button type="button" class="btn btn-warning create-btn text-uppercase visible-xs" onclick="showHideSearchMobile()"&gt;&lt;i class="icon-search"&gt;&lt;/i&gt; &lt;span class="visible-xs"&gt;search&lt;/span&gt;&lt;/button&gt;
+
+                        &lt;script type="text/javascript"&gt;
+
+                            function showHideSearchMobile() {
+
+                                $("#searchMobileView").fadeToggle();
+
+                            }
+
+                        &lt;/script&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;div id="logo" class="pull-left"&gt;
+
+                        &lt;a href="/" title="ARMSLIST - Firearms Classifieds"&gt;
+
+                            &lt;picture&gt;
+
+                                    &lt;!--[if IE 9]&gt;&lt;video style="display: none;"&gt;&lt;![endif]--&gt;
+
+                                    &lt;source srcset="https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/images/logo-mobile.png, https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/images/logo-mobile@2x.png 2x" media="(max-width: 767px)"&gt;
+
+                                    &lt;source srcset="https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/images/logo-desktop.png, https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/images/logo-desktop@2x.png 2x"&gt;
+
+                                    &lt;!--[if IE 9]&gt;&lt;/video&gt;&lt;![endif]--&gt;
+
+                                    &lt;img src="https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/images/logo-desktop.png" alt="armslist firearms marketplace" width="260" height="66"&gt;
+
+                            &lt;/picture&gt;
+
+                        &lt;/a&gt;
+
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+            &lt;div class="alert " id="mainMessageContainer" style="display: none; margin-bottom: 0px;"&gt;
+
+                
+
+                &lt;div id="mainMessageContainer_Message" style="text-align: center;"&gt;&lt;/div&gt;
+
+            &lt;/div&gt;
+
+            
+
+            &lt;div style="padding: 20px 10px 10px 20px; text-align: center; display: none;" class="hidden-sm hidden-md hidden-lg" id="searchMobileView"&gt;
+
+
+
+&lt;form action="/classifieds/search" class="search-form" method="get" role="search" style="width: 75% !important;"&gt;                    &lt;fieldset&gt;
+
+                        &lt;div class="form-group"&gt;
+
+                            &lt;input type="text" name="search" class="form-control" placeholder="Search listings" value=""&gt;
+
+                            &lt;input type="hidden" name="location" value="usa"&gt;
+
+                            &lt;input type="hidden" name="category" value="all"&gt;
+
+                            &lt;input type="hidden" name="posttype" value="7"&gt;
+
+                            &lt;input type="hidden" name="ships" value="False"&gt;
+
+                        &lt;/div&gt;
+
+                        &lt;button type="submit" class="btn btn-default icon-search"&gt;&lt;/button&gt;
+
+                    &lt;/fieldset&gt;
+
+&lt;/form&gt;                &lt;br&gt;
+
+
+
+                &lt;div id="myCarousel" class="carousel slide" data-ride="carousel" style="padding-top: 20px;"&gt;
+
+
+
+
+
+                    &lt;!-- Wrapper for slides --&gt;
+
+                    &lt;div class="carousel-inner" role="listbox"&gt;
+
+                        &lt;div class="item"&gt;
+
+                            &lt;div style="text-align: center; font: 300 16px/19px &amp;quot;Oswald&amp;quot;, &amp;quot;Arial&amp;quot;, &amp;quot;Helvetica&amp;quot;, sans-serif; text-decoration: none; text-transform: uppercase;"&gt;
+
+                                &lt;a style="color: #e5e0bf; padding-right: 10px; display: inline-block;" href="/classifieds/search?category=handguns&amp;amp;location=usa&amp;amp;posttype=7&amp;amp;ships=False"&gt;HANDGUNS &lt;br&gt;&lt;i class="icon-handguns"&gt;&lt;/i&gt;&lt;/a&gt;
+
+                                &lt;a style="color: #e5e0bf; padding-right: 10px; display: inline-block;" href="/classifieds/search?category=shotguns&amp;amp;location=usa&amp;amp;posttype=7&amp;amp;ships=False"&gt;SHOTGUNS &lt;br&gt;&lt;i class="icon-shotguns"&gt;&lt;/i&gt;&lt;/a&gt;
+
+                                &lt;a style="color: #e5e0bf; display: inline-block;" href="/classifieds/search?category=rifles&amp;amp;location=usa&amp;amp;posttype=7&amp;amp;ships=False"&gt;RIFLES &lt;br&gt;&lt;i class="icon-rifles"&gt;&lt;/i&gt;&lt;/a&gt;
+
+                            &lt;/div&gt;
+
+                        &lt;/div&gt;
+
+
+
+                        &lt;div class="item active"&gt;
+
+                            &lt;div style="text-align: center; font: 300 16px/19px &amp;quot;Oswald&amp;quot;, &amp;quot;Arial&amp;quot;, &amp;quot;Helvetica&amp;quot;, sans-serif; text-decoration: none; text-transform: uppercase;"&gt;
+
+                                &lt;a style="color: #e5e0bf; padding-right: 10px; display: inline-block;" href="/classifieds/search?category=firearm-accessories&amp;amp;location=usa&amp;amp;posttype=7&amp;amp;ships=False"&gt;ACCESSORIES &lt;br&gt;&lt;i class="icon-scope"&gt;&lt;/i&gt;&lt;/a&gt;
+
+                                &lt;a style="color: #e5e0bf; display: inline-block;" href="/classifieds/search?category=outdoors&amp;amp;location=usa&amp;amp;posttype=7&amp;amp;ships=False"&gt;GEAR + MORE &lt;br&gt;&lt;i class="icon-gear"&gt;&lt;/i&gt;&lt;/a&gt;
+
+                            &lt;/div&gt;
+
+                        &lt;/div&gt;
+
+                    &lt;/div&gt;
+
+
+
+                    &lt;!-- Left and right controls --&gt;
+
+                    &lt;a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"&gt;
+
+                        &lt;span class="glyphicon glyphicon-chevron-left" aria-hidden="true"&gt;&lt;/span&gt;
+
+                        &lt;span class="sr-only"&gt;Previous&lt;/span&gt;
+
+                    &lt;/a&gt;
+
+                    &lt;a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"&gt;
+
+                        &lt;span class="glyphicon glyphicon-chevron-right" aria-hidden="true"&gt;&lt;/span&gt;
+
+                        &lt;span class="sr-only"&gt;Next&lt;/span&gt;
+
+                    &lt;/a&gt;
+
+                &lt;/div&gt;
+
+                &lt;style type="text/css"&gt;
+
+                    .carousel-control.left, .carousel-control.right {
+
+                        background-image: none;
+
+                    }
+
+                &lt;/style&gt;
+
+            &lt;/div&gt;
+
+        &lt;/header&gt;
+
+        
+
+
+
+        
+
+            &lt;main id="main"&gt;
+
+                &lt;div class="container-fluid" style="color: #655D5B;"&gt;
+
+                    
+
+
+
+
+
+
+
+&lt;div align="center"&gt;&lt;!--/*
+
+  *
+
+  * Revive Adserver Javascript Tag
+
+  * - Generated with Revive Adserver v3.2.2
+
+  *
+
+  */--&gt;
+
+
+
+&lt;!--/*
+
+  * The backup image section of this tag has been generated for use on a
+
+  * non-SSL page. If this tag is to be placed on an SSL page, change the
+
+  *   'http://revive.armslist.com/revive/www/delivery/...'
+
+  * to
+
+  *   'https://revive.armslist.com/revive/www/delivery/...'
+
+  *
+
+  * This noscript section of this tag only shows image banners. There
+
+  * is no width or height in these banners, so if you want these tags to
+
+  * allocate space for the ad before it shows, you will need to add this
+
+  * information to the &lt;img&gt; tag.
+
+  *
+
+  * If you do not want to deal with the intricities of the noscript
+
+  * section, delete the tag (from &lt;noscript&gt;... to &lt;/noscript&gt;). On
+
+  * average, the noscript tag is called from less than 1% of internet
+
+  * users.
+
+  */--&gt;
+
+
+
+&lt;script type="text/javascript"&gt;&lt;!--//&lt;![CDATA[
+
+   var m3_u = (location.protocol=='https:'?'https://revive.armslist.com/revive/www/delivery/ajs.php':'http://revive.armslist.com/revive/www/delivery/ajs.php');
+
+var m3_r = Math.floor(Math.random()*99999999999);
+
+if (!document.MAX_used) document.MAX_used = ',';
+
+document.write ("&lt;scr"+"ipt type='text/javascript' src='"+m3_u);
+
+document.write ("?zoneid=60");
+
+document.write ('&amp;amp;cb=' + m3_r);
+
+if (document.MAX_used != ',') document.write ("&amp;amp;exclude=" + document.MAX_used);
+
+document.write (document.charset ? '&amp;amp;charset='+document.charset : (document.characterSet ? '&amp;amp;charset='+document.characterSet : ''));
+
+document.write ("&amp;amp;loc=" + escape(window.location));
+
+if (document.referrer) document.write ("&amp;amp;referer=" + escape(document.referrer));
+
+if (document.context) document.write ("&amp;context=" + escape(document.context));
+
+if (document.mmm_fo) document.write ("&amp;amp;mmm_fo=1");
+
+document.write ("'&gt;&lt;\/scr"+"ipt&gt;");
+
+//]]&gt;--&gt;&lt;/script&gt;&lt;script type="text/javascript" src="http://revive.armslist.com/revive/www/delivery/ajs.php?zoneid=60&amp;amp;cb=93833836749&amp;amp;charset=UTF-8&amp;amp;loc=http%3A//www.armslist.com/blog/news/jay-%23myCarousel&amp;amp;referer=http%3A//www.armslist.com/blog/news/jay-"&gt;&lt;/script&gt;&lt;!--/* OpenX JavaScript tag */--&gt;
+
+&lt;script type="text/javascript"&gt;
+
+if (!window.OX_ads) { OX_ads = []; }
+
+OX_ads.push({ "auid" : "538370813" });
+
+&lt;/script&gt;
+
+&lt;script type="text/javascript"&gt;
+
+document.write('&lt;scr'+'ipt src="//secondmedia-d.openx.net/w/1.0/jstag"&gt;&lt;\/scr'+'ipt&gt;');
+
+&lt;/script&gt;&lt;script src="//secondmedia-d.openx.net/w/1.0/jstag"&gt;&lt;/script&gt;&lt;script type="text/javascript" id="ox_acj_2431394529" src="http://secondmedia-d.openx.net/w/1.0/acj?ai=98d34fe2-233a-4fdf-f64f-e8b1870853c6&amp;amp;o=2431394529&amp;amp;callback=OX_2431394529&amp;amp;ju=http%3A//www.armslist.com/blog/news/jay-%23myCarousel&amp;amp;jr=http%3A//www.armslist.com/blog/news/jay-&amp;amp;auid=538370813&amp;amp;dims=992x744&amp;amp;adxy=15%2C114&amp;amp;tp.rv.data=a&amp;amp;res=1024x768x24&amp;amp;plg=pm&amp;amp;ch=UTF-8&amp;amp;tz=0&amp;amp;ws=992x744&amp;amp;ifr=0&amp;amp;tws=992x744&amp;amp;vmt=1&amp;amp;sd=3"&gt;&lt;/script&gt;&lt;script language="JavaScript1.1" src="http://ad.doubleclick.net/ddm/adj/N9059.2181304VERTICALSCOPE/B9394364.133840038;sz=300x250;click1=http://secondmedia-d.openx.net/w/1.0/rc?ts=1fHJpZD05ODVmMDVjMy0yNzA1LTQ5ZTktOWU4NC00NTY1ZTJjN2NjMjV8cnQ9MTQ2Nzg2NzA0NnxhdWlkPTUzODM3MDgxM3xhdW09RE1JRC5XRUJ8c2lkPTk4MzN8cHViPTE0NTUwfHBjPVVTRHxyYWlkPWEzM2Y1ZjZiLWE3NWItNDY0Yy1hMmNmLTI5MjUxNzBjYmZiYXxhaWQ9NTM4MjUyMDc4fHQ9NXxhcz0zMDB4MjUwfGxpZD01Mzc2OTY1MDl8b2lkPTUzNzMwMDc0OXxwPTMwMDB8cHI9MzAwMHxhdGI9MzAwMHxhZHY9NTM3MDk1MDIwfGFjPVVTRHxwbT1QUklDSU5HLkNQTXxibT1CVVlJTkcuR1VBUkFOVEVFRFZPTFVNRUdPQUx8bGM9Mnxsdz0xNDQwfHVyPXl6aHJzSElnMjE&amp;amp;r=;ord=yzhrsHIg21?"&gt;
+
+&lt;/script&gt;&lt;div class="GoogleActiveViewClass" id="DfaVisibilityIdentifier_1830063469"&gt;&lt;a target="_blank" href="http://adclick.g.doubleclick.net/pcs/click?xai=AKAOjssTVJgJRmbSod375j8bEG9QlqxgWMfx5iD6HUCe71CsU42baEI2TlAiZSxiafiA4nKkliquIepOLGyw8BiD0fllpE4thC7HU2OEybFLwojjUfIUsquBSqp0&amp;amp;sig=Cg0ArKJSzGuHqwOqbTi9&amp;amp;urlfix=1&amp;amp;adurl=http://secondmedia-d.openx.net/w/1.0/rc%3Fts%3D1fHJpZD05ODVmMDVjMy0yNzA1LTQ5ZTktOWU4NC00NTY1ZTJjN2NjMjV8cnQ9MTQ2Nzg2NzA0NnxhdWlkPTUzODM3MDgxM3xhdW09RE1JRC5XRUJ8c2lkPTk4MzN8cHViPTE0NTUwfHBjPVVTRHxyYWlkPWEzM2Y1ZjZiLWE3NWItNDY0Yy1hMmNmLTI5MjUxNzBjYmZiYXxhaWQ9NTM4MjUyMDc4fHQ9NXxhcz0zMDB4MjUwfGxpZD01Mzc2OTY1MDl8b2lkPTUzNzMwMDc0OXxwPTMwMDB8cHI9MzAwMHxhdGI9MzAwMHxhZHY9NTM3MDk1MDIwfGFjPVVTRHxwbT1QUklDSU5HLkNQTXxibT1CVVlJTkcuR1VBUkFOVEVFRFZPTFVNRUdPQUx8bGM9Mnxsdz0xNDQwfHVyPXl6aHJzSElnMjE%26r%3Dhttp://www.cabelas.com/browse.cmd%253FcategoryId%253D1107664380%2526WT.tsrc%253DODA%2526WT.mc_id%253DSecondMedia_BenjaminAirbow_ODA16"&gt;&lt;img src="http://s0.2mdn.net/viewad/5322226/BenjaminAirbow_Product_300x250.jpg" alt="Advertisement" border="0" width="300" height="250"&gt;&lt;/a&gt;&lt;/div&gt;
+
+&lt;noscript&gt;
+
+&amp;lt;a href="http://secondmedia-d.openx.net/w/1.0/rc?ts=1fHJpZD05ODVmMDVjMy0yNzA1LTQ5ZTktOWU4NC00NTY1ZTJjN2NjMjV8cnQ9MTQ2Nzg2NzA0NnxhdWlkPTUzODM3MDgxM3xhdW09RE1JRC5XRUJ8c2lkPTk4MzN8cHViPTE0NTUwfHBjPVVTRHxyYWlkPWEzM2Y1ZjZiLWE3NWItNDY0Yy1hMmNmLTI5MjUxNzBjYmZiYXxhaWQ9NTM4MjUyMDc4fHQ9NXxhcz0zMDB4MjUwfGxpZD01Mzc2OTY1MDl8b2lkPTUzNzMwMDc0OXxwPTMwMDB8cHI9MzAwMHxhdGI9MzAwMHxhZHY9NTM3MDk1MDIwfGFjPVVTRHxwbT1QUklDSU5HLkNQTXxibT1CVVlJTkcuR1VBUkFOVEVFRFZPTFVNRUdPQUx8bGM9Mnxsdz0xNDQwfHVyPXl6aHJzSElnMjE&amp;amp;r=http://ad.doubleclick.net/ddm/jump/N9059.2181304VERTICALSCOPE/B9394364.133840038;sz=300x250;ord=yzhrsHIg21?"&amp;gt;
+
+&amp;lt;IMG SRC="http://ad.doubleclick.net/ddm/ad/N9059.2181304VERTICALSCOPE/B9394364.133840038;sz=300x250;ord=yzhrsHIg21?" BORDER=0 WIDTH=300 HEIGHT=250 ALT="Advertisement"&amp;gt;&amp;lt;/A&amp;gt;
+
+&lt;/noscript&gt;&lt;div style="position:absolute;left:0px;top:0px;visibility:hidden;"&gt;&lt;img src="http://secondmedia-d.openx.net/w/1.0/ri?ts=1fHJpZD05ODVmMDVjMy0yNzA1LTQ5ZTktOWU4NC00NTY1ZTJjN2NjMjV8cnQ9MTQ2Nzg2NzA0NnxhdWlkPTUzODM3MDgxM3xhdW09RE1JRC5XRUJ8c2lkPTk4MzN8cHViPTE0NTUwfHBjPVVTRHxyYWlkPWEzM2Y1ZjZiLWE3NWItNDY0Yy1hMmNmLTI5MjUxNzBjYmZiYXxhaWQ9NTM4MjUyMDc4fHQ9NXxhcz0zMDB4MjUwfGxpZD01Mzc2OTY1MDl8b2lkPTUzNzMwMDc0OXxwPTMwMDB8cHI9MzAwMHxhdGI9MzAwMHxhZHY9NTM3MDk1MDIwfGFjPVVTRHxwbT1QUklDSU5HLkNQTXxibT1CVVlJTkcuR1VBUkFOVEVFRFZPTFVNRUdPQUx8bGM9Mnxsdz0xNDQwfHVyPXl6aHJzSElnMjE"&gt;&lt;/div&gt;
+
+&lt;noscript&gt;&amp;lt;iframe id="4cd85123ce" name="4cd85123ce" src="//secondmedia-d.openx.net/w/1.0/afr?auid=538370813&amp;amp;cb=INSERT_RANDOM_NUMBER_HERE" frameborder="0" scrolling="no" width="300" height="250"&amp;gt;&amp;lt;a href="//secondmedia-d.openx.net/w/1.0/rc?cs=4cd85123ce&amp;amp;cb=INSERT_RANDOM_NUMBER_HERE" &amp;gt;&amp;lt;img src="//secondmedia-d.openx.net/w/1.0/ai?auid=538370813&amp;amp;cs=4cd85123ce&amp;amp;cb=INSERT_RANDOM_NUMBER_HERE" border="0" alt=""&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/noscript&gt;&lt;div id="beacon_fb0e63fc8e" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"&gt;&lt;img src="http://revive.armslist.com/revive/www/delivery/lg.php?bannerid=65&amp;amp;campaignid=4&amp;amp;zoneid=60&amp;amp;loc=http%3A%2F%2Fwww.armslist.com%2Fblog%2Fnews%2Fjay-%23myCarousel&amp;amp;referer=http%3A%2F%2Fwww.armslist.com%2Fblog%2Fnews%2Fjay-&amp;amp;cb=fb0e63fc8e" width="0" height="0" alt="" style="width: 0px; height: 0px;"&gt;&lt;/div&gt;
+
+&lt;noscript&gt;&amp;lt;a href='http://revive.armslist.com/revive/www/delivery/ck.php?n=aac3d9a9&amp;amp;amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'&amp;gt;&amp;lt;img src='http://revive.armslist.com/revive/www/delivery/avw.php?zoneid=39&amp;amp;amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;amp;amp;n=aac3d9a9' border='0' alt='' /&amp;gt;&amp;lt;/a&amp;gt;&lt;/noscript&gt;
+
+&lt;/div&gt;
+
+&lt;br&gt;
+
+    &lt;div style="text-align: center;"&gt;&lt;a href="/blog/news"&gt;Back to Category List&lt;/a&gt;&lt;h2 style="color: #000000;"&gt;Jay Leno involved in a gnarly rollover crash, walks away&lt;/h2&gt;&lt;/div&gt;
+
+    &lt;div style="padding-top: 10px;"&gt;&lt;p&gt;Jay Leno was riding shotgun in a 2500hp car during filming for his show, Jay Leno's Garage. &amp;nbsp;After successfully pulling the front wheels well off the ground, the car bounced down and was difficult to control. &amp;nbsp;The car rolled over more than once and sustained significant damage. &amp;nbsp;Leno and the driver, 80 year old stunt man Bob Riggle, both walked away.&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;You can watch the crash here on the youtube channel for Jay Leno's Garage.&lt;br&gt;&lt;iframe src="//www.youtube.com/embed/LabX19ocJZA" width="560" height="320" allowfullscreen="allowfullscreen"&gt;&lt;/iframe&gt;&lt;/p&gt;&lt;/div&gt;
+
+    &lt;div style="font-style: italic; padding-top: 15px;"&gt;created: 6/28/2016 5:54 PM&lt;/div&gt;
+
+    &lt;br&gt;
+
+            &lt;div class="panel panel-default"&gt;
+
+                &lt;div class="panel-heading"&gt;
+
+                    Cyrus Williams commented on 7/6/2016 7:49 AM
+
+                &lt;/div&gt;
+
+                &lt;div class="panel-body"&gt;N&lt;/div&gt;
+
+            &lt;/div&gt;
+
+            &lt;div class="panel panel-default"&gt;
+
+                &lt;div class="panel-heading"&gt;
+
+                    djmurdoc commented on 7/2/2016 6:18 PM
+
+                &lt;/div&gt;
+
+                &lt;div class="panel-body"&gt;&lt;/div&gt;
+
+            &lt;/div&gt;
+
+
+
+
+
+                &lt;/div&gt;
+
+            &lt;/main&gt;
+
+
+
+
+
+
+
+
+
+        
+
+
+
+        &lt;footer id="footer" style="display: table;"&gt;
+
+            &lt;div class="top-hold hidden-xs"&gt;
+
+                &lt;div class="container-fluid"&gt;
+
+                    &lt;div class="row"&gt;
+
+                        &lt;div class="col-md-3 col-sm-6 col-lg-offset-1 col-md-offset-0"&gt;
+
+    &lt;h3 class="text-uppercase"&gt;ACCOUNT &amp;amp; LISTINGS &lt;/h3&gt;
+
+    &lt;ul class="nav-footer"&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/accountlogin/new"&gt;Account Login&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/account/new"&gt;New Account&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/posts/new"&gt;Create a New Listing&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/posts/resendactivation"&gt;Edit or Remove a Listing&lt;/a&gt;&lt;/li&gt;
+
+    &lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;div class="col-lg-2 col-md-3 col-sm-6"&gt;
+
+    &lt;h3 class="text-uppercase"&gt;ABOUT &amp;amp; HELP&lt;/h3&gt;
+
+    &lt;ul class="nav-footer"&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/info/faqs"&gt;FAQs&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/info/contact"&gt;Contact Armslist&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/info/privacy"&gt;Privacy Policy&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/info/terms"&gt;Terms of Use&lt;/a&gt;&lt;/li&gt;
+
+    &lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;div class="col-md-3 col-sm-6"&gt;
+
+    &lt;h3 class="text-uppercase"&gt;MORE ARMSLIST LINKS &lt;/h3&gt;
+
+    &lt;ul class="nav-footer"&gt;
+
+        &lt;li&gt;&lt;a href="http://forum.armslist.com/"&gt;Armslist Discussion Forum&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="http://www.armslist.com/contests/"&gt;Armslist Contests&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="http://www.armslistlegaldefensefund.com/"&gt;Armslist Legal Defense Fund&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="//www.armslist.com/info/advertise"&gt;Advertising with Armslist&lt;/a&gt;&lt;/li&gt;
+
+    &lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;div class="col-md-3 col-sm-6"&gt;
+
+    &lt;h3 class="text-uppercase"&gt;PARTNER SITES&lt;/h3&gt;
+
+    &lt;ul class="nav-footer"&gt;
+
+        &lt;li&gt;&lt;a href="http://www.torquelist.com/"&gt;Torquelist Vehicle Trader&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="http://www.rangemonkey.com/"&gt;Range Monkey&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="http://www.invictusgearcompany.com/"&gt;Invictus Gear &lt;/a&gt;&lt;/li&gt;
+
+    &lt;/ul&gt;
+
+&lt;/div&gt;
+
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+            &lt;div class="container-fluid"&gt;
+
+                &lt;div class="row"&gt;
+
+                    &lt;div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2"&gt;
+
+                        &lt;ul class="social-list"&gt;
+
+                            &lt;li&gt;
+
+                                    &lt;a target="_blank" href="http://www.youtube.com/user/armslistmedia?sub_confirmation=1" title="Armslist Youtube channel" class="icon-youtube"&gt;&lt;/a&gt;
+
+                            &lt;/li&gt;
+
+                            &lt;li&gt;
+
+                                    &lt;a target="_blank" href="https://instagram.com/armslist/" title="Armslist on Instagram" class="icon-instagram"&gt;&lt;/a&gt;
+
+                            &lt;/li&gt;
+
+                            &lt;li&gt;
+
+                                    &lt;a target="_blank" href="https://www.facebook.com/armslist" title="Armslist on Facebook" class="icon-facebook"&gt;&lt;/a&gt;
+
+                            &lt;/li&gt;
+
+                            &lt;li&gt;
+
+                                    &lt;a target="_blank" href="https://twitter.com/armslist" title="Armslist Twitter page" class="icon-twitter"&gt;&lt;/a&gt;
+
+                            &lt;/li&gt;
+
+                            &lt;li&gt;
+
+                                    &lt;a target="_blank" href="https://plus.google.com/103978926144598391141/posts" title="Armslist on Google+" class="icon-google-plus"&gt;&lt;/a&gt;
+
+                            &lt;/li&gt;
+
+                        &lt;/ul&gt;
+
+                        &lt;div class="text-block"&gt;
+
+                            &lt;p&gt;Always comply with local, state, federal, and international law.
+
+ARMSLIST does not become involved in transactions between parties. Review our 
+
+&lt;a href="/info/privacy"&gt;privacy policy&lt;/a&gt; and &lt;a href="/info/terms"&gt;terms of use&lt;/a&gt; for more
+
+information. Report Illegal Firearms Activity to 1-800-ATF-GUNS.  &lt;/p&gt;
+
+
+
+                        &lt;/div&gt;
+
+                        &lt;span class="copy"&gt;
+
+                            Copyright © 2016 Armslist, LLC |
+
+                            | Version: 15.0.2
+
+                        &lt;/span&gt;
+
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+        &lt;/footer&gt;
+
+
+
+
+
+
+
+
+
+    &lt;/div&gt;
+
+    &lt;div class="loader-box"&gt;
+
+        &lt;img src="https://s3.amazonaws.com/mgm-content/static/r131903/gzip/shared/images/loader.gif" height="64" width="64" alt="loader"&gt;
+
+    &lt;/div&gt;
+
+
+
+    &lt;script&gt;   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');    ga('create', 'UA-5138407-1', 'auto');   ga('send', 'pageview');  &lt;/script&gt;&lt;iframe src="//tpc.googlesyndication.com/sodar/cTrvNaRi.html" width="0" height="0" style="display: none;"&gt;&lt;/iframe&gt;
+
+
+
+
+
+
+
+
+
+
+&lt;div class="modal-backdrop fade in"&gt;&lt;/div&gt;&lt;iframe src="http://us-u.openx.net/w/1.0/pd?plm=6&amp;amp;ph=7160e237-0d5b-4d05-960a-3900726301ba" width="0" height="0" style="display:none;"&gt;&lt;/iframe&gt;&lt;/body&gt;&lt;/html&gt;</raw_content>
+
+
